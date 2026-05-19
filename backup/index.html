@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Optimization -->
+  <title>SG Education - Premium Pre-School & Early Budding Center</title>
+  <meta name="description" content="Welcome to SG Education and SG Early Budding, Hosur. Inspired by Kidzee's playful layout, we blend Ancient Bharath Culture (ANBC) with Modern Corporate standards to nurture tomorrow's leaders.">
+  <meta name="keywords" content="SG Education, SG Early Budding, pre-school Hosur, kidzee style school, play school Hosur, Hosur primary education, ANBC CPC curriculum">
+  
+  <!-- Playful Rounded Typography Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Vector Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       1. STICKY PLAYFUL HEADER
+       ========================================== -->
+  <header id="header">
+    <div class="container navbar">
+      <!-- School Logo Brand -->
+      <a href="#hero" class="logo-container" id="logo-link">
+        <img src="logo.png" class="logo-img" alt="SG Education Logo">
+        <div class="brand-text">
+          <span class="brand-name">SG Education</span>
+          <span class="brand-tag">Early Budding</span>
+        </div>
+      </a>
+      
+      <!-- Hamburger Menu for Handheld Devices -->
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- Nav menu links -->
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+          <li class="nav-item"><a href="#programs" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Programs</a></li>
+          <li class="nav-item"><a href="#pedagogy" class="nav-link"><i class="fa-solid fa-cubes"></i> Pedagogy</a></li>
+          <li class="nav-item"><a href="#gallery" class="nav-link"><i class="fa-solid fa-images"></i> Memories</a></li>
+          <li class="nav-item"><a href="#admissions" class="nav-link"><i class="fa-solid fa-envelope-open-text"></i> Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="#admissions" class="btn btn-rainbow"><i class="fa-solid fa-star"></i> Enroll Now</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       2. HERO CAROUSEL BANNER & FLOATING FORM
+       ========================================== -->
+  <section class="hero-section" id="hero">
+    <!-- Automated Carousel Background -->
+    <div class="hero-carousel" id="hero-carousel">
+      <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1500&q=80');"></div>
+      <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1500&q=80');"></div>
+      <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1500&q=80');"></div>
+    </div>
+
+    <!-- Playful Floating Clouds / Bubble Decor -->
+    <div class="hero-shapes">
+      <div class="hero-cloud cloud-1"></div>
+      <div class="hero-cloud cloud-2"></div>
+      <div class="bubble bubble-1"></div>
+      <div class="bubble bubble-2"></div>
+      <div class="bubble bubble-3"></div>
+    </div>
+
+    <div class="container hero-container">
+      <div class="hero-grid">
+        <!-- Content left -->
+        <div class="hero-text reveal-left">
+          <div class="badge-early"><img src="SG EB (2).png" alt="SGEB Emblem" class="emblem-mini"> <span>Pre-School Admissions 2026 - 2027</span></div>
+          <h1 class="hero-title">
+            Where Learning is a <span class="text-pink">Playful</span> Journey!
+          </h1>
+          <p class="hero-subtitle">
+            Welcome to <strong>SG Education</strong>. Blending ancient Bharath wisdom with modern corporate communication standards to raise bright, confident, future-ready leaders.
+          </p>
+          <div class="hero-btns">
+            <a href="#programs" class="btn btn-yellow-large"><i class="fa-solid fa-puzzle-piece"></i> Explore Programs</a>
+            <a href="#pedagogy" class="btn btn-outline-white"><i class="fa-solid fa-seedling"></i> Learn Our Way</a>
+          </div>
+        </div>
+
+        <!-- Floating Quick inquiry card right -->
+        <div class="hero-inquiry-card reveal-right">
+          <div class="inquiry-header">
+            <h3>Quick Inquiry</h3>
+            <p>Sow the seeds of bright future</p>
+          </div>
+          <form class="inquiry-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-item">
+              <input type="text" placeholder="Parent Name *" class="inquiry-input" required>
+            </div>
+            <div class="form-item">
+              <input type="tel" placeholder="Mobile Number *" class="inquiry-input" required>
+            </div>
+            <div class="form-item">
+              <input type="email" placeholder="Email Address *" class="inquiry-input" required>
+            </div>
+            <div class="form-item">
+              <select class="inquiry-select" required>
+                <option value="" disabled selected>Select Program *</option>
+                <option value="playgroup">Playgroup (1.5 - 2.5 Years)</option>
+                <option value="nursery">Nursery (2.5 - 3.5 Years)</option>
+                <option value="junior-kg">Junior KG (3.5 - 4.5 Years)</option>
+                <option value="senior-kg">Senior KG (4.5 - 5.5 Years)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-pink-full"><i class="fa-solid fa-paper-plane"></i> Submit Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wavy Bottom Separation -->
+    <div class="wave-bottom">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,96C240,128,480,32,720,64C960,96,1200,32,1440,80L1440,120L0,120Z" fill="#ffffff"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       3. INTRO & PEDAGOGY (iLLUME & GURUKUL)
+       ========================================== -->
+  <section class="section-padding about-section" id="about">
+    <div class="container">
+      <div class="intro-grid">
+        <!-- Text details -->
+        <div class="intro-text reveal-left">
+          <span class="label-brand color-blue">Shaping Talents Since 2023</span>
+          <h2 class="title-left">Welcome to <span class="highlight-blue text-blue-line">SG Education</span></h2>
+          <p>
+            Established in July 2023 by <strong>Sarathi Groups</strong>, SG Education focuses on providing premium educational services that blend ancient Indian cultural practices with modern corporate requirements. Our child-centric environment provides the perfect start to a lifelong love of learning.
+          </p>
+          <p>
+            Our dedicated early childhood wing, <strong>SG Early Budding</strong> (located in Gokul Nagar, Hosur), specializes in nursery, preschool, and playgroup curriculums, ensuring a high-quality foundation during your child's critical developmental years.
+          </p>
+          
+          <!-- Key elements bullet row -->
+          <div class="pedagogy-features">
+            <div class="p-feat-card yellow">
+              <div class="p-feat-icon"><i class="fa-solid fa-child-reaching"></i></div>
+              <h4>Holistic Care</h4>
+              <p>Individual focus on intellectual, emotional and physical development.</p>
+            </div>
+            <div class="p-feat-card pink">
+              <div class="p-feat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+              <h4>Safe Campus</h4>
+              <p>Hygienic classroom spaces with modern round-the-clock CCTV cameras.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visionary Founders details -->
+        <div class="founders-showcase reveal-right">
+          <div class="founder-card main-founder">
+            <div class="founder-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=350&q=80" alt="Founder Mamatha M.C">
+              <span class="founder-role">Founder & Director</span>
+            </div>
+            <div class="founder-info">
+              <h3>Mamatha M.C</h3>
+              <p class="credential">Co-founder Sarathi Groups & Entrepreneur</p>
+              <p class="quote">"We cultivate capabilities, willpower and persistent focus so each early bud turns into a powerful blossom."</p>
+            </div>
+          </div>
+
+          <div class="founder-card sub-founder">
+            <div class="founder-img-wrapper">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=350&q=80" alt="Mentor Shashi Kiran">
+              <span class="founder-role">Strategic Mentor</span>
+            </div>
+            <div class="founder-info">
+              <h3>Shashi Kiran K.N</h3>
+              <p class="credential">Philanthropist & Social Leader</p>
+              <p class="quote">"Combining moral character, self-reliance and modern tech tools is the ideal foundation for the leaders of tomorrow."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- iLLUME & GURUKUL Pedagogy Model -->
+      <div class="illume-pedagogy reveal">
+        <div class="illume-header">
+          <span class="ped-badge">Our Unique Methodology</span>
+          <h2>The <span class="highlight-pink text-pink-line">SG iLLUME & Gurukul</span> Pedagogy</h2>
+          <p class="illume-sub">
+            How do we bring out the best in your child? We merge Kidzee-style active inquiry-led play with timeless Gurukul standards.
+          </p>
+        </div>
+
+        <div class="illume-grid">
+          <!-- Pillar 1 -->
+          <div class="illume-card blue">
+            <div class="illume-num">01</div>
+            <h3>Inquiry-Led Play</h3>
+            <p>Children explore concepts by questioning, doing, and playing. No rote learning. We encourage curiosity and self-discovery.</p>
+          </div>
+          <!-- Pillar 2 -->
+          <div class="illume-card yellow">
+            <div class="illume-num">02</div>
+            <h3>ANBC Culture</h3>
+            <p>Connecting kids to their roots. Value-based lessons, moral stories, yoga, and meditation elements in our daily schedule.</p>
+          </div>
+          <!-- Pillar 3 -->
+          <div class="illume-card green">
+            <div class="illume-num">03</div>
+            <h3>CPC Foundations</h3>
+            <p>Developing essential professional skills like dynamic communication, public speaking, tech integration, and polite gestures.</p>
+          </div>
+          <!-- Pillar 4 -->
+          <div class="illume-card pink">
+            <div class="illume-num">04</div>
+            <h3>Parent Partnership</h3>
+            <p>Continuous parent engagement, developmental workshops, and interactive tools to align home guidance with school learning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       4. OUR PROGRAMS SECTION
+       ========================================== -->
+  <section class="programs-section section-padding" id="programs">
+    <!-- Wavy Top Divider -->
+    <div class="wave-top">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,32C240,64,480,0,720,32C960,64,1200,0,1440,32L1440,0L0,0Z" fill="#ffffff"></path>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="label-brand color-pink">Tailored Age Groups</span>
+        <h2>Explore <span class="highlight-orange text-orange-line">Our Playful Programs</span></h2>
+        <p>Providing custom, age-specific curriculums to match every step of early development.</p>
+      </div>
+
+      <div class="programs-grid">
+        <!-- Playgroup -->
+        <div class="program-card playgroup reveal" style="animation-delay: 0.1s;">
+          <div class="program-badge yellow">1.5 - 2.5 Years</div>
+          <div class="program-icon"><i class="fa-solid fa-puzzle-piece"></i></div>
+          <h3>Playgroup</h3>
+          <p>
+            Focuses on sensory play, motor-skill coordination, emotional comfort, and visual recognition in a highly colourful space.
+          </p>
+          <ul class="program-features">
+            <li><span class="dot yellow"></span> Fine Motor Skills</li>
+            <li><span class="dot yellow"></span> Story & Rhymes</li>
+            <li><span class="dot yellow"></span> Fun Toy Building</li>
+          </ul>
+          <a href="#admissions" class="btn btn-card-yellow">Inquire Now</a>
+        </div>
+
+        <!-- Nursery -->
+        <div class="program-card nursery reveal" style="animation-delay: 0.2s;">
+          <div class="program-badge pink">2.5 - 3.5 Years</div>
+          <div class="program-icon"><i class="fa-solid fa-shapes"></i></div>
+          <h3>Nursery</h3>
+          <p>
+            Introduces children to basic vocabulary, numbers, phonetics, and creative artwork. Emphasizes early social connections.
+          </p>
+          <ul class="program-features">
+            <li><span class="dot pink"></span> Vocabulary Building</li>
+            <li><span class="dot pink"></span> Basic Mathematics</li>
+            <li><span class="dot pink"></span> Dynamic Coloring</li>
+          </ul>
+          <a href="#admissions" class="btn btn-card-pink">Inquire Now</a>
+        </div>
+
+        <!-- Junior KG -->
+        <div class="program-card junior-kg reveal" style="animation-delay: 0.3s;">
+          <div class="program-badge blue">3.5 - 4.5 Years</div>
+          <div class="program-icon"><i class="fa-solid fa-paint-brush"></i></div>
+          <h3>Junior KG</h3>
+          <p>
+            Bridges simple alphabets with moral science, basic yoga practices, public confidence showcases, and creative projects.
+          </p>
+          <ul class="program-features">
+            <li><span class="dot blue"></span> Language Arts</li>
+            <li><span class="dot blue"></span> Ancient ANBC Stories</li>
+            <li><span class="dot blue"></span> Physical Yoga Drills</li>
+          </ul>
+          <a href="#admissions" class="btn btn-card-blue">Inquire Now</a>
+        </div>
+
+        <!-- Senior KG -->
+        <div class="program-card senior-kg reveal" style="animation-delay: 0.4s;">
+          <div class="program-badge green">4.5 - 5.5 Years</div>
+          <div class="program-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <h3>Senior KG</h3>
+          <p>
+            Prepares young buds for mainstream schools with advanced communications, basic computing logic, and dynamic thinking patterns.
+          </p>
+          <ul class="program-features">
+            <li><span class="dot green"></span> Logical Analysis</li>
+            <li><span class="dot green"></span> Tech Integration</li>
+            <li><span class="dot green"></span> Public Speaking Skills</li>
+          </ul>
+          <a href="#admissions" class="btn btn-card-green">Inquire Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       5. EDUCATION SYSTEM COMPARISON (ANBC & CPC)
+       ========================================== -->
+  <section class="system-section section-padding" id="pedagogy">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="label-brand color-blue">Curriculum Foundations</span>
+        <h2>Ancient Bharath <span class="highlight-blue text-blue-line">vs. Corporate Standards</span></h2>
+        <p>Combining the values of ancient Gurukul models with the professionalism of the corporate world.</p>
+      </div>
+
+      <div class="system-grid">
+        <!-- ANBC Card -->
+        <div class="system-card anbc reveal-left">
+          <div class="card-header yellow-grad">
+            <div class="card-icon"><i class="fa-solid fa-om"></i></div>
+            <div class="header-text">
+              <h3>Ancient Bharath Culture</h3>
+              <span>ANBC Standard</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p>
+              Ancient Indian education practices focus on overall self-reliance, moral integration, and respect for nature and elders:
+            </p>
+            <ul class="system-list">
+              <li><i class="fa-solid fa-circle-check yellow-text"></i> <strong>Gurukul Philosophy:</strong> Moral stories that shape character and values.</li>
+              <li><i class="fa-solid fa-circle-check yellow-text"></i> <strong>Yoga & Meditation:</strong> Daily breathing drills for concentration.</li>
+              <li><i class="fa-solid fa-circle-check yellow-text"></i> <strong>Traditional Crafts:</strong> Tactile and creative learning using local arts.</li>
+              <li><i class="fa-solid fa-circle-check yellow-text"></i> <strong>Self-Reliance:</strong> Simple tidy-up habits that teach responsibility.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- CPC Card -->
+        <div class="system-card cpc reveal-right">
+          <div class="card-header blue-grad">
+            <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="header-text">
+              <h3>Corporate Culture Standards</h3>
+              <span>CPC Standard</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <p>
+              Preparing kids to communicate clearly and navigate modern, professional interfaces with confidence and grace:
+            </p>
+            <ul class="system-list">
+              <li><i class="fa-solid fa-circle-check blue-text"></i> <strong>Dynamic Communication:</strong> Developing rich, expressive vocabulary.</li>
+              <li><i class="fa-solid fa-circle-check blue-text"></i> <strong>Professional Gestures:</strong> Correct body language and listening skills.</li>
+              <li><i class="fa-solid fa-circle-check blue-text"></i> <strong>Technology Integration:</strong> Familiarity with tablets and coding concepts.</li>
+              <li><i class="fa-solid fa-circle-check blue-text"></i> <strong>Project Teamwork:</strong> Small collaborative play blocks to solve puzzles.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- One Day One Good Thing Box -->
+      <div class="habit-box reveal">
+        <div class="habit-info">
+          <span class="label-brand color-pink">A Heartwarming Philosophy</span>
+          <h3 class="highlight-pink">One Day, One Good Thing</h3>
+          <p>
+            We believe that small, daily habits form the ultimate foundation for moral character and personal success. Under our unique program, <strong>"One Day, One Good Thing"</strong>, kids explore one positive habit each day.
+          </p>
+          <p>
+            Over the academic year, these gentle habits build strong, disciplined, empathetic young individuals who value kindness and responsibility.
+          </p>
+          <a href="#admissions" class="btn btn-pink"><i class="fa-solid fa-face-smile-wink"></i> Start building habits today</a>
+        </div>
+
+        <!-- Dynamic Switcher Card -->
+        <div class="habit-card-widget">
+          <span class="widget-tag">Habit of the Day</span>
+          <div class="widget-display" id="habit-widget-content">
+            <!-- Populated via Javascript -->
+            <div class="widget-emoji" id="habit-emoji">🙏</div>
+            <h4 class="widget-title" id="habit-title">Greeting Elders</h4>
+            <p class="widget-desc" id="habit-desc">Namaste! Children learn to greet parents, teachers, and elders with folded hands, building warm, respectful connections.</p>
+          </div>
+          <div class="widget-controls">
+            <button class="widget-btn" id="habit-prev" aria-label="Previous habit"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="widget-dots" id="habit-dots">
+              <!-- Dots generated by JS -->
+            </div>
+            <button class="widget-btn" id="habit-next" aria-label="Next habit"><i class="fa-solid fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       6. FILTERED MEMORIES GALLERY SECTION
+       ========================================== -->
+  <section class="gallery-section section-padding" id="gallery">
+    <!-- Wavy Top Separator -->
+    <div class="wave-top">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,96C240,64,480,128,720,96C960,64,1200,96,1440,64L1440,0L0,0Z" fill="#f5f6fa"></path>
+      </svg>
+    </div>
+
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="label-brand color-pink">Memory Clips</span>
+        <h2>Discover <span class="highlight-pink text-pink-line">Our Magic Memories</span></h2>
+        <p>A vibrant look at daily activities, festival celebrations, and learning milestones.</p>
+      </div>
+
+      <!-- Categories filters -->
+      <div class="gallery-filters reveal">
+        <button class="filter-btn active" onclick="filterGallery('all')">Show All</button>
+        <button class="filter-btn" onclick="filterGallery('playtime')">Playtime</button>
+        <button class="filter-btn" onclick="filterGallery('celebrations')">Celebrations</button>
+        <button class="filter-btn" onclick="filterGallery('yoga')">Yoga & Art</button>
+        <button class="filter-btn" onclick="filterGallery('safety')">Safety & Tech</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="gallery-grid reveal">
+        <!-- Item 1 -->
+        <div class="gallery-item" data-category="playtime" onclick="openLightbox(0)">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" alt="Preschool children playing happily outdoors">
+            <div class="item-overlay">
+              <span class="item-tag">Playtime</span>
+              <h4>Outdoor Fun Play</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="gallery-item" data-category="yoga" onclick="openLightbox(1)">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="Kid drawing with beautiful vibrant paints">
+            <div class="item-overlay">
+              <span class="item-tag">Yoga & Art</span>
+              <h4>Vibrant Drawing Classes</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="gallery-item" data-category="celebrations" onclick="openLightbox(2)">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1561489396-888724a1543d?auto=format&fit=crop&w=600&q=80" alt="Group of colorful kids gathering for festival celebration">
+            <div class="item-overlay">
+              <span class="item-tag">Celebrations</span>
+              <h4>Festival Celebrations</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="gallery-item" data-category="yoga" onclick="openLightbox(3)">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Kid yoga and meditation pose classes">
+            <div class="item-overlay">
+              <span class="item-tag">Yoga & Art</span>
+              <h4>Meditation Drills</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="gallery-item" data-category="safety" onclick="openLightbox(4)">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=600&q=80" alt="Students using educational learning computer tablet under teacher care">
+            <div class="item-overlay">
+              <span class="item-tag">Safety & Tech</span>
+              <h4>Learning with Technology</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="gallery-item" data-category="playtime" onclick="openLightbox(5)">
+          <div class="img-container">
+            <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="Little kids in school smiling together">
+            <div class="item-overlay">
+              <span class="item-tag">Playtime</span>
+              <h4>Sharing and Caring</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Popup Overlay -->
+  <div class="lightbox" id="lightbox-modal">
+    <div class="lightbox-dialog">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <button class="lightbox-nav prev" onclick="prevLightbox()"><i class="fa-solid fa-circle-chevron-left"></i></button>
+      <div class="lightbox-img-wrapper">
+        <img src="" alt="Lightbox Zoomed Item" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption">Outdoor Fun Play</div>
+      </div>
+      <button class="lightbox-nav next" onclick="nextLightbox()"><i class="fa-solid fa-circle-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       7. TESTIMONIALS SLIDER SECTION
+       ========================================== -->
+  <section class="testimonials-section section-padding">
+    <div class="container">
+      <div class="section-title reveal">
+        <span class="label-brand color-orange">Parent Testimonials</span>
+        <h2>What Our <span class="highlight-orange text-orange-line">Happy Parents Say</span></h2>
+        <p>We believe in absolute partnerships with families to foster successful milestones.</p>
+      </div>
+
+      <!-- Testimonial slider track -->
+      <div class="testimonial-slider-container reveal">
+        <button class="slider-btn prev" id="review-prev" aria-label="Previous review"><i class="fa-solid fa-chevron-left"></i></button>
+        
+        <div class="slider-viewport">
+          <div class="testimonial-track" id="testimonial-track">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="feedback-text">
+                  "SG Early Budding is absolutely transformational! The 'One Day, One Good Thing' habits are wonderful. My little son Aarav now tidies up his play drawer, greets elders with folded hands, and loves going to school!"
+                </p>
+                <div class="parent-meta">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Mother Priyanka">
+                  <div>
+                    <h4>Priyanka Sharma</h4>
+                    <span>Mother of Aarav (Age 3)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="feedback-text">
+                  "What truly stands out is the wonderful combination of Ancient Bharath moral stories with Corporate speech standard training. My daughter Deepthi has gained amazing confidence and speaks clearly in front of guests."
+                </p>
+                <div class="parent-meta">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Father Rajesh">
+                  <div>
+                    <h4>Rajesh K. Balan</h4>
+                    <span>Father of Deepthi (Age 4)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="rating">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p class="feedback-text">
+                  "Perfect safety and high hygiene standards! We visited the campus in Gokul Nagar and were extremely impressed with their classrooms and safe play areas. The teachers are incredibly loving and professional."
+                </p>
+                <div class="parent-meta">
+                  <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&q=80" alt="Mother Anitha">
+                  <div>
+                    <h4>Anitha Ramakrishnan</h4>
+                    <span>Mother of Kavin (Age 4.5)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="slider-btn next" id="review-next" aria-label="Next review"><i class="fa-solid fa-chevron-right"></i></button>
+
+        <div class="slider-dots" id="review-dots">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       8. CHALKBOARD ADMISSIONS ENROLLMENT FORM
+       ========================================== -->
+  <section class="admissions-section section-padding" id="admissions">
+    <!-- Wavy Top Divider -->
+    <div class="wave-top">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,32C240,64,480,0,720,32C960,64,1200,0,1440,32L1440,0L0,0Z" fill="#f8fafc"></path>
+      </svg>
+    </div>
+
+    <div class="container admissions-grid">
+      <!-- Info Left -->
+      <div class="admit-info reveal-left">
+        <span class="label-brand color-blue">Admissions Open 2026</span>
+        <h2>Sow the Seeds of <span class="highlight-blue text-blue-line">Knowledge Today</span></h2>
+        <p class="admit-intro-p">
+          Our admissions process is simple, warm, and transparent. We welcome you and your child to visit our campus, observe a session, and explore our unique pedagogy firsthand.
+        </p>
+        
+        <!-- Checklist benefits -->
+        <div class="benefit-row">
+          <div class="b-icon blue"><i class="fa-solid fa-check"></i></div>
+          <div class="b-text">
+            <h4>Simple Enrollment Steps</h4>
+            <p>Fill out the chalkboard form, schedule a campus visit, and secure your seat.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <div class="b-icon pink"><i class="fa-solid fa-check"></i></div>
+          <div class="b-text">
+            <h4>Interactive Activity Areas</h4>
+            <p>Specially curated materials that promote hands-on discovery and active inquiry.</p>
+          </div>
+        </div>
+        <div class="benefit-row">
+          <div class="b-icon yellow"><i class="fa-solid fa-check"></i></div>
+          <div class="b-text">
+            <h4>Direct Admission Helpline</h4>
+            <p>Need support? Ring our admissions office instantly at <strong>+91 7339475210</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chalkboard Form Right -->
+      <div class="chalkboard-form-container reveal-right">
+        <div class="chalk-board">
+          <div class="chalk-header">
+            <h3>Admissions Open</h3>
+            <p>Enrollment Form</p>
+          </div>
+          
+          <form class="chalk-form" id="enrollmentForm" onsubmit="handleAdmissionSubmit(event)">
+            <!-- Parent details -->
+            <div class="chalk-group">
+              <label for="parent_name"><i class="fa-solid fa-user-friends"></i> Parent Name *</label>
+              <input type="text" id="parent_name" class="chalk-input" placeholder="e.g. Mamatha M.C" required>
+              <span class="chalk-err">Parent name is required.</span>
+            </div>
+
+            <div class="chalk-group">
+              <label for="phone_num"><i class="fa-solid fa-phone"></i> Mobile Number *</label>
+              <input type="tel" id="phone_num" class="chalk-input" placeholder="e.g. 7339475210" required>
+              <span class="chalk-err">Please enter a valid 10-digit number.</span>
+            </div>
+
+            <div class="chalk-group full-width">
+              <label for="email_id"><i class="fa-solid fa-envelope"></i> Email Address *</label>
+              <input type="email" id="email_id" class="chalk-input" placeholder="e.g. parent@example.com" required>
+              <span class="chalk-err">Please enter a valid email address.</span>
+            </div>
+
+            <div class="chalk-group">
+              <label for="location_place"><i class="fa-solid fa-map-pin"></i> Location / Place</label>
+              <input type="text" id="location_place" class="chalk-input" placeholder="e.g. Gokul Nagar, Hosur">
+            </div>
+
+            <!-- Kid details -->
+            <div class="chalk-group">
+              <label for="child_name"><i class="fa-solid fa-baby"></i> Child's Full Name *</label>
+              <input type="text" id="child_name" class="chalk-input" placeholder="e.g. Little Bud" required>
+              <span class="chalk-err">Child's name is required.</span>
+            </div>
+
+            <div class="chalk-group full-width">
+              <label for="child_dob"><i class="fa-solid fa-calendar-days"></i> Child's DOB *</label>
+              <input type="date" id="child_dob" class="chalk-input" required>
+              <span class="chalk-err">Please select child's DOB.</span>
+            </div>
+
+            <button type="submit" class="btn btn-chalk-submit"><i class="fa-solid fa-paper-plane"></i> Register Child</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Submit Thank you success modal overlay -->
+  <div class="success-overlay" id="success-dialog">
+    <div class="success-box">
+      <div class="success-icon-badge"><i class="fa-solid fa-circle-check"></i></div>
+      <h3>Application Submitted!</h3>
+      <p>
+        Thank you for choosing <strong>SG Education</strong>. We have successfully registered your parent inquiry. Our admissions advisor will contact you within 24 hours to coordinate your campus tour.
+      </p>
+      <button class="btn btn-close-success" onclick="closeSuccessDialog()"><i class="fa-solid fa-face-smile"></i> Perfect!</button>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       9. PLAYFUL FOOTER WITH CONTACT & MAP
+       ========================================== -->
+  <footer>
+    <!-- Background float decor -->
+    <div class="floating-cloud cloud-1" style="opacity: 0.05;"></div>
+    <div class="floating-cloud cloud-2" style="opacity: 0.05;"></div>
+
+    <div class="container footer-grid">
+      <!-- Column 1: Brand details -->
+      <div class="footer-col brand-col">
+        <a href="#hero" class="footer-logo">
+          <img src="logo.png" alt="SG Education Logo">
+          <span class="logo-text">SG Education</span>
+        </a>
+        <p class="footer-about-text">
+          CoEducate, Empower, Elevate! Our pre-school is committed to raising well-rounded future leaders with rich ancient Indian values and confident corporate standards.
+        </p>
+        <div class="social-icons">
+          <a href="#" class="soc-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="soc-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="soc-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="soc-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick navigation -->
+      <div class="footer-col links-col">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#hero">Home Base</a></li>
+          <li><a href="#about">About Our Ethos</a></li>
+          <li><a href="#programs">Child Programs</a></li>
+          <li><a href="#pedagogy">Our Pedagogy</a></li>
+          <li><a href="#gallery">Memory Gallery</a></li>
+          <li><a href="#admissions">Enrollment Form</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact & Address -->
+      <div class="footer-col contact-col">
+        <h3>Contact Us</h3>
+        <div class="footer-contact-details">
+          <div class="contact-row">
+            <div class="c-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+            <p>
+              Flat no. D337, Near Nanthavanam, Gokul Nagar, Agraharam, Hosur, Tamil Nadu - 635109
+            </p>
+          </div>
+          
+          <div class="contact-row">
+            <div class="c-icon"><i class="fa-solid fa-phone-volume"></i></div>
+            <p>
+              Admissions: <strong>+91 7339475210</strong>
+            </p>
+          </div>
+
+          <div class="contact-row">
+            <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+            <p>
+              Email: <strong>support@sgeducations.com</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright details bottom -->
+    <div class="container footer-bottom">
+      <p class="copyright">
+        &copy; 2023 - 2026 <strong>SG Education</strong>. All Rights Reserved.
+      </p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+      <p class="powered-by">
+        Powered by <strong>Sarathi Groups</strong>
+      </p>
+    </div>
+  </footer>
+
+  <!-- App Controller -->
+  <script src="app.js"></script>
+</body>
+</html>
