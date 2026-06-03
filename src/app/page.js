@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 // ==========================================
 // 1. FLOATING KIDS-RELATED UNIQUE DOODLES (SVGs)
@@ -51,22 +51,22 @@ const AirplaneDoodle = ({ style }) => (
 const THREE_PILLARS = [
   {
     title: "Hygiene & Safety",
-    desc: "Maintaining a fully sanitized, safe environment with healthy meals and CCTV security.",
-    img: "https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&w=500&q=80",
+    desc: "Fully sanitized, CCTV secured campus.",
+    img: "https://images.pexels.com/photos/30889597/pexels-photo-30889597.jpeg",
     icon: "fa-shield-heart",
     color: "#FF2A7A"
   },
   {
     title: "Traditional Customs",
-    desc: "Preserving cultural heritage through moral lessons, festival celebrations, and gratitude.",
-    img: "https://images.unsplash.com/photo-1561489396-888724a1543d?auto=format&fit=crop&w=500&q=80",
+    desc: "Moral lessons and cultural heritage.",
+    img: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=500&q=80",
     icon: "fa-om",
     color: "#5A49E3"
   },
   {
     title: "Fun & Skill Learning",
-    desc: "Activity-based project puzzles, early public speaking, and confidence-building skills.",
-    img: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80",
+    desc: "Activity-based puzzles and early speaking.",
+    img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80",
     icon: "fa-graduation-cap",
     color: "#00AEFF"
   }
@@ -75,34 +75,181 @@ const THREE_PILLARS = [
 const TESTIMONIALS = [
   {
     stars: 5,
-    quote: "SG Early Budding is magical! My son Aarav now tidies his play space, greets elders, and runs happily to school.",
+    quote: "SG Early Budding is simply magical! Best futuristic campus in Hosur. Aarav now tidies his play space, greets elders with folded hands, and runs happily to school.",
     name: "Priyanka Sharma",
     role: "Mother of Aarav",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80",
-    border: "var(--lime-green)"
+    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
   },
   {
     stars: 5,
     quote: "The blend of traditional moral stories with modern speech training has boosted my daughter's confidence immensely.",
     name: "Rajesh Balan",
     role: "Father of Deepthi",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80",
-    border: "var(--sky-blue)"
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
   },
   {
     stars: 5,
-    quote: "Safe campus, warm teachers, and beautiful cultural custom exposure. It is exactly what my child needed.",
+    quote: "Safe campus, warm teachers, and beautiful cultural exposure in a modern way. It is exactly what my child Kabir needed.",
     name: "Sarah Taylor",
     role: "Mother of Kabir",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80",
-    border: "var(--joyful-yellow)"
+    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80"
+  },
+  {
+    stars: 5,
+    quote: "The safety measures and clean classrooms give me complete peace of mind. Vihaan has blossomed here.",
+    name: "Dr. Anjali R.",
+    role: "Mother of Vihaan",
+    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+  },
+  {
+    stars: 5,
+    quote: "SG's unique approach of blending tradition with logic/coding sets them apart. Advait loves the coding games and stories!",
+    name: "Karthik Meyyappan",
+    role: "Father of Advait",
+    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80"
   }
 ];
 
+const FOUR_PILLARS = [
+  {
+    title: "Inquiry-Led Play",
+    desc: "Children explore concepts by questioning, doing, and playing. No rote learning. We encourage curiosity and self-discovery.",
+    icon: "fa-child-reaching",
+    color: "#00AEFF",
+    img: "/sg-education/pillars1.png"
+  },
+  {
+    title: "ANBC Culture",
+    desc: "Connecting kids to their roots. Value-based lessons, moral stories, yoga, and meditation elements in our daily schedule.",
+    icon: "fa-om",
+    color: "#FF2A7A",
+    img: "/sg-education/pillars2.png"
+  },
+  {
+    title: "CPC Foundations",
+    desc: "Developing essential professional skills like dynamic communication, public speaking, tech integration, and polite gestures.",
+    icon: "fa-laptop-code",
+    color: "#5A49E3",
+    img: "/sg-education/pillars3.png"
+  },
+  {
+    title: "Parent Partnership",
+    desc: "Continuous parent engagement, developmental workshops, and interactive tools to align home guidance with school learning.",
+    icon: "fa-handshake-angle",
+    color: "#FFC300",
+    img: "/sg-education/pillars4.png"
+  }
+];
+
+const row1Images = [
+  "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1587691592099-24045742c181?auto=format&fit=crop&w=500&q=80"
+];
+
+const row2Images = [
+  "https://images.pexels.com/photos/618116/pexels-photo-618116.jpeg",
+  "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1536337005238-94b997371b40?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1602052793312-b99c2a9ee797?auto=format&fit=crop&w=500&q=80"
+];
+
+const row3Images = [
+  "https://images.pexels.com/photos/31864392/pexels-photo-31864392.jpeg",
+  "https://images.pexels.com/photos/35493021/pexels-photo-35493021.jpeg",
+  "https://images.unsplash.com/photo-1511629091441-ee46146481b6?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1567057419565-4349c49d8a04?auto=format&fit=crop&w=500&q=80"
+];
+
+const row4Images = [
+  "https://images.pexels.com/photos/12818151/pexels-photo-12818151.jpeg",
+  "https://images.unsplash.com/photo-1510531704581-5b2870972060?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1471286174240-e67f29dbb499?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=500&q=80",
+  "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80"
+];
+
 export default function Home() {
+  const [testiIndex, setTestiIndex] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const founder1Ref = useRef(null);
+  const founder2Ref = useRef(null);
+  const pinWrapperRef = useRef(null);
+  const aboutImageRef = useRef(null);
+
+  // Monitor screen size for responsiveness adjustments
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Viewport-relative ScrollTrigger Cards progress calculator
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!pinWrapperRef.current) return;
+      const rect = pinWrapperRef.current.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+      const containerHeight = rect.height;
+      
+      const scrolledPast = -rect.top;
+      const maxScroll = containerHeight - viewportHeight;
+      if (maxScroll <= 0) return;
+
+      const progress = Math.max(0, Math.min(1, scrolledPast / maxScroll));
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
+  }, []);
+
+  // Auto slider for testimonials (5 items)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTestiIndex((prev) => (prev + 1) % TESTIMONIALS.length);
+    }, 5500);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Holographic 3D tilt effect on hover
+  const handleMouseMoveTilt = (e, ref) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 768) return;
+    if (!ref.current) return;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    const x = (e.clientX - left) / width;
+    const y = (e.clientY - top) / height;
+    const tiltX = (y - 0.5) * -15; // Max 15 degree X rotation
+    const tiltY = (x - 0.5) * 15;  // Max 15 degree Y rotation
+    ref.current.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.03, 1.03, 1.03)`;
+  };
+  
+  const handleMouseLeaveTilt = (ref) => {
+    if (!ref.current) return;
+    ref.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+  };
+
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [testimonialIdx, setTestimonialIdx] = useState(0);
 
   // Form states
   const [parentName, setParentName] = useState("");
@@ -196,10 +343,10 @@ export default function Home() {
         <div className="container navbar">
           <a href="#hero" className="logo-container" id="logo-link">
             <img src="/sg-education/logo.png" className="logo-img" alt="SG Education Logo" />
-            <div className="brand-text">
+            {/* <div className="brand-text">
               <span className="brand-name">SG Education</span>
               <span className="brand-tag">Early Budding</span>
-            </div>
+            </div> */}
           </a>
 
           <button
@@ -214,37 +361,64 @@ export default function Home() {
 
           <nav className={`nav-menu ${mobileMenuOpen ? "open" : ""}`} id="nav-menu">
             <ul className="nav-list">
-              <li><a href="#hero" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
-              <li><a href="#about" className="nav-link" onClick={() => setMobileMenuOpen(false)}>About Us</a></li>
-              <li><a href="#pedagogy" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Pillars</a></li>
-              <li><a href="#gallery" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Gallery</a></li>
-              <li><a href="#admissions" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Admissions</a></li>
+              <li className="nav-item"><a href="#hero" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
+              
+              <li className="nav-item">
+                <a href="#about" className="nav-link">About Us <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></a>
+                <div className="dropdown-menu">
+                  <a href="#about-vision" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Vision & Mission</a>
+                  <a href="#about-principal" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Principal's Message</a>
+                  <a href="#about-motto" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>School Motto</a>
+                </div>
+              </li>
+              
+              <li className="nav-item">
+                <a href="#pedagogy" className="nav-link">Academic <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></a>
+                <div className="dropdown-menu">
+                  <a href="#pedagogy" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</a>
+                  <a href="#pedagogy" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</a>
+                  <a href="#pedagogy" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>1st to 5th Std</a>
+                </div>
+              </li>
+              
+              <li className="nav-item">
+                <a href="#facilities" className="nav-link">Facilities <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></a>
+                <div className="dropdown-menu">
+                  <a href="#fac-library" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Library</a>
+                  <a href="#fac-health" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Health & Well-being</a>
+                  <a href="#fac-beyond" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Beyond Academics</a>
+                </div>
+              </li>
+              
+              <li className="nav-item"><a href="#gallery" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Gallery</a></li>
+              <li className="nav-item"><a href="#blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</a></li>
+              <li className="nav-item"><a href="#contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
             </ul>
             <div className="nav-cta">
               <a href="#admissions" className="btn btn-rainbow" onClick={() => setMobileMenuOpen(false)}>
-                Schedule a Tour
+                Admission
               </a>
             </div>
           </nav>
         </div>
       </header>
 
-      {/* ==========================================
-           2. HERO SECTION WITH VIDEO BACKGROUND
+            {/* ==========================================
+           2. HERO SECTION WITH ELEGANT MINIMAL DESIGN
            ========================================== */}
       <section className="hero-section" id="hero">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="hero-video-bg"
-        >
-          <source src="/sg-education/kids.mp4" type="video/mp4" />
-        </video>
+        <video 
+          src="/sg-education/kids.mp4" 
+          autoPlay={true} 
+          loop={true} 
+          muted={true} 
+          playsInline={true} 
+          className="hero-video-bg" 
+          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1 }}
+        />
 
         {/* Navy Overlay */}
-        <div className="hero-overlay"></div>
+        <div className="hero-overlay" style={{ background: 'linear-gradient(to bottom, rgba(29, 42, 68, 0.7) 0%, rgba(29, 42, 68, 0.4) 100%)', zIndex: 2 }}></div>
 
         <div className="hero-shapes">
           <SunDoodle style={{ top: "12%", right: "8%" }} />
@@ -255,94 +429,90 @@ export default function Home() {
 
         <div className="container hero-container" style={{ position: "relative", zIndex: 5 }}>
           <div className="hero-center-content">
-            <h1 className="hero-title">
+            <h1 className="hero-title" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
               Welcome to <span className="text-yellow">SG Educations</span>
             </h1>
-            <p className="hero-subtitle" style={{ maxWidth: '800px', margin: '0 auto 3rem' }}>
-              We merge ancient Bharath wisdom with modern corporate culture standards to shape confident, discipline-driven young leaders.
+            <p className="hero-subtitle" style={{ maxWidth: '800px', margin: '0 auto', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+              CoEducate, Empower, Elevate. Nurturing young minds by blending ancient Bharath values with modern academic excellence. 
             </p>
-            <div className="hero-btns justify-center">
-              <a href="#admissions" className="btn btn-yellow-large">Enroll Now</a>
-              <a href="#about" className="btn btn-outline-white">Explore Ethos</a>
-            </div>
           </div>
         </div>
 
-        <div className="wave-divider bottom">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,96C240,128,480,32,720,64C960,96,1200,32,1440,80L1440,120L0,120Z" fill="#FAF9F5"></path>
+        {/* Gentle wavy bottom divider */}
+        <div className="wave-divider bottom" style={{ bottom: 0, height: '140px', zIndex: 10 }}>
+          <svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ width: '100%', height: '100%', display: 'block' }}>
+            <path d="M0,224 C180,96 540,352 720,224 C900,96 1260,352 1440,224 L1440,320 L0,320 Z" fill="#FAF8F5"></path>
           </svg>
         </div>
       </section>
 
       {/* ==========================================
-           3. ABOUT US (SCREENSHOT 1 & 5 EXACT ALIGNMENT)
+           3. ABOUT US SECTION ENHANCED
            ========================================== */}
       <section className="section-padding about-section scroll-reveal" id="about" style={{ position: "relative", overflow: "hidden" }}>
+        
+        {/* Soft atmospheric gradient glows */}
+        <div className="about-atmospheric-glow radial-yellow"></div>
+        <div className="about-atmospheric-glow radial-pink"></div>
 
         <div className="container">
-          <div className="intro-grid">
+          <div className="about-intro-split-grid">
 
-            {/* Left side: Portrait with overlapping yellow circle & teardrop badge (Screenshot 5 style) */}
-            <div className="about-portrait-side">
-
-              {/* Floating doodles */}
-              <LightbulbDoodle style={{ top: '-15px', left: '10%' }} />
-              <HeartDoodle style={{ right: '-25px', top: '42%' }} />
-              <LightningDoodle style={{ bottom: '-35px', left: '50%' }} />
-              <SunDoodle style={{ top: '10%', right: '10%' }} />
-              <AirplaneDoodle style={{ bottom: '15%', right: '5%' }} />
-
-              {/* Large solid yellow circle */}
-              <div className="about-yellow-bg-circle"></div>
-
-              {/* Image representing schoolboy with backpack */}
-              <div className="about-student-frame">
-                <img
-                  src="/sg-education/about-student.png"
-                  alt="Happy schoolboy cutout"
-                  className="about-student-img"
+            {/* REF 2: STICKER COLLAGE */}
+            <div className="sticker-collage-container">
+              
+              {/* Main Portrait */}
+              <div className="sc-main-portrait hover-lift">
+                <img 
+                  src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=700&q=80" 
+                  alt="Portrait smiling" 
                 />
-
-                {/* Overlay phone number badge */}
-                <div className="about-phone-badge">
-                  <i className="fa-solid fa-phone"></i>
-                  <span>7339475210</span>
-                </div>
               </div>
 
-              {/* Absolutely positioned teardrop EXPERIENCE badge */}
-              <div className="about-experience-badge hover-lift">
-                <strong>38+</strong>
-                <span>Experience</span>
+              {/* Floating Elements */}
+              <div className="sc-float-card sc-left-card float-anim-1">
+                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=300&q=80" alt="Activity" />
+              </div>
+
+              <div className="sc-float-card sc-right-card float-anim-2">
+                <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=300&q=80" alt="Outdoors" />
+              </div>
+
+              {/* Stickers */}
+              <div className="sc-sticker sc-heart float-anim-3">💖</div>
+              <div className="sc-sticker sc-cupcake float-anim-2">🧁</div>
+              
+              <div className="sc-text-sticker float-anim-1">
+                <span className="sc-text-line1">Stay</span>
+                <span className="sc-text-line2">Positive</span>
               </div>
             </div>
 
-            {/* Right side: about details */}
-            <div className="intro-text">
-              <span className="label-brand color-blue">About Us</span>
-              <h2>Safe, Fun & Educational - <span className="highlight-blue text-blue-line">Just What Your Child Needs</span></h2>
-              <p className="intro-lead-p" style={{ fontSize: '1.05rem', marginBottom: '2rem' }}>
-                Established in July 2023, SG Education blends traditional culture values with contemporary business skills to lay a solid foundation for early budding minds.
+            {/* Content Details */}
+            <div className="about-details-content">
+              <span className="label-brand color-blue">Welcome to SG Educations</span>
+              <h2 className="about-main-title">
+                Blending <span className="highlight-text-gradient">Ancient Wisdom</span> with Modern Corporate Excellence
+              </h2>
+              <p className="about-lead-text">
+                Established in July 2023, we aim to nurture individuals with knowledge, discipline, and leadership qualities.
               </p>
 
-              {/* 2-Column Checklist (Screenshot 5 style) */}
-              <div className="about-checklist-grid">
-                <div className="check-item">
-                  <div className="check-icon-circle"><i className="fa-solid fa-circle-check"></i></div>
-                  <span>Learning & Fun</span>
+              {/* Feature Highlights Grid */}
+              <div className="about-premium-highlights">
+                <div className="highlight-row">
+                  <div className="h-icon blue"><i className="fa-solid fa-om"></i></div>
+                  <div className="h-info">
+                    <h4>Ancient Bharath Values</h4>
+                    <p>Fostering respect and cultural traditions.</p>
+                  </div>
                 </div>
-                <div className="check-item">
-                  <div className="check-icon-circle"><i className="fa-solid fa-circle-check"></i></div>
-                  <span>Healthy Meals</span>
-                </div>
-                <div className="check-item">
-                  <div className="check-icon-circle"><i className="fa-solid fa-circle-check"></i></div>
-                  <span>Children Safety</span>
-                </div>
-                <div className="check-item">
-                  <div className="check-icon-circle"><i className="fa-solid fa-circle-check"></i></div>
-                  <span>Cute Environment</span>
+                <div className="highlight-row">
+                  <div className="h-icon pink"><i className="fa-solid fa-building"></i></div>
+                  <div className="h-info">
+                    <h4>Corporate Standards</h4>
+                    <p>Preparing young minds for future excellence.</p>
+                  </div>
                 </div>
               </div>
 
@@ -356,73 +526,55 @@ export default function Home() {
       </section>
 
       {/* ==========================================
-           3B. FOUNDER & MENTOR SECTION (NEW)
+           3.5 VISIONARY FOUNDERS & LEADERSHIP
            ========================================== */}
-      <section className="founder-mentor-section section-padding scroll-reveal" id="leadership" style={{ position: "relative" }}>
+      <section className="founders-section scroll-reveal" id="leadership">
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
+            <span className="label-brand color-pink" style={{ background: 'rgba(233, 30, 99, 0.08)', color: 'var(--playful-pink)' }}>Visionary Leadership</span>
+            <h2>Meet Our <span className="highlight-pink text-pink-line">Founders & Mentors</span></h2>
+          </div>
 
-        {/* Top Wave divider filled with previous section's end bg (#EEF2F7) */}
-        <div className="wave-divider top">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,32C240,64,480,0,720,32C960,64,1200,0,1440,32L1440,0L0,0Z" fill="#EEF2F7"></path>
-          </svg>
-        </div>
-
-        {/* MASSIVE POPULATED FLOATING ELEMENTS */}
-        <SunDoodle style={{ top: '8%', left: '6%' }} />
-        <AirplaneDoodle style={{ top: '25%', right: '8%' }} />
-        <HeartDoodle style={{ top: '45%', left: '5%' }} />
-        <LightningDoodle style={{ bottom: '28%', right: '6%' }} />
-        <LightbulbDoodle style={{ bottom: '10%', left: '8%' }} />
-
-        <div className="container" style={{ marginTop: '5rem', position: 'relative', zIndex: 10 }}>
-          <div className="leadership-split-grid">
-
-            {/* Left side detail panel */}
-            <div className="leadership-left-details">
-              <span className="label-brand color-orange">Our Pillars</span>
-              <h2 className="leadership-split-title">
-                Most <span className="highlight-orange text-orange-line">Dedicated Staff</span> for Your Child
-              </h2>
-              <p className="leadership-split-p">
-                Our leadership combines ancient Bharath’s character-building wisdom with modern corporate excellence to create a nurturing, secure, and future-ready environment for your children.
-              </p>
+          <div className="founders-grid" style={{ margin: '0 auto' }}>
+            {/* Founder 1 */}
+            <div 
+              ref={founder1Ref}
+              className="founder-card-3d main-founder-theme"
+              onMouseMove={(e) => handleMouseMoveTilt(e, founder1Ref)}
+              onMouseLeave={() => handleMouseLeaveTilt(founder1Ref)}
+            >
+              <div className="founder-img-wrapper-3d">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Founder Mamatha M.C" />
+                <span className="founder-role-badge">Founder</span>
+              </div>
+              <div className="founder-info-3d">
+                <h3>Mamatha M.C</h3>
+                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Founder of SG Educations & Co-founder of Sarathi Groups</p>
+                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
+                  <p>"Strongly believes in education that builds character alongside capabilities, cultivating willpower and persistent focus among young children."</p>
+                </div>
+              </div>
             </div>
 
-            {/* Right side staff card panel (Flex Row) */}
-            <div className="leadership-right-cards">
-
-              {/* CARD 1: M.C MAMATHA (FOUNDER) */}
-              <div className="leader-card hover-lift">
-                <div className="leader-image-frame">
-                  <img
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80"
-                    alt="M.C Mamatha - Founder"
-                  />
-                  <div className="leader-share-btn" aria-label="Share profile">
-                    <i className="fa-solid fa-share-nodes"></i>
-                  </div>
-                </div>
-                <h3 className="leader-name">M.C Mamatha</h3>
-                <span className="leader-role">Founder & Director</span>
+            {/* Founder 2 */}
+            <div 
+              ref={founder2Ref}
+              className="founder-card-3d sub-founder-theme"
+              onMouseMove={(e) => handleMouseMoveTilt(e, founder2Ref)}
+              onMouseLeave={() => handleMouseLeaveTilt(founder2Ref)}
+            >
+              <div className="founder-img-wrapper-3d">
+                <img src="/sg-education/mentor.png" alt="Mentor Shashi Kiran" />
+                <span className="founder-role-badge">Mentor</span>
               </div>
-
-              {/* CARD 2: SHASHI KIRAN K.N (MENTOR) */}
-              <div className="leader-card hover-lift">
-                <div className="leader-image-frame">
-                  <img
-                    src="/sg-education/mentor.png"
-                    alt="Shashi Kiran K.N - Mentor"
-                  />
-                  <div className="leader-share-btn" aria-label="Share profile">
-                    <i className="fa-solid fa-share-nodes"></i>
-                  </div>
+              <div className="founder-info-3d">
+                <h3>Shashi Kiran K.N</h3>
+                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor at SG Education & Visionary Leader</p>
+                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
+                  <p>"A visionary leader with a deep commitment to social responsibility and national development, combining moral character with modern tools."</p>
                 </div>
-                <h3 className="leader-name">Shashi Kiran K.N</h3>
-                <span className="leader-role">Chief Mentor & Co-Founder</span>
               </div>
-
             </div>
-
           </div>
         </div>
       </section>
@@ -447,26 +599,21 @@ export default function Home() {
           <div className="section-title text-white">
             <span className="label-brand color-yellow" style={{ background: 'rgba(255, 195, 0, 0.15)', color: 'var(--joyful-yellow)' }}>Learning is an Adventure</span>
             <h2 className="text-white">Nurturing Young Minds - with <span className="text-orange">Love & Learning</span></h2>
-            <p className="text-white-muted">Our holistic early education is securely anchored on three robust key pillars.</p>
+            <p className="text-white-muted">Our holistic early education is securely anchored on four robust key pillars.</p>
           </div>
 
-          <div className="three-cards-grid">
-            {THREE_PILLARS.map((pillar, idx) => (
-              <div key={idx} className="three-pillar-card hover-lift">
-                <div className="pillar-image-header">
+          <div className="stacked-cards-container">
+            {FOUR_PILLARS.map((pillar, idx) => (
+              <div key={idx} className="stacked-card">
+                <div className="stacked-card-img">
                   <img src={pillar.img} alt={pillar.title} />
-
-                  {/* Overlapping circular colored icon */}
-                  <div className="pillar-circular-icon" style={{ backgroundColor: pillar.color }}>
+                </div>
+                <div className="stacked-card-content">
+                  <div className="stacked-card-icon" style={{ backgroundColor: pillar.color }}>
                     <i className={`fa-solid ${pillar.icon}`}></i>
                   </div>
-                </div>
-                <div className="pillar-body">
                   <h3>{pillar.title}</h3>
                   <p>{pillar.desc}</p>
-                  <a href="#admissions" className="pillar-arrow-btn" style={{ backgroundColor: pillar.color }}>
-                    <i className="fa-solid fa-arrow-right"></i>
-                  </a>
                 </div>
               </div>
             ))}
@@ -475,7 +622,42 @@ export default function Home() {
 
         <div className="wave-divider bottom">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,96C240,128,480,32,720,64C960,96,1200,32,1440,80L1440,120L0,120Z" fill="#FFF6F9"></path>
+            <path d="M0,96C240,128,480,32,720,64C960,96,1200,32,1440,80L1440,120L0,120Z" fill="#E91E63"></path>
+          </svg>
+        </div>
+      </section>
+
+      {/* ==========================================
+           4.5 VIDEO SECTION (REF 2)
+           ========================================== */}
+      <section className="video-section scroll-reveal" id="video-section" style={{ position: 'relative', overflow: 'hidden' }}>
+        
+        <div className="container video-section-container">
+          <div className="vs-video-thumb hover-lift">
+            <img src="https://images.pexels.com/photos/31864391/pexels-photo-31864391.jpeg" alt="Video thumbnail" />
+            <div className="vs-play-btn"><i className="fa-solid fa-play"></i></div>
+          </div>
+          <div className="vs-content">
+            <div className="vs-doodle bee"><i className="fa-solid fa-bug"></i></div>
+            <div className="vs-doodle hands"><i className="fa-solid fa-hands-clapping"></i></div>
+            
+            <div className="vs-badge">
+              <i className="fa-solid fa-brain"></i> Mental Health Growth
+            </div>
+            <h2 className="vs-title">Solve Problem And Learn More</h2>
+            <p className="vs-desc">
+              Merging ancient Bharath wisdom with modern learning techniques to foster mental resilience and logical problem-solving.
+            </p>
+            <a href="#admissions" className="vs-btn">Watch More Videos</a>
+            
+            <div className="vs-doodle bike"><i className="fa-solid fa-bicycle"></i></div>
+          </div>
+        </div>
+
+        {/* Wavy bottom divider transitioning to Testimonials background */}
+        <div className="wave-divider bottom" style={{ bottom: 0, height: '100px', zIndex: 10 }}>
+          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ width: '100%', height: '100%', display: 'block' }}>
+            <path d="M0,96 C240,128 480,32 720,64 C960,96 1200,32 1440,80 L1440,120 L0,120 Z" fill="#FFF6F9"></path>
           </svg>
         </div>
       </section>
@@ -496,7 +678,7 @@ export default function Home() {
         <div className="container">
           <div className="section-title">
             <span className="label-brand color-orange">Our Testimonials</span>
-            <h2>Read & <span className="highlight-orange text-orange-line">Student's Parent</span> Testimonials</h2>
+            <h2>Read & <span className="highlight-orange text-orange-line">Student&apos;s Parent</span> Testimonials</h2>
           </div>
 
           <div className="testimonial-slider-container">
@@ -531,13 +713,12 @@ export default function Home() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="speech-quote">
-                    "Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet"
+                    &quot;Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet&quot;
                   </p>
                   <h4 className="speech-author">William John</h4>
                   <span className="speech-subtitle">Student Mother</span>
 
-                  {/* Huge background quotation */}
-                  <span className="card-quote-bg">”</span>
+
                 </div>
 
                 {/* CARD 2 */}
@@ -556,13 +737,12 @@ export default function Home() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="speech-quote">
-                    "Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet"
+                    &quot;Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet&quot;
                   </p>
                   <h4 className="speech-author">Devis Taylor</h4>
                   <span className="speech-subtitle">Student Mother</span>
 
-                  {/* Huge background quotation */}
-                  <span className="card-quote-bg">”</span>
+
                 </div>
 
                 {/* CARD 3 */}
@@ -581,13 +761,12 @@ export default function Home() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="speech-quote">
-                    "Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet"
+                    &quot;Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet&quot;
                   </p>
                   <h4 className="speech-author">Sarah Taylor</h4>
                   <span className="speech-subtitle">Student Mother</span>
 
-                  {/* Huge background quotation */}
-                  <span className="card-quote-bg">”</span>
+
                 </div>
 
               </div>
@@ -610,78 +789,49 @@ export default function Home() {
       </section>
 
       {/* ==========================================
-           6. GALLERY SECTION (SCREENSHOT 6 EXACT PHOTO WAVY GRID)
+           6. GALLERY SECTION (REFERENCE 1 EXACT LAYOUT)
            ========================================== */}
-      <section className="gallery-section section-padding scroll-reveal" id="gallery" style={{ position: "relative" }}>
-        <div className="wave-divider top">
-          <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,96C240,64,480,128,720,96C960,64,1200,96,1440,64L1440,0L0,0Z" fill="#FAF8F0"></path>
-          </svg>
-        </div>
-
-        {/* Floating doodles */}
-        <SunDoodle style={{ top: '8%', left: '6%' }} />
-        <HeartDoodle style={{ bottom: '12%', right: '8%' }} />
-        <LightningDoodle style={{ top: '20%', right: '10%' }} />
-        <AirplaneDoodle style={{ bottom: '8%', left: '12%' }} />
-
-        <div className="container" style={{ marginTop: '5rem' }}>
-          <div className="section-title">
-            <span className="label-brand color-pink">Photo Gallery</span>
-            <h2>Discover the Magic of <span className="highlight-pink text-pink-line">SG Early Budding</span></h2>
-            <p>Our Memory Clips — Capturing happy learning faces and daily childhood smiles.</p>
+      <section className="gallery-section section-padding" id="gallery" style={{ backgroundColor: '#FAF9F5', position: 'relative', zIndex: 10 }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
+            <span className="label-brand color-blue">Discover the Magic</span>
+            <h2 style={{ color: '#111', fontSize: '3.5rem', fontWeight: '800' }}>
+              SG Early Budding <br/>
+              <span style={{ color: 'var(--playful-pink)' }}>Moments</span>
+            </h2>
+          </div>
+          
+          <div className="kimono-gallery-grid">
+            <div className="k-item k-item-1 hover-lift" style={{ position: 'relative' }}>
+              <img src={row1Images[0]} alt="Gallery 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Creative Arts</div>
+            </div>
+            <div className="k-item k-item-2 hover-lift" style={{ position: 'relative' }}>
+              <img src={row1Images[1]} alt="Gallery 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Learning</div>
+            </div>
+            <div className="k-item k-item-3 hover-lift" style={{ position: 'relative' }}>
+              <img src={row2Images[0]} alt="Gallery 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Playtime</div>
+            </div>
+            <div className="k-item k-item-4 hover-lift" style={{ position: 'relative' }}>
+              <img src={row2Images[1]} alt="Gallery 4" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Nature</div>
+            </div>
+            <div className="k-item k-item-5 hover-lift" style={{ position: 'relative' }}>
+              <img src={row3Images[0]} alt="Gallery 5" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Joy</div>
+            </div>
+            <div className="k-item k-item-6 hover-lift" style={{ position: 'relative' }}>
+              <img src={row4Images[0]} alt="Gallery 6" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Exploration</div>
+            </div>
           </div>
 
-          {/* EXACT SCREENSHOT 6 PHOTO MASONRY GRID LAYOUT */}
-          <div className="wavy-masonry-gallery">
-
-            {/* COLUMN 1: Stack of 2 */}
-            <div className="gallery-masonry-col">
-              <div className="wavy-img-container wavy-top-left hover-lift">
-                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=500&q=80" alt="Children painting activity" />
-                <div className="wavy-card-overlay"><h4>Creative Play</h4></div>
-              </div>
-              <div className="wavy-img-container wavy-bottom-right hover-lift">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80" alt="Pre-school group classroom" />
-                <div className="wavy-card-overlay"><h4>Classroom Learning</h4></div>
-              </div>
-            </div>
-
-            {/* COLUMN 2: 1 Tall Vertical Image */}
-            <div className="gallery-masonry-col">
-              <div className="wavy-img-container tall-portrait wavy-vertical-long hover-lift" style={{ height: '100%' }}>
-                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=600&q=80" alt="Girl painting apron cutout" style={{ height: '100%' }} />
-                <div className="wavy-card-overlay"><h4>Young Painter</h4></div>
-              </div>
-            </div>
-
-            {/* COLUMN 3: Stack of 2 */}
-            <div className="gallery-masonry-col">
-              <div className="wavy-img-container wavy-bottom-left hover-lift">
-                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=500&q=80" alt="Children indoor playtime" />
-                <div className="wavy-card-overlay"><h4>Indoor Activities</h4></div>
-              </div>
-              <div className="wavy-img-container wavy-top-right hover-lift">
-                <img src="https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&w=500&q=80" alt="Empathetic sharing shapes" />
-                <div className="wavy-card-overlay"><h4>Sharing is Caring</h4></div>
-              </div>
-            </div>
-
-            {/* COLUMN 4: Stack of 2 */}
-            <div className="gallery-masonry-col">
-              <div className="wavy-img-container wavy-top-left hover-lift">
-                <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80" alt="Child soccer ball play" />
-                <div className="wavy-card-overlay"><h4>Sports & Games</h4></div>
-              </div>
-              <div className="wavy-img-container wavy-bottom-right hover-lift orange-overlay-tint">
-                <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=500&q=80" alt="Children sharing toys plus overlay" />
-                <div className="wavy-card-overlay plus-active">
-                  <span className="plus-sign-dec">+</span>
-                  <h4>More Memories</h4>
-                </div>
-              </div>
-            </div>
-
+          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+            <button className="btn btn-red" style={{ backgroundColor: '#D90013', color: '#fff', borderRadius: '4px', textTransform: 'uppercase', padding: '0.8rem 1.5rem', fontWeight: 'bold', fontSize: '0.8rem' }}>
+              See All Memories <i className="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
           </div>
         </div>
       </section>
@@ -727,7 +877,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Chalkboard form */}
+                    {/* Chalkboard form */}
           <div className="chalkboard-form-container hover-lift">
             <div className="chalk-board">
               <div className="chalk-header">
@@ -782,7 +932,7 @@ export default function Home() {
                 </div>
 
                 <div className="chalk-group">
-                  <label htmlFor="child_name"><i className="fa-solid fa-baby"></i> Child's Name *</label>
+                  <label htmlFor="child_name"><i className="fa-solid fa-baby"></i> Child&apos;s Name *</label>
                   <input
                     type="text"
                     id="child_name"
@@ -797,7 +947,7 @@ export default function Home() {
                 </div>
 
                 <div className="chalk-group">
-                  <label htmlFor="child_dob"><i className="fa-solid fa-calendar-days"></i> Child's DOB *</label>
+                  <label htmlFor="child_dob"><i className="fa-solid fa-calendar-days"></i> Child&apos;s DOB *</label>
                   <input
                     type="date"
                     id="child_dob"
