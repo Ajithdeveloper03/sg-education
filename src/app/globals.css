@@ -413,6 +413,14 @@ header {
   padding: 1rem 0;
 }
 
+header.inner-page {
+  /* Removed background to allow banners to show through */
+}
+
+header.scrolled {
+  /* Scroll behavior removed so it naturally scrolls out of view */
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;

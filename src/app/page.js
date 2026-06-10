@@ -78,7 +78,7 @@ const TESTIMONIALS = [
     quote: "SG Early Budding is simply magical! Best futuristic campus in Hosur. Aarav now tidies his play space, greets elders with folded hands, and runs happily to school.",
     name: "Priyanka Sharma",
     role: "Mother of Aarav",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
+    img: "https://images.pexels.com/photos/16562722/pexels-photo-16562722.jpeg"
   },
   {
     stars: 5,
@@ -248,8 +248,29 @@ export default function Home() {
     ref.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
   };
 
-  const [headerScrolled, setHeaderScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const handleMouseMoveTiltEvent = (e) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 768) return;
+    const el = e.currentTarget;
+    if (!el) return;
+    const { left, top, width, height } = el.getBoundingClientRect();
+    const x = (e.clientX - left) / width;
+    const y = (e.clientY - top) / height;
+    const tiltX = (y - 0.5) * -15; 
+    const tiltY = (x - 0.5) * 15;  
+    el.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.03, 1.03, 1.03)`;
+    el.style.transition = 'transform 0.1s ease-out';
+    el.style.zIndex = 20;
+  };
+  
+  const handleMouseLeaveTiltEvent = (e) => {
+    const el = e.currentTarget;
+    if (!el) return;
+    el.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+    el.style.transition = 'transform 0.5s ease-out';
+    el.style.zIndex = 1;
+  };
+
+
 
   // Form states
   const [parentName, setParentName] = useState("");
@@ -269,11 +290,6 @@ export default function Home() {
 
   // Scroll Reveal hook
   useEffect(() => {
-    const handleScroll = () => {
-      setHeaderScrolled(window.scrollY > 30);
-    };
-    window.addEventListener("scroll", handleScroll);
-
     // Scroll reveal observer
     const revealElems = document.querySelectorAll(".scroll-reveal");
     const observer = new IntersectionObserver(
@@ -289,7 +305,6 @@ export default function Home() {
     revealElems.forEach((elem) => observer.observe(elem));
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
       observer.disconnect();
     };
   }, []);
@@ -319,89 +334,7 @@ export default function Home() {
 
   return (
     <>
-      {/* ==========================================
-           TOP BAR
-           ========================================== */}
-      <div className="header-top-bar">
-        <div className="container top-bar-content">
-          <div className="top-info-left">
-            <span><i className="fa-solid fa-map-location-dot"></i> Gokul Nagar, Hosur</span>
-            <span><i className="fa-solid fa-phone-volume"></i> +91 7339475210</span>
-          </div>
-          <div className="top-social-right">
-            <a href="#" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-            <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-            <a href="#" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
-          </div>
-        </div>
-      </div>
 
-      {/* ==========================================
-           1. PLAYFUL HEADER
-           ========================================== */}
-      <header id="header">
-        <div className="container navbar">
-          <a href="#hero" className="logo-container" id="logo-link">
-            <img src="/sg-education/logo.png" className="logo-img" alt="SG Education Logo" />
-            {/* <div className="brand-text">
-              <span className="brand-name">SG Education</span>
-              <span className="brand-tag">Early Budding</span>
-            </div> */}
-          </a>
-
-          <button
-            className={`mobile-toggle ${mobileMenuOpen ? "open" : ""}`}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-
-          <nav className={`nav-menu ${mobileMenuOpen ? "open" : ""}`} id="nav-menu">
-            <ul className="nav-list">
-              <li className="nav-item"><a href="#hero" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
-              
-              <li className="nav-item">
-                <a href="#about" className="nav-link">About Us <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></a>
-                <div className="dropdown-menu">
-                  <a href="#about-vision" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Vision & Mission</a>
-                  <a href="#about-principal" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Principal's Message</a>
-                  <a href="#about-motto" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>School Motto</a>
-                </div>
-              </li>
-              
-              <li className="nav-item">
-                <a href="#pedagogy" className="nav-link">Academic <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></a>
-                <div className="dropdown-menu">
-                  <a href="#pedagogy" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</a>
-                  <a href="#pedagogy" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</a>
-                  <a href="#pedagogy" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>1st to 5th Std</a>
-                </div>
-              </li>
-              
-              <li className="nav-item">
-                <a href="#facilities" className="nav-link">Facilities <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></a>
-                <div className="dropdown-menu">
-                  <a href="#fac-library" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Library</a>
-                  <a href="#fac-health" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Health & Well-being</a>
-                  <a href="#fac-beyond" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Beyond Academics</a>
-                </div>
-              </li>
-              
-              <li className="nav-item"><a href="#gallery" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Gallery</a></li>
-              <li className="nav-item"><a href="#blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</a></li>
-              <li className="nav-item"><a href="#contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</a></li>
-            </ul>
-            <div className="nav-cta">
-              <a href="#admissions" className="btn btn-rainbow" onClick={() => setMobileMenuOpen(false)}>
-                Admission
-              </a>
-            </div>
-          </nav>
-        </div>
-      </header>
 
             {/* ==========================================
            2. HERO SECTION WITH ELEGANT MINIMAL DESIGN
@@ -701,7 +634,7 @@ export default function Home() {
                 <div className="speech-bubble-card green-theme hover-lift">
                   <div className="speech-avatar">
                     <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
+                      src="https://images.pexels.com/photos/16562722/pexels-photo-16562722.jpeg"
                       alt="William John"
                     />
                   </div>
@@ -715,7 +648,7 @@ export default function Home() {
                   <p className="speech-quote">
                     &quot;Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet&quot;
                   </p>
-                  <h4 className="speech-author">William John</h4>
+                  <h4 className="speech-author">Priyanka</h4>
                   <span className="speech-subtitle">Student Mother</span>
 
 
@@ -725,7 +658,7 @@ export default function Home() {
                 <div className="speech-bubble-card blue-theme hover-lift">
                   <div className="speech-avatar">
                     <img
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80"
+                      src="https://images.pexels.com/photos/14673049/pexels-photo-14673049.jpeg"
                       alt="Devis Taylor"
                     />
                   </div>
@@ -739,8 +672,8 @@ export default function Home() {
                   <p className="speech-quote">
                     &quot;Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet&quot;
                   </p>
-                  <h4 className="speech-author">Devis Taylor</h4>
-                  <span className="speech-subtitle">Student Mother</span>
+                  <h4 className="speech-author">Deepan</h4>
+                  <span className="speech-subtitle">Student Father</span>
 
 
                 </div>
@@ -749,7 +682,7 @@ export default function Home() {
                 <div className="speech-bubble-card orange-theme hover-lift">
                   <div className="speech-avatar">
                     <img
-                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80"
+                      src="https://images.pexels.com/photos/20133860/pexels-photo-20133860.jpeg"
                       alt="Sarah Taylor"
                     />
                   </div>
@@ -763,7 +696,7 @@ export default function Home() {
                   <p className="speech-quote">
                     &quot;Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet&quot;
                   </p>
-                  <h4 className="speech-author">Sarah Taylor</h4>
+                  <h4 className="speech-author">Sharmila</h4>
                   <span className="speech-subtitle">Student Mother</span>
 
 
@@ -802,27 +735,27 @@ export default function Home() {
           </div>
           
           <div className="kimono-gallery-grid">
-            <div className="k-item k-item-1 hover-lift" style={{ position: 'relative' }}>
+            <div className="k-item k-item-1 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
               <img src={row1Images[0]} alt="Gallery 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Creative Arts</div>
             </div>
-            <div className="k-item k-item-2 hover-lift" style={{ position: 'relative' }}>
+            <div className="k-item k-item-2 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
               <img src={row1Images[1]} alt="Gallery 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Learning</div>
             </div>
-            <div className="k-item k-item-3 hover-lift" style={{ position: 'relative' }}>
+            <div className="k-item k-item-3 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
               <img src={row2Images[0]} alt="Gallery 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Playtime</div>
             </div>
-            <div className="k-item k-item-4 hover-lift" style={{ position: 'relative' }}>
+            <div className="k-item k-item-4 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
               <img src={row2Images[1]} alt="Gallery 4" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Nature</div>
             </div>
-            <div className="k-item k-item-5 hover-lift" style={{ position: 'relative' }}>
+            <div className="k-item k-item-5 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
               <img src={row3Images[0]} alt="Gallery 5" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Joy</div>
             </div>
-            <div className="k-item k-item-6 hover-lift" style={{ position: 'relative' }}>
+            <div className="k-item k-item-6 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
               <img src={row4Images[0]} alt="Gallery 6" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Exploration</div>
             </div>
@@ -998,74 +931,7 @@ export default function Home() {
         </div>
       )}
 
-      {/* ==========================================
-           8. NEWSLETTER & DECORATIVE GRASS FOOTER (SCREENSHOT 3 ALIGNMENT)
-           ========================================== */}
-      <section className="newsletter-section section-padding" style={{ backgroundColor: '#FAF8F0', paddingBottom: '0' }}>
-        <div className="container">
-          {/* <div className="newsletter-box hover-lift">
-            <span className="newsletter-badge">Subscribe Now</span>
-            <h3>Sign up for our newsletter</h3>
-            <p>Keep up to date with the latest news, curriculum releases, and events.</p>
-            
-            <form className="newsletter-form" onSubmit={(e) => { e.preventDefault(); setSuccessOpen(true); }}>
-              <input type="email" placeholder="Enter your email address *" required />
-              <button type="submit">Subscribe Now <i className="fa-solid fa-paper-plane" style={{ marginLeft: '6px' }}></i></button>
-            </form>
-          </div> */}
-        </div>
-
-        {/* Playful Decorative Grass Footer (Light Background, Navy elements for absolute visibility) */}
-        <div className="decorative-grass-wrapper">
-          <div className="grass-doodles"></div>
-
-          <div className="container footer-content-grid">
-            <div className="footer-col brand-col">
-              <a href="#hero" className="footer-logo">
-                <img src="/sg-education/logo.png" alt="SG Education Logo" />
-                <span className="logo-text">SG Education</span>
-              </a>
-              <p className="footer-about-text">
-                CoEducate · Empower · Elevate! Nurturing clear conscience, strong bodies, and values since July 2023.
-              </p>
-              <div className="social-icons">
-                <a href="#" className="soc-btn" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-                <a href="#" className="soc-btn" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-                <a href="#" className="soc-btn" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
-              </div>
-            </div>
-
-            <div className="footer-col links-col">
-              <h3>Quick Links</h3>
-              <ul className="footer-links">
-                <li><a href="#hero">Home Base</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#pedagogy">Our Pillars</a></li>
-                <li><a href="#gallery">Memory Clips</a></li>
-                <li><a href="#admissions">Admissions</a></li>
-              </ul>
-            </div>
-
-            <div className="footer-col contact-col">
-              <h3>Email us</h3>
-              <div className="contact-row">
-                <div className="c-icon"><i className="fa-solid fa-envelope"></i></div>
-                <p className="footer-contact-p">support@sgeducations.com</p>
-              </div>
-              <h3 style={{ marginTop: '2rem' }}>Location</h3>
-              <div className="contact-row">
-                <div className="c-icon"><i className="fa-solid fa-map-location-dot"></i></div>
-                <p className="footer-contact-p">Flat no. D337, near Nanthavanam, Gokul Nagar, Agraharam, Hosur, Tamil Nadu - 635109</p>
-              </div>
-            </div>
-          </div>
-
-          {/* <div className="container footer-bottom-meta">
-            <p>&copy; 2026 <strong>SG Educations</strong>. All Rights Reserved.</p>
-            <p>Powered by <strong>Sarathi Groups</strong></p>
-          </div> */}
-        </div>
-      </section>
+      {/* Footer is now globally imported in layout.js */}
     </>
   );
 }
