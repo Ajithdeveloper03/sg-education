@@ -1,5 +1,11 @@
 /* Founders Message CSS */
 
+@keyframes fm-float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
 .fm-section-padding {
   padding: 6rem 0;
 }
@@ -135,6 +141,10 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.fm-pill-img:hover img {
+  transform: scale(1.05);
 }
 
 .fm-pill-img-left {
@@ -205,7 +215,7 @@
   display: grid;
   grid-template-columns: 350px 1fr;
   gap: 2rem; /* Match vm-grid gap */
-  align-items: center;
+  align-items: stretch;
   position: relative;
   z-index: 1;
 }
@@ -243,6 +253,10 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  transition: transform 0.4s ease;
+}
+.fm-leadership-left-card:hover .fm-leadership-left-image {
+  transform: scale(1.05);
 }
 
 .fm-leadership-left-overlay {
@@ -293,6 +307,7 @@
 .fm-leadership-right-list {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -300,8 +315,9 @@
   display: flex;
   align-items: flex-start;
   gap: 1.2rem;
-  padding: 0.2rem;
+  padding: 1rem;
   border-radius: 16px;
+  background: transparent;
   transition: all 0.3s ease;
 }
 
@@ -309,6 +325,9 @@
   background: white;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   transform: translateX(10px);
+}
+.fm-leadership-list-item:hover .fm-leadership-item-thumbnail img {
+  transform: scale(1.1);
 }
 
 .fm-leadership-item-thumbnail {
@@ -326,6 +345,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
 .fm-leadership-item-content {
@@ -399,12 +419,12 @@
 }
 
 .fm-impact-img-1 {
-  height: 300px;
+  height: 380px;
   transform: translateY(30px);
 }
 
 .fm-impact-img-2 {
-  height: 400px;
+  height: 480px;
 }
 
 .fm-stats-container {
@@ -658,6 +678,15 @@
 .fm-founder-vision-light .eb-founder-subtitle {
   font-size: 0.8rem; /* Reduced from 0.95rem */
   margin-bottom: 0.5rem;
+}
+.eb-founder-image-wrapper {
+  overflow: hidden;
+}
+.eb-founder-image-wrapper img {
+  transition: transform 0.4s ease;
+}
+.eb-founder-image-wrapper:hover img {
+  transform: scale(1.05);
 }
 .fm-founder-vision-light .eb-founder-large-heading {
   color: #1D2A44; /* Dark color for heading */

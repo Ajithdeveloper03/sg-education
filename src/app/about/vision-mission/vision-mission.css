@@ -138,6 +138,11 @@
   color: #00AEFF;
 }
 
+.tag-green {
+  background-color: #E5F6F0;
+  color: #00BFA6;
+}
+
 .vm-title {
   font-family: var(--font-comfortaa), sans-serif;
   font-size: 2.2rem;
@@ -162,6 +167,12 @@
 .underline-blue {
   color: #00AEFF;
   border-bottom: 2px dashed #00AEFF;
+  padding-bottom: 5px;
+}
+
+.underline-green {
+  color: #00BFA6;
+  border-bottom: 2px dashed #00BFA6;
   padding-bottom: 5px;
 }
 

@@ -17,8 +17,25 @@ export default function FoundersMessagePage() {
   }, []);
 
   return (
-    <main style={{ backgroundColor: '#fff', paddingTop: '0', minHeight: '100vh', overflowX: 'hidden' }}>
+    <main style={{ position: 'relative', backgroundColor: '#fff', paddingTop: '0', minHeight: '100vh', overflowX: 'hidden' }}>
       
+      {/* Kids-Themed Decorative Elements */}
+      <div style={{ position: 'absolute', top: '15%', left: '5%', color: '#FFB300', fontSize: '2.5rem', opacity: 0.6, animation: 'fm-float 3s ease-in-out infinite', zIndex: 0 }}>
+        <i className="fa-solid fa-star"></i>
+      </div>
+      <div style={{ position: 'absolute', top: '28%', right: '8%', color: '#00AEFF', fontSize: '3rem', opacity: 0.5, animation: 'fm-float 4s ease-in-out infinite reverse', zIndex: 0 }}>
+        <i className="fa-solid fa-paper-plane"></i>
+      </div>
+      <div style={{ position: 'absolute', top: '45%', left: '6%', color: '#00C853', fontSize: '2.5rem', opacity: 0.5, animation: 'fm-float 3.5s ease-in-out infinite', zIndex: 0 }}>
+        <i className="fa-solid fa-lightbulb"></i>
+      </div>
+      <div style={{ position: 'absolute', top: '65%', right: '5%', color: '#FF2A7A', fontSize: '3.5rem', opacity: 0.4, animation: 'fm-float 4.5s ease-in-out infinite', zIndex: 0 }}>
+        <i className="fa-solid fa-puzzle-piece"></i>
+      </div>
+      <div style={{ position: 'absolute', bottom: '10%', left: '8%', color: '#9C27B0', fontSize: '2.8rem', opacity: 0.5, animation: 'fm-float 3.8s ease-in-out infinite reverse', zIndex: 0 }}>
+        <i className="fa-solid fa-cubes"></i>
+      </div>
+
       {/* Upgraded Page Banner */}
       <section style={{ 
         position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
@@ -64,8 +81,10 @@ export default function FoundersMessagePage() {
 
             {/* Right: Content Section */}
             <div className="eb-founder-content-right">
-              <span className="eb-founder-subtitle">VISION & LEADERSHIP</span>
-              <h2 className="eb-founder-large-heading">Vision & Leadership in Education</h2>
+              <div className="vm-tag tag-pink">THE FOUNDER'S VISION</div>
+              <h2 className="vm-title">
+                Bridging <span className="underline-pink">Tradition</span> & Innovation
+              </h2>
               
               <div className="eb-founder-identity">
                 <h3 className="eb-founder-name">Ms. Mamatha M.C</h3>
@@ -93,13 +112,13 @@ export default function FoundersMessagePage() {
       </section>
 
       {/* Section 2: Entrepreneurial Leadership Across Industries */}
-      <section className="fm-leadership-section-new" style={{ padding: '2rem 0', backgroundColor: '#F0F7F4' }}>
+      <section className="fm-leadership-section-new" style={{ padding: '2rem 0', backgroundColor: '#FFFFFF' }}>
         <div className="container">
           
-          <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-            <div className="vm-tag tag-blue" style={{ backgroundColor: '#FF2A7A' }}>LEADERSHIP</div>
+          <div style={{ textAlign: 'center', marginBottom: '1.5rem', position: 'relative', zIndex: 2 }}>
+            <div className="vm-tag tag-blue">MULTI-SECTOR EXPERTISE</div>
             <h2 className="vm-title">
-              Entrepreneurial <span className="underline-blue" style={{ borderBottom: '3px solid #FF2A7A' }}>Leadership</span>
+              Driving <span className="underline-blue">Growth</span> Across Industries
             </h2>
           </div>
 
@@ -123,8 +142,10 @@ export default function FoundersMessagePage() {
                   <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=150&q=80" alt="Education" />
                 </div>
                 <div className="fm-leadership-item-content">
-                  <h4 className="fm-leadership-item-title">Education</h4>
-                  <p className="fm-leadership-item-role">Founder – SG Education</p>
+                  <h4 className="fm-leadership-item-title" style={{ color: '#FF2A7A' }}>
+                    <i className="fa-solid fa-book-open" style={{ marginRight: '8px' }}></i>Education
+                  </h4>
+                  <p className="fm-leadership-item-role" style={{ color: '#333' }}>Founder – SG Education</p>
                   <p className="fm-leadership-item-desc">Building innovative learning environments that empower future generations through quality education and modern teaching methods.</p>
                   <div className="fm-leadership-item-divider"></div>
                 </div>
@@ -135,8 +156,10 @@ export default function FoundersMessagePage() {
                   <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=150&q=80" alt="Business Leadership" />
                 </div>
                 <div className="fm-leadership-item-content">
-                  <h4 className="fm-leadership-item-title">Business Leadership</h4>
-                  <p className="fm-leadership-item-role">Co-Founder – Sarathi Groups</p>
+                  <h4 className="fm-leadership-item-title" style={{ color: '#FFB300' }}>
+                    <i className="fa-solid fa-briefcase" style={{ marginRight: '8px' }}></i>Business Leadership
+                  </h4>
+                  <p className="fm-leadership-item-role" style={{ color: '#333' }}>Co-Founder – Sarathi Groups</p>
                   <p className="fm-leadership-item-desc">Driving strategic growth, innovation, and sustainable business development across multiple sectors.</p>
                   <div className="fm-leadership-item-divider"></div>
                 </div>
@@ -147,8 +170,10 @@ export default function FoundersMessagePage() {
                   <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=150&q=80" alt="Real Estate" />
                 </div>
                 <div className="fm-leadership-item-content">
-                  <h4 className="fm-leadership-item-title">Real Estate</h4>
-                  <p className="fm-leadership-item-role">Director – SG Builders Pvt. Ltd.</p>
+                  <h4 className="fm-leadership-item-title" style={{ color: '#00AEFF' }}>
+                    <i className="fa-solid fa-city" style={{ marginRight: '8px' }}></i>Real Estate
+                  </h4>
+                  <p className="fm-leadership-item-role" style={{ color: '#333' }}>Director – SG Builders Pvt. Ltd.</p>
                   <p className="fm-leadership-item-desc">Leading residential and commercial projects with a focus on quality, trust, and long-term value.</p>
                   <div className="fm-leadership-item-divider"></div>
                 </div>
@@ -159,8 +184,10 @@ export default function FoundersMessagePage() {
                   <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ce122?auto=format&fit=crop&w=150&q=80" alt="Healthcare" />
                 </div>
                 <div className="fm-leadership-item-content">
-                  <h4 className="fm-leadership-item-title">Healthcare</h4>
-                  <p className="fm-leadership-item-role">Managing Director – SG Health & Care</p>
+                  <h4 className="fm-leadership-item-title" style={{ color: '#00C853' }}>
+                    <i className="fa-solid fa-heart-pulse" style={{ marginRight: '8px' }}></i>Healthcare
+                  </h4>
+                  <p className="fm-leadership-item-role" style={{ color: '#333' }}>Managing Director – SG Health & Care</p>
                   <p className="fm-leadership-item-desc">Improving community well-being through accessible healthcare services and patient-centered solutions.</p>
                   <div className="fm-leadership-item-divider"></div>
                 </div>
@@ -177,10 +204,10 @@ export default function FoundersMessagePage() {
         <div className="container">
           <div className="fm-impact-grid">
             
-            <div className="fm-impact-content">
-              <div className="vm-tag tag-yellow" style={{ backgroundColor: '#FF2A7A' }}>COMMUNITY</div>
+            <div className="fm-impact-content" style={{ position: 'relative', zIndex: 2 }}>
+              <div className="vm-tag tag-yellow">SOCIAL RESPONSIBILITY</div>
               <h2 className="vm-title" style={{ marginBottom: '1.5rem' }}>
-                Social Impact & <span className="underline-yellow" style={{ borderBottom: '3px solid #FF2A7A' }}>Inspiring</span> Generations
+                Empowering <span className="underline-yellow">Communities</span> & Future Leaders
               </h2>
               
               <p className="vm-desc">
@@ -189,15 +216,15 @@ export default function FoundersMessagePage() {
 
               <div className="fm-stats-container">
                 <div className="fm-stat-card">
-                  <div className="fm-stat-title"><i className="fa-solid fa-hand-holding-heart" style={{color: '#FF2A7A', marginRight: '8px'}}></i> Social Welfare</div>
+                  <div className="fm-stat-title"><i className="fa-solid fa-hand-holding-heart" style={{color: '#00AEFF', marginRight: '8px'}}></i> Social Welfare</div>
                   <div className="fm-stat-desc">Driving impactful community initiatives.</div>
                 </div>
                 <div className="fm-stat-card">
-                  <div className="fm-stat-title"><i className="fa-solid fa-seedling" style={{color: '#FF2A7A', marginRight: '8px'}}></i> Empowerment</div>
+                  <div className="fm-stat-title"><i className="fa-solid fa-seedling" style={{color: '#00C853', marginRight: '8px'}}></i> Empowerment</div>
                   <div className="fm-stat-desc">Educational & Healthcare support.</div>
                 </div>
                 <div className="fm-stat-card">
-                  <div className="fm-stat-title"><i className="fa-solid fa-user-group" style={{color: '#FF2A7A', marginRight: '8px'}}></i> Leadership</div>
+                  <div className="fm-stat-title"><i className="fa-solid fa-user-group" style={{color: '#FFB300', marginRight: '8px'}}></i> Leadership</div>
                   <div className="fm-stat-desc">Youth leadership development.</div>
                 </div>
               </div>
@@ -230,8 +257,10 @@ export default function FoundersMessagePage() {
 
             {/* Left (Content): Content Section */}
             <div className="eb-founder-content-right">
-              <span className="eb-founder-subtitle">MENTOR</span>
-              <h2 className="eb-founder-large-heading">Visionary Leadership</h2>
+              <div className="vm-tag tag-green">MENTOR</div>
+              <h2 className="vm-title">
+                Visionary <span className="underline-green">Leadership</span>
+              </h2>
               
               <div className="eb-founder-identity">
                 <h3 className="eb-founder-name">Shashi Kiran K.N</h3>

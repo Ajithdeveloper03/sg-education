@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import "../vision-mission/vision-mission.css"; // Reuse Mission & Vision styles
 
 export default function SchoolMottoPage() {
   const [isMobile, setIsMobile] = useState(false);
@@ -14,86 +15,166 @@ export default function SchoolMottoPage() {
   }, []);
 
   return (
-    <main style={{ backgroundColor: '#1D2A44', paddingTop: '0', minHeight: '100vh', color: '#fff', position: 'relative', overflow: 'hidden' }}>
+    <main style={{ backgroundColor: '#fff', paddingTop: '0', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
+      <style>{`
+        /* Remove top padding of the footer only on the motto page */
+        .newsletter-section.section-padding {
+          padding-top: 0 !important;
+        }
+      `}</style>
       
       {/* Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80")', 
-        backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px' 
+        backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(29, 42, 68, 0.7)', zIndex: 1 }}></div>
-        <div style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-          <h1 style={{ fontSize: '3.5rem', fontFamily: 'var(--font-comfortaa), sans-serif', color: '#fff', fontWeight: 800, marginBottom: '1rem', textShadow: '0 4px 15px rgba(0,0,0,0.3)' }}>School Motto</h1>
-          <p style={{ color: 'var(--kidza-orange)', fontSize: '1.2rem', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase' }}>Our Core Beliefs</p>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.4)', zIndex: 1 }}></div>
+        <div className="vm-banner-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
+          <h1 className="vm-banner-title">School Motto</h1>
+          <p className="vm-banner-desc">
+            The core beliefs that guide our educational journey.<br />
+            Inspiring excellence, character, and lifelong learning.
+          </p>
+          <div className="vm-pagination">
+            <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
+            <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
+            <Link href="/about" className="breadcrumb-link" style={{ color: '#fff', textDecoration: 'none' }}>About SG</Link>
+            <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
+            <span style={{ color: '#FFC300' }}>School Motto</span>
+          </div>
+        </div>
+        
+        {/* Cloud Transition */}
+        <div className="cloud-container">
+          <div className="cloud-wrapper">
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.95) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.95) sepia(0.05) hue-rotate(180deg)' }} />
+          </div>
         </div>
       </section>
-      
-      {/* Background Decor */}
-      <div style={{ position: 'absolute', top: '-10%', right: '-5%', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,195,0,0.15) 0%, rgba(29,42,68,0) 70%)', zIndex: 0 }}></div>
-      <div style={{ position: 'absolute', bottom: '-10%', left: '-5%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,42,122,0.15) 0%, rgba(29,42,68,0) 70%)', zIndex: 0 }}></div>
 
-      <section className="section-padding" style={{ position: 'relative', zIndex: 10 }}>
-        <div className="container">
+      {/* Main Content Area */}
+      <section className="vm-section" style={{ paddingTop: '6rem', paddingBottom: '3rem', position: 'relative', backgroundColor: '#F0F4F8' }}>
+        
+        {/* Transparent PNG Decorative Images (Left & Right) */}
+        {!isMobile && (
+          <>
+            <div style={{ position: 'absolute', left: '-5%', top: '10%', width: '450px', height: '450px', opacity: 0.85, zIndex: 0, pointerEvents: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img src="/sg-education/motto teacher.png" alt="Decorative Left" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+            </div>
+            <div style={{ position: 'absolute', right: '-5%', top: '10%', width: '450px', height: '450px', opacity: 0.85, zIndex: 0, pointerEvents: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <img src="/sg-education/about-student.png" alt="Decorative Right" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
+            </div>
+          </>
+        )}
+
+        <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '900px', margin: '0 auto' }}>
           
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <span className="label-brand color-yellow" style={{ backgroundColor: 'rgba(255,195,0,0.1)' }}>Our Core</span>
-            <h2 style={{ fontSize: isMobile ? '3rem' : '4rem', color: '#fff', fontFamily: 'var(--font-comfortaa), sans-serif', marginTop: '1rem' }}>
-              The School <span className="text-orange" style={{ textDecoration: 'underline', textDecorationStyle: 'wavy', textDecorationColor: 'var(--playful-pink)' }}>Motto</span>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="vm-tag tag-pink">OUR MOTTO</div>
+            <h2 className="vm-title" style={{ marginTop: '0.5rem' }}>
+              CoEducate, Empower, <span className="underline-pink">Elevate</span>
             </h2>
           </div>
 
-          <div style={{ 
-            maxWidth: '900px',
-            margin: '0 auto',
-            backgroundColor: 'rgba(255, 255, 255, 0.05)',
-            border: '1px solid rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            padding: isMobile ? '2rem' : '4rem',
-            borderRadius: '30px',
-            textAlign: 'center'
-          }}>
-            <div style={{ fontSize: '4rem', color: 'var(--playful-pink)', marginBottom: '2rem' }}>
-              <i className="fa-solid fa-gem"></i>
-            </div>
-            
-            <h3 style={{ fontSize: isMobile ? '2rem' : '2.5rem', color: 'var(--joyful-yellow)', marginBottom: '2rem', fontFamily: 'var(--font-comfortaa), sans-serif', lineHeight: '1.4' }}>
-              "CoEducate, Empower, Elevate"
-            </h3>
-            
-            <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#cbd5e1', marginBottom: '2rem' }}>
-              Our motto encapsulates the essence of what we strive to achieve every day at SG Educations. We believe that true education is a collaborative journey (<span style={{ color: '#fff', fontWeight: 'bold' }}>CoEducate</span>) between teachers, students, and parents.
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <p className="vm-desc" style={{ fontSize: '1.15rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
+              Our motto encapsulates the essence of what we strive to achieve every day at SG Education. We believe that true education is a collaborative journey between teachers, students, and parents.
             </p>
-
-            <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#cbd5e1', marginBottom: '2rem' }}>
-              Through this collaboration, we give our students the tools, wisdom, and confidence they need to succeed (<span style={{ color: '#fff', fontWeight: 'bold' }}>Empower</span>). 
+            <p className="vm-desc" style={{ fontSize: '1.15rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
+              Through this collaboration, we give our students the tools, wisdom, and confidence they need to succeed and make a positive impact on the world.
             </p>
-
-            <p style={{ fontSize: '1.2rem', lineHeight: '1.8', color: '#cbd5e1', marginBottom: '3rem' }}>
-              Ultimately, our goal is to lift them up to reach their highest potential, both academically and morally (<span style={{ color: '#fff', fontWeight: 'bold' }}>Elevate</span>), ensuring they become the leaders and visionaries of tomorrow.
+            <p className="vm-desc" style={{ fontSize: '1.15rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
+              Ultimately, our goal is to lift them up to reach their highest potential, both academically and morally, ensuring they become the leaders and visionaries of tomorrow.
             </p>
-            
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--joyful-yellow)' }}>
-                <i className="fa-solid fa-check-circle"></i> Wisdom
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--playful-pink)' }}>
-                <i className="fa-solid fa-check-circle"></i> Values
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--kidza-navy)', textShadow: '0 0 5px rgba(255,255,255,0.5)' }}>
-                <i className="fa-solid fa-check-circle"></i> Leadership
-              </div>
-            </div>
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '4rem' }}>
-            <Link href="/" className="btn btn-rainbow">
-               Back to About Us
-            </Link>
+        </div> {/* End of 900px constrained container */}
+
+        {/* Highlighted Key Points - Unconstrained wider container */}
+        <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1300px', margin: '0 auto' }}>
+          <div style={{ 
+            display: 'grid', 
+            gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', 
+            gap: '2.5rem',
+            alignItems: 'stretch'
+          }}>
+            
+            <div style={{ 
+              backgroundColor: '#FFFEFA', 
+              borderRadius: '16px', 
+              padding: '1.5rem', 
+              boxShadow: '0 2px 10px rgba(0,0,0,0.02)', 
+              border: '1px solid #FEF08A',
+              display: 'flex', 
+              flexDirection: 'row', 
+              alignItems: 'center', 
+              height: '100%',
+              boxSizing: 'border-box'
+            }}>
+              <div className="vm-c-icon icon-yellow" style={{ marginRight: '1rem', width: '60px', height: '60px', fontSize: '1.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '12px', flexShrink: 0 }}>
+                <i className="fa-solid fa-users"></i>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                <h4 style={{ fontSize: '1.1rem', color: '#1D2A44', fontWeight: '700', marginBottom: '0.3rem' }}>CoEducate</h4>
+                <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: '1.4', margin: '0' }}>
+                  Collaborative learning uniting teachers, students, and parents.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ 
+              backgroundColor: '#FFF5F8', 
+              borderRadius: '16px', 
+              padding: '1.5rem', 
+              boxShadow: '0 2px 10px rgba(0,0,0,0.02)', 
+              border: '1px solid #FBCFE8',
+              display: 'flex', 
+              flexDirection: 'row', 
+              alignItems: 'center', 
+              height: '100%',
+              boxSizing: 'border-box'
+            }}>
+              <div className="vm-c-icon icon-pink" style={{ marginRight: '1rem', width: '60px', height: '60px', fontSize: '1.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '12px', flexShrink: 0 }}>
+                <i className="fa-solid fa-bolt"></i>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                <h4 style={{ fontSize: '1.1rem', color: '#1D2A44', fontWeight: '700', marginBottom: '0.3rem' }}>Empower</h4>
+                <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: '1.4', margin: '0' }}>
+                  Building confidence, critical thinking, and practical skills.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ 
+              backgroundColor: '#F5F9FF', 
+              borderRadius: '16px', 
+              padding: '1.5rem', 
+              boxShadow: '0 2px 10px rgba(0,0,0,0.02)', 
+              border: '1px solid #BFDBFE',
+              display: 'flex', 
+              flexDirection: 'row', 
+              alignItems: 'center', 
+              height: '100%',
+              boxSizing: 'border-box'
+            }}>
+              <div className="vm-c-icon icon-blue" style={{ marginRight: '1rem', width: '60px', height: '60px', fontSize: '1.5rem', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '12px', flexShrink: 0 }}>
+                <i className="fa-solid fa-arrow-trend-up"></i>
+              </div>
+              <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                <h4 style={{ fontSize: '1.1rem', color: '#1D2A44', fontWeight: '700', marginBottom: '0.3rem' }}>Elevate</h4>
+                <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: '1.4', margin: '0' }}>
+                  Lifting students to their highest academic and moral potential.
+                </p>
+              </div>
+            </div>
+
           </div>
 
         </div>
       </section>
+
     </main>
   );
 }
