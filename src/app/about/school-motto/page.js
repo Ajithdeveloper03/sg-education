@@ -29,7 +29,7 @@ export default function SchoolMottoPage() {
         backgroundImage: 'url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(0, 0, 0, 0.4)', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(7, 6, 16, 0.6)', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title">School Motto</h1>
           <p className="vm-banner-desc">
@@ -79,14 +79,8 @@ export default function SchoolMottoPage() {
           </div>
 
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <p className="vm-desc" style={{ fontSize: '1.15rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
-              Our motto encapsulates the essence of what we strive to achieve every day at SG Education. We believe that true education is a collaborative journey between teachers, students, and parents.
-            </p>
-            <p className="vm-desc" style={{ fontSize: '1.15rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto 1.5rem auto' }}>
-              Through this collaboration, we give our students the tools, wisdom, and confidence they need to succeed and make a positive impact on the world.
-            </p>
-            <p className="vm-desc" style={{ fontSize: '1.15rem', textAlign: 'center', maxWidth: '800px', margin: '0 auto' }}>
-              Ultimately, our goal is to lift them up to reach their highest potential, both academically and morally, ensuring they become the leaders and visionaries of tomorrow.
+            <p className="vm-desc" style={{ fontSize: '1.5rem', textAlign: 'justify', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+              Our motto encapsulates the essence of what we strive to achieve every day at SG Education. We believe that true education is a collaborative journey between teachers, students, and parents. Through this collaboration, we give our students the tools, wisdom, and confidence they need to succeed and make a positive impact on the world. Ultimately, our goal is to lift them up to reach their highest potential, both academically and morally, ensuring they become the leaders and visionaries of tomorrow.
             </p>
           </div>
 

@@ -1,0 +1,357 @@
+/* src/app/academic/primary/primary-advanced.css */
+
+/* --- General Variables specific to Primary Page --- */
+:root {
+  --primary-accent: #00AEFF; /* SWS Blue */
+  --primary-dark: #1D2A44;
+  --primary-light: #F7FAFC;
+  --primary-text: #4A5568;
+  --primary-border-radius: 20px;
+}
+
+/* ==========================================================================
+   GLOBAL UTILITIES FOR PRIMARY PAGE
+   ========================================================================== */
+.primary-section-padding {
+  padding: 6rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-title-main {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.primary-text-main {
+  font-size: 1.15rem;
+  color: var(--primary-text);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+/* Animations */
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUpAnim 0.8s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+
+@keyframes fadeUpAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   SECTION 1: HERO BANNER
+   ========================================================================== */
+.primary-hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Parallax effect */
+}
+
+.primary-hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(to bottom, rgba(7, 6, 16, 0.7), rgba(29, 42, 68, 0.8));
+  z-index: 1;
+}
+
+.primary-hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.primary-breadcrumbs {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.primary-hero-subtitle {
+  display: inline-block;
+  background: var(--primary-accent);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 174, 255, 0.4);
+}
+
+.primary-hero-title {
+  font-size: 3.5rem;
+  color: #fff;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.primary-hero-desc {
+  font-size: 1.2rem;
+  color: #E2E8F0;
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   SECTION 2: VISUAL HIGHLIGHT (SPLIT)
+   ========================================================================== */
+.primary-split-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .primary-split-container {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+.primary-split-images {
+  position: relative;
+  height: 500px;
+}
+
+.primary-img-back {
+  width: 75%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: var(--primary-border-radius);
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease;
+}
+
+.primary-img-front {
+  width: 65%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 16px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: 12px solid #fff;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  transition: transform 0.5s ease;
+  z-index: 2;
+}
+
+.primary-split-images:hover .primary-img-back {
+  transform: translate(-15px, -15px) rotate(-2deg);
+}
+
+.primary-split-images:hover .primary-img-front {
+  transform: translate(15px, 15px) rotate(2deg);
+}
+
+.primary-shape-decorator {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  opacity: 0.6;
+  animation: spinSlow 15s linear infinite;
+  z-index: 0;
+}
+
+@keyframes spinSlow {
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   SECTION 3: CORE CURRICULUM PILLARS (4 CARDS)
+   ========================================================================== */
+.primary-pillars-wrapper {
+  background-color: var(--primary-light);
+  border-top: 1px solid rgba(0,0,0,0.03);
+}
+
+.primary-pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .primary-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.primary-pillar-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: var(--primary-border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.02);
+}
+
+.primary-pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: var(--primary-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.primary-pillar-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.primary-pillar-card:hover::before {
+  transform: scaleX(1);
+}
+
+.primary-pillar-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.primary-pillar-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 174, 255, 0.1);
+  color: var(--primary-accent);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.primary-pillar-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  margin: 0;
+}
+
+.primary-pillar-desc {
+  font-size: 1rem;
+  color: #64748B;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ==========================================================================
+   SECTION 4: ADMISSIONS CTA
+   ========================================================================== */
+.primary-cta-wrapper {
+  background: var(--primary-dark);
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.primary-cta-bg-shape {
+  position: absolute;
+  top: -50%;
+  left: -10%;
+  width: 50%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(0,174,255,0.15) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.primary-cta-content {
+  position: relative;
+  z-index: 10;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.primary-cta-badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.primary-cta-title {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 1.2rem;
+}
+
+.primary-cta-text {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  margin-bottom: 2rem;
+}
+
+.primary-btn-premium {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #C2FC85; /* Matching reference Vamtam theme */
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(194, 252, 133, 0.2);
+}
+
+.primary-btn-premium:hover {
+  background: #fff;
+  color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(255, 255, 255, 0.3);
+}
+
+.primary-btn-premium i {
+  margin-left: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.primary-btn-premium:hover i {
+  transform: translateX(5px);
+}

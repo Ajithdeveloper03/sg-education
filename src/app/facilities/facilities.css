@@ -1,0 +1,145 @@
+/* src/app/facilities/facilities.css */
+
+.facilities-section {
+  padding: 5rem 0;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.fac-bg-light {
+  background-color: #F0F4F8;
+}
+
+.fac-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #1D2A44;
+  margin-bottom: 1rem;
+}
+
+.fac-desc {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.fac-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .fac-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.fac-content {
+  padding: 1rem;
+}
+
+/* Facility Grid Highlights */
+.fac-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .fac-highlights {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.fac-highlight-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+
+.fac-highlight-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.fac-highlight-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.fac-highlight-card h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1D2A44;
+  margin-bottom: 0.5rem;
+}
+
+.fac-highlight-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Colors for Facility Highlights */
+.fac-blue { background-color: #00AEFF; }
+.fac-pink { background-color: #FF2A7A; }
+.fac-green { background-color: #00C853; }
+.fac-yellow { background-color: #FFC300; }
+.fac-purple { background-color: #5A49E3; }
+.fac-orange { background-color: #FF5722; }
+
+/* Image Display */
+.fac-image-collage {
+  position: relative;
+  height: 100%;
+  min-height: 400px;
+}
+
+.fac-img-main {
+  width: 80%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.fac-img-overlay {
+  width: 60%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 8px solid #fff;
+  z-index: 2;
+}
+
+.fac-doodle {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.4;
+  animation: float 5s ease-in-out infinite;
+  z-index: 0;
+}

@@ -79,26 +79,26 @@ export default function Navbar() {
               </li>
               
               <li className="nav-item">
-                <Link href="/#pedagogy" className="nav-link">Academic <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></Link>
+                <Link href="/academic" className="nav-link">Academic <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></Link>
                 <div className="dropdown-menu">
-                  <Link href="/#pedagogy" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</Link>
-                  <Link href="/#pedagogy" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</Link>
-                  <Link href="/#pedagogy" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>1st to 5th Std</Link>
+                  <Link href="/academic#pre-school" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</Link>
+                  <Link href="/academic#lkg-ukg" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</Link>
+                  <Link href="/academic/primary" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>1st to 5th Std</Link>
                 </div>
               </li>
               
               <li className="nav-item">
-                <Link href="/#facilities" className="nav-link">Facilities <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></Link>
+                <Link href="/facilities" className="nav-link">Facilities <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></Link>
                 <div className="dropdown-menu">
-                  <Link href="/#fac-library" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Library</Link>
-                  <Link href="/#fac-health" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Health & Well-being</Link>
-                  <Link href="/#fac-beyond" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Beyond Academics</Link>
+                  <Link href="/facilities/library" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Library</Link>
+                  <Link href="/facilities/health" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Health & Well-being</Link>
+                  <Link href="/facilities/beyond" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Beyond Academics</Link>
                 </div>
               </li>
               
-              <li className="nav-item"><Link href="/#gallery" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Gallery</Link></li>
-              <li className="nav-item"><Link href="/#blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link></li>
-              <li className="nav-item"><Link href="/#contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
+              <li className="nav-item"><Link href="/gallery" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Gallery</Link></li>
+              <li className="nav-item"><Link href="/blog" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Blog</Link></li>
+              <li className="nav-item"><Link href="/contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
             </ul>
             <div className="nav-cta">
               <button 

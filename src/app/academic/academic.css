@@ -1,0 +1,121 @@
+/* src/app/academic/academic.css */
+
+.academic-section {
+  padding: 5rem 0;
+  position: relative;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.academic-bg-light {
+  background-color: #FAF9F5;
+}
+
+.academic-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1D2A44;
+  margin-bottom: 1rem;
+}
+
+.academic-desc {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.ac-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .ac-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.ac-content {
+  padding: 1rem;
+}
+
+.ac-image-wrapper {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.ac-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.ac-image-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.ac-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+.ac-feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+.ac-feature-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-right: 1.2rem;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.ac-icon-pink { background-color: #FF2A7A; box-shadow: 0 4px 15px rgba(255, 42, 122, 0.4); }
+.ac-icon-blue { background-color: #00AEFF; box-shadow: 0 4px 15px rgba(0, 174, 255, 0.4); }
+.ac-icon-green { background-color: #00C853; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4); }
+.ac-icon-yellow { background-color: #FFC300; box-shadow: 0 4px 15px rgba(255, 195, 0, 0.4); }
+.ac-icon-purple { background-color: #5A49E3; box-shadow: 0 4px 15px rgba(90, 73, 227, 0.4); }
+
+.ac-feature-text h4 {
+  font-size: 1.2rem;
+  color: #1D2A44;
+  margin: 0 0 0.3rem 0;
+  font-weight: 700;
+}
+
+.ac-feature-text p {
+  color: #666;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.ac-doodle {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.3;
+  animation: float 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}

@@ -88,7 +88,7 @@ export default function SGEarlyBuddingPage() {
       <section className="eb-hero" style={{ 
         backgroundImage: 'url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80")'
       }}>
-        <div className="eb-hero-overlay"></div>
+        <div className="eb-hero-overlay" style={{ backgroundColor: 'rgba(7, 6, 16, 0.6)' }}></div>
         <div className="eb-hero-content">
           <h1 className="eb-hero-title">Welcome to SG Early Budding</h1>
           <p className="eb-hero-desc">
