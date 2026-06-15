@@ -42,7 +42,7 @@ export default function LibraryPage() {
           SECTION 1: A World of Stories & Learning
           ========================================== */}
       <section className="lib-section-padding" style={{ backgroundColor: '#fff' }}>
-        <i className="fa-solid fa-book-open lib-doodle" style={{ top: '10%', right: '10%', color: '#00AEFF' }}></i>
+        <i className="fa-solid fa-book-open lib-doodle" style={{ top: '10%', right: '10%', color: '#ECC440' }}></i>
         <i className="fa-solid fa-star lib-doodle" style={{ bottom: '15%', left: '5%', color: '#FFC300', fontSize: '2rem' }}></i>
         
         <div className="container">
@@ -66,7 +66,7 @@ export default function LibraryPage() {
                   </div>
                 </div>
                 <div className="lib-s1-feature-card">
-                  <div className="lib-s1-icon" style={{ background: '#00AEFF' }}><i className="fa-solid fa-magnifying-glass-plus"></i></div>
+                  <div className="lib-s1-icon" style={{ background: '#ECC440' }}><i className="fa-solid fa-magnifying-glass-plus"></i></div>
                   <div className="lib-s1-feature-text">
                     <h4>Curated for Kids</h4>
                     <p>Materials carefully selected to perfectly match the reading levels of LKG to Grade 5 students.</p>
@@ -138,7 +138,7 @@ export default function LibraryPage() {
             
             {/* Left Content (Premium Showcase text) */}
             <div className="lib-s3-content">
-              <div className="vm-tag tag-yellow" style={{ backgroundColor: 'rgba(255, 195, 0, 0.2)', color: '#FFC300', border: '1px solid #FFC300' }}>CREATIVE ENVIRONMENT</div>
+              <div className="vm-tag tag-yellow" style={{ backgroundColor: 'rgba(236, 196, 64, 0.2)', color: '#FFC300', border: '1px solid #FFC300' }}>CREATIVE ENVIRONMENT</div>
               <h2 className="lib-title-main" style={{ marginTop: '0.5rem' }}>
                 An Inspiring Space for <br/><span style={{ color: '#FFC300' }}>Young Readers</span>
               </h2>

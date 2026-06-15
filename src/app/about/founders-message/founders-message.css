@@ -75,7 +75,7 @@
 
 .fm-visionary-title-new {
   font-family: var(--font-comfortaa), sans-serif;
-  color: #1D2A44; /* Match vm-title color */
+  color: #000000; /* Match vm-title color */
   font-size: 2.2rem; /* Match vm-title */
   font-weight: 700; /* Match vm-title */
   text-transform: uppercase;
@@ -355,14 +355,14 @@
 .fm-leadership-item-title {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #1D2A44;
+  color: #000000;
   margin-bottom: 0.1rem;
   font-family: var(--font-comfortaa), sans-serif;
 }
 
 .fm-leadership-item-role {
   font-size: 0.8rem;
-  color: #00AEFF; /* Use Mission & Vision blue */
+  color: #ECC440; /* Use Mission & Vision blue */
   font-weight: 700;
   margin-bottom: 0.3rem;
 }
@@ -466,7 +466,7 @@
    4. Closing Quote Section
    ========================================= */
 .fm-quote-section {
-  background: linear-gradient(135deg, #1D2A44 0%, #2A3B5C 100%);
+  background: linear-gradient(135deg, #000000 0%, #2A3B5C 100%);
   padding: 8rem 0;
   text-align: center;
   position: relative;
@@ -689,12 +689,12 @@
   transform: scale(1.05);
 }
 .fm-founder-vision-light .eb-founder-large-heading {
-  color: #1D2A44; /* Dark color for heading */
+  color: #000000; /* Dark color for heading */
   font-size: 2rem; /* Reduced from 2.8rem */
   margin-bottom: 1.5rem;
 }
 .fm-founder-vision-light .eb-founder-name {
-  color: #1D2A44;
+  color: #000000;
   font-size: 1.3rem; /* Reduced from 1.6rem */
 }
 .fm-founder-vision-light .eb-founder-designation {

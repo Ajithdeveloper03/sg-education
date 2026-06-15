@@ -1,0 +1,353 @@
+/* Admission Portal Custom Styles (Compact & Logo Colors) */
+
+.adm-page-wrapper {
+  background: #FCFAF2; /* Very light warm beige from logo */
+  min-height: 100vh;
+  padding: 2rem 1rem 3rem 1rem;
+  font-family: inherit;
+  color: #1D2A44; /* Logo Navy */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.adm-return-home {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.adm-return-home a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1D2A44;
+  font-weight: 600;
+  text-decoration: none;
+  background: #FFFFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.adm-return-home a:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+.adm-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 950px; /* Slightly wider to accommodate 2 columns */
+  margin: 0 auto;
+}
+
+.adm-page-content {
+  background: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid #E2E8F0;
+}
+
+.adm-header-title {
+  padding: 1.5rem 2rem 1rem;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.adm-header-title h2 {
+  font-family: var(--font-comfortaa), sans-serif;
+  color: #ECC440; /* Logo Gold */
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.adm-header-title p {
+  color: #64748B;
+  margin: 0.4rem 0 0 0;
+  font-size: 1rem;
+}
+
+.adm-modal-body {
+  padding: 2rem 3rem;
+}
+
+/* Stepper */
+.adm-stepper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  position: relative;
+  padding: 0 4rem;
+}
+
+.adm-stepper::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 15%;
+  right: 15%;
+  height: 2px;
+  background: #E2E8F0;
+  z-index: 1;
+}
+
+.adm-step {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #94A3B8;
+}
+
+.adm-step.active {
+  color: #1D2A44;
+}
+
+.adm-step.completed {
+  color: #1D2A44;
+}
+
+.adm-step-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #F8FAFC;
+  color: #64748B;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s;
+  box-shadow: 0 0 0 4px #FFFFFF;
+  border: 2px solid #E2E8F0;
+}
+
+.adm-step.active .adm-step-circle {
+  background: #ECC440;
+  color: #1D2A44;
+  border-color: #ECC440;
+}
+
+.adm-step.completed .adm-step-circle {
+  background: #ECC440;
+  color: #1D2A44;
+  border-color: #ECC440;
+}
+
+.adm-step-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* 2-Column Grid */
+.adm-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.5rem;
+}
+
+/* Form Styles */
+.adm-form-group {
+  margin-bottom: 1rem;
+}
+
+.adm-form-group label {
+  display: block;
+  font-size: 0.85rem;
+  color: #334155;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.adm-form-group label span {
+  color: #E91E63; /* Small hint of magenta for required asterisks */
+}
+
+.adm-form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #1D2A44;
+  background-color: #F8FAFC;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.adm-form-control::placeholder {
+  color: #94A3B8;
+}
+
+.adm-form-control:focus {
+  outline: none;
+  border-color: #ECC440;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(236, 196, 64, 0.2);
+}
+
+select.adm-form-control {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
+.adm-form-error {
+  color: #E91E63;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  display: block;
+  font-weight: 500;
+}
+
+/* Navigation Actions */
+.adm-form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #F1F5F9;
+}
+
+.adm-btn {
+  padding: 0.7rem 2rem;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.adm-btn-secondary {
+  background: #F1F5F9;
+  color: #475569;
+}
+
+.adm-btn-secondary:hover {
+  background: #E2E8F0;
+  color: #1D2A44;
+}
+
+.adm-btn-primary {
+  background: #ECC440;
+  color: #1D2A44;
+}
+
+.adm-btn-primary:hover {
+  background: #D4AE38;
+}
+
+/* Summary view */
+.adm-summary-block {
+  background: #F8FAFC;
+  padding: 1.2rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+}
+
+.adm-summary-block h4 {
+  margin: 0 0 1rem 0;
+  color: #1D2A44;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-bottom: 2px solid #ECC440;
+  display: inline-block;
+  padding-bottom: 0.2rem;
+}
+
+.adm-summary-row {
+  display: flex;
+  margin-bottom: 0.6rem;
+  font-size: 0.9rem;
+}
+
+.adm-summary-label {
+  font-weight: 600;
+  color: #64748B;
+  width: 120px;
+  flex-shrink: 0;
+}
+
+.adm-summary-val {
+  color: #1D2A44;
+  font-weight: 500;
+}
+
+/* Success View */
+.adm-success {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.adm-success-icon {
+  font-size: 4rem;
+  color: #388E3C; /* Logo Green for success */
+  margin-bottom: 1rem;
+}
+
+.adm-success h3 {
+  font-family: var(--font-comfortaa), sans-serif;
+  color: #1D2A44;
+  font-size: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.adm-success p {
+  color: #475569;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .adm-page-wrapper {
+    padding: 1rem 0.5rem;
+  }
+  .adm-return-home {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-bottom: 0.8rem;
+  }
+  .adm-header-title {
+    padding: 1.2rem 1rem;
+  }
+  .adm-header-title h2 {
+    font-size: 1.8rem;
+  }
+  .adm-modal-body {
+    padding: 1.5rem 1rem;
+  }
+  .adm-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .adm-stepper {
+    padding: 0 1rem;
+  }
+  .adm-stepper::before {
+    left: 15%;
+    right: 15%;
+  }
+  .adm-summary-row {
+    flex-direction: column;
+  }
+  .adm-summary-label {
+    width: 100%;
+    margin-bottom: 0.2rem;
+  }
+}

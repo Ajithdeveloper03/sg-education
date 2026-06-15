@@ -20,10 +20,10 @@ export default function FoundersMessagePage() {
     <main style={{ position: 'relative', backgroundColor: '#fff', paddingTop: '0', minHeight: '100vh', overflowX: 'hidden' }}>
       
       {/* Kids-Themed Decorative Elements */}
-      <div style={{ position: 'absolute', top: '15%', left: '5%', color: '#FFB300', fontSize: '2.5rem', opacity: 0.6, animation: 'fm-float 3s ease-in-out infinite', zIndex: 0 }}>
+      <div style={{ position: 'absolute', top: '15%', left: '5%', color: '#ECC440', fontSize: '2.5rem', opacity: 0.6, animation: 'fm-float 3s ease-in-out infinite', zIndex: 0 }}>
         <i className="fa-solid fa-star"></i>
       </div>
-      <div style={{ position: 'absolute', top: '28%', right: '8%', color: '#00AEFF', fontSize: '3rem', opacity: 0.5, animation: 'fm-float 4s ease-in-out infinite reverse', zIndex: 0 }}>
+      <div style={{ position: 'absolute', top: '28%', right: '8%', color: '#ECC440', fontSize: '3rem', opacity: 0.5, animation: 'fm-float 4s ease-in-out infinite reverse', zIndex: 0 }}>
         <i className="fa-solid fa-paper-plane"></i>
       </div>
       <div style={{ position: 'absolute', top: '45%', left: '6%', color: '#00C853', fontSize: '2.5rem', opacity: 0.5, animation: 'fm-float 3.5s ease-in-out infinite', zIndex: 0 }}>
@@ -156,7 +156,7 @@ export default function FoundersMessagePage() {
                   <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=150&q=80" alt="Business Leadership" />
                 </div>
                 <div className="fm-leadership-item-content">
-                  <h4 className="fm-leadership-item-title" style={{ color: '#FFB300' }}>
+                  <h4 className="fm-leadership-item-title" style={{ color: '#ECC440' }}>
                     <i className="fa-solid fa-briefcase" style={{ marginRight: '8px' }}></i>Business Leadership
                   </h4>
                   <p className="fm-leadership-item-role" style={{ color: '#333' }}>Co-Founder – Sarathi Groups</p>
@@ -170,7 +170,7 @@ export default function FoundersMessagePage() {
                   <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=150&q=80" alt="Real Estate" />
                 </div>
                 <div className="fm-leadership-item-content">
-                  <h4 className="fm-leadership-item-title" style={{ color: '#00AEFF' }}>
+                  <h4 className="fm-leadership-item-title" style={{ color: '#ECC440' }}>
                     <i className="fa-solid fa-city" style={{ marginRight: '8px' }}></i>Real Estate
                   </h4>
                   <p className="fm-leadership-item-role" style={{ color: '#333' }}>Director – SG Builders Pvt. Ltd.</p>
@@ -216,7 +216,7 @@ export default function FoundersMessagePage() {
 
               <div className="fm-stats-container">
                 <div className="fm-stat-card">
-                  <div className="fm-stat-title"><i className="fa-solid fa-hand-holding-heart" style={{color: '#00AEFF', marginRight: '8px'}}></i> Social Welfare</div>
+                  <div className="fm-stat-title"><i className="fa-solid fa-hand-holding-heart" style={{color: '#ECC440', marginRight: '8px'}}></i> Social Welfare</div>
                   <div className="fm-stat-desc">Driving impactful community initiatives.</div>
                 </div>
                 <div className="fm-stat-card">
@@ -224,7 +224,7 @@ export default function FoundersMessagePage() {
                   <div className="fm-stat-desc">Educational & Healthcare support.</div>
                 </div>
                 <div className="fm-stat-card">
-                  <div className="fm-stat-title"><i className="fa-solid fa-user-group" style={{color: '#FFB300', marginRight: '8px'}}></i> Leadership</div>
+                  <div className="fm-stat-title"><i className="fa-solid fa-user-group" style={{color: '#ECC440', marginRight: '8px'}}></i> Leadership</div>
                   <div className="fm-stat-desc">Youth leadership development.</div>
                 </div>
               </div>

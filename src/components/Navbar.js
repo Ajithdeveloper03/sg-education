@@ -3,26 +3,12 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import AdmissionModal from "./AdmissionModal";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
-  const [isAdmissionModalOpen, setIsAdmissionModalOpen] = useState(false);
   const isInnerPage = pathname !== '/';
-
-  // Prevent background scrolling when modal is open
-  useEffect(() => {
-    if (isAdmissionModalOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isAdmissionModalOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,6 +17,8 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (pathname === '/admission') return null;
 
   return (
     <>
@@ -51,7 +39,11 @@ export default function Navbar() {
       <header id="header" className={`${headerScrolled ? "scrolled" : ""} ${isInnerPage ? "inner-page" : ""}`.trim()}>
         <div className="container navbar">
           <Link href="/" className="logo-container" id="logo-link">
-            <img src="/sg-education/logo.webp" className="logo-img" alt="SG Education Logo" />
+            <img 
+              src={pathname === '/about/sg-early-budding' ? "/sg-education/early budding logo.png" : "/sg-education/logo.webp"} 
+              className="logo-img" 
+              alt={pathname === '/about/sg-early-budding' ? "SG Early Budding Logo" : "SG Education Logo"} 
+            />
           </Link>
 
           <button
@@ -79,16 +71,16 @@ export default function Navbar() {
               </li>
               
               <li className="nav-item">
-                <Link href="/academic" className="nav-link">Academic <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></Link>
+                <span className="nav-link" style={{ cursor: 'pointer' }}>Academic <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></span>
                 <div className="dropdown-menu">
-                  <Link href="/academic#pre-school" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</Link>
-                  <Link href="/academic#lkg-ukg" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</Link>
+                  <Link href="/academic/pre-school" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</Link>
+                  <Link href="/academic/kindergarten" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</Link>
                   <Link href="/academic/primary" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>1st to 5th Std</Link>
                 </div>
               </li>
               
               <li className="nav-item">
-                <Link href="/facilities" className="nav-link">Facilities <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></Link>
+                <span className="nav-link" style={{ cursor: 'pointer' }}>Facilities <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></span>
                 <div className="dropdown-menu">
                   <Link href="/facilities/library" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Library</Link>
                   <Link href="/facilities/health" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Health & Well-being</Link>
@@ -101,26 +93,13 @@ export default function Navbar() {
               <li className="nav-item"><Link href="/contact" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Contact</Link></li>
             </ul>
             <div className="nav-cta">
-              <button 
-                className="btn btn-rainbow" 
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  setIsAdmissionModalOpen(true);
-                }}
-                style={{ border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
-              >
+              <Link href="/admission" className="btn btn-rainbow" onClick={() => setMobileMenuOpen(false)} style={{ border: 'none', textDecoration: 'none' }}>
                 Admission
-              </button>
+              </Link>
             </div>
           </nav>
         </div>
       </header>
-
-      {/* Admission Modal */}
-      <AdmissionModal 
-        isOpen={isAdmissionModalOpen} 
-        onClose={() => setIsAdmissionModalOpen(false)} 
-      />
     </>
   );
 }

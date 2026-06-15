@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ==========================================================================
    SG EDUCATION - SUPERCHARGED DESIGN SYSTEM (KIDZA STYLING SPEC)
    ========================================================================== */
@@ -289,12 +293,14 @@ ul {
 }
 
 .btn-rainbow {
-  background-color: var(--kidza-purple);
-  color: var(--white);
+  background-color: #ECC440;
+  color: #1D2A44;
   padding: 0.8rem 2rem;
+  font-weight: 700;
 }
 .btn-rainbow:hover {
-  background-color: var(--kidza-orange);
+  background-color: #d1ad38;
+  color: #1D2A44;
   transform: translateY(-2px);
 }
 
@@ -354,8 +360,8 @@ ul {
    1. STICKY PLAYFUL HEADER
    ========================================================================== */
 .header-top-bar {
-  background-color: var(--kidza-purple);
-  color: rgba(255,255,255,0.9);
+  background-color: #ECC440;
+  color: #000000;
   padding: 0.6rem 0;
   font-size: 0.9rem;
   font-weight: 600;
@@ -380,7 +386,7 @@ ul {
   gap: 0.5rem;
 }
 .top-info-left i {
-  color: var(--joyful-yellow);
+  color: #000000;
 }
 
 .top-social-right {
@@ -407,9 +413,22 @@ ul {
   justify-content: center;
   line-height: 1;
 }
+
+/* Original Brand Colors for Social Media Icons */
+.top-social-right a[aria-label="Facebook"] i {
+  color: #1877F2;
+}
+
+.top-social-right a[aria-label="Instagram"] i {
+  color: #E1306C;
+}
+
+.top-social-right a[aria-label="YouTube"] i {
+  color: #FF0000;
+}
 .top-social-right a:hover {
-  background-color: var(--joyful-yellow);
-  color: var(--neutral-dark);
+  background-color: #FFFFFF;
+  color: #000000;
   transform: translateY(-2px);
 }
 

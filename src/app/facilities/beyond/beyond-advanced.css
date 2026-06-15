@@ -2,11 +2,11 @@
 
 /* --- General Variables specific to Beyond Academics Page --- */
 :root {
-  --beyond-primary: #FF2A7A; /* Pink */
-  --beyond-secondary: #00AEFF; /* Blue */
-  --beyond-accent: #FFC300; /* Yellow */
-  --beyond-green: #00C853; /* Green */
-  --beyond-dark: #1D2A44;
+  --beyond-primary: #ECC440; /* Pink */
+  --beyond-secondary: #000000; /* Navy */
+  --beyond-accent: #ECC440; /* Yellow */
+  --beyond-green: #907010; /* Green */
+  --beyond-dark: #000000;
 }
 
 .beyond-section-padding {

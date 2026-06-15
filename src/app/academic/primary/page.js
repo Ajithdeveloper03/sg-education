@@ -72,18 +72,18 @@ export default function PrimaryStandardPage() {
             <div ref={addToRefs} style={{ opacity: 0 }}>
               <div className="vm-tag tag-blue">CAMPUS LIFE</div>
               <h2 className="primary-title-main">
-                Discovering the Joy of <span style={{ color: '#00AEFF' }}>Learning Every Day</span>
+                Discovering the Joy of <span style={{ color: '#ECC440' }}>Learning Every Day</span>
               </h2>
               <p className="primary-text-main">
                 At SG Education, we believe that primary schooling is the most crucial phase in a child's academic journey. Our beautifully designed classrooms, interactive methodologies, and holistic approach ensure that every day is a new adventure in learning.
               </p>
               <ul style={{ listStyle: 'none', padding: 0, margin: '2rem 0', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#4A5568' }}>
-                  <i className="fa-solid fa-check" style={{ color: '#00C853', background: 'rgba(0,200,83,0.1)', padding: '0.5rem', borderRadius: '50%' }}></i> 
+                  <i className="fa-solid fa-check" style={{ color: '#907010', background: 'rgba(144, 112, 16,0.1)', padding: '0.5rem', borderRadius: '50%' }}></i> 
                   Innovative and interactive teaching models
                 </li>
                 <li style={{ display: 'flex', alignItems: 'center', gap: '1rem', fontSize: '1.1rem', color: '#4A5568' }}>
-                  <i className="fa-solid fa-check" style={{ color: '#00C853', background: 'rgba(0,200,83,0.1)', padding: '0.5rem', borderRadius: '50%' }}></i> 
+                  <i className="fa-solid fa-check" style={{ color: '#907010', background: 'rgba(144, 112, 16,0.1)', padding: '0.5rem', borderRadius: '50%' }}></i> 
                   Focus on both conceptual and practical knowledge
                 </li>
               </ul>

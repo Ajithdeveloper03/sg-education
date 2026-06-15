@@ -2,11 +2,11 @@
 
 /* --- General Variables & Resets specific to Library --- */
 :root {
-  --lib-primary: #FF2A7A; /* Pink */
-  --lib-secondary: #00AEFF; /* Blue */
-  --lib-accent: #FFC300; /* Yellow */
-  --lib-dark: #1D2A44;
-  --lib-light: #FAF9F5;
+  --lib-primary: #ECC440; /* Pink */
+  --lib-secondary: #000000; /* Navy */
+  --lib-accent: #ECC440; /* Yellow */
+  --lib-dark: #000000;
+  --lib-light: #FAF8F0;
   --lib-border-radius: 24px;
 }
 

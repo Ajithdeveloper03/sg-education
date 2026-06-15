@@ -8,13 +8,13 @@
 }
 
 .academic-bg-light {
-  background-color: #FAF9F5;
+  background-color: #FAF8F0;
 }
 
 .academic-title {
   font-size: 2.8rem;
   font-weight: 800;
-  color: #1D2A44;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
@@ -86,15 +86,15 @@
   color: #fff;
 }
 
-.ac-icon-pink { background-color: #FF2A7A; box-shadow: 0 4px 15px rgba(255, 42, 122, 0.4); }
-.ac-icon-blue { background-color: #00AEFF; box-shadow: 0 4px 15px rgba(0, 174, 255, 0.4); }
-.ac-icon-green { background-color: #00C853; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4); }
-.ac-icon-yellow { background-color: #FFC300; box-shadow: 0 4px 15px rgba(255, 195, 0, 0.4); }
-.ac-icon-purple { background-color: #5A49E3; box-shadow: 0 4px 15px rgba(90, 73, 227, 0.4); }
+.ac-icon-pink { background-color: #ECC440; box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4); }
+.ac-icon-blue { background-color: #000000; box-shadow: 0 4px 15px rgba(29, 42, 68, 0.4); }
+.ac-icon-green { background-color: #907010; box-shadow: 0 4px 15px rgba(56, 142, 60, 0.4); }
+.ac-icon-yellow { background-color: #ECC440; box-shadow: 0 4px 15px rgba(255, 179, 0, 0.4); }
+.ac-icon-purple { background-color: #000000; box-shadow: 0 4px 15px rgba(29, 42, 68, 0.4); }
 
 .ac-feature-text h4 {
   font-size: 1.2rem;
-  color: #1D2A44;
+  color: #000000;
   margin: 0 0 0.3rem 0;
   font-weight: 700;
 }

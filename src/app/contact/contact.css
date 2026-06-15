@@ -55,13 +55,13 @@
 }
 
 .cc-pink { background: #FF2A7A; box-shadow: 0 4px 15px rgba(255, 42, 122, 0.4); }
-.cc-blue { background: #00AEFF; box-shadow: 0 4px 15px rgba(0, 174, 255, 0.4); }
+.cc-blue { background: #ECC440; box-shadow: 0 4px 15px rgba(0, 174, 255, 0.4); }
 .cc-green { background: #00C853; box-shadow: 0 4px 15px rgba(0, 200, 83, 0.4); }
 
 .contact-card-text h3 {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #1D2A44;
+  color: #000000;
   margin: 0 0 0.5rem 0;
 }
 
@@ -85,7 +85,7 @@
 .contact-form-title {
   font-size: 2rem;
   font-weight: 800;
-  color: #1D2A44;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
@@ -102,7 +102,7 @@
 .form-label {
   display: block;
   font-weight: 600;
-  color: #1D2A44;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
@@ -120,7 +120,7 @@
 
 .form-control:focus {
   outline: none;
-  border-color: #00AEFF;
+  border-color: #ECC440;
   background: #fff;
   box-shadow: 0 0 0 4px rgba(0, 174, 255, 0.1);
 }
@@ -157,7 +157,7 @@ textarea.form-control {
 }
 
 .submit-btn:hover {
-  background: #FFB300;
+  background: #ECC440;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 195, 0, 0.4);
 }

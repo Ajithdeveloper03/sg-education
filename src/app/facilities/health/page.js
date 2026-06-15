@@ -68,7 +68,7 @@ export default function HealthPage() {
               </div>
               <div className="beyond-s1-masonry-col">
                 <div className="beyond-s1-card">
-                  <div className="beyond-s1-card-icon" style={{ background: '#00AEFF' }}><i className="fa-solid fa-hands-bubbles"></i></div>
+                  <div className="beyond-s1-card-icon" style={{ background: '#ECC440' }}><i className="fa-solid fa-hands-bubbles"></i></div>
                   <h4>Hygiene Practices</h4>
                   <p>Developing essential cleanliness routines.</p>
                 </div>
@@ -113,7 +113,7 @@ export default function HealthPage() {
                 <p>Engaging in outdoor games and playground activities helps improve strength, coordination, and overall fitness.</p>
                 <div className="beyond-s2-highlight-list">
                   <div className="beyond-s2-highlight-item"><i className="fa-solid fa-tree" style={{ color: '#00C853' }}></i> Nature Walks</div>
-                  <div className="beyond-s2-highlight-item"><i className="fa-solid fa-futbol" style={{ color: '#00AEFF' }}></i> Playground</div>
+                  <div className="beyond-s2-highlight-item"><i className="fa-solid fa-futbol" style={{ color: '#ECC440' }}></i> Playground</div>
                 </div>
               </div>
             </div>
@@ -141,7 +141,7 @@ export default function HealthPage() {
           SECTION 3: Growing with Confidence (Using Beyond's Spotlight Grid)
           ========================================== */}
       <section className="beyond-s3-spotlight" style={{ overflow: 'hidden' }}>
-        <div className="beyond-s3-overlay" style={{ background: 'linear-gradient(135deg, rgba(15, 20, 35, 0.8) 0%, rgba(29, 42, 68, 0.7) 100%)' }}></div>
+        <div className="beyond-s3-overlay" style={{ background: 'linear-gradient(135deg, rgba(15, 20, 35, 0.8) 0%, rgba(0, 0, 0, 0.7) 100%)' }}></div>
         
         {/* Animated Glassmorphism Background Orbs */}
         <div className="glass-orb-container">
@@ -153,7 +153,7 @@ export default function HealthPage() {
         <div className="container beyond-s3-container" style={{ zIndex: 10 }}>
           
           <div className="beyond-s3-header">
-            <div className="vm-tag tag-yellow" style={{ backgroundColor: 'rgba(255, 195, 0, 0.2)', color: '#FFC300', border: '1px solid #FFC300', marginBottom: '1rem' }}>EMOTIONAL WELL-BEING</div>
+            <div className="vm-tag tag-yellow" style={{ backgroundColor: 'rgba(236, 196, 64, 0.2)', color: '#FFC300', border: '1px solid #FFC300', marginBottom: '1rem' }}>EMOTIONAL WELL-BEING</div>
             <h2 className="beyond-title-main">Growing with Confidence & Happiness</h2>
             <p className="beyond-text-main">
               Our focus on health and well-being goes beyond physical fitness. We strive to create a positive atmosphere where children feel secure, valued, and motivated to learn. By supporting their emotional, social, and physical development, we help students build confidence, resilience, and a strong foundation for lifelong success.
@@ -169,7 +169,7 @@ export default function HealthPage() {
             </div>
 
             <div className="beyond-s3-glass-card">
-              <div className="beyond-s3-glass-icon" style={{ color: '#00AEFF' }}><i className="fa-solid fa-shield-heart"></i></div>
+              <div className="beyond-s3-glass-icon" style={{ color: '#ECC440' }}><i className="fa-solid fa-shield-heart"></i></div>
               <h4>Emotional Security</h4>
               <p>Building a safe space for expression and personal growth.</p>
             </div>

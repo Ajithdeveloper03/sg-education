@@ -14,7 +14,7 @@
 .fac-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1D2A44;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
@@ -87,7 +87,7 @@
 .fac-highlight-card h4 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1D2A44;
+  color: #000000;
   margin-bottom: 0.5rem;
 }
 
@@ -99,12 +99,12 @@
 }
 
 /* Colors for Facility Highlights */
-.fac-blue { background-color: #00AEFF; }
-.fac-pink { background-color: #FF2A7A; }
-.fac-green { background-color: #00C853; }
-.fac-yellow { background-color: #FFC300; }
-.fac-purple { background-color: #5A49E3; }
-.fac-orange { background-color: #FF5722; }
+.fac-blue { background-color: #000000; }
+.fac-pink { background-color: #ECC440; }
+.fac-green { background-color: #907010; }
+.fac-yellow { background-color: #ECC440; }
+.fac-purple { background-color: #000000; }
+.fac-orange { background-color: #ECC440; }
 
 /* Image Display */
 .fac-image-collage {

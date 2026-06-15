@@ -21,6 +21,43 @@ export default function SchoolMottoPage() {
         .newsletter-section.section-padding {
           padding-top: 0 !important;
         }
+        .motto-hero-grid {
+          display: grid;
+          grid-template-columns: 1fr 2fr 1fr;
+          align-items: center;
+          gap: 2rem;
+          max-width: 1400px;
+          margin: 0 auto;
+          position: relative;
+          z-index: 2;
+        }
+        .motto-img-wrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .motto-img-wrapper img {
+          max-width: 100%;
+          height: auto;
+          max-height: 400px;
+          object-fit: contain;
+        }
+        @media (max-width: 1024px) {
+          .motto-hero-grid {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+          }
+          .motto-center-text {
+            order: 1;
+            padding: 0 1rem;
+          }
+          .motto-side-img-1 {
+            order: 2;
+          }
+          .motto-side-img-2 {
+            order: 3;
+          }
+        }
       `}</style>
       
       {/* Page Banner */}
@@ -55,43 +92,41 @@ export default function SchoolMottoPage() {
       </section>
 
       {/* Main Content Area */}
-      <section className="vm-section" style={{ paddingTop: '6rem', paddingBottom: '3rem', position: 'relative', backgroundColor: '#F0F4F8' }}>
+      <section className="vm-section" style={{ paddingTop: isMobile ? '3rem' : '6rem', paddingBottom: isMobile ? '2rem' : '3rem', position: 'relative', backgroundColor: '#F0F4F8' }}>
         
-        {/* Transparent PNG Decorative Images (Left & Right) */}
-        {!isMobile && (
-          <>
-            <div style={{ position: 'absolute', left: '-5%', top: '10%', width: '450px', height: '450px', opacity: 0.85, zIndex: 0, pointerEvents: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <img src="/sg-education/motto teacher.png" alt="Decorative Left" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
-            </div>
-            <div style={{ position: 'absolute', right: '-5%', top: '10%', width: '450px', height: '450px', opacity: 0.85, zIndex: 0, pointerEvents: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-              <img src="/sg-education/about-student.png" alt="Decorative Right" style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }} />
-            </div>
-          </>
-        )}
-
-        <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '900px', margin: '0 auto' }}>
+        <div className="container motto-hero-grid">
           
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <div className="vm-tag tag-pink">OUR MOTTO</div>
-            <h2 className="vm-title" style={{ marginTop: '0.5rem' }}>
-              CoEducate, Empower, <span className="underline-pink">Elevate</span>
-            </h2>
+          {/* Left Decorative Image */}
+          <div className="motto-img-wrapper motto-side-img-1">
+            <img src="/sg-education/motto teacher.png" alt="Teacher interacting with students" />
           </div>
 
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <p className="vm-desc" style={{ fontSize: '1.5rem', textAlign: 'justify', maxWidth: '700px', margin: '0 auto', lineHeight: '1.6' }}>
+          {/* Center Text Content */}
+          <div className="motto-center-text">
+            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+              <div className="vm-tag tag-pink">OUR MOTTO</div>
+              <h2 className="vm-title" style={{ marginTop: '0.5rem' }}>
+                CoEducate, Empower, <span className="underline-pink">Elevate</span>
+              </h2>
+            </div>
+            <p className="vm-desc" style={{ fontSize: '1rem', textAlign: 'justify', maxWidth: '700px', margin: '0 auto', lineHeight: '1.8', color: '#4A5568' }}>
               Our motto encapsulates the essence of what we strive to achieve every day at SG Education. We believe that true education is a collaborative journey between teachers, students, and parents. Through this collaboration, we give our students the tools, wisdom, and confidence they need to succeed and make a positive impact on the world. Ultimately, our goal is to lift them up to reach their highest potential, both academically and morally, ensuring they become the leaders and visionaries of tomorrow.
             </p>
           </div>
 
-        </div> {/* End of 900px constrained container */}
+          {/* Right Decorative Image */}
+          <div className="motto-img-wrapper motto-side-img-2">
+            <img src="/sg-education/about-student.png" alt="Student learning" />
+          </div>
+
+        </div>
 
         {/* Highlighted Key Points - Unconstrained wider container */}
-        <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1300px', margin: '0 auto' }}>
+        <div className="container" style={{ position: 'relative', zIndex: 2, maxWidth: '1300px', margin: '0 auto', padding: isMobile ? '0 1rem' : '0' }}>
           <div style={{ 
             display: 'grid', 
             gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', 
-            gap: '2.5rem',
+            gap: isMobile ? '1.5rem' : '2.5rem',
             alignItems: 'stretch'
           }}>
             
@@ -111,7 +146,7 @@ export default function SchoolMottoPage() {
                 <i className="fa-solid fa-users"></i>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                <h4 style={{ fontSize: '1.1rem', color: '#1D2A44', fontWeight: '700', marginBottom: '0.3rem' }}>CoEducate</h4>
+                <h4 style={{ fontSize: '1.1rem', color: '#000000', fontWeight: '700', marginBottom: '0.3rem' }}>CoEducate</h4>
                 <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: '1.4', margin: '0' }}>
                   Collaborative learning uniting teachers, students, and parents.
                 </p>
@@ -134,7 +169,7 @@ export default function SchoolMottoPage() {
                 <i className="fa-solid fa-bolt"></i>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                <h4 style={{ fontSize: '1.1rem', color: '#1D2A44', fontWeight: '700', marginBottom: '0.3rem' }}>Empower</h4>
+                <h4 style={{ fontSize: '1.1rem', color: '#000000', fontWeight: '700', marginBottom: '0.3rem' }}>Empower</h4>
                 <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: '1.4', margin: '0' }}>
                   Building confidence, critical thinking, and practical skills.
                 </p>
@@ -157,7 +192,7 @@ export default function SchoolMottoPage() {
                 <i className="fa-solid fa-arrow-trend-up"></i>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                <h4 style={{ fontSize: '1.1rem', color: '#1D2A44', fontWeight: '700', marginBottom: '0.3rem' }}>Elevate</h4>
+                <h4 style={{ fontSize: '1.1rem', color: '#000000', fontWeight: '700', marginBottom: '0.3rem' }}>Elevate</h4>
                 <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: '1.4', margin: '0' }}>
                   Lifting students to their highest academic and moral potential.
                 </p>

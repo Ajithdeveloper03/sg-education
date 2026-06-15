@@ -20,7 +20,7 @@
 
 .decor-1 { top: 10%; left: 5%; font-size: 4rem; color: #FF2A7A; }
 .decor-2 { bottom: 15%; right: 5%; font-size: 5rem; color: #FFC300; animation-delay: 1s; }
-.decor-3 { top: 20%; right: 8%; font-size: 3.5rem; color: #00AEFF; animation-delay: 2s; }
+.decor-3 { top: 20%; right: 8%; font-size: 3.5rem; color: #ECC440; animation-delay: 2s; }
 .decor-4 { bottom: 10%; left: 8%; font-size: 4.5rem; color: #00BFA6; animation-delay: 1.5s; }
 
 /* Banner Typography */
@@ -135,7 +135,7 @@
 
 .tag-blue {
   background-color: #E5F3FF;
-  color: #00AEFF;
+  color: #ECC440;
 }
 
 .tag-green {
@@ -148,7 +148,7 @@
   font-size: 2.2rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #1D2A44;
+  color: #000000;
   margin-bottom: 1rem;
 }
 
@@ -165,8 +165,8 @@
 }
 
 .underline-blue {
-  color: #00AEFF;
-  border-bottom: 2px dashed #00AEFF;
+  color: #ECC440;
+  border-bottom: 2px dashed #ECC440;
   padding-bottom: 5px;
 }
 
@@ -243,12 +243,12 @@
 .icon-pink { background-color: #FFE5EC; color: #FF2A7A; }
 .icon-green { background-color: #E5F6F0; color: #00BFA6; }
 .icon-yellow { background-color: #FFF9E5; color: #FFC300; }
-.icon-blue { background-color: #E5F3FF; color: #00AEFF; }
+.icon-blue { background-color: #E5F3FF; color: #ECC440; }
 .icon-orange { background-color: #FFF0E5; color: #FF9800; }
 
 .vm-c-text h4, .vm-compact-card h4 {
   font-size: 0.95rem;
-  color: #1D2A44;
+  color: #000000;
   margin-bottom: 0.2rem;
   font-weight: 700;
 }
@@ -333,6 +333,6 @@
   gap: 0.4rem;
 }
 
-.bg-pink { background-color: #E91E63; }
+.bg-pink { background-color: #ECC440; }
 .bg-green { background-color: #4CAF50; }
-.bg-blue { background-color: #00AEFF; }
+.bg-blue { background-color: #ECC440; }

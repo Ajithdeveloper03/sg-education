@@ -100,11 +100,11 @@ export default function BeyondPage() {
             <div className="health-s2-item">
               <div className="health-s2-dot"></div>
               <div className="health-s2-content">
-                <h3 style={{ fontSize: '1.5rem', color: '#1D2A44', marginBottom: '1rem', fontWeight: '800' }}>School Events & Programs</h3>
+                <h3 style={{ fontSize: '1.5rem', color: '#000000', marginBottom: '1rem', fontWeight: '800' }}>School Events & Programs</h3>
                 <p style={{ color: '#666', lineHeight: '1.6' }}>Participation in school events, competitions, and cultural programs helps students develop teamwork, leadership, communication, and problem-solving skills.</p>
                 <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
                   <div style={{ background: '#E8F5E9', padding: '0.5rem 1rem', borderRadius: '8px', color: '#00C853', fontWeight: '700', fontSize: '0.9rem' }}><i className="fa-solid fa-trophy"></i> Competitions</div>
-                  <div style={{ background: '#E3F2FD', padding: '0.5rem 1rem', borderRadius: '8px', color: '#00AEFF', fontWeight: '700', fontSize: '0.9rem' }}><i className="fa-solid fa-people-group"></i> Teamwork</div>
+                  <div style={{ background: '#E3F2FD', padding: '0.5rem 1rem', borderRadius: '8px', color: '#ECC440', fontWeight: '700', fontSize: '0.9rem' }}><i className="fa-solid fa-people-group"></i> Teamwork</div>
                 </div>
               </div>
               <div className="health-s2-image">
@@ -116,7 +116,7 @@ export default function BeyondPage() {
             <div className="health-s2-item">
               <div className="health-s2-dot"></div>
               <div className="health-s2-content">
-                <h3 style={{ fontSize: '1.5rem', color: '#1D2A44', marginBottom: '1rem', fontWeight: '800' }}>Stepping Out of Comfort Zones</h3>
+                <h3 style={{ fontSize: '1.5rem', color: '#000000', marginBottom: '1rem', fontWeight: '800' }}>Stepping Out of Comfort Zones</h3>
                 <p style={{ color: '#666', lineHeight: '1.6' }}>These opportunities encourage children to step out of their comfort zones and grow into confident, well-rounded individuals ready to face the world.</p>
                 <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1rem' }}>
                   <div style={{ background: '#FFF3E0', padding: '0.5rem 1rem', borderRadius: '8px', color: '#FF9800', fontWeight: '700', fontSize: '0.9rem' }}><i className="fa-solid fa-bullhorn"></i> Leadership</div>
@@ -149,7 +149,7 @@ export default function BeyondPage() {
           <div className="health-s3-glass-panel">
             <i className="fa-solid fa-quote-left health-s3-quote-icon"></i>
             
-            <div className="vm-tag tag-yellow" style={{ backgroundColor: 'rgba(255, 195, 0, 0.2)', color: '#FFC300', border: '1px solid #FFC300', marginBottom: '1.5rem' }}>FUTURE READY</div>
+            <div className="vm-tag tag-yellow" style={{ backgroundColor: 'rgba(236, 196, 64, 0.2)', color: '#FFC300', border: '1px solid #FFC300', marginBottom: '1.5rem' }}>FUTURE READY</div>
             
             <h2 className="health-title-main">Building Character for the Future</h2>
             

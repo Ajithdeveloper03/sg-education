@@ -40,7 +40,7 @@ const AirplaneDoodle = ({ style }) => (
   <svg className="floating-doodle" style={{ width: '55px', height: '55px', stroke: '#E95D2A', fill: 'none', position: 'absolute', zIndex: 12, ...style }} viewBox="0 0 100 100">
     <path d="M20,50 L80,20 L60,80 L50,60 L20,50 Z" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
     <path d="M50,60 L80,20" strokeWidth="4" strokeLinecap="round" />
-    <path d="M20,65 C30,75 40,75 50,65 C60,55 70,55 80,65" stroke="#00AEFF" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
+    <path d="M20,65 C30,75 40,75 50,65 C60,55 70,55 80,65" stroke="#ECC440" strokeWidth="2" strokeDasharray="4 4" strokeLinecap="round" />
   </svg>
 );
 
@@ -68,7 +68,7 @@ const THREE_PILLARS = [
     desc: "Activity-based puzzles and early speaking.",
     img: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80",
     icon: "fa-graduation-cap",
-    color: "#00AEFF"
+    color: "#ECC440"
   }
 ];
 
@@ -115,7 +115,7 @@ const FOUR_PILLARS = [
     title: "Inquiry-Led Play",
     desc: "Children explore concepts by questioning, doing, and playing. No rote learning. We encourage curiosity and self-discovery.",
     icon: "fa-child-reaching",
-    color: "#00AEFF",
+    color: "#ECC440",
     img: "/sg-education/pillars1.png"
   },
   {
@@ -351,7 +351,7 @@ export default function Home() {
         />
 
         {/* Navy Overlay */}
-        <div className="hero-overlay" style={{ background: 'linear-gradient(to bottom, rgba(29, 42, 68, 0.7) 0%, rgba(29, 42, 68, 0.4) 100%)', zIndex: 2 }}></div>
+        <div className="hero-overlay" style={{ background: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%)', zIndex: 2 }}></div>
 
         <div className="hero-shapes">
           <SunDoodle style={{ top: "12%", right: "8%" }} />
@@ -366,7 +366,7 @@ export default function Home() {
               Welcome to <span className="text-yellow">SG Educations</span>
             </h1>
             <p className="hero-subtitle" style={{ maxWidth: '800px', margin: '0 auto', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-              CoEducate, Empower, Elevate. Nurturing young minds by blending ancient Bharath values with modern academic excellence. 
+              SG Education, established in 2023 under Sarathi Groups, provides quality education by blending Bharath’s ancient culture with modern corporate culture. We nurture knowledgeable, disciplined, and future-ready individuals.Educate, Empower, Elevate. 
             </p>
           </div>
         </div>
@@ -464,7 +464,7 @@ export default function Home() {
       <section className="founders-section scroll-reveal" id="leadership">
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
-            <span className="label-brand color-pink" style={{ background: 'rgba(233, 30, 99, 0.08)', color: 'var(--playful-pink)' }}>Visionary Leadership</span>
+            <span className="label-brand color-pink" style={{ background: 'rgba(236, 196, 64, 0.08)', color: 'var(--playful-pink)' }}>Visionary Leadership</span>
             <h2>Meet Our <span className="highlight-pink text-pink-line">Founders & Mentors</span></h2>
           </div>
 
@@ -484,7 +484,7 @@ export default function Home() {
                 <h3>Mamatha M.C</h3>
                 <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Founder of SG Educations & Co-founder of Sarathi Groups</p>
                 <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>"Strongly believes in education that builds character alongside capabilities, cultivating willpower and persistent focus among young children."</p>
+                  <p>&quot;Strongly believes in education that builds character alongside capabilities, cultivating willpower and persistent focus among young children.&quot;</p>
                 </div>
               </div>
             </div>
@@ -504,7 +504,7 @@ export default function Home() {
                 <h3>Shashi Kiran K.N</h3>
                 <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor at SG Education & Visionary Leader</p>
                 <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>"A visionary leader with a deep commitment to social responsibility and national development, combining moral character with modern tools."</p>
+                  <p>&quot;A visionary leader with a deep commitment to social responsibility and national development, combining moral character with modern tools.&quot;</p>
                 </div>
               </div>
             </div>
@@ -530,7 +530,7 @@ export default function Home() {
 
         <div className="container" style={{ marginTop: '5rem', position: 'relative', zIndex: 10 }}>
           <div className="section-title text-white">
-            <span className="label-brand color-yellow" style={{ background: 'rgba(255, 195, 0, 0.15)', color: 'var(--joyful-yellow)' }}>Learning is an Adventure</span>
+            <span className="label-brand color-yellow" style={{ background: 'rgba(236, 196, 64, 0.15)', color: 'var(--joyful-yellow)' }}>Learning is an Adventure</span>
             <h2 className="text-white">Nurturing Young Minds - with <span className="text-orange">Love & Learning</span></h2>
             <p className="text-white-muted">Our holistic early education is securely anchored on four robust key pillars.</p>
           </div>
@@ -555,7 +555,7 @@ export default function Home() {
 
         <div className="wave-divider bottom">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,96C240,128,480,32,720,64C960,96,1200,32,1440,80L1440,120L0,120Z" fill="#E91E63"></path>
+            <path d="M0,96C240,128,480,32,720,64C960,96,1200,32,1440,80L1440,120L0,120Z" fill="#ECC440"></path>
           </svg>
         </div>
       </section>

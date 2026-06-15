@@ -2,11 +2,11 @@
 
 /* --- General Variables specific to Health Page --- */
 :root {
-  --health-primary: #00C853; /* Green */
-  --health-secondary: #00AEFF; /* Blue */
-  --health-accent: #FFC300; /* Yellow */
-  --health-pink: #FF2A7A;
-  --health-dark: #1D2A44;
+  --health-primary: #907010; /* Green */
+  --health-secondary: #000000; /* Navy */
+  --health-accent: #ECC440; /* Yellow */
+  --health-pink: #ECC440;
+  --health-dark: #000000;
 }
 
 .health-section-padding {

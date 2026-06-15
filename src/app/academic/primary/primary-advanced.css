@@ -2,8 +2,8 @@
 
 /* --- General Variables specific to Primary Page --- */
 :root {
-  --primary-accent: #00AEFF; /* SWS Blue */
-  --primary-dark: #1D2A44;
+  --primary-accent: #ECC440; /* Logo Magenta Pink */
+  --primary-dark: #000000;
   --primary-light: #F7FAFC;
   --primary-text: #4A5568;
   --primary-border-radius: 20px;
@@ -329,7 +329,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #C2FC85; /* Matching reference Vamtam theme */
+  background: #ECC440; /* Logo Golden Yellow */
   color: var(--primary-dark);
   font-weight: 700;
   font-size: 1.1rem;

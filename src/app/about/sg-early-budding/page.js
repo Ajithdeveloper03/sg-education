@@ -227,11 +227,11 @@ export default function SGEarlyBuddingPage() {
                 <h3>Corporate Culture <span className="acronym">(CPC)</span></h3>
                 <p className="culture-intro">Corporate Culture refers to the set of beliefs and behaviors that guide how a person can manage internet and handle external thing in a modern world.</p>
                 <ul className="culture-list" style={{ listStyleType: 'none', paddingLeft: 0 }}>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-comments" style={{color: '#00AEFF', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Communication</strong> </li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-book-open-reader" style={{color: '#00AEFF', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Usage of Vocabulary</strong> </li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-handshake-angle" style={{color: '#00AEFF', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Gesture</strong> </li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-users" style={{color: '#00AEFF', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>People Handling</strong> </li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-ear-listen" style={{color: '#00AEFF', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Active Listening</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-comments" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Communication</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-book-open-reader" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Usage of Vocabulary</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-handshake-angle" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Gesture</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-users" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>People Handling</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-ear-listen" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Active Listening</strong> </li>
                 </ul>
                 <div className="culture-card-bottom">
                   <div className="culture-highlight">
@@ -255,7 +255,7 @@ export default function SGEarlyBuddingPage() {
         <div className="container">
           
           <div className="eb-section-header" style={{ marginBottom: '3rem' }}>
-            <h2>Why Choose <span style={{ color: '#00AEFF' }}>SG Early Budding?</span></h2>
+            <h2>Why Choose <span style={{ color: '#ECC440' }}>SG Early Budding?</span></h2>
             <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '1rem', lineHeight: '1.8', maxWidth: '800px', margin: '1rem auto 0' }}>
               In parallel, we recognize the importance of preparing students for the professional world. Therefore, we are integrating essential modern corporate practices directly into our daily routines:
             </p>
