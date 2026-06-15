@@ -40,9 +40,9 @@ export default function Footer() {
           <div className="footer-col links-col">
             <h3>Quick Links</h3>
             <ul className="footer-links">
-              <li><Link href="/">Home Base</Link></li>
-              <li><Link href="/about">About Us</Link></li>
-              <li><Link href="/academic">Our Pillars</Link></li>
+              <li><Link href="/">Home</Link></li>
+              <li><Link href="/about/sg-early-budding">SG Early Budding</Link></li>
+              <li><Link href="/">Facilities</Link></li>
               <li><Link href="/gallery">Memory Clips</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>

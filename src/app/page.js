@@ -339,7 +339,7 @@ export default function Home() {
             {/* ==========================================
            2. HERO SECTION WITH ELEGANT MINIMAL DESIGN
            ========================================== */}
-      <section className="hero-section" id="hero">
+      <section className="hero-section" id="hero" style={{ padding: "1rem 0" }}>
         <video 
           src="/sg-education/kids.mp4" 
           autoPlay={true} 
@@ -365,7 +365,7 @@ export default function Home() {
             <h1 className="hero-title" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
               Welcome to <span className="text-yellow">SG Educations</span>
             </h1>
-            <p className="hero-subtitle" style={{ maxWidth: '800px', margin: '0 auto', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+            <p className="hero-subtitle" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
               SG Education, established in 2023 under Sarathi Groups, provides quality education by blending Bharath’s ancient culture with modern corporate culture. We nurture knowledgeable, disciplined, and future-ready individuals.Educate, Empower, Elevate. 
             </p>
           </div>
@@ -382,74 +382,81 @@ export default function Home() {
       {/* ==========================================
            3. ABOUT US SECTION ENHANCED
            ========================================== */}
-      <section className="section-padding about-section scroll-reveal" id="about" style={{ position: "relative", overflow: "hidden" }}>
+      <section className="about-section scroll-reveal" id="about" style={{ position: "relative", overflow: "hidden", padding: "1rem 0" }}>
         
         {/* Soft atmospheric gradient glows */}
         <div className="about-atmospheric-glow radial-yellow"></div>
         <div className="about-atmospheric-glow radial-pink"></div>
 
         <div className="container">
-          <div className="about-intro-split-grid">
+          <div className="about-intro-split-grid" style={{ gap: '3rem', marginBottom: '3rem', alignItems: 'center' }}>
 
-            {/* REF 2: STICKER COLLAGE */}
-            <div className="sticker-collage-container">
-              
-              {/* Main Portrait */}
-              <div className="sc-main-portrait hover-lift">
-                <img 
-                  src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=700&q=80" 
-                  alt="Portrait smiling" 
-                />
-              </div>
+            {/* LEFT COLUMN: Image Collage Only */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+              {/* REF 2: STICKER COLLAGE */}
+              <div className="sticker-collage-container">
+                
+                {/* Main Portrait */}
+                <div className="sc-main-portrait hover-lift">
+                  <img 
+                    src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=700&q=80" 
+                    alt="Portrait smiling" 
+                  />
+                </div>
 
-              {/* Floating Elements */}
-              <div className="sc-float-card sc-left-card float-anim-1">
-                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=300&q=80" alt="Activity" />
-              </div>
+                {/* Floating Elements */}
+                <div className="sc-float-card sc-left-card float-anim-1">
+                  <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=300&q=80" alt="Activity" />
+                </div>
 
-              <div className="sc-float-card sc-right-card float-anim-2">
-                <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=300&q=80" alt="Outdoors" />
-              </div>
+                <div className="sc-float-card sc-right-card float-anim-2">
+                  <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=300&q=80" alt="Outdoors" />
+                </div>
 
-              {/* Stickers */}
-              <div className="sc-sticker sc-heart float-anim-3">💖</div>
-              <div className="sc-sticker sc-cupcake float-anim-2">🧁</div>
-              
-              <div className="sc-text-sticker float-anim-1">
-                <span className="sc-text-line1">Stay</span>
-                <span className="sc-text-line2">Positive</span>
+                {/* Stickers */}
+                <div className="sc-sticker sc-heart float-anim-3">💖</div>
+                <div className="sc-sticker sc-cupcake float-anim-2">🧁</div>
+                
+                <div className="sc-text-sticker float-anim-1">
+                  <span className="sc-text-line1">Stay</span>
+                  <span className="sc-text-line2">Positive</span>
+                </div>
               </div>
             </div>
 
-            {/* Content Details */}
-            <div className="about-details-content">
-              <span className="label-brand color-blue">Welcome to SG Educations</span>
-              <h2 className="about-main-title">
-                Blending <span className="highlight-text-gradient">Ancient Wisdom</span> with Modern Corporate Excellence
-              </h2>
-              <p className="about-lead-text">
-                Established in July 2023, we aim to nurture individuals with knowledge, discipline, and leadership qualities.
-              </p>
+            {/* RIGHT COLUMN: Text, Feature Boxes, Button */}
+            <div className="about-details-content" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', height: '100%', justifyContent: 'center' }}>
+              <div>
+                <span className="label-brand color-blue">Welcome to SG Educations</span>
+                <h2 className="about-main-title">
+                  Blending <span className="highlight-text-gradient">Ancient Culture </span> with Modern Corporate Culture
+                </h2>
+                <p className="about-lead-text">
+                  Sarathi Groups is a successful organization contributing to economic growth through professional services.SG Education established in 2023, aims to provide quality education by combining traditional Bharath’s ancient culture with modern corporate culture learning standards. Through SG Early Budding in Hosur, it focuses on building strong foundations for young learners and shaping  future leaders with knowledge, discipline, and leadership skills.
+                </p>
+              </div>
 
-              {/* Feature Highlights Grid */}
-              <div className="about-premium-highlights">
+              {/* Both Feature Boxes */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', marginTop: '0.5rem' }}>
                 <div className="highlight-row">
                   <div className="h-icon blue"><i className="fa-solid fa-om"></i></div>
                   <div className="h-info">
-                    <h4>Ancient Bharath Values</h4>
+                    <h4>Ancient Culture </h4>
                     <p>Fostering respect and cultural traditions.</p>
                   </div>
                 </div>
+
                 <div className="highlight-row">
                   <div className="h-icon pink"><i className="fa-solid fa-building"></i></div>
                   <div className="h-info">
-                    <h4>Corporate Standards</h4>
+                    <h4>Corporate Culture</h4>
                     <p>Preparing young minds for future excellence.</p>
                   </div>
                 </div>
               </div>
 
-              <div style={{ marginTop: '3rem' }}>
+              {/* CENTERED BUTTON BENEATH BOXES */}
+              <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '1.5rem' }}>
                 <a href="#admissions" className="btn btn-orange">Online Admission <i className="fa-solid fa-arrow-right" style={{ marginLeft: '8px' }}></i></a>
               </div>
             </div>
@@ -461,7 +468,7 @@ export default function Home() {
       {/* ==========================================
            3.5 VISIONARY FOUNDERS & LEADERSHIP
            ========================================== */}
-      <section className="founders-section scroll-reveal" id="leadership">
+      <section className="founders-section scroll-reveal" id="leadership" style={{ padding: "1rem 0" }}>
         <div className="container">
           <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
             <span className="label-brand color-pink" style={{ background: 'rgba(236, 196, 64, 0.08)', color: 'var(--playful-pink)' }}>Visionary Leadership</span>
@@ -484,7 +491,7 @@ export default function Home() {
                 <h3>Mamatha M.C</h3>
                 <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Founder of SG Educations & Co-founder of Sarathi Groups</p>
                 <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;Strongly believes in education that builds character alongside capabilities, cultivating willpower and persistent focus among young children.&quot;</p>
+                  <p>&quot;She is the Founder of SG Education and the Co-Founder of Sarathi Groups. She also serves as the Managing Director of SGNL and SG Health & Care, Director of SG Builders Pvt. Ltd., and Vice President of NSR Social Welfare Trust.&quot;</p>
                 </div>
               </div>
             </div>
@@ -504,7 +511,7 @@ export default function Home() {
                 <h3>Shashi Kiran K.N</h3>
                 <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor at SG Education & Visionary Leader</p>
                 <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;A visionary leader with a deep commitment to social responsibility and national development, combining moral character with modern tools.&quot;</p>
+                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished leader, entrepreneur, and visionary. He is committed to education, social welfare, and national development, inspiring individuals through his leadership and dedication to creating a positive impact on society.&quot;</p>
                 </div>
               </div>
             </div>
@@ -515,7 +522,7 @@ export default function Home() {
       {/* ==========================================
            4. SYSTEM PILLARS SECTION (DARK INDIGO - SCREENSHOT 4 ALIGNMENT)
            ========================================== */}
-      <section className="pedagogy-section section-padding dark-navy-bg scroll-reveal" id="pedagogy" style={{ position: "relative" }}>
+      <section className="pedagogy-section dark-navy-bg scroll-reveal" id="pedagogy" style={{ position: "relative", padding: "1rem 0" }}>
         <div className="wave-divider top">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <path d="M0,32C240,64,480,0,720,32C960,64,1200,0,1440,32L1440,0L0,0Z" fill="#FFF5E6"></path>
@@ -529,9 +536,9 @@ export default function Home() {
         <LightningDoodle style={{ bottom: '15%', left: '12%' }} />
 
         <div className="container" style={{ marginTop: '5rem', position: 'relative', zIndex: 10 }}>
-          <div className="section-title text-white">
+          <div className="section-title text-white" style={{ marginBottom: '1rem' }}>
             <span className="label-brand color-yellow" style={{ background: 'rgba(236, 196, 64, 0.15)', color: 'var(--joyful-yellow)' }}>Learning is an Adventure</span>
-            <h2 className="text-white">Nurturing Young Minds - with <span className="text-orange">Love & Learning</span></h2>
+            <h2 className="text-white" style={{ fontSize: '1.8rem' }}>Nurturing Young Minds - with <span className="text-orange">Love & Learning</span></h2>
             <p className="text-white-muted">Our holistic early education is securely anchored on four robust key pillars.</p>
           </div>
 
@@ -555,7 +562,7 @@ export default function Home() {
 
         <div className="wave-divider bottom">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-            <path d="M0,96C240,128,480,32,720,64C960,96,1200,32,1440,80L1440,120L0,120Z" fill="#ECC440"></path>
+            <path d="M0,96C240,128,480,32,720,64C960,96,1200,32,1440,80L1440,120L0,120Z" fill="#E91E63"></path>
           </svg>
         </div>
       </section>
@@ -563,27 +570,31 @@ export default function Home() {
       {/* ==========================================
            4.5 VIDEO SECTION (REF 2)
            ========================================== */}
-      <section className="video-section scroll-reveal" id="video-section" style={{ position: 'relative', overflow: 'hidden' }}>
+      <section className="video-section scroll-reveal" id="video-section" style={{ position: 'relative', overflow: 'hidden', padding: '1rem 0' }}>
         
-        <div className="container video-section-container">
-          <div className="vs-video-thumb hover-lift">
-            <img src="https://images.pexels.com/photos/31864391/pexels-photo-31864391.jpeg" alt="Video thumbnail" />
-            <div className="vs-play-btn"><i className="fa-solid fa-play"></i></div>
-          </div>
-          <div className="vs-content">
-            <div className="vs-doodle bee"><i className="fa-solid fa-bug"></i></div>
-            <div className="vs-doodle hands"><i className="fa-solid fa-hands-clapping"></i></div>
-            
-            <div className="vs-badge">
-              <i className="fa-solid fa-brain"></i> Mental Health Growth
+        <div className="container">
+          <div className="video-section-container" style={{ padding: '4rem 0 4rem 0', gap: '2rem' }}>
+            <div className="vs-video-thumb hover-lift">
+              <img src="https://images.pexels.com/photos/31864391/pexels-photo-31864391.jpeg" alt="Video thumbnail" />
+              <div className="vs-play-btn"><i className="fa-solid fa-play"></i></div>
             </div>
-            <h2 className="vs-title">Solve Problem And Learn More</h2>
-            <p className="vs-desc">
-              Merging ancient Bharath wisdom with modern learning techniques to foster mental resilience and logical problem-solving.
-            </p>
-            <a href="#admissions" className="vs-btn">Watch More Videos</a>
-            
-            <div className="vs-doodle bike"><i className="fa-solid fa-bicycle"></i></div>
+            <div className="vs-content">
+              <div className="vs-doodle bee"><i className="fa-solid fa-bug"></i></div>
+              <div className="vs-doodle hands"><i className="fa-solid fa-hands-clapping"></i></div>
+              
+              <div className="vs-badge">
+                <i className="fa-solid fa-brain"></i>Educate – Empower – Elevate
+              </div>
+              <h2 className="vs-title"></h2>
+              <p className="vs-desc">
+                We provide quality education that builds strong knowledge, values, and lifelong learning habits.We nurture confidence, leadership, communication, and practical skills to prepare students for real-world challenges.We inspire students to achieve their full potential and grow into responsible, successful, and future-ready individuals.
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem', position: 'relative', zIndex: 20 }}>
+                <a href="#admissions" className="vs-btn">join us now</a>
+              </div>
+              
+              <div className="vs-doodle bike"><i className="fa-solid fa-bicycle"></i></div>
+            </div>
           </div>
         </div>
 
@@ -598,7 +609,7 @@ export default function Home() {
       {/* ==========================================
            5. PARENTS TESTIMONIALS SLIDER (SCREENSHOT 2 SPEECH BUBBLE AVATAR TOP)
            ========================================== */}
-      <section className="testimonials-section section-padding scroll-reveal" style={{ position: "relative" }}>
+      <section className="testimonials-section scroll-reveal" style={{ position: "relative", padding: "1rem 0" }}>
         <div className="bg-mesh-glow glow-pink" style={{ top: '15%', right: '10%' }}></div>
         <div className="bg-mesh-glow glow-purple" style={{ bottom: '15%', left: '5%' }}></div>
 
@@ -609,12 +620,12 @@ export default function Home() {
         <LightbulbDoodle style={{ bottom: '30%', right: '8%' }} />
 
         <div className="container">
-          <div className="section-title">
+          <div className="section-title" style={{ marginBottom: '1rem' }}>
             <span className="label-brand color-orange">Our Testimonials</span>
-            <h2>Read & <span className="highlight-orange text-orange-line">Student&apos;s Parent</span> Testimonials</h2>
+            <h2 style={{ fontSize: '1.8rem' }}>Read & <span className="highlight-orange text-orange-line">Student&apos;s Parent</span> Testimonials</h2>
           </div>
 
-          <div className="testimonial-slider-container">
+          <div className="testimonial-slider-container" style={{ marginTop: '0' }}>
             <div className="testimonial-carousel-row">
 
               {/* Left purple navigation arrow gutter */}
@@ -724,11 +735,11 @@ export default function Home() {
       {/* ==========================================
            6. GALLERY SECTION (REFERENCE 1 EXACT LAYOUT)
            ========================================== */}
-      <section className="gallery-section section-padding" id="gallery" style={{ backgroundColor: '#FAF9F5', position: 'relative', zIndex: 10 }}>
+      <section className="gallery-section" id="gallery" style={{ backgroundColor: '#FAF9F5', position: 'relative', zIndex: 10, padding: '1rem 0' }}>
         <div className="container">
-          <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
+          <div className="section-title text-center" style={{ marginBottom: '1rem' }}>
             <span className="label-brand color-blue">Discover the Magic</span>
-            <h2 style={{ color: '#111', fontSize: '3.5rem', fontWeight: '800' }}>
+            <h2 style={{ color: '#111', fontSize: '1.8rem', fontWeight: '800' }}>
               SG Early Budding <br/>
               <span style={{ color: 'var(--playful-pink)' }}>Moments</span>
             </h2>
@@ -772,7 +783,7 @@ export default function Home() {
       {/* ==========================================
            7. ADMISSIONS ENROLLMENT FORM
            ========================================== */}
-      <section className="admissions-section section-padding scroll-reveal" id="admissions" style={{ position: "relative" }}>
+      <section className="admissions-section scroll-reveal" id="admissions" style={{ position: "relative", padding: "1rem 0" }}>
         <div className="wave-divider top">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <path d="M0,32C240,64,480,0,720,32C960,64,1200,0,1440,32L1440,0L0,0Z" fill="#FAF8F0"></path>
@@ -785,9 +796,9 @@ export default function Home() {
         <HeartDoodle style={{ top: '25%', right: '5%' }} />
         <SunDoodle style={{ bottom: '25%', left: '12%' }} />
 
-        <div className="container admissions-grid" style={{ marginTop: '6rem' }}>
+        <div className="container admissions-grid" style={{ marginTop: '2rem' }}>
 
-          <div className="admit-info">
+          <div className="admit-info" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
             <span className="label-brand color-blue">Secure A Seat</span>
             <h2>Sow the Seeds of a <span className="highlight-blue text-blue-line">Brighter Future</span></h2>
             <p className="admit-intro-p">
