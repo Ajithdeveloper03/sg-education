@@ -256,49 +256,57 @@ export default function SGEarlyBuddingPage() {
           
           <div className="eb-section-header" style={{ marginBottom: '3rem' }}>
             <h2>Why Choose <span style={{ color: '#ECC440' }}>SG Early Budding?</span></h2>
-            <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '1rem', lineHeight: '1.8', maxWidth: '800px', margin: '1rem auto 0' }}>
-              In parallel, we recognize the importance of preparing students for the professional world. Therefore, we are integrating essential modern corporate practices directly into our daily routines:
-            </p>
+            <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '1rem', lineHeight: '1.8', maxWidth: '800px', margin: '1rem auto 0', textAlign: 'center' }}>
+              The integration of ancient Bharath culture with corporate culture offers a balanced framework for developing individuals who are not only efficient but also grounded in strong ethical and cultural values. This fusion can nurture qualities such as discipline, respect, responsibility, and holistic thinking in students, enabling them to stand out both personally and professionally.</p>
           </div>
 
           <div className="eb-asym-grid">
             
             <div className="eb-highlight-box">
-              <h3><i className="fa-solid fa-star"></i> Sowing the Seeds of Success in Every Child</h3>
-              <p style={{ color: '#fff' }}>
-At SG Early Budding, we nurture young learners to become confident, knowledgeable, and culturally rooted individuals. Our mission is to provide a strong foundation through enriching early education that inspires curiosity, creativity, and lifelong learning. With dedicated educators and a focus on holistic development, we help every child grow, thrive, and reach their full potential.           </p> </div>
+              <h3><i className="fa-solid fa-star"></i> One Day One Good Thing</h3>
+              <p style={{ color: '#fff', textAlign: 'justify', marginBottom: '2rem' }}>
+We believe that small habits shape great individuals. Our unique approach, "One Day, One Good Thing," is designed to instill positive values, discipline, and essential life skills in children from an early age. Each day, our children learn one simple yet impactful habit that contributes to their personal growth, social awareness, and overall well-being. These habits help them develop a strong character, responsibility, and respect for others, forming the foundation of a successful life.</p>
+              <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Children learning positive habits" className="eb-highlight-img" />
+            </div>
 
             <div>
               <div className="eb-horizontal-cards-container">
                 <div className="eb-horizontal-card eb-hc-pink">
                   <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=400&q=80" alt="Project-Based Learning" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
-                    <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-book-open" style={{ color: 'var(--playful-pink)' }}></i> Project-Based Learning</h4>
-                    <p className="eb-horizontal-card-desc">Learn by doing through hands-on projects that encourage creativity and teamwork.</p>
+                    <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-book-open" style={{ color: 'var(--playful-pink)' }}></i> Holistic Development</h4>
+                    <p className="eb-horizontal-card-desc">Ancient Bharath culture emphasizes moral values, community living, and self-discipline, which complements the corporate focus on professionalism, leadership and teamwork.</p>
                   </div>
                 </div>
 
                 <div className="eb-horizontal-card eb-hc-blue">
                   <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Leadership & Communication" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
-                    <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-comments" style={{ color: 'var(--sky-blue)' }}></i> Leadership & Communication Skills</h4>
-                    <p className="eb-horizontal-card-desc">Build confidence and communication skills through collaborative activities.</p>
+                    <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-comments" style={{ color: 'var(--sky-blue)' }}></i> Ethical Leadership</h4>
+                    <p className="eb-horizontal-card-desc">The spiritual and philosophical teachings of Bharath culture help individuals develop mental resilience and adaptability—qualities essential in the ever-evolving corporate world.</p>
                   </div>
                 </div>
 
                 <div className="eb-horizontal-card eb-hc-green">
                   <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=400&q=80" alt="Time Management" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
-                    <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-clock" style={{ color: 'var(--lime-green)' }}></i> Time Management & Professionalism</h4>
-                    <p className="eb-horizontal-card-desc">Develop responsibility, discipline, and organizational skills for success.</p>
+                    <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-clock" style={{ color: 'var(--lime-green)' }}></i> Adaptability and Resilience</h4>
+                    <p className="eb-horizontal-card-desc">The spiritual and philosophical teachings of Bharath culture help individuals develop mental resilience and adaptability—qualities essential in the ever-evolving corporate world.</p>
                   </div>
                 </div>
 
                 <div className="eb-horizontal-card eb-hc-orange">
                   <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80" alt="Technology Integration" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
-                    <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-laptop" style={{ color: 'var(--kidza-orange)' }}></i> Technology Integration</h4>
-                    <p className="eb-horizontal-card-desc">Explore digital tools and technology to enhance learning and future readiness. 🌱✨</p>
+                    <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-laptop" style={{ color: 'var(--kidza-orange)' }}></i> Purpose-Driven Life</h4>
+                    <p className="eb-horizontal-card-desc">Bharath’s rich heritage instills a sense of purpose beyond material success, motivating individuals to contribute positively to society while excelling in their careers.🌱✨</p>
+                  </div>
+                </div>
+                 <div className="eb-horizontal-card eb-hc-blue">
+                  <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Leadership & Communication" className="eb-horizontal-card-img" />
+                  <div className="eb-horizontal-card-content">
+                    <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-comments" style={{ color: 'var(--sky-blue)' }}></i> Strong Work Ethic and Dedication</h4>
+                    <p className="eb-horizontal-card-desc">The disciplined lifestyle promoted by ancient traditions translates into a strong work ethic and a sense of dedication in professional settings.</p>
                   </div>
                 </div>
               </div>
@@ -336,13 +344,7 @@ At SG Early Budding, we nurture young learners to become confident, knowledgeabl
                 </div>
               </div>
               <div className="eb-party-card-body">
-                <ul className="eb-party-list" style={{ listStyleType: 'none', paddingLeft: 0 }}>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-star" style={{color: 'var(--playful-pink)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Holistic learning experience</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-seedling" style={{color: 'var(--playful-pink)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Nurturing young minds</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-brain" style={{color: 'var(--playful-pink)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Intellectual development</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-heart" style={{color: 'var(--playful-pink)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Emotional & Social growth</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-child-reaching" style={{color: 'var(--playful-pink)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Physical development</li>
-                </ul>
+                <p>Our approach to early childhood education is centered around a holistic learning experience that nurtures a child's intellectual, emotional, social, and physical development. We focus on creating a stimulating, safe, and culturally enriching environment where children can explore, learn, and grow with confidence. Our teachers create a sup</p>
                 <div className="eb-party-action">
                   <button className="eb-party-btn">Read More</button>
                 </div>
@@ -360,13 +362,7 @@ At SG Early Budding, we nurture young learners to become confident, knowledgeabl
                 </div>
               </div>
               <div className="eb-party-card-body">
-                <ul className="eb-party-list" style={{ listStyleType: 'none', paddingLeft: 0 }}>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-compass-drafting" style={{color: 'var(--kidza-orange)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Comprehensive design</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-children" style={{color: 'var(--kidza-orange)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Child-centric focus</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-dharmachakra" style={{color: 'var(--kidza-orange)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Traditional values</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-laptop-code" style={{color: 'var(--kidza-orange)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Modern methodologies</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-arrow-trend-up" style={{color: 'var(--kidza-orange)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Well-rounded growth</li>
-                </ul>
+                <p>We have designed a comprehensive and child-centric curriculum that blends traditional values with modern education methodologies. Our approach ensures a well-rounded development of children by focusing on intellectual, emotional, physical, social, and cultural growth.  We focus on create a strong foundation for lifelong learning, ensurin </p>
                 <div className="eb-party-action">
                   <button className="eb-party-btn">Read More</button>
                 </div>
@@ -384,13 +380,7 @@ At SG Early Budding, we nurture young learners to become confident, knowledgeabl
                 </div>
               </div>
               <div className="eb-party-card-body">
-                <ul className="eb-party-list" style={{ listStyleType: 'none', paddingLeft: 0 }}>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-heart-pulse" style={{color: 'var(--lime-green)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Heart of our environment</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-lightbulb" style={{color: 'var(--lime-green)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Inspiring great teachers</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-compass" style={{color: 'var(--lime-green)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Guiding young minds</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-leaf" style={{color: 'var(--lime-green)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Nurturing environment</li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-stairs" style={{color: 'var(--lime-green)', marginRight: '10px', width: '20px', textAlign: 'center'}}></i>Foundation for success</li>
-                </ul>
+               <p>Our teachers are the heart and soul of our learning environment. We believe that a great teacher inspires, guides, and nurtures young minds, laying the foundation for a child's lifelong success. Our educators are more than just teachers; they are mentors, caregivers, and role models who bring passion and dedication to every child’s growth. </p>
                 <div className="eb-party-action">
                   <button className="eb-party-btn">Read More</button>
                 </div>

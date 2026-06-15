@@ -146,7 +146,7 @@ export default function SchoolMottoPage() {
                 <i className="fa-solid fa-users"></i>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                <h4 style={{ fontSize: '1.1rem', color: '#000000', fontWeight: '700', marginBottom: '0.3rem' }}>CoEducate</h4>
+                <h4 style={{ fontSize: '1.1rem', color: '#000000', fontWeight: '700', marginBottom: '0.3rem' }}>Educate</h4>
                 <p style={{ fontSize: '0.85rem', color: '#666', lineHeight: '1.4', margin: '0' }}>
                   Collaborative learning uniting teachers, students, and parents.
                 </p>

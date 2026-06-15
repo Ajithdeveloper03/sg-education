@@ -522,7 +522,7 @@ export default function Home() {
       {/* ==========================================
            4. SYSTEM PILLARS SECTION (DARK INDIGO - SCREENSHOT 4 ALIGNMENT)
            ========================================== */}
-      <section className="pedagogy-section dark-navy-bg scroll-reveal" id="pedagogy" style={{ position: "relative", padding: "1rem 0" }}>
+      <section className="pedagogy-section dark-navy-bg" id="pedagogy" style={{ position: "relative", padding: "1rem 0" }}>
         <div className="wave-divider top">
           <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
             <path d="M0,32C240,64,480,0,720,32C960,64,1200,0,1440,32L1440,0L0,0Z" fill="#FFF5E6"></path>
@@ -536,7 +536,7 @@ export default function Home() {
         <LightningDoodle style={{ bottom: '15%', left: '12%' }} />
 
         <div className="container" style={{ marginTop: '5rem', position: 'relative', zIndex: 10 }}>
-          <div className="section-title text-white" style={{ marginBottom: '1rem' }}>
+          <div className="section-title text-white scroll-reveal" style={{ marginBottom: '1rem' }}>
             <span className="label-brand color-yellow" style={{ background: 'rgba(236, 196, 64, 0.15)', color: 'var(--joyful-yellow)' }}>Learning is an Adventure</span>
             <h2 className="text-white" style={{ fontSize: '1.8rem' }}>Nurturing Young Minds - with <span className="text-orange">Love & Learning</span></h2>
             <p className="text-white-muted">Our holistic early education is securely anchored on four robust key pillars.</p>
