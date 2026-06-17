@@ -182,8 +182,7 @@ export default function Home() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  const founder1Ref = useRef(null);
-  const founder2Ref = useRef(null);
+
   const pinWrapperRef = useRef(null);
   const aboutImageRef = useRef(null);
 
@@ -231,22 +230,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  // Holographic 3D tilt effect on hover
-  const handleMouseMoveTilt = (e, ref) => {
-    if (typeof window !== "undefined" && window.innerWidth <= 768) return;
-    if (!ref.current) return;
-    const { left, top, width, height } = ref.current.getBoundingClientRect();
-    const x = (e.clientX - left) / width;
-    const y = (e.clientY - top) / height;
-    const tiltX = (y - 0.5) * -15; // Max 15 degree X rotation
-    const tiltY = (x - 0.5) * 15;  // Max 15 degree Y rotation
-    ref.current.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.03, 1.03, 1.03)`;
-  };
-  
-  const handleMouseLeaveTilt = (ref) => {
-    if (!ref.current) return;
-    ref.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-  };
+
 
   const handleMouseMoveTiltEvent = (e) => {
     if (typeof window !== "undefined" && window.innerWidth <= 768) return;
@@ -366,7 +350,7 @@ export default function Home() {
               Welcome to <span className="text-yellow">SG Educations</span>
             </h1>
             <p className="hero-subtitle" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-              SG Education, established in 2023 under Sarathi Groups, provides quality education by blending Bharath’s ancient culture with modern corporate culture. We nurture knowledgeable, disciplined, and future-ready individuals.Educate, Empower, Elevate. 
+              SG Education, established in 2023 under Sarathi Groups, provides quality education by blending Ancient Bharath’s Culture with Corporate Culture. We nurture knowledgeable, disciplined, and future-ready individuals.Educate, Empower, Elevate. 
             </p>
           </div>
         </div>
@@ -429,10 +413,10 @@ export default function Home() {
               <div>
                 <span className="label-brand color-blue">Welcome to SG Educations</span>
                 <h2 className="about-main-title">
-                  Blending <span className="highlight-text-gradient">Ancient Culture </span> with Modern Corporate Culture
+                  Blending <span className="highlight-text-gradient">Ancient Bharath’s Culture </span> with Corporate Culture
                 </h2>
                 <p className="about-lead-text">
-                  Sarathi Groups is a successful organization contributing to economic growth through professional services.SG Education established in 2023, aims to provide quality education by combining traditional Bharath’s ancient culture with modern corporate culture learning standards. Through SG Early Budding in Hosur, it focuses on building strong foundations for young learners and shaping  future leaders with knowledge, discipline, and leadership skills.
+                  Sarathi Groups is a successful organization contributing to economic growth through professional services.SG Education established in 2023, aims to provide quality education by combining traditional Ancient Bharath’s Culture with Corporate Culture learning standards. Through SG Early Budding in Hosur, it focuses on building strong foundations for young learners and shaping  future leaders with knowledge, discipline, and leadership skills.
                 </p>
               </div>
 
@@ -441,7 +425,7 @@ export default function Home() {
                 <div className="highlight-row">
                   <div className="h-icon blue"><i className="fa-solid fa-om"></i></div>
                   <div className="h-info">
-                    <h4>Ancient Culture </h4>
+                    <h4>Ancient Bharath’s Culture </h4>
                     <p>Fostering respect and cultural traditions.</p>
                   </div>
                 </div>
@@ -465,59 +449,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ==========================================
-           3.5 VISIONARY FOUNDERS & LEADERSHIP
-           ========================================== */}
-      <section className="founders-section scroll-reveal" id="leadership" style={{ padding: "1rem 0" }}>
-        <div className="container">
-          <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
-            <span className="label-brand color-pink" style={{ background: 'rgba(236, 196, 64, 0.08)', color: 'var(--playful-pink)' }}>Visionary Leadership</span>
-            <h2>Meet Our <span className="highlight-pink text-pink-line">Founders & Mentors</span></h2>
-          </div>
 
-          <div className="founders-grid" style={{ margin: '0 auto' }}>
-            {/* Founder 1 */}
-            <div 
-              ref={founder1Ref}
-              className="founder-card-3d main-founder-theme"
-              onMouseMove={(e) => handleMouseMoveTilt(e, founder1Ref)}
-              onMouseLeave={() => handleMouseLeaveTilt(founder1Ref)}
-            >
-              <div className="founder-img-wrapper-3d">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Founder Mamatha M.C" />
-                <span className="founder-role-badge">Founder</span>
-              </div>
-              <div className="founder-info-3d">
-                <h3>Mamatha M.C</h3>
-                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Founder of SG Educations & Co-founder of Sarathi Groups</p>
-                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;She is the Founder of SG Education and the Co-Founder of Sarathi Groups. She also serves as the Managing Director of SGNL and SG Health & Care, Director of SG Builders Pvt. Ltd., and Vice President of NSR Social Welfare Trust.&quot;</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Founder 2 */}
-            <div 
-              ref={founder2Ref}
-              className="founder-card-3d sub-founder-theme"
-              onMouseMove={(e) => handleMouseMoveTilt(e, founder2Ref)}
-              onMouseLeave={() => handleMouseLeaveTilt(founder2Ref)}
-            >
-              <div className="founder-img-wrapper-3d">
-                <img src="/sg-education/mentor.png" alt="Mentor Shashi Kiran" />
-                <span className="founder-role-badge">Mentor</span>
-              </div>
-              <div className="founder-info-3d">
-                <h3>Shashi Kiran K.N</h3>
-                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor at SG Education & Visionary Leader</p>
-                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished leader, entrepreneur, and visionary. He is committed to education, social welfare, and national development, inspiring individuals through his leadership and dedication to creating a positive impact on society.&quot;</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ==========================================
            4. SYSTEM PILLARS SECTION (DARK INDIGO - SCREENSHOT 4 ALIGNMENT)

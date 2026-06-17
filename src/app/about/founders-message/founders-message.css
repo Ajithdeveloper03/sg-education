@@ -548,11 +548,9 @@
   }
 
   .fm-leadership-left-card {
-    min-height: 250px;
+    min-height: 350px;
     padding: 3rem 2rem;
     border-radius: 30px;
-    border-bottom-left-radius: 120px;
-    border-bottom-right-radius: 120px;
   }
 }
 
@@ -609,9 +607,18 @@
 
   /* Leadership Grid Scale Down */
   .fm-leadership-list-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    padding: 0.5rem 0;
+  }
+  
+  .fm-leadership-left-card {
+    min-height: 350px;
+  }
+
+  .fm-leadership-left-card::before {
+    display: none;
   }
 
   /* Impact Images Stack */

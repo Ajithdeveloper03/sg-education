@@ -27,9 +27,17 @@ export default function Footer() {
               <img src="/sg-education/logo.webp" alt="SG Education Logo" />
               <span className="logo-text">SG Education</span>
             </Link>
-            <p className="footer-about-text">
-              CoEducate · Empower · Elevate! Nurturing clear conscience, strong bodies, and values since July 2023.
+            <p className="footer-about-text" style={{ marginBottom: '1.5rem' }}>
+              Educate · Empower · Elevate! Nurturing clear conscience, strong bodies, and values since Jun 2023.
             </p>
+            <div className="footer-contact-info" style={{ marginBottom: '1.5rem' }}>
+              <p style={{ margin: '0 0 8px 0', fontSize: '0.95rem', color: '#555', display: 'flex', alignItems: 'center' }}>
+                <i className="fa-solid fa-envelope" style={{ marginRight: '10px', color: '#E95D2A', fontSize: '1.1rem' }}></i> support@sgeducations.com
+              </p>
+              <p style={{ margin: 0, fontSize: '0.95rem', color: '#555', display: 'flex', alignItems: 'center' }}>
+                <i className="fa-solid fa-phone" style={{ marginRight: '10px', color: '#E95D2A', fontSize: '1.1rem' }}></i> +91 73394 75210
+              </p>
+            </div>
             <div className="social-icons">
               <a href="#" className="soc-btn" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
               <a href="#" className="soc-btn" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
@@ -49,15 +57,20 @@ export default function Footer() {
           </div>
 
           <div className="footer-col contact-col">
-            <h3>Email us</h3>
-            <div className="contact-row">
-              <div className="c-icon"><i className="fa-solid fa-envelope"></i></div>
-              <p className="footer-contact-p">support@sgeducations.com</p>
+            <h3>Location</h3>
+            <div className="contact-row" style={{ alignItems: 'flex-start', marginBottom: '1rem' }}>
+              <div className="c-icon" style={{ marginTop: '4px' }}><i className="fa-solid fa-map-location-dot"></i></div>
+              <div>
+                <strong style={{ display: 'block', color: '#1D2A44', marginBottom: '4px', fontSize: '0.9rem' }}>SG Education</strong>
+                <p className="footer-contact-p" style={{ margin: 0 }}>Flat no. D337, near Nanthavanam, Gokul Nagar, Agraharam, Hosur, Tamil Nadu - 635109</p>
+              </div>
             </div>
-            <h3 style={{ marginTop: '2rem' }}>Location</h3>
-            <div className="contact-row">
-              <div className="c-icon"><i className="fa-solid fa-map-location-dot"></i></div>
-              <p className="footer-contact-p">Flat no. D337, near Nanthavanam, Gokul Nagar, Agraharam, Hosur, Tamil Nadu - 635109</p>
+            <div className="contact-row" style={{ alignItems: 'flex-start' }}>
+              <div className="c-icon" style={{ marginTop: '4px' }}><i className="fa-solid fa-map-location-dot"></i></div>
+              <div>
+                <strong style={{ display: 'block', color: '#1D2A44', marginBottom: '4px', fontSize: '0.9rem' }}>SG Early Budding</strong>
+                <p className="footer-contact-p" style={{ margin: 0 }}>Flat no. D337, near Nanthavanam, Gokul Nagar, Agraharam, Hosur, Tamil Nadu - 635109</p>
+              </div>
             </div>
           </div>
         </div>

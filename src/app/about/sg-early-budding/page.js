@@ -31,7 +31,7 @@ export default function SGEarlyBuddingPage() {
       number: "02",
       title: "Traditional Customs",
       icon: "fa-om",
-      image: "https://images.unsplash.com/photo-1604313049589-3221941655b3?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&w=800&q=80",
       content: {
         badge: "Pillar 02",
         heading: "Preserving Our Rich Heritage",
@@ -123,9 +123,7 @@ export default function SGEarlyBuddingPage() {
         <div className="container">
           <div className="eb-section-header" style={{ marginBottom: '2rem' }}>
             <h2>About <span style={{ color: 'var(--playful-pink)' }}>SG Early Budding</span></h2>
-            <p style={{ color: 'var(--neutral-dark)', fontSize: '1.1rem', marginTop: '1rem', lineHeight: '1.8', maxWidth: '800px', margin: '1rem auto 1.5rem' }}>
-              At <strong>SG Early Budding</strong>, we believe in nurturing young minds with a balanced approach that integrates traditional values, modern learning techniques, creativity, and essential life skills.
-            </p>
+            
             
           </div>
 
@@ -186,7 +184,7 @@ export default function SGEarlyBuddingPage() {
         <div className="container">
           <div className="eb-section-header">
             <h2>Our <span style={{ color: '#E95D2A' }}>Unique Approach</span></h2>
-            <p style={{ color: '#666', fontSize: '1.1rem', maxWidth: '800px', margin: '1rem auto 0' }}>
+            <p style={{ color: '#666', fontSize: '1.1rem', maxWidth: '800px', margin: '1rem auto 0', textAlign: 'center' }}>
               SG Education integrates the profound wisdom of Ancient Bharath Culture with the dynamic skills of Corporate Culture to nurture well-rounded, future-ready individuals.
             </p>
           </div>
@@ -255,9 +253,9 @@ export default function SGEarlyBuddingPage() {
         <div className="container">
           
           <div className="eb-section-header" style={{ marginBottom: '3rem' }}>
-            <h2>Why Choose <span style={{ color: '#ECC440' }}>SG Early Budding?</span></h2>
+            <h2 style={{ fontSize: '2rem' }}>Why Choose <span style={{ color: '#ECC440' }}>SG Early Budding?</span></h2>
             <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '1rem', lineHeight: '1.8', maxWidth: '800px', margin: '1rem auto 0', textAlign: 'center' }}>
-              The integration of ancient Bharath culture with corporate culture offers a balanced framework for developing individuals who are not only efficient but also grounded in strong ethical and cultural values. This fusion can nurture qualities such as discipline, respect, responsibility, and holistic thinking in students, enabling them to stand out both personally and professionally.</p>
+              The integration of Ancient Bharath’s Culture with Corporate Culture offers a balanced framework for developing individuals who are not only efficient but also grounded in strong ethical and cultural values. This fusion can nurture qualities such as discipline, respect, responsibility, and holistic thinking in students, enabling them to stand out both personally and professionally.</p>
           </div>
 
           <div className="eb-asym-grid">
@@ -326,7 +324,7 @@ We believe that small habits shape great individuals. Our unique approach, "One 
           
           <div className="eb-section-header" style={{ marginBottom: '1rem' }}>
             <h2>Discover <span style={{ color: 'var(--joyful-yellow)' }}>SG Early Budding</span></h2>
-            <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '1rem', lineHeight: '1.8', maxWidth: '800px', margin: '1rem auto 0' }}>
+            <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '1rem', lineHeight: '1.8', maxWidth: '800px', margin: '1rem auto 0', textAlign: 'center' }}>
               SG Early Budding provides a holistic learning experience that nurtures intellectual, emotional, social, and physical development. 
             </p>
           </div>
@@ -361,7 +359,7 @@ We believe that small habits shape great individuals. Our unique approach, "One 
                   <h3>Our Curriculum</h3>
                 </div>
               </div>
-              <div className="eb-party-card-body">
+              <div className="eb-party-card-body" style={{ paddingBottom: '1rem' }}>
                 <p>We have designed a comprehensive and child-centric curriculum that blends traditional values with modern education methodologies. Our approach ensures a well-rounded development of children by focusing on intellectual, emotional, physical, social, and cultural growth.  We focus on create a strong foundation for lifelong learning, ensurin </p>
                 <div className="eb-party-action">
                   <button className="eb-party-btn">Read More</button>

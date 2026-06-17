@@ -18,20 +18,10 @@
   max-width: 800px;
 }
 
-.blog-hero-pill {
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 0.4rem 1.2rem;
-  border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  display: inline-block;
-  background-color: rgba(255,255,255,0.05);
-}
+
 
 .blog-hero-title {
+  padding-top: 6rem;
   color: #fff;
   font-size: 3rem;
   font-weight: 800;
@@ -40,6 +30,7 @@
 }
 
 .blog-hero-desc {
+  text-align: center;
   color: #9CA3AF; /* Light grayish blue */
   font-size: 1.1rem;
   line-height: 1.6;

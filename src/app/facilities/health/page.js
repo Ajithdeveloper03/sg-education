@@ -44,44 +44,44 @@ export default function HealthPage() {
           SECTION 1: Healthy Habits (Using Beyond's Masonry Layout)
           ========================================== */}
       <section className="beyond-section-padding beyond-s1-wrapper">
-        <i className="fa-solid fa-star beyond-shape" style={{ top: '10%', left: '5%', color: '#FFC300', fontSize: '3rem' }}></i>
-        <i className="fa-solid fa-apple-whole beyond-shape" style={{ bottom: '15%', right: '8%', color: '#00C853', fontSize: '4rem', animationDelay: '1s' }}></i>
+        <i className="fa-solid fa-book-open beyond-shape" style={{ top: '10%', left: '5%', color: '#FFC300', fontSize: '3rem' }}></i>
+        <i className="fa-solid fa-laptop-code beyond-shape" style={{ bottom: '15%', right: '8%', color: '#00C853', fontSize: '4rem', animationDelay: '1s' }}></i>
         
         <div className="container">
           <div className="beyond-s1-grid">
             
             {/* Left Content */}
             <div style={{ position: 'relative', zIndex: 5 }}>
-              <div className="vm-tag tag-green">EVERYDAY LIFE</div>
+              <div className="vm-tag tag-green">LIBRARY & LEARNING</div>
               <h2 className="beyond-title-main">
-                Healthy Habits for <br/><span className="underline-green">Everyday Life</span>
+                A Hub for <br/><span className="underline-green">Academic Support</span>
               </h2>
               <p className="beyond-text-main">
-                We believe that healthy children learn better and grow with confidence. Our Health & Well-Being program encourages students to develop good hygiene practices, healthy eating habits, and positive daily routines from an early age. Through regular guidance and awareness activities, children learn the importance of taking care of their physical and mental well-being.
+                Our library is a treasure trove of knowledge, offering an extensive collection of reading materials, digital learning resources, and academic support. We encourage students to explore diverse genres, conduct research, and develop a lifelong love for reading in a quiet and inspiring environment.
               </p>
             </div>
 
             {/* Right Masonry Grid */}
             <div className="beyond-s1-masonry">
               <div className="beyond-s1-card featured">
-                <img src="https://images.pexels.com/photos/35493021/pexels-photo-35493021.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Children maintaining hygiene" />
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=800&q=80" alt="Library Facilities" />
               </div>
               <div className="beyond-s1-masonry-col">
                 <div className="beyond-s1-card">
-                  <div className="beyond-s1-card-icon" style={{ background: '#ECC440' }}><i className="fa-solid fa-hands-bubbles"></i></div>
-                  <h4>Hygiene Practices</h4>
-                  <p>Developing essential cleanliness routines.</p>
+                  <div className="beyond-s1-card-icon" style={{ background: '#ECC440' }}><i className="fa-solid fa-book-open"></i></div>
+                  <h4>Reading Resources</h4>
+                  <p>Extensive collection of books and journals.</p>
                 </div>
               </div>
-              {/* Nutritional Awareness Wide Card */}
+              {/* Digital Learning Wide Card */}
               <div className="beyond-s1-card featured" style={{ display: 'flex', alignItems: 'center', textAlign: 'left', padding: '1.5rem', gridColumn: 'span 2' }}>
                 <div style={{ flex: 1 }}>
-                  <div className="beyond-s1-card-icon" style={{ background: '#00C853', margin: '0 0 1rem 0' }}><i className="fa-solid fa-apple-whole"></i></div>
-                  <h4>Nutritional Awareness</h4>
-                  <p>Understanding the value of healthy eating.</p>
+                  <div className="beyond-s1-card-icon" style={{ background: '#00C853', margin: '0 0 1rem 0' }}><i className="fa-solid fa-laptop-file"></i></div>
+                  <h4>Digital Learning</h4>
+                  <p>Access to e-books and online materials.</p>
                 </div>
                 <div style={{ flex: 1, paddingLeft: '1rem' }}>
-                  <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Healthy Food" style={{ width: '100%', height: '140px', borderRadius: '15px', objectFit: 'cover' }} />
+                  <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Digital Learning" style={{ width: '100%', height: '140px', borderRadius: '15px', objectFit: 'cover' }} />
                 </div>
               </div>
             </div>

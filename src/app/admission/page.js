@@ -22,7 +22,14 @@ export default function AdmissionPage() {
     mobileNumber: '',
     emailAddress: '',
     occupation: '',
-    residentialAddress: ''
+    residentialAddress: '',
+    // Direct Visit Information
+    isDirectVisit: false,
+    preferredVisitDate: '',
+    preferredVisitTime: '',
+    directVisitParentName: '',
+    purposeOfVisit: '',
+    additionalComments: ''
   });
 
   const handleInputChange = (e) => {
@@ -54,6 +61,13 @@ export default function AdmissionPage() {
     if (!formData.emailAddress.trim()) newErrors.emailAddress = "Email address is required";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.emailAddress)) newErrors.emailAddress = "Valid email is required";
     if (!formData.residentialAddress.trim()) newErrors.residentialAddress = "Residential address is required";
+
+    if (formData.isDirectVisit) {
+      if (!formData.preferredVisitDate) newErrors.preferredVisitDate = "Preferred Visit Date is required";
+      if (!formData.preferredVisitTime) newErrors.preferredVisitTime = "Preferred Visit Time is required";
+      if (!formData.directVisitParentName.trim()) newErrors.directVisitParentName = "Parent/Guardian name is required";
+      if (!formData.purposeOfVisit) newErrors.purposeOfVisit = "Purpose of Visit is required";
+    }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -236,6 +250,62 @@ export default function AdmissionPage() {
                         </div>
                         {errors.residentialAddress && <span className="adm-form-error">{errors.residentialAddress}</span>}
                       </div>
+
+                      {formData.isDirectVisit && (
+                        <div className="adm-direct-visit-fields fade-in" style={{ background: '#F8FAFC', padding: '1.5rem', borderRadius: '8px', border: '1px solid #E2E8F0', marginTop: '1.5rem', width: '100%' }}>
+                          <h4 style={{ margin: '0 0 1rem 0', color: '#1D2A44', fontSize: '1.05rem', borderBottom: '2px solid #ECC440', display: 'inline-block', paddingBottom: '0.2rem' }}>Direct Visit Details</h4>
+                          <div className="adm-grid-2">
+                            <div className="adm-form-group">
+                              <label>Preferred Visit Date <span>*</span></label>
+                              <div className="adm-input-wrapper">
+                                <input type="date" name="preferredVisitDate" value={formData.preferredVisitDate} onChange={handleInputChange} className="adm-form-control" />
+                              </div>
+                              {errors.preferredVisitDate && <span className="adm-form-error">{errors.preferredVisitDate}</span>}
+                            </div>
+                            
+                            <div className="adm-form-group">
+                              <label>Preferred Visit Time <span>*</span></label>
+                              <div className="adm-input-wrapper">
+                                <select name="preferredVisitTime" value={formData.preferredVisitTime} onChange={handleInputChange} className="adm-form-control">
+                                  <option value="">Select Time</option>
+                                  <option value="Morning">Morning</option>
+                                  <option value="Afternoon">Afternoon</option>
+                                </select>
+                              </div>
+                              {errors.preferredVisitTime && <span className="adm-form-error">{errors.preferredVisitTime}</span>}
+                            </div>
+
+                            <div className="adm-form-group" style={{ gridColumn: '1 / -1' }}>
+                              <label>Parent/Guardian Name <span>*</span></label>
+                              <div className="adm-input-wrapper">
+                                <input type="text" name="directVisitParentName" value={formData.directVisitParentName} onChange={handleInputChange} className="adm-form-control" placeholder="Enter parent/guardian name" />
+                              </div>
+                              {errors.directVisitParentName && <span className="adm-form-error">{errors.directVisitParentName}</span>}
+                            </div>
+                            
+                            <div className="adm-form-group" style={{ gridColumn: '1 / -1' }}>
+                              <label>Purpose of Visit <span>*</span></label>
+                              <div className="adm-input-wrapper">
+                                <select name="purposeOfVisit" value={formData.purposeOfVisit} onChange={handleInputChange} className="adm-form-control">
+                                  <option value="">Select Purpose</option>
+                                  <option value="Campus Tour">Campus Tour</option>
+                                  <option value="Admission Inquiry">Admission Inquiry</option>
+                                  <option value="Meeting with Counselor">Meeting with Counselor</option>
+                                  <option value="General Inquiry">General Inquiry</option>
+                                </select>
+                              </div>
+                              {errors.purposeOfVisit && <span className="adm-form-error">{errors.purposeOfVisit}</span>}
+                            </div>
+                            
+                            <div className="adm-form-group" style={{ gridColumn: '1 / -1' }}>
+                              <label>Additional Comments / Message</label>
+                              <div className="adm-input-wrapper">
+                                <textarea name="additionalComments" value={formData.additionalComments} onChange={handleInputChange} className="adm-form-control" rows="3" placeholder="Any additional details..."></textarea>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   )}
 
@@ -258,22 +328,40 @@ export default function AdmissionPage() {
                           <div className="adm-summary-row"><div className="adm-summary-label">Mobile:</div><div className="adm-summary-val">{formData.mobileNumber}</div></div>
                           <div className="adm-summary-row"><div className="adm-summary-label">Email:</div><div className="adm-summary-val">{formData.emailAddress}</div></div>
                           <div className="adm-summary-row"><div className="adm-summary-label">Address:</div><div className="adm-summary-val">{formData.residentialAddress}</div></div>
+                          
+                          {formData.isDirectVisit && (
+                            <>
+                              <h4 style={{ marginTop: '1.5rem' }}>Direct Visit Request</h4>
+                              <div className="adm-summary-row"><div className="adm-summary-label">Date:</div><div className="adm-summary-val">{formData.preferredVisitDate}</div></div>
+                              <div className="adm-summary-row"><div className="adm-summary-label">Time:</div><div className="adm-summary-val">{formData.preferredVisitTime}</div></div>
+                              <div className="adm-summary-row"><div className="adm-summary-label">Parent Name:</div><div className="adm-summary-val">{formData.directVisitParentName}</div></div>
+                              <div className="adm-summary-row"><div className="adm-summary-label">Purpose:</div><div className="adm-summary-val">{formData.purposeOfVisit}</div></div>
+                              {formData.additionalComments && <div className="adm-summary-row"><div className="adm-summary-label">Comments:</div><div className="adm-summary-val">{formData.additionalComments}</div></div>}
+                            </>
+                          )}
                         </div>
                       </div>
                     </div>
                   )}
 
                   {/* Navigation Actions */}
-                  <div className="adm-form-actions">
+                  <div className="adm-form-actions" style={{ alignItems: 'center' }}>
                     {step > 1 ? (
                       <button type="button" className="adm-btn adm-btn-secondary" onClick={handleBack}>Back</button>
                     ) : <div></div>}
 
-                    {step < 3 ? (
-                      <button type="button" className="adm-btn adm-btn-primary" onClick={handleNext}>Next</button>
-                    ) : (
-                      <button type="button" className="adm-btn adm-btn-primary" onClick={handleSubmit}>Submit</button>
-                    )}
+                    <div style={{ display: 'flex', gap: '1rem' }}>
+                      {step === 2 && (
+                        <button type="button" className="adm-btn adm-btn-secondary" onClick={() => setFormData(prev => ({ ...prev, isDirectVisit: !prev.isDirectVisit }))}>
+                          {formData.isDirectVisit ? 'Cancel Direct Visit' : 'Direct Visit'}
+                        </button>
+                      )}
+                      {step < 3 ? (
+                        <button type="button" className="adm-btn adm-btn-primary" onClick={handleNext}>Next</button>
+                      ) : (
+                        <button type="button" className="adm-btn adm-btn-primary" onClick={handleSubmit}>Submit</button>
+                      )}
+                    </div>
                   </div>
 
                 </form>

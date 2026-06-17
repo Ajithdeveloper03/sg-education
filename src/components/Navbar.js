@@ -65,7 +65,7 @@ export default function Navbar() {
                 <div className="dropdown-menu">
                   <Link href="/about/sg-early-budding" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>SG Early Budding</Link>
                   <Link href="/about/vision-mission" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Vision & Mission</Link>
-                  <Link href="/about/founders-message" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Founders Message</Link>
+                  <Link href="/about/founders-message" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Meet Our Team</Link>
                   <Link href="/about/school-motto" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>School Motto</Link>
                 </div>
               </li>
@@ -73,19 +73,14 @@ export default function Navbar() {
               <li className="nav-item">
                 <span className="nav-link" style={{ cursor: 'pointer' }}>Academic <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></span>
                 <div className="dropdown-menu">
-                  <Link href="/academic/pre-school" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</Link>
-                  <Link href="/academic/kindergarten" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</Link>
-                  <Link href="/academic/primary" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>1st to 5th Std</Link>
+                  <Link href="/" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</Link>
+                  <Link href="/" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</Link>
+                  <Link href="/" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>1st to 5th Std</Link>
                 </div>
               </li>
               
               <li className="nav-item">
-                <span className="nav-link" style={{ cursor: 'pointer' }}>Facilities <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></span>
-                <div className="dropdown-menu">
-                  <Link href="/facilities/library" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Library</Link>
-                  <Link href="/facilities/health" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Health & Well-being</Link>
-                  <Link href="/facilities/beyond" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Beyond Academics</Link>
-                </div>
+                <Link href="/facilities" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Facilities</Link>
               </li>
               
               <li className="nav-item"><Link href="/gallery" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Gallery</Link></li>
