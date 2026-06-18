@@ -73,9 +73,9 @@ export default function Navbar() {
               <li className="nav-item">
                 <span className="nav-link" style={{ cursor: 'pointer' }}>Academic <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></span>
                 <div className="dropdown-menu">
-                  <Link href="/academic/pre-school" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</Link>
-                  <Link href="/academic/kindergarten" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</Link>
-                  <Link href="/academic/primary" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>1st to 5th Std</Link>
+                  <Link href="/" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Pre School</Link>
+                  <Link href="/" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>LKG & UKG</Link>
+                  <Link href="/" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>1st to 5th Std</Link>
                 </div>
               </li>
               
