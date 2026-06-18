@@ -86,9 +86,9 @@ export default function SGEarlyBuddingPage() {
     <main>
       {/* 1. Welcome to SG Early Budding (Hero Section) */}
       <section className="eb-hero" style={{ 
-        backgroundImage: 'url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80")'
+        backgroundImage: 'url("/sg-education/sg early budding banner.png")'
       }}>
-        <div className="eb-hero-overlay" style={{ backgroundColor: 'rgba(7, 6, 16, 0.6)' }}></div>
+        <div className="eb-hero-overlay" style={{ backgroundColor: 'transparent' }}></div>
         <div className="eb-hero-content">
           <h1 className="eb-hero-title">Welcome to SG Early Budding</h1>
           <p className="eb-hero-desc">
@@ -263,7 +263,7 @@ export default function SGEarlyBuddingPage() {
             <div className="eb-highlight-box">
               <h3><i className="fa-solid fa-star"></i> One Day One Good Thing</h3>
               <p style={{ color: '#fff', textAlign: 'justify', marginBottom: '2rem' }}>
-We believe that small habits shape great individuals. Our unique approach, "One Day, One Good Thing," is designed to instill positive values, discipline, and essential life skills in children from an early age. Each day, our children learn one simple yet impactful habit that contributes to their personal growth, social awareness, and overall well-being. These habits help them develop a strong character, responsibility, and respect for others, forming the foundation of a successful life.</p>
+We believe that small habits shape great individuals. Our unique approach, &quot;One Day, One Good Thing,&quot; is designed to instill positive values, discipline, and essential life skills in children from an early age. Each day, our children learn one simple yet impactful habit that contributes to their personal growth, social awareness, and overall well-being. These habits help them develop a strong character, responsibility, and respect for others, forming the foundation of a successful life.</p>
               <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Children learning positive habits" className="eb-highlight-img" />
             </div>
 
@@ -342,7 +342,7 @@ We believe that small habits shape great individuals. Our unique approach, "One 
                 </div>
               </div>
               <div className="eb-party-card-body">
-                <p>Our approach to early childhood education is centered around a holistic learning experience that nurtures a child's intellectual, emotional, social, and physical development. We focus on creating a stimulating, safe, and culturally enriching environment where children can explore, learn, and grow with confidence. Our teachers create a sup</p>
+                <p>Our approach to early childhood education is centered around a holistic learning experience that nurtures a child&apos;s intellectual, emotional, social, and physical development. We focus on creating a stimulating, safe, and culturally enriching environment where children can explore, learn, and grow with confidence. Our teachers create a sup</p>
                 <div className="eb-party-action">
                   <button className="eb-party-btn">Read More</button>
                 </div>
@@ -378,7 +378,7 @@ We believe that small habits shape great individuals. Our unique approach, "One 
                 </div>
               </div>
               <div className="eb-party-card-body">
-               <p>Our teachers are the heart and soul of our learning environment. We believe that a great teacher inspires, guides, and nurtures young minds, laying the foundation for a child's lifelong success. Our educators are more than just teachers; they are mentors, caregivers, and role models who bring passion and dedication to every child’s growth. </p>
+               <p>Our teachers are the heart and soul of our learning environment. We believe that a great teacher inspires, guides, and nurtures young minds, laying the foundation for a child&apos;s lifelong success. Our educators are more than just teachers; they are mentors, caregivers, and role models who bring passion and dedication to every child’s growth. </p>
                 <div className="eb-party-action">
                   <button className="eb-party-btn">Read More</button>
                 </div>
@@ -394,3 +394,4 @@ We believe that small habits shape great individuals. Our unique approach, "One 
     </main>
   );
 }
+

@@ -49,15 +49,15 @@ export default function ContactPage() {
       
       {/* Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', height: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1600&q=80")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(7, 6, 16, 0.6)', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'transparent', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title" style={{ color: '#fff' }}>Contact Us</h1>
           <p className="vm-banner-desc" style={{ color: '#fff' }}>
-            We'd love to hear from you. Get in touch with us to <br />
+            We&apos;d love to hear from you. Get in touch with us to <br />
             learn more about our programs and admissions.
           </p>
           <div className="vm-pagination">
@@ -212,3 +212,4 @@ export default function ContactPage() {
     </main>
   );
 }
+

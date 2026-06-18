@@ -61,7 +61,7 @@ export default function FoundersMessagePage() {
         backgroundImage: 'url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(7, 6, 16, 0.6)', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'transparent', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title">Founders Message</h1>
           <p className="vm-banner-desc">
@@ -155,7 +155,7 @@ export default function FoundersMessagePage() {
 
             {/* Right: Content Section */}
             <div className="eb-founder-content-right">
-              <div className="vm-tag tag-pink">THE FOUNDER'S VISION</div>
+              <div className="vm-tag tag-pink">THE FOUNDER&apos;S VISION</div>
               <h2 className="vm-title">
                 Bridging <span className="underline-pink">Tradition</span> & Innovation
               </h2>
@@ -167,7 +167,7 @@ export default function FoundersMessagePage() {
               
               <div className="eb-founder-vision-statement">
                 <p>
-                  "Ms. Mamatha M.C is the driving force behind SG Education, envisioning an institution that merges ancient Bharath’s wisdom with modern corporate excellence to create future-ready individuals. Her leadership is rooted in the belief that education should not only impart knowledge but also shape character, discipline, and leadership qualities."
+                  &quot;Ms. Mamatha M.C is the driving force behind SG Education, envisioning an institution that merges ancient Bharath&apos;s wisdom with modern corporate excellence to create future-ready individuals. Her leadership is rooted in the belief that education should not only impart knowledge but also shape character, discipline, and leadership qualities.&quot;
                 </p>
                 <p style={{ marginTop: '1rem' }}>
                   As the Founder of SG Education, she has been instrumental in building a learning environment that nurtures intellectual growth, ethical values, and practical skills. Her commitment to education led to the establishment of SG Early Budding in Gokul Nagar, Hosur, where young minds are given the best foundation to succeed in an evolving world.
@@ -343,7 +343,7 @@ export default function FoundersMessagePage() {
               
               <div className="eb-founder-vision-statement">
                 <p>
-                  "A visionary leader with a deep commitment to social responsibility and national development, combining moral character with modern tools."
+                  &quot;A visionary leader with a deep commitment to social responsibility and national development, combining moral character with modern tools.&quot;
                 </p>
                 <p style={{ marginTop: '1rem' }}>
                   His guidance and expertise play a crucial role in shaping the strategic direction of SG Education, ensuring that the institution remains at the forefront of holistic learning and character development.
@@ -363,3 +363,4 @@ export default function FoundersMessagePage() {
     </main>
   );
 }
+

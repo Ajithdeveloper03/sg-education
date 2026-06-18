@@ -16,7 +16,7 @@ export default function HealthPage() {
         backgroundImage: 'url("https://images.pexels.com/photos/31864392/pexels-photo-31864392.jpeg?auto=compress&cs=tinysrgb&w=1600")', 
         backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(7, 6, 16, 0.6)', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'transparent', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title" style={{ color: '#fff' }}>Health & Well-being</h1>
           <p className="vm-banner-desc" style={{ color: '#fff' }}>
@@ -98,7 +98,7 @@ export default function HealthPage() {
           <div style={{ textAlign: 'center' }}>
             <div className="vm-tag tag-blue">PHYSICAL FITNESS</div>
             <h2 className="beyond-title-main">Active Bodies, <span className="underline-blue">Active Minds</span></h2>
-            <p className="beyond-text-main" style={{ maxWidth: '700px', margin: '0 auto' }}>A safe and supportive environment is essential for every child's growth. We promote active learning through physical activities and outdoor play.</p>
+            <p className="beyond-text-main" style={{ maxWidth: '700px', margin: '0 auto' }}>A safe and supportive environment is essential for every child&apos;s growth. We promote active learning through physical activities and outdoor play.</p>
           </div>
 
           <div className="beyond-s2-slider-container">
@@ -188,3 +188,4 @@ export default function HealthPage() {
     </main>
   );
 }
+

@@ -678,29 +678,47 @@ export default function Home() {
           </div>
           
           <div className="kimono-gallery-grid">
-            <div className="k-item k-item-1 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row1Images[0]} alt="Gallery 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Creative Arts</div>
+            <div className="k-item k-item-1">
+              <img src={row1Images[0]} alt="Gallery 1" />
+              <div className="k-item-overlay">
+                <h3>Creative Arts</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-2 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row1Images[1]} alt="Gallery 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Learning</div>
+            <div className="k-item k-item-2">
+              <img src={row1Images[1]} alt="Gallery 2" />
+              <div className="k-item-overlay">
+                <h3>Learning</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-3 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row2Images[0]} alt="Gallery 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Playtime</div>
+            <div className="k-item k-item-3">
+              <img src={row2Images[0]} alt="Gallery 3" />
+              <div className="k-item-overlay">
+                <h3>Playtime</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-4 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row2Images[1]} alt="Gallery 4" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Nature</div>
+            <div className="k-item k-item-4">
+              <img src={row2Images[1]} alt="Gallery 4" />
+              <div className="k-item-overlay">
+                <h3>Nature</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-5 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row3Images[0]} alt="Gallery 5" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Joy</div>
+            <div className="k-item k-item-5">
+              <img src={row3Images[0]} alt="Gallery 5" />
+              <div className="k-item-overlay">
+                <h3>Joy</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-6 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row4Images[0]} alt="Gallery 6" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Exploration</div>
+            <div className="k-item k-item-6">
+              <img src={row4Images[0]} alt="Gallery 6" />
+              <div className="k-item-overlay">
+                <h3>Exploration</h3>
+                <p>View Details</p>
+              </div>
             </div>
           </div>
 
