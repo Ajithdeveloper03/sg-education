@@ -15,7 +15,7 @@ export default function BlogPage() {
       }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.85)', zIndex: 1 }}></div>
         <div className="container blog-hero-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
-          <div className="blog-hero-pill">Latest Insights</div>
+          
           <h1 className="blog-hero-title">Stories & Insights from SG Education</h1>
           <p className="blog-hero-desc">
             Parenting tips, early learning guides, and joyful success stories<br />

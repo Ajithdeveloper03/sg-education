@@ -19,7 +19,7 @@ export default function VisionMissionPage() {
       
       {/* Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("/sg-education/banner page.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>

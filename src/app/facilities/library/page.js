@@ -75,9 +75,11 @@ export default function LibraryPage() {
               </div>
             </div>
             
-            {/* Right Image */}
-            <div className="lib-s1-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Children Reading in Library" />
+            {/* Right Image (Bubble Style Gallery) */}
+            <div className="lib-bubble-gallery">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Children Reading in Library" className="lib-bubble-img-1" />
+              <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=600&q=80" alt="Books on shelf" className="lib-bubble-img-2" />
+              
               <div className="lib-s1-badge">
                 <span style={{ fontSize: '2rem', display: 'block' }}>10k+</span>
                 <span style={{ fontSize: '0.8rem', textTransform: 'uppercase' }}>Books</span>

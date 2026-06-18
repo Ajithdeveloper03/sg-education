@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import "./founders-message.css";
 import "../vision-mission/vision-mission.css";
@@ -8,6 +8,25 @@ import "../sg-early-budding/sg-early-budding.css";
 
 export default function FoundersMessagePage() {
   const [isMobile, setIsMobile] = useState(false);
+  const founder1Ref = useRef(null);
+  const founder2Ref = useRef(null);
+
+  // Holographic 3D tilt effect on hover
+  const handleMouseMoveTilt = (e, ref) => {
+    if (typeof window !== "undefined" && window.innerWidth <= 768) return;
+    if (!ref.current) return;
+    const { left, top, width, height } = ref.current.getBoundingClientRect();
+    const x = (e.clientX - left) / width;
+    const y = (e.clientY - top) / height;
+    const tiltX = (y - 0.5) * -15; // Max 15 degree X rotation
+    const tiltY = (x - 0.5) * 15;  // Max 15 degree Y rotation
+    ref.current.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.03, 1.03, 1.03)`;
+  };
+  
+  const handleMouseLeaveTilt = (ref) => {
+    if (!ref.current) return;
+    ref.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+  };
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -38,7 +57,7 @@ export default function FoundersMessagePage() {
 
       {/* Upgraded Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
@@ -46,7 +65,7 @@ export default function FoundersMessagePage() {
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title">Founders Message</h1>
           <p className="vm-banner-desc">
-            Empowering the next generation through a unique blend of ancient wisdom and modern corporate excellence.<br />
+            Empowering the next generation through a unique blend of ancient Ancient Bharath’s Culture with Corporate Culture.<br />
             Dedicated to shaping character, fostering innovation, and building future-ready leaders.
           </p>
           <div className="vm-pagination">
@@ -66,6 +85,61 @@ export default function FoundersMessagePage() {
           </div>
         </div>
       </section>
+
+      {/* ==========================================
+           1. VISIONARY FOUNDERS & LEADERSHIP
+           ========================================== */}
+      <section className="founders-section" id="leadership" style={{ padding: "4rem 0 1rem 0" }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
+            <span className="label-brand color-pink" style={{ background: 'rgba(236, 196, 64, 0.08)', color: 'var(--playful-pink)' }}>Visionary Leadership</span>
+            <h2>Meet Our <span className="highlight-pink text-pink-line">Founders & Mentors</span></h2>
+          </div>
+
+          <div className="founders-grid" style={{ margin: '0 auto' }}>
+            {/* Founder 1 */}
+            <div 
+              ref={founder1Ref}
+              className="founder-card-3d main-founder-theme"
+              onMouseMove={(e) => handleMouseMoveTilt(e, founder1Ref)}
+              onMouseLeave={() => handleMouseLeaveTilt(founder1Ref)}
+            >
+              <div className="founder-img-wrapper-3d">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Founder Mamatha M.C" />
+                <span className="founder-role-badge">Founder</span>
+              </div>
+              <div className="founder-info-3d">
+                <h3>Mamatha M.C</h3>
+                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Founder of SG Educations & Co-founder of Sarathi Groups</p>
+                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
+                  <p>&quot;She is the Founder of SG Education and the Co-Founder of Sarathi Groups. She also serves as the Managing Director of SGNL and SG Health & Care, Director of SG Builders Pvt. Ltd., and Vice President of NSR Social Welfare Trust.&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Founder 2 */}
+            <div 
+              ref={founder2Ref}
+              className="founder-card-3d sub-founder-theme"
+              onMouseMove={(e) => handleMouseMoveTilt(e, founder2Ref)}
+              onMouseLeave={() => handleMouseLeaveTilt(founder2Ref)}
+            >
+              <div className="founder-img-wrapper-3d">
+                <img src="/sg-education/mentor.png" alt="Mentor Shashi Kiran" />
+                <span className="founder-role-badge">Mentor</span>
+              </div>
+              <div className="founder-info-3d">
+                <h3>Shashi Kiran K.N</h3>
+                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor at SG Education & Visionary Leader</p>
+                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
+                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished leader, entrepreneur, and visionary. He is committed to education, social welfare, and national development, inspiring individuals through his leadership and dedication to creating a positive impact on society.&quot;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Section 1: The Visionary Behind SG Education */}
       <section className="eb-section fm-founder-vision-light" style={{ paddingTop: '7rem' }}>
@@ -181,7 +255,7 @@ export default function FoundersMessagePage() {
 
               <div className="fm-leadership-list-item">
                 <div className="fm-leadership-item-thumbnail">
-                  <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ce122?auto=format&fit=crop&w=150&q=80" alt="Healthcare" />
+                  <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=150&q=80" alt="Healthcare" />
                 </div>
                 <div className="fm-leadership-item-content">
                   <h4 className="fm-leadership-item-title" style={{ color: '#00C853' }}>
@@ -246,7 +320,7 @@ export default function FoundersMessagePage() {
       {/* Section 4: Mentor */}
       <section className="eb-section fm-founder-vision-light" style={{ padding: '4rem 0' }}>
         <div className="container">
-          <div className="eb-founder-dark-layout" style={{ flexDirection: 'row-reverse' }}>
+          <div className="eb-founder-dark-layout reverse-layout-desktop">
             {/* Right (Visuals): Slanted Image Card */}
             <div className="eb-founder-card-left">
               <div className="eb-founder-image-wrapper">

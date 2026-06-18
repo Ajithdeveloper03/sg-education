@@ -10,7 +10,7 @@
 }
 
 .health-section-padding {
-  padding: 6rem 0;
+  padding: 4rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -21,6 +21,12 @@
   color: var(--health-dark);
   margin-bottom: 1.2rem;
   line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .health-title-main {
+    font-size: 2rem;
+  }
 }
 
 .health-text-main {
@@ -34,15 +40,15 @@
    SECTION 1: Healthy Habits (Curved Block & Organic Shape)
    ========================================================================== */
 .health-s1-wrapper {
-  background-color: #E8F5E9;
-  background-image: radial-gradient(circle at 10% 20%, rgba(0, 200, 83, 0.05) 0%, transparent 40%),
-                    radial-gradient(circle at 90% 80%, rgba(0, 174, 255, 0.05) 0%, transparent 40%);
+  background: #fff;
   position: relative;
 }
 
 /* Large Curved Background Block */
 .health-s1-curve-block {
-  background: #fff;
+  background-color: #E8F5E9;
+  background-image: radial-gradient(circle at 10% 20%, rgba(0, 200, 83, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(0, 174, 255, 0.05) 0%, transparent 40%);
   border-radius: 50px 200px 50px 200px;
   padding: 4rem;
   box-shadow: 0 20px 40px rgba(0,0,0,0.04);
@@ -57,6 +63,14 @@
 @media (min-width: 992px) {
   .health-s1-curve-block {
     grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .health-s1-curve-block {
+    padding: 2.5rem 1.5rem;
+    border-radius: 40px 100px 40px 100px;
+    gap: 2rem;
   }
 }
 
@@ -113,6 +127,17 @@
   100% { transform: translateY(0px) rotate(0deg); }
 }
 
+@media (max-width: 768px) {
+  .health-s1-float-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+  .health-s1-icon-1 { top: -15px; right: 2%; }
+  .health-s1-icon-2 { bottom: 5%; left: -10px; }
+  .health-s1-icon-3 { bottom: -15px; right: 5%; }
+}
+
 /* ==========================================================================
    SECTION 2: Active Bodies, Active Minds (Zig-Zag Timeline)
    ========================================================================== */
@@ -123,7 +148,7 @@
 .health-s2-timeline {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 3rem;
   position: relative;
 }
 
@@ -167,7 +192,7 @@
 .health-s2-content {
   flex: 1;
   background: #F9F9F9;
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 24px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.03);
   position: relative;
@@ -185,7 +210,7 @@
   border-radius: 24px;
   overflow: hidden;
   box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-  height: 350px;
+  height: 280px;
 }
 
 .health-s2-image img {
@@ -227,7 +252,7 @@
    ========================================================================== */
 .health-s3-spotlight {
   position: relative;
-  padding: 8rem 0;
+  padding: 2rem 0;
   background-image: url("https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1600&q=80");
   background-size: cover;
   background-position: center;
@@ -253,22 +278,17 @@
 }
 
 .health-s3-glass-panel {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 30px;
+  background: transparent;
   padding: 4rem;
   max-width: 900px;
   text-align: center;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
   position: relative;
 }
 
 .health-s3-glass-panel .health-title-main {
   color: #fff;
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
 }
 
 .health-s3-glass-panel .health-text-main {
@@ -310,4 +330,43 @@
   left: 40px;
   font-size: 5rem;
   color: rgba(255, 255, 255, 0.15);
+}
+
+.transportation-split-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .transportation-split-layout {
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+  }
+  .transportation-split-layout .health-s3-glass-panel {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  .transportation-split-layout .transportation-image-wrapper {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.transportation-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.transportation-img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  margin-left: -40px; /* Shifted left as requested */
 }

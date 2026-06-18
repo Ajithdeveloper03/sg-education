@@ -21,6 +21,12 @@ export const metadata = {
   keywords: "SG Education, SG Early Budding, pre-school Hosur, kidzee style school, play school Hosur, Hosur primary education, ANBC CPC curriculum",
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${comfortaa.variable} ${quicksand.variable}`}>

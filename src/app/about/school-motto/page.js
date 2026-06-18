@@ -23,10 +23,10 @@ export default function SchoolMottoPage() {
         }
         .motto-hero-grid {
           display: grid;
-          grid-template-columns: 1fr 2fr 1fr;
+          grid-template-columns: 1fr 1fr;
           align-items: center;
-          gap: 2rem;
-          max-width: 1400px;
+          gap: 4rem;
+          max-width: 1200px;
           margin: 0 auto;
           position: relative;
           z-index: 2;
@@ -35,11 +35,12 @@ export default function SchoolMottoPage() {
           display: flex;
           justify-content: center;
           align-items: center;
+          height: 100%;
         }
         .motto-img-wrapper img {
           max-width: 100%;
           height: auto;
-          max-height: 400px;
+          max-height: 600px;
           object-fit: contain;
         }
         @media (max-width: 1024px) {
@@ -50,19 +51,17 @@ export default function SchoolMottoPage() {
           .motto-center-text {
             order: 1;
             padding: 0 1rem;
-          }
-          .motto-side-img-1 {
-            order: 2;
+            text-align: center;
           }
           .motto-side-img-2 {
-            order: 3;
+            order: 2;
           }
         }
       `}</style>
       
       {/* Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
@@ -96,20 +95,15 @@ export default function SchoolMottoPage() {
         
         <div className="container motto-hero-grid">
           
-          {/* Left Decorative Image */}
-          <div className="motto-img-wrapper motto-side-img-1">
-            <img src="/sg-education/motto teacher.png" alt="Teacher interacting with students" />
-          </div>
-
-          {/* Center Text Content */}
+          {/* Left Text Content */}
           <div className="motto-center-text">
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+            <div style={{ textAlign: 'left', marginBottom: '2rem' }}>
               <div className="vm-tag tag-pink">OUR MOTTO</div>
               <h2 className="vm-title" style={{ marginTop: '0.5rem' }}>
-                CoEducate, Empower, <span className="underline-pink">Elevate</span>
+                Educate, Empower, <span className="underline-pink">Elevate</span>
               </h2>
             </div>
-            <p className="vm-desc" style={{ fontSize: '1rem', textAlign: 'justify', maxWidth: '700px', margin: '0 auto', lineHeight: '1.8', color: '#4A5568' }}>
+            <p className="vm-desc" style={{ fontSize: '1.05rem', textAlign: 'justify', lineHeight: '1.8', color: '#4A5568' }}>
               Our motto encapsulates the essence of what we strive to achieve every day at SG Education. We believe that true education is a collaborative journey between teachers, students, and parents. Through this collaboration, we give our students the tools, wisdom, and confidence they need to succeed and make a positive impact on the world. Ultimately, our goal is to lift them up to reach their highest potential, both academically and morally, ensuring they become the leaders and visionaries of tomorrow.
             </p>
           </div>
