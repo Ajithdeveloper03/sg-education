@@ -1,4 +1,4 @@
-﻿/* Admission Portal Custom Styles (Compact & Logo Colors) */
+/* Admission Portal Custom Styles (Compact & Logo Colors) */
 
 .adm-page-wrapper {
   background: #F0F9FF; /* Light sky blue background */
@@ -382,15 +382,23 @@ select.adm-form-control {
 @media (max-width: 768px) {
   .adm-page-wrapper {
     padding: 1rem 0.5rem;
+    flex-direction: column;
   }
   .adm-return-home {
     position: relative;
     top: 0;
     left: 0;
     margin-bottom: 0.8rem;
+    align-self: flex-start;
   }
   .adm-header-title {
     padding: 1.2rem 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .adm-header-text {
+    padding-right: 0;
   }
   .adm-header-title h2 {
     font-size: 1.8rem;
@@ -403,11 +411,11 @@ select.adm-form-control {
     gap: 0;
   }
   .adm-stepper {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
   .adm-stepper::before {
-    left: 15%;
-    right: 15%;
+    left: 10%;
+    right: 10%;
   }
   .adm-summary-row {
     flex-direction: column;

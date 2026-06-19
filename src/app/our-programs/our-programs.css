@@ -1,4 +1,4 @@
-﻿/* src/app/our-programs/our-programs.css */
+/* src/app/our-programs/our-programs.css */
 
 .programs-page-wrapper {
   background-color: #fff;
@@ -31,7 +31,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 600px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,10 +138,9 @@
 .op-hero-title-main {
   font-size: 3rem;
   font-weight: 800;
-  color: #fff;
+  color: #1D2A44;
   line-height: 1.2;
   margin-bottom: 1rem;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .op-hero-title-sub {
@@ -155,7 +154,7 @@
 
 .op-hero-subtitle {
   font-size: 1.1rem;
-  color: #9CA3AF;
+  color: #000000;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -647,6 +646,15 @@
   right: 20px;
   width: 200px;
   z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .op-card-left, .op-card-right {
+    padding-bottom: 200px;
+  }
+  .op-card-img-left, .op-card-img-right {
+    width: 160px;
+  }
 }
 
 /* Admissions Bar */

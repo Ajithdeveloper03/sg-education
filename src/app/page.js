@@ -1,6 +1,7 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 // ==========================================
 // 1. FLOATING KIDS-RELATED UNIQUE DOODLES (SVGs)
@@ -398,8 +399,8 @@ export default function Home() {
                 </div>
 
                 {/* Stickers */}
-                <div className="sc-sticker sc-heart float-anim-3">ðŸ’–</div>
-                <div className="sc-sticker sc-cupcake float-anim-2">ðŸ§</div>
+                <div className="sc-sticker sc-heart float-anim-3">💖</div>
+                <div className="sc-sticker sc-cupcake float-anim-2">🧁</div>
                 
                 <div className="sc-text-sticker float-anim-1">
                   <span className="sc-text-line1">Stay</span>
@@ -441,7 +442,7 @@ export default function Home() {
 
               {/* CENTERED BUTTON BENEATH BOXES */}
               <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '1.5rem' }}>
-                <a href="#admissions" className="btn btn-orange">Online Admission <i className="fa-solid fa-arrow-right" style={{ marginLeft: '8px' }}></i></a>
+                <Link href="/admission" className="btn btn-orange" style={{ textDecoration: 'none' }}>Online Admission <i className="fa-solid fa-arrow-right" style={{ marginLeft: '8px' }}></i></Link>
               </div>
             </div>
 
@@ -522,7 +523,7 @@ export default function Home() {
                 We provide quality education that builds strong knowledge, values, and lifelong learning habits.We nurture confidence, leadership, communication, and practical skills to prepare students for real-world challenges.We inspire students to achieve their full potential and grow into responsible, successful, and future-ready individuals.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem', position: 'relative', zIndex: 20 }}>
-                <a href="#admissions" className="vs-btn">join us now</a>
+                <Link href="/contact" className="vs-btn" style={{ textDecoration: 'none' }}>JOIN US NOW</Link>
               </div>
               
               <div className="vs-doodle bike"><i className="fa-solid fa-bicycle"></i></div>
@@ -723,9 +724,9 @@ export default function Home() {
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-            <button className="btn btn-red" style={{ backgroundColor: '#D90013', color: '#fff', borderRadius: '4px', textTransform: 'uppercase', padding: '0.8rem 1.5rem', fontWeight: 'bold', fontSize: '0.8rem' }}>
+            <Link href="/gallery" className="btn btn-red" style={{ backgroundColor: '#D90013', color: '#fff', borderRadius: '4px', textTransform: 'uppercase', padding: '0.8rem 1.5rem', fontWeight: 'bold', fontSize: '0.8rem', textDecoration: 'none', display: 'inline-block' }}>
               See All Memories <i className="fa-solid fa-arrow-up-right-from-square"></i>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -744,7 +745,7 @@ export default function Home() {
         <LightbulbDoodle style={{ top: '12%', left: '5%' }} />
         <LightningDoodle style={{ bottom: '10%', right: '10%' }} />
         <HeartDoodle style={{ top: '25%', right: '5%' }} />
-        <SunDoodle style={{ bottom: '25%', left: '12%' }} />
+
 
         <div className="container admissions-grid" style={{ marginTop: '2rem' }}>
 

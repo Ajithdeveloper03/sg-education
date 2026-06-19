@@ -1,4 +1,4 @@
-﻿/* SG Early Budding Redesigned Styles */
+/* SG Early Budding Redesigned Styles */
 
 .eb-section {
   font-family: var(--font-quicksand), sans-serif;
@@ -13,7 +13,7 @@
 .eb-hero {
   position: relative;
   width: 100%;
-  height: 600px;
+  height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +55,7 @@
 
 .eb-hero-desc {
   font-size: 1.1rem;
-  color: #9CA3AF;
+  color: #fff;
   line-height: 1.6;
   margin-bottom: 2rem;
   max-width: 700px;
@@ -63,7 +63,7 @@
 
 @media (max-width: 768px) {
   .eb-hero-title {
-  font-size: 3rem;
+  font-size: 2.2rem;
   color: #fff;
   font-weight: 800;
   margin-bottom: 1rem;
@@ -292,7 +292,7 @@
   color: #444;
   line-height: 1.6;
   margin-bottom: 1.2rem;
-  text-align: left;
+  text-align: justify;
 }
 
 .eb-tab-list {
@@ -1042,9 +1042,15 @@
 
 /* Responsive */
 @media (max-width: 992px) {
+  .eb-founder-vision-dark {
+    padding: 3rem 1rem;
+  }
   .eb-founder-dark-layout {
     flex-direction: column;
-    gap: 4rem;
+    gap: 3rem;
+  }
+  .eb-tab-text, .culture-intro, .eb-highlight-box p {
+    text-align: left;
   }
   .eb-founder-card-left {
     flex: 0 0 auto;

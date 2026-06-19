@@ -1,4 +1,4 @@
-﻿/* src/app/blog/blog.css */
+/* src/app/blog/blog.css */
 
 /* --- Hero Section --- */
 .blog-hero {
@@ -31,7 +31,7 @@
 
 .blog-hero-desc {
   text-align: center;
-  color: #9CA3AF; /* Light grayish blue */
+  color: #fff; /* Light grayish blue -> White */
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 2rem;

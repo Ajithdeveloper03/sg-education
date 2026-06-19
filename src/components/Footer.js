@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -28,7 +28,7 @@ export default function Footer() {
               <span className="logo-text">SG Education</span>
             </Link>
             <p className="footer-about-text" style={{ marginBottom: '1.5rem' }}>
-              Educate Â· Empower Â· Elevate! Nurturing clear conscience, strong bodies, and values since Jun 2023.
+              Educate · Empower · Elevate! Nurturing clear conscience, strong bodies, and values since Jun 2023.
             </p>
             <div className="footer-contact-info" style={{ marginBottom: '1.5rem' }}>
               <p style={{ margin: '0 0 8px 0', fontSize: '0.95rem', color: '#555', display: 'flex', alignItems: 'center' }}>
@@ -50,7 +50,7 @@ export default function Footer() {
             <ul className="footer-links">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about/sg-early-budding">SG Early Budding</Link></li>
-              <li><Link href="/">Facilities</Link></li>
+              <li><Link href="/facilities">Facilities</Link></li>
               <li><Link href="/gallery">Memory Clips</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import "./health/health-advanced.css"; // For Discovering Hidden Talents and Learning Through Participation
@@ -215,7 +215,7 @@ export default function FacilitiesPage() {
                 We provide a secure, comfortable, and efficient transportation system for our students. Our modern fleet of school buses is equipped with advanced safety features and driven by trained professionals, ensuring a stress-free journey and giving parents complete peace of mind every day.
               </p>
               
-              <div className="health-s3-highlight-tags" style={{ justifyContent: 'space-between', width: '100%', flexWrap: 'nowrap', gap: '0.5rem' }}>
+              <div className="health-s3-highlight-tags" style={{ justifyContent: 'space-between', width: '100%', flexWrap: 'wrap', gap: '0.5rem' }}>
                 <span className="health-s3-tag" style={{ padding: '0.6rem 1rem', fontSize: '0.9rem', whiteSpace: 'nowrap' }}><i className="fa-solid fa-shield-halved"></i> Safety First</span>
                 <span className="health-s3-tag" style={{ padding: '0.6rem 1rem', fontSize: '0.9rem', whiteSpace: 'nowrap' }}><i className="fa-solid fa-bus"></i> Modern Fleet</span>
                 <span className="health-s3-tag" style={{ padding: '0.6rem 1rem', fontSize: '0.9rem', whiteSpace: 'nowrap' }}><i className="fa-solid fa-route"></i> Convenient Routes</span>

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
@@ -57,7 +57,7 @@ export default function FoundersMessagePage() {
 
       {/* Upgraded Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
@@ -80,8 +80,8 @@ export default function FoundersMessagePage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>

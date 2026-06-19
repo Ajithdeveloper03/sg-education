@@ -11,7 +11,7 @@ export default function OurProgramsPage() {
       {/* Page Banner Section */}
       <section className="op-page-banner" style={{ backgroundImage: 'url("/sg-education/program banner.png")' }}>
         <div className="op-banner-overlay"></div>
-        <div className="op-banner-content">
+        <div className="op-banner-content" style={{ paddingBottom: '30px' }}>
           <h1 className="op-banner-title">A UNIT OF SG EDUCATIONS</h1>
           <p className="op-banner-subtitle">SOWING SEEDS OF KNOWLEDGE</p>
           <div className="vm-pagination" style={{ marginTop: '1.5rem', justifyContent: 'center' }}>
@@ -24,8 +24,8 @@ export default function OurProgramsPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -112,7 +112,7 @@ export default function OurProgramsPage() {
             {/* Card 1: Day Care */}
             <div className="journey-card jc-daycare">
               <div className="jc-icon">
-                <i className="fa-solid fa-teddy-bear"></i>
+                <i className="fa-solid fa-baby-carriage"></i>
               </div>
               <h3 className="jc-title" style={{ color: '#E65100' }}>Day Care</h3>
               <span className="jc-age">6 Months - 2 Years</span>

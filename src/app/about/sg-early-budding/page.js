@@ -31,7 +31,7 @@ export default function SGEarlyBuddingPage() {
       number: "02",
       title: "Traditional Customs",
       icon: "fa-om",
-      image: "https://images.unsplash.com/photo-1582560475093-ba66accbc424?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80",
       content: {
         badge: "Pillar 02",
         heading: "Preserving Our Rich Heritage",
@@ -89,7 +89,7 @@ export default function SGEarlyBuddingPage() {
         backgroundImage: 'url("/sg-education/sg early budding banner.png")'
       }}>
         <div className="eb-hero-overlay" style={{ backgroundColor: 'rgba(17, 24, 39, 0.45)' }}></div>
-        <div className="eb-hero-content">
+        <div className="eb-hero-content" style={{ paddingBottom: '30px' }}>
           <h1 className="eb-hero-title">Welcome to SG Early Budding</h1>
           <p className="eb-hero-desc">
             Nurturing young minds with a balanced approach of traditional values, modern learning techniques, creativity, and essential life skills.
@@ -106,10 +106,10 @@ export default function SGEarlyBuddingPage() {
         </div>
         
         {/* Cloud Transition */}
-        <div className="cloud-container" style={{ position: 'absolute', bottom: '-1px', left: 0, width: '100%', zIndex: 3, overflow: 'hidden', lineHeight: 0 }}>
-          <div className="cloud-wrapper" style={{ display: 'flex', width: '200%', animation: 'moveCloudsRight 30s linear infinite' }}>
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ width: '50%', height: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ width: '50%', height: 'auto', display: 'block', filter: 'brightness(0) invert(1)' }} />
+        <div className="cloud-container">
+          <div className="cloud-wrapper">
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -344,7 +344,7 @@ We believe that small habits shape great individuals. Our unique approach, &quot
               <div className="eb-party-card-body">
                 <p>Our approach to early childhood education is centered around a holistic learning experience that nurtures a child&apos;s intellectual, emotional, social, and physical development. We focus on creating a stimulating, safe, and culturally enriching environment where children can explore, learn, and grow with confidence. Our teachers create a sup</p>
                 <div className="eb-party-action">
-                  <button className="eb-party-btn">Read More</button>
+                  <Link href="/our-programs" className="eb-party-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>Read More</Link>
                 </div>
               </div>
             </div>
@@ -362,7 +362,7 @@ We believe that small habits shape great individuals. Our unique approach, &quot
               <div className="eb-party-card-body" style={{ paddingBottom: '1rem' }}>
                 <p>We have designed a comprehensive and child-centric curriculum that blends traditional values with modern education methodologies. Our approach ensures a well-rounded development of children by focusing on intellectual, emotional, physical, social, and cultural growth.  We focus on create a strong foundation for lifelong learning, ensurin </p>
                 <div className="eb-party-action">
-                  <button className="eb-party-btn">Read More</button>
+                  <Link href="/our-programs" className="eb-party-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>Read More</Link>
                 </div>
               </div>
             </div>
@@ -380,7 +380,7 @@ We believe that small habits shape great individuals. Our unique approach, &quot
               <div className="eb-party-card-body">
                <p>Our teachers are the heart and soul of our learning environment. We believe that a great teacher inspires, guides, and nurtures young minds, laying the foundation for a child&apos;s lifelong success. Our educators are more than just teachers; they are mentors, caregivers, and role models who bring passion and dedication to every child’s growth. </p>
                 <div className="eb-party-action">
-                  <button className="eb-party-btn">Read More</button>
+                  <Link href="/our-programs" className="eb-party-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>Read More</Link>
                 </div>
               </div>
             </div>

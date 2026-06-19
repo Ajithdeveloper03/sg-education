@@ -1,4 +1,4 @@
-﻿@tailwind base;
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -102,6 +102,33 @@ p {
   font-weight: 500;
   color: var(--neutral-muted);
   text-align: justify;
+}
+
+/* Ensure banner descriptions are center-aligned and white across all pages */
+.vm-banner-desc,
+.op-banner-subtitle,
+.op-hero-subtitle,
+.hero-subtitle,
+.eb-hero-desc,
+.blog-hero-desc {
+  text-align: center !important;
+  color: #ffffff !important;
+}
+
+/* Ensure paragraphs are properly justified on mobile view */
+@media (max-width: 768px) {
+  p {
+    text-align: justify !important;
+  }
+  .vm-banner-desc,
+  .op-banner-subtitle,
+  .op-hero-subtitle,
+  .hero-subtitle,
+  .eb-hero-desc,
+  .blog-hero-desc {
+    text-align: center !important;
+    color: #ffffff !important;
+  }
 }
 
 a {
@@ -1267,7 +1294,7 @@ header.scrolled .brand-name {
   z-index: 10;
 }
 .habit-box::after {
-  content: 'Ã¢â„¢Â¥';
+  content: '♥';
   position: absolute;
   bottom: -40px;
   right: -25px;
@@ -3266,7 +3293,7 @@ header.scrolled .brand-name {
 }
 
 .decorative-grass-wrapper .footer-links li a::before {
-  content: 'Ã¢â„¢Â¥';
+  content: '♥';
   color: var(--playful-pink);
   font-size: 0.8rem;
   transition: transform var(--transition-fast);
@@ -4504,7 +4531,7 @@ header.scrolled .brand-name {
 }
 
 .founder-info-3d .quote-box::before {
-  content: 'Ã¢â‚¬Å“';
+  content: '“';
   font-size: 3.5rem;
   color: rgba(233, 30, 99, 0.08);
   position: absolute;
@@ -5528,12 +5555,18 @@ header.scrolled .brand-name {
   }
   header {
     top: 0 !important;
-    background: var(--white) !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05) !important;
+    background: transparent !important;
+    box-shadow: none !important;
     padding: 0.8rem 0 !important;
   }
   .mobile-toggle {
     display: block !important;
+  }
+  .mobile-toggle span {
+    background: var(--white) !important;
+  }
+  .mobile-toggle.open span {
+    background: var(--kidza-navy) !important;
   }
   .logo-img {
     height: 55px !important;
@@ -5926,7 +5959,81 @@ header.scrolled .brand-name {
   filter: brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg) !important;
 }
 
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: var(--playful-pink);
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--kidza-navy);
+  transform: translateY(-5px);
+}
+
 @keyframes moveCloudsRight {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
+}
+
+@media (max-width: 991px) {
+  .vm-banner-content, .op-banner-content, .eb-hero-content, .blog-hero-content {
+    padding-top: 80px !important;
+  }
+}
+
+/* ==========================================================================
+   Global Mobile Responsiveness Fixes
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* Reduce heading font sizes slightly for mobile view */
+  h1 { font-size: 2.2rem !important; }
+  h2 { font-size: 1.8rem !important; }
+  h3 { font-size: 1.5rem !important; }
+  h4 { font-size: 1.25rem !important; }
+  h5 { font-size: 1.1rem !important; }
+  h6 { font-size: 1rem !important; }
+
+  /* Application Form (.chalk-form) responsive layout */
+  .chalk-form {
+    grid-template-columns: 1fr !important;
+  }
+  .btn-chalk-submit {
+    grid-column: span 1 !important;
+    width: 100% !important;
+  }
+  .chalk-form .full-width {
+    grid-column: span 1 !important;
+  }
+  
+  /* Ensure padding and spacing are optimized */
+  .admissions-grid {
+    gap: 1.5rem !important;
+  }
+  .chalk-board {
+    padding: 1.5rem !important;
+  }
 }

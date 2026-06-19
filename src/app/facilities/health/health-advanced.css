@@ -1,4 +1,4 @@
-﻿/* src/app/facilities/health/health-advanced.css */
+/* src/app/facilities/health/health-advanced.css */
 
 /* --- General Variables specific to Health Page --- */
 :root {
@@ -369,5 +369,14 @@
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   margin-left: -40px; /* Shifted left as requested */
+}
+
+@media (max-width: 991px) {
+  .transportation-img {
+    margin-left: 0;
+  }
+  .health-s3-glass-panel {
+    padding: 2rem !important;
+  }
 }
 

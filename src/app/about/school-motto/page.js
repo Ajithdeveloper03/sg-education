@@ -61,7 +61,7 @@ export default function SchoolMottoPage() {
       
       {/* Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("/sg-education/school motto banner.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
@@ -84,8 +84,8 @@ export default function SchoolMottoPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.95) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.95) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
