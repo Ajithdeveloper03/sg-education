@@ -107,7 +107,6 @@ p {
 /* Ensure banner descriptions are center-aligned and white across all pages */
 .vm-banner-desc,
 .op-banner-subtitle,
-.op-hero-subtitle,
 .hero-subtitle,
 .eb-hero-desc,
 .blog-hero-desc {
@@ -122,7 +121,6 @@ p {
   }
   .vm-banner-desc,
   .op-banner-subtitle,
-  .op-hero-subtitle,
   .hero-subtitle,
   .eb-hero-desc,
   .blog-hero-desc {
