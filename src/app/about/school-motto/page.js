@@ -61,11 +61,11 @@ export default function SchoolMottoPage() {
       
       {/* Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
-        backgroundImage: 'url("https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80")', 
+        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        backgroundImage: 'url("/sg-education/school motto banner.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(7, 6, 16, 0.6)', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title">School Motto</h1>
           <p className="vm-banner-desc">
@@ -84,8 +84,8 @@ export default function SchoolMottoPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.95) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.95) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -201,3 +201,6 @@ export default function SchoolMottoPage() {
     </main>
   );
 }
+
+
+

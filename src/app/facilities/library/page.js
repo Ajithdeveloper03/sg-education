@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import "./library-advanced.css"; // The new advanced CSS
@@ -14,7 +14,7 @@ export default function LibraryPage() {
         backgroundImage: 'url("https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=1600&q=80")', 
         backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(7, 6, 16, 0.6)', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title" style={{ color: '#fff' }}>Library</h1>
           <p className="vm-banner-desc" style={{ color: '#fff' }}>
@@ -176,3 +176,6 @@ export default function LibraryPage() {
     </main>
   );
 }
+
+
+

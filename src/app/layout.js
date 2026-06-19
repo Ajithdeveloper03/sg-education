@@ -2,6 +2,7 @@ import { Comfortaa, Quicksand } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import BackToTop from "../components/BackToTop";
 
 const comfortaa = Comfortaa({
   subsets: ["latin"],
@@ -37,7 +38,9 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
 }
+

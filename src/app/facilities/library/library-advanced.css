@@ -1,4 +1,4 @@
-/* src/app/facilities/library/library-advanced.css */
+﻿/* src/app/facilities/library/library-advanced.css */
 
 /* --- General Variables & Resets specific to Library --- */
 :root {
@@ -383,3 +383,4 @@
   50% { transform: translateY(-20px) rotate(10deg); }
   100% { transform: translateY(0) rotate(0deg); }
 }
+

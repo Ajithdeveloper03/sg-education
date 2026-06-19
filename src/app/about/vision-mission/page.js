@@ -19,11 +19,11 @@ export default function VisionMissionPage() {
       
       {/* Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '600px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("/sg-education/banner page.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(7, 6, 16, 0.6)', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title">Vision & Mission</h1>
           <p className="vm-banner-desc">
@@ -42,8 +42,8 @@ export default function VisionMissionPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -186,7 +186,7 @@ export default function VisionMissionPage() {
               </div>
               
               <div className="vm-quote-block">
-                <p>"Empowering individuals to contribute to national growth and development through wisdom, values, and leadership."</p>
+                <p>&quot;Empowering individuals to contribute to national growth and development through wisdom, values, and leadership.&quot;</p>
               </div>
             </div>
             
@@ -267,3 +267,6 @@ export default function VisionMissionPage() {
     </main>
   );
 }
+
+
+

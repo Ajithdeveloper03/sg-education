@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
 
 // ==========================================
 // 1. FLOATING KIDS-RELATED UNIQUE DOODLES (SVGs)
@@ -441,7 +442,7 @@ export default function Home() {
 
               {/* CENTERED BUTTON BENEATH BOXES */}
               <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '1.5rem' }}>
-                <a href="#admissions" className="btn btn-orange">Online Admission <i className="fa-solid fa-arrow-right" style={{ marginLeft: '8px' }}></i></a>
+                <Link href="/admission" className="btn btn-orange" style={{ textDecoration: 'none' }}>Online Admission <i className="fa-solid fa-arrow-right" style={{ marginLeft: '8px' }}></i></Link>
               </div>
             </div>
 
@@ -522,7 +523,7 @@ export default function Home() {
                 We provide quality education that builds strong knowledge, values, and lifelong learning habits.We nurture confidence, leadership, communication, and practical skills to prepare students for real-world challenges.We inspire students to achieve their full potential and grow into responsible, successful, and future-ready individuals.
               </p>
               <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem', position: 'relative', zIndex: 20 }}>
-                <a href="#admissions" className="vs-btn">join us now</a>
+                <Link href="/contact" className="vs-btn" style={{ textDecoration: 'none' }}>JOIN US NOW</Link>
               </div>
               
               <div className="vs-doodle bike"><i className="fa-solid fa-bicycle"></i></div>
@@ -678,36 +679,54 @@ export default function Home() {
           </div>
           
           <div className="kimono-gallery-grid">
-            <div className="k-item k-item-1 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row1Images[0]} alt="Gallery 1" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Creative Arts</div>
+            <div className="k-item k-item-1">
+              <img src={row1Images[0]} alt="Gallery 1" />
+              <div className="k-item-overlay">
+                <h3>Creative Arts</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-2 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row1Images[1]} alt="Gallery 2" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Learning</div>
+            <div className="k-item k-item-2">
+              <img src={row1Images[1]} alt="Gallery 2" />
+              <div className="k-item-overlay">
+                <h3>Learning</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-3 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row2Images[0]} alt="Gallery 3" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Playtime</div>
+            <div className="k-item k-item-3">
+              <img src={row2Images[0]} alt="Gallery 3" />
+              <div className="k-item-overlay">
+                <h3>Playtime</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-4 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row2Images[1]} alt="Gallery 4" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Nature</div>
+            <div className="k-item k-item-4">
+              <img src={row2Images[1]} alt="Gallery 4" />
+              <div className="k-item-overlay">
+                <h3>Nature</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-5 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row3Images[0]} alt="Gallery 5" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Joy</div>
+            <div className="k-item k-item-5">
+              <img src={row3Images[0]} alt="Gallery 5" />
+              <div className="k-item-overlay">
+                <h3>Joy</h3>
+                <p>View Details</p>
+              </div>
             </div>
-            <div className="k-item k-item-6 hover-lift" style={{ position: 'relative' }} onMouseMove={handleMouseMoveTiltEvent} onMouseLeave={handleMouseLeaveTiltEvent}>
-              <img src={row4Images[0]} alt="Gallery 6" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              <div className="k-caption" style={{ background: '#fff', color: '#111', boxShadow: '0 4px 15px rgba(0,0,0,0.1)' }}>Exploration</div>
+            <div className="k-item k-item-6">
+              <img src={row4Images[0]} alt="Gallery 6" />
+              <div className="k-item-overlay">
+                <h3>Exploration</h3>
+                <p>View Details</p>
+              </div>
             </div>
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-            <button className="btn btn-red" style={{ backgroundColor: '#D90013', color: '#fff', borderRadius: '4px', textTransform: 'uppercase', padding: '0.8rem 1.5rem', fontWeight: 'bold', fontSize: '0.8rem' }}>
+            <Link href="/gallery" className="btn btn-red" style={{ backgroundColor: '#D90013', color: '#fff', borderRadius: '4px', textTransform: 'uppercase', padding: '0.8rem 1.5rem', fontWeight: 'bold', fontSize: '0.8rem', textDecoration: 'none', display: 'inline-block' }}>
               See All Memories <i className="fa-solid fa-arrow-up-right-from-square"></i>
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -726,7 +745,7 @@ export default function Home() {
         <LightbulbDoodle style={{ top: '12%', left: '5%' }} />
         <LightningDoodle style={{ bottom: '10%', right: '10%' }} />
         <HeartDoodle style={{ top: '25%', right: '5%' }} />
-        <SunDoodle style={{ bottom: '25%', left: '12%' }} />
+
 
         <div className="container admissions-grid" style={{ marginTop: '2rem' }}>
 
@@ -878,3 +897,4 @@ export default function Home() {
     </>
   );
 }
+

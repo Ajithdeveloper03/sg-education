@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -106,9 +106,12 @@ export default function AdmissionPage() {
       <div className="adm-container">
         <div className="adm-page-content">
           
-          <div className="adm-header-title text-center">
-            <h2>Join SG Education</h2>
-            <p>Embark on your learning journey with us!</p>
+          <div className="adm-header-title">
+            <img src="/sg-education/logo.webp" alt="SG Education Logo" className="adm-header-logo" style={{ height: '160px', objectFit: 'contain' }} />
+            <div className="adm-header-text">
+              <h2>Join SG Education</h2>
+              <p>Embark on your learning journey with us!</p>
+            </div>
           </div>
 
           <div className="adm-modal-body">
@@ -138,7 +141,7 @@ export default function AdmissionPage() {
                     <div className="adm-step-content fade-in">
                       <div className="adm-grid-2">
                         <div className="adm-form-group">
-                          <label>Student Full Name <span>*</span></label>
+                          <label><i className="fa-solid fa-user-graduate"></i> Student Full Name <span>*</span></label>
                           <div className="adm-input-wrapper">
                             <input type="text" name="studentName" value={formData.studentName} onChange={handleInputChange} className="adm-form-control" placeholder="Enter student name" />
                           </div>
@@ -146,7 +149,7 @@ export default function AdmissionPage() {
                         </div>
 
                         <div className="adm-form-group">
-                          <label>Gender <span>*</span></label>
+                          <label><i className="fa-solid fa-venus-mars"></i> Gender <span>*</span></label>
                           <div className="adm-input-wrapper">
                             <select name="gender" value={formData.gender} onChange={handleInputChange} className="adm-form-control">
                               <option value="">Select Gender</option>
@@ -159,7 +162,7 @@ export default function AdmissionPage() {
                         </div>
 
                         <div className="adm-form-group">
-                          <label>Date of Birth <span>*</span></label>
+                          <label><i className="fa-solid fa-calendar-day"></i> Date of Birth <span>*</span></label>
                           <div className="adm-input-wrapper">
                             <input type="date" name="dob" value={formData.dob} onChange={handleInputChange} className="adm-form-control" />
                           </div>
@@ -167,17 +170,17 @@ export default function AdmissionPage() {
                         </div>
 
                         <div className="adm-form-group">
-                          <label>Applying For <span>*</span></label>
+                          <label><i className="fa-solid fa-bullseye"></i> Applying For <span>*</span></label>
                           <div className="adm-input-wrapper">
                             <select name="applyingFor" value={formData.applyingFor} onChange={handleInputChange} className="adm-form-control">
-                              <option value="">Select Grade</option>
+                              <option value="">Select Standard</option>
                               <option value="LKG">LKG</option>
                               <option value="UKG">UKG</option>
-                              <option value="Grade 1">Grade 1</option>
-                              <option value="Grade 2">Grade 2</option>
-                              <option value="Grade 3">Grade 3</option>
-                              <option value="Grade 4">Grade 4</option>
-                              <option value="Grade 5">Grade 5</option>
+                              <option value="Standard 1">Standard 1</option>
+                              <option value="Standard 2">Standard 2</option>
+                              <option value="Standard 3">Standard 3</option>
+                              <option value="Standard 4">Standard 4</option>
+                              <option value="Standard 5">Standard 5</option>
                             </select>
                           </div>
                           {errors.applyingFor && <span className="adm-form-error">{errors.applyingFor}</span>}
@@ -186,7 +189,7 @@ export default function AdmissionPage() {
 
                       {/* Full width field */}
                       <div className="adm-form-group">
-                        <label>Previous School Attended (Optional)</label>
+                        <label><i className="fa-solid fa-school"></i> Previous School Attended (Optional)</label>
                         <div className="adm-input-wrapper">
                           <input type="text" name="previousSchool" value={formData.previousSchool} onChange={handleInputChange} className="adm-form-control" placeholder="Name of previous school" />
                         </div>
@@ -199,7 +202,7 @@ export default function AdmissionPage() {
                     <div className="adm-step-content fade-in">
                       <div className="adm-grid-2">
                         <div className="adm-form-group">
-                          <label>Parent / Guardian Name <span>*</span></label>
+                          <label><i className="fa-solid fa-user-tie"></i> Parent / Guardian Name <span>*</span></label>
                           <div className="adm-input-wrapper">
                             <input type="text" name="parentName" value={formData.parentName} onChange={handleInputChange} className="adm-form-control" placeholder="Enter parent/guardian name" />
                           </div>
@@ -207,7 +210,7 @@ export default function AdmissionPage() {
                         </div>
 
                         <div className="adm-form-group">
-                          <label>Relationship to Student <span>*</span></label>
+                          <label><i className="fa-solid fa-users"></i> Relationship to Student <span>*</span></label>
                           <div className="adm-input-wrapper">
                             <select name="relationship" value={formData.relationship} onChange={handleInputChange} className="adm-form-control">
                               <option value="">Select Relationship</option>
@@ -220,7 +223,7 @@ export default function AdmissionPage() {
                         </div>
 
                         <div className="adm-form-group">
-                          <label>Mobile Number <span>*</span></label>
+                          <label><i className="fa-solid fa-phone"></i> Mobile Number <span>*</span></label>
                           <div className="adm-input-wrapper">
                             <input type="tel" name="mobileNumber" value={formData.mobileNumber} onChange={handleInputChange} className="adm-form-control" placeholder="10-digit mobile number" />
                           </div>
@@ -228,7 +231,7 @@ export default function AdmissionPage() {
                         </div>
 
                         <div className="adm-form-group">
-                          <label>Email Address <span>*</span></label>
+                          <label><i className="fa-solid fa-envelope"></i> Email Address <span>*</span></label>
                           <div className="adm-input-wrapper">
                             <input type="email" name="emailAddress" value={formData.emailAddress} onChange={handleInputChange} className="adm-form-control" placeholder="email@example.com" />
                           </div>
@@ -237,14 +240,14 @@ export default function AdmissionPage() {
                       </div>
 
                       <div className="adm-form-group">
-                        <label>Occupation (Optional)</label>
+                        <label><i className="fa-solid fa-briefcase"></i> Occupation (Optional)</label>
                         <div className="adm-input-wrapper">
                           <input type="text" name="occupation" value={formData.occupation} onChange={handleInputChange} className="adm-form-control" placeholder="E.g., Software Engineer, Business" />
                         </div>
                       </div>
 
                       <div className="adm-form-group">
-                        <label>Residential Address <span>*</span></label>
+                        <label><i className="fa-solid fa-map-marker-alt"></i> Residential Address <span>*</span></label>
                         <div className="adm-input-wrapper">
                           <input type="text" name="residentialAddress" value={formData.residentialAddress} onChange={handleInputChange} className="adm-form-control" placeholder="Full residential address" />
                         </div>
@@ -253,10 +256,10 @@ export default function AdmissionPage() {
 
                       {formData.isDirectVisit && (
                         <div className="adm-direct-visit-fields fade-in" style={{ background: '#F8FAFC', padding: '1.5rem', borderRadius: '8px', border: '1px solid #E2E8F0', marginTop: '1.5rem', width: '100%' }}>
-                          <h4 style={{ margin: '0 0 1rem 0', color: '#1D2A44', fontSize: '1.05rem', borderBottom: '2px solid #ECC440', display: 'inline-block', paddingBottom: '0.2rem' }}>Direct Visit Details</h4>
+                          <h4 style={{ margin: '0 0 1rem 0', color: '#1D2A44', fontSize: '1.05rem', borderBottom: '2px solid #3B82F6', display: 'inline-block', paddingBottom: '0.2rem' }}><i className="fa-solid fa-school"></i> Direct Visit Details</h4>
                           <div className="adm-grid-2">
                             <div className="adm-form-group">
-                              <label>Preferred Visit Date <span>*</span></label>
+                              <label><i className="fa-solid fa-calendar-alt"></i> Preferred Visit Date <span>*</span></label>
                               <div className="adm-input-wrapper">
                                 <input type="date" name="preferredVisitDate" value={formData.preferredVisitDate} onChange={handleInputChange} className="adm-form-control" />
                               </div>
@@ -264,7 +267,7 @@ export default function AdmissionPage() {
                             </div>
                             
                             <div className="adm-form-group">
-                              <label>Preferred Visit Time <span>*</span></label>
+                              <label><i className="fa-solid fa-clock"></i> Preferred Visit Time <span>*</span></label>
                               <div className="adm-input-wrapper">
                                 <select name="preferredVisitTime" value={formData.preferredVisitTime} onChange={handleInputChange} className="adm-form-control">
                                   <option value="">Select Time</option>
@@ -276,7 +279,7 @@ export default function AdmissionPage() {
                             </div>
 
                             <div className="adm-form-group" style={{ gridColumn: '1 / -1' }}>
-                              <label>Parent/Guardian Name <span>*</span></label>
+                              <label><i className="fa-solid fa-user"></i> Parent/Guardian Name <span>*</span></label>
                               <div className="adm-input-wrapper">
                                 <input type="text" name="directVisitParentName" value={formData.directVisitParentName} onChange={handleInputChange} className="adm-form-control" placeholder="Enter parent/guardian name" />
                               </div>
@@ -284,7 +287,7 @@ export default function AdmissionPage() {
                             </div>
                             
                             <div className="adm-form-group" style={{ gridColumn: '1 / -1' }}>
-                              <label>Purpose of Visit <span>*</span></label>
+                              <label><i className="fa-solid fa-bullseye"></i> Purpose of Visit <span>*</span></label>
                               <div className="adm-input-wrapper">
                                 <select name="purposeOfVisit" value={formData.purposeOfVisit} onChange={handleInputChange} className="adm-form-control">
                                   <option value="">Select Purpose</option>
@@ -298,7 +301,7 @@ export default function AdmissionPage() {
                             </div>
                             
                             <div className="adm-form-group" style={{ gridColumn: '1 / -1' }}>
-                              <label>Additional Comments / Message</label>
+                              <label><i className="fa-solid fa-comment-dots"></i> Additional Comments / Message</label>
                               <div className="adm-input-wrapper">
                                 <textarea name="additionalComments" value={formData.additionalComments} onChange={handleInputChange} className="adm-form-control" rows="3" placeholder="Any additional details..."></textarea>
                               </div>
@@ -314,7 +317,7 @@ export default function AdmissionPage() {
                     <div className="adm-step-content fade-in">
                       <div className="adm-grid-2">
                         <div className="adm-summary-block">
-                          <h4>Student Details</h4>
+                          <h4><i className="fa-solid fa-graduation-cap"></i> Student Details</h4>
                           <div className="adm-summary-row"><div className="adm-summary-label">Name:</div><div className="adm-summary-val">{formData.studentName}</div></div>
                           <div className="adm-summary-row"><div className="adm-summary-label">Gender:</div><div className="adm-summary-val">{formData.gender}</div></div>
                           <div className="adm-summary-row"><div className="adm-summary-label">Date of Birth:</div><div className="adm-summary-val">{formData.dob}</div></div>
@@ -323,7 +326,7 @@ export default function AdmissionPage() {
                         </div>
 
                         <div className="adm-summary-block">
-                          <h4>Parent Details</h4>
+                          <h4><i className="fa-solid fa-users"></i> Parent Details</h4>
                           <div className="adm-summary-row"><div className="adm-summary-label">Name:</div><div className="adm-summary-val">{formData.parentName} ({formData.relationship})</div></div>
                           <div className="adm-summary-row"><div className="adm-summary-label">Mobile:</div><div className="adm-summary-val">{formData.mobileNumber}</div></div>
                           <div className="adm-summary-row"><div className="adm-summary-label">Email:</div><div className="adm-summary-val">{formData.emailAddress}</div></div>
@@ -331,7 +334,7 @@ export default function AdmissionPage() {
                           
                           {formData.isDirectVisit && (
                             <>
-                              <h4 style={{ marginTop: '1.5rem' }}>Direct Visit Request</h4>
+                              <h4 style={{ marginTop: '1.5rem' }}><i className="fa-solid fa-school"></i> Direct Visit Request</h4>
                               <div className="adm-summary-row"><div className="adm-summary-label">Date:</div><div className="adm-summary-val">{formData.preferredVisitDate}</div></div>
                               <div className="adm-summary-row"><div className="adm-summary-label">Time:</div><div className="adm-summary-val">{formData.preferredVisitTime}</div></div>
                               <div className="adm-summary-row"><div className="adm-summary-label">Parent Name:</div><div className="adm-summary-val">{formData.directVisitParentName}</div></div>
@@ -347,19 +350,19 @@ export default function AdmissionPage() {
                   {/* Navigation Actions */}
                   <div className="adm-form-actions" style={{ alignItems: 'center' }}>
                     {step > 1 ? (
-                      <button type="button" className="adm-btn adm-btn-secondary" onClick={handleBack}>Back</button>
+                      <button type="button" className="adm-btn adm-btn-secondary" onClick={handleBack}><i className="fa-solid fa-arrow-left"></i> Back</button>
                     ) : <div></div>}
 
                     <div style={{ display: 'flex', gap: '1rem' }}>
                       {step === 2 && (
                         <button type="button" className="adm-btn adm-btn-secondary" onClick={() => setFormData(prev => ({ ...prev, isDirectVisit: !prev.isDirectVisit }))}>
-                          {formData.isDirectVisit ? 'Cancel Direct Visit' : 'Direct Visit'}
+                          <i className="fa-solid fa-school"></i> {formData.isDirectVisit ? 'Cancel Direct Visit' : 'Direct Visit'}
                         </button>
                       )}
                       {step < 3 ? (
-                        <button type="button" className="adm-btn adm-btn-primary" onClick={handleNext}>Next</button>
+                        <button type="button" className="adm-btn adm-btn-primary" onClick={handleNext}>Next <i className="fa-solid fa-arrow-right"></i></button>
                       ) : (
-                        <button type="button" className="adm-btn adm-btn-primary" onClick={handleSubmit}>Submit</button>
+                        <button type="button" className="adm-btn adm-btn-primary" onClick={handleSubmit}>Submit <i className="fa-solid fa-paper-plane"></i></button>
                       )}
                     </div>
                   </div>
@@ -381,3 +384,4 @@ export default function AdmissionPage() {
     </main>
   );
 }
+

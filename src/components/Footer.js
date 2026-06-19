@@ -46,7 +46,7 @@ export default function Footer() {
             <ul className="footer-links">
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about/sg-early-budding">SG Early Budding</Link></li>
-              <li><Link href="/">Facilities</Link></li>
+              <li><Link href="/facilities">Facilities</Link></li>
               <li><Link href="/gallery">Memory Clips</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
@@ -74,3 +74,4 @@ export default function Footer() {
     </section>
   );
 }
+
