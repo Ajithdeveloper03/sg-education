@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import "./health/health-advanced.css"; // For Discovering Hidden Talents and Learning Through Participation
@@ -199,7 +199,7 @@ export default function FacilitiesPage() {
       {/* ==========================================
           SECTION 4: Transportation (Using Health's Spotlight Glass Panel)
           ========================================== */}
-      <section className="health-s3-spotlight" style={{ overflow: 'hidden' }}>
+      <section className="health-s3-spotlight" style={{ overflow: 'hidden', backgroundImage: "url('/sg-education/transport/school-bus-bg.jpg')" }}>
         <div className="health-s3-overlay" style={{ background: 'linear-gradient(135deg, rgba(20, 25, 40, 0.8) 0%, rgba(10, 15, 25, 0.7) 100%)' }}></div>
         
         <div className="container health-s3-container" style={{ zIndex: 10 }}>

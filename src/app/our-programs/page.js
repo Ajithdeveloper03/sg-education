@@ -33,14 +33,47 @@ export default function OurProgramsPage() {
       {/* 1. Hero Section */}
       <section className="op-hero-section">
         
-        {/* Decorators */}
-        <div className="op-deco" style={{ top: '10%', right: '40%', color: '#FFB300', fontSize: '2.5rem' }}><i className="fa-regular fa-sun"></i></div>
-        <div className="op-deco" style={{ bottom: '20%', left: '45%', color: '#4CAF50', fontSize: '2rem' }}><i className="fa-regular fa-paper-plane"></i></div>
-        <div className="op-deco" style={{ top: '30%', left: '5%', color: '#E91E63', fontSize: '1.2rem' }}><i className="fa-regular fa-star"></i></div>
-        <div className="op-deco" style={{ bottom: '10%', right: '35%', color: '#FFB300', fontSize: '1.5rem' }}><i className="fa-regular fa-star"></i></div>
 
-        <div className="op-hero-left">
+
+        <div className="op-hero-left" style={{ position: 'relative' }}>
           
+          {/* Kids Decorative Elements */}
+          <div className="op-deco" style={{ position: 'absolute', top: '5%', right: '5%', color: '#FFB300', zIndex: -1, animation: 'spin 20s linear infinite' }}>
+            <svg width="80" height="80" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="50" cy="50" r="20" />
+              <path d="M50 15 V25 M50 75 V85 M15 50 H25 M75 50 H85 M25 25 L32 32 M68 68 L75 75 M25 75 L32 68 M68 25 L75 32" />
+              <path d="M42 45 Q42 45 42 45.5" strokeWidth="6" />
+              <path d="M58 45 Q58 45 58 45.5" strokeWidth="6" />
+              <path d="M42 55 Q50 62 58 55" />
+            </svg>
+          </div>
+
+          <div className="op-deco" style={{ position: 'absolute', top: '25%', right: '-10%', color: '#4CAF50', zIndex: -1, animation: 'float-bob 3s infinite ease-in-out' }}>
+            <svg width="40" height="40" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="5" strokeLinejoin="round">
+              <polygon points="50,10 61,35 88,35 66,51 74,78 50,61 26,78 34,51 12,35 39,35" />
+            </svg>
+          </div>
+
+          <div className="op-deco" style={{ position: 'absolute', bottom: '30%', left: '-5%', color: '#E91E63', zIndex: -1, animation: 'float-bob 4s infinite ease-in-out' }}>
+            <svg width="35" height="35" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="5" strokeLinejoin="round">
+              <polygon points="50,10 61,35 88,35 66,51 74,78 50,61 26,78 34,51 12,35 39,35" />
+            </svg>
+          </div>
+
+          <div className="op-deco" style={{ position: 'absolute', bottom: '0', right: '10%', color: '#FFB300', zIndex: -1, animation: 'float-bob 3.5s infinite ease-in-out' }}>
+            <svg width="30" height="30" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="5" strokeLinejoin="round">
+              <polygon points="50,10 61,35 88,35 66,51 74,78 50,61 26,78 34,51 12,35 39,35" />
+            </svg>
+          </div>
+
+          <div className="op-deco" style={{ position: 'absolute', bottom: '15%', right: '-15%', color: '#4CAF50', zIndex: -1 }}>
+            <svg width="100" height="120" viewBox="0 0 120 150" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 30 L80 10 L50 70 L40 40 Z" />
+              <path d="M40 40 L30 65 L45 55" />
+              <path d="M80 10 L40 40" />
+              <path d="M40 70 Q 55 110 30 140" strokeDasharray="6 6" />
+            </svg>
+          </div>
           <h1 className="op-hero-title-main">Big Dreams</h1>
           <h1 className="op-hero-title-sub">Bright Beginnings</h1>
           
@@ -86,7 +119,7 @@ export default function OurProgramsPage() {
 
         <div className="op-hero-right">
           <div className="op-hero-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80" alt="Children Learning" />
+            <img src="/sg-education/banner page.png" alt="Children Learning" />
             <div className="op-pink-circle">
               Every Child.<br/>
               Every Talent.<br/>
