@@ -1,4 +1,4 @@
-/* src/app/our-programs/our-programs.css */
+﻿/* src/app/our-programs/our-programs.css */
 
 .programs-page-wrapper {
   background-color: #fff;
@@ -48,7 +48,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background-color: rgba(17, 24, 39, 0.45);
   z-index: 1;
 }
 
@@ -136,12 +136,12 @@
 }
 
 .op-hero-title-main {
-  font-family: var(--font-headings);
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 800;
-  color: #1B5E20; /* Deep Green */
-  margin: 0;
-  line-height: 1.1;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .op-hero-title-sub {
@@ -154,11 +154,10 @@
 }
 
 .op-hero-subtitle {
-  font-family: var(--font-body);
-  font-size: 1.4rem;
-  color: #333;
-  margin-bottom: 2.5rem;
-  font-weight: 500;
+  font-size: 1.1rem;
+  color: #9CA3AF;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .op-hero-subtitle span {
@@ -782,4 +781,7 @@
 }
 
 .strip-logo { display: flex; align-items: center; }
+
+
+
 

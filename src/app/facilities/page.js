@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import "./health/health-advanced.css"; // For Discovering Hidden Talents and Learning Through Participation
@@ -15,7 +15,7 @@ export default function FacilitiesPage() {
         backgroundImage: 'url("/sg-education/facilities banner.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'transparent', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title" style={{ color: '#fff' }}>Facilities</h1>
           <p className="vm-banner-desc" style={{ color: '#fff' }}>
@@ -232,4 +232,6 @@ export default function FacilitiesPage() {
     </main>
   );
 }
+
+
 

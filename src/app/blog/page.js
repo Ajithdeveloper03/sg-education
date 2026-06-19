@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import "./blog.css";
@@ -13,7 +13,7 @@ export default function BlogPage() {
         backgroundImage: 'url("/sg-education/blog banner.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.85)', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
         <div className="container blog-hero-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
           
           <h1 className="blog-hero-title">Stories & Insights from SG Education</h1>
@@ -69,3 +69,4 @@ export default function BlogPage() {
     </main>
   );
 }
+

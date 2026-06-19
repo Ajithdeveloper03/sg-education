@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import "../health/health-advanced.css"; // Using Health's layout styles
@@ -185,3 +185,4 @@ export default function BeyondPage() {
     </main>
   );
 }
+

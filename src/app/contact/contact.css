@@ -1,4 +1,4 @@
-/* src/app/contact/contact.css */
+﻿/* src/app/contact/contact.css */
 
 .contact-page-section {
   padding: 3rem 0;
@@ -206,3 +206,4 @@ textarea.form-control {
     grid-template-columns: 1fr;
   }
 }
+

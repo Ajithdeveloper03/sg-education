@@ -1,4 +1,4 @@
-/* Founders Message CSS */
+﻿/* Founders Message CSS */
 
 @keyframes fm-float {
   0% { transform: translateY(0px) rotate(0deg); }
@@ -722,3 +722,4 @@
   color: #333;
   font-size: 0.95rem; /* Reduced from 1.05rem */
 }
+

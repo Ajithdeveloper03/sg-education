@@ -1,4 +1,4 @@
-/* src/app/facilities/health/health-advanced.css */
+﻿/* src/app/facilities/health/health-advanced.css */
 
 /* --- General Variables specific to Health Page --- */
 :root {
@@ -370,3 +370,4 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
   margin-left: -40px; /* Shifted left as requested */
 }
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import "./health-advanced.css"; // We will rename the classes in health-advanced.css or just use beyond CSS. Actually, since the user said swap the *design and layout*, I should just use the exact CSS rules. The easiest way is to literally copy beyond-advanced.css to health and vice-versa, or just swap the class names in the files. Let's just import beyond's CSS for Health and Health's CSS for Beyond to save time, OR I can rename them. Let's stick to using the existing CSS files and just applying the classes.
@@ -16,7 +16,7 @@ export default function HealthPage() {
         backgroundImage: 'url("https://images.pexels.com/photos/31864392/pexels-photo-31864392.jpeg?auto=compress&cs=tinysrgb&w=1600")', 
         backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'hidden'
       }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'transparent', zIndex: 1 }}></div>
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title" style={{ color: '#fff' }}>Health & Well-being</h1>
           <p className="vm-banner-desc" style={{ color: '#fff' }}>
@@ -188,4 +188,6 @@ export default function HealthPage() {
     </main>
   );
 }
+
+
 

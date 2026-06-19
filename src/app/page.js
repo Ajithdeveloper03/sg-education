@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef } from "react";
 
@@ -398,8 +398,8 @@ export default function Home() {
                 </div>
 
                 {/* Stickers */}
-                <div className="sc-sticker sc-heart float-anim-3">💖</div>
-                <div className="sc-sticker sc-cupcake float-anim-2">🧁</div>
+                <div className="sc-sticker sc-heart float-anim-3">ðŸ’–</div>
+                <div className="sc-sticker sc-cupcake float-anim-2">ðŸ§</div>
                 
                 <div className="sc-text-sticker float-anim-1">
                   <span className="sc-text-line1">Stay</span>
@@ -896,3 +896,4 @@ export default function Home() {
     </>
   );
 }
+

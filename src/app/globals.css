@@ -1,4 +1,4 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -1267,7 +1267,7 @@ header.scrolled .brand-name {
   z-index: 10;
 }
 .habit-box::after {
-  content: 'â™¥';
+  content: 'Ã¢â„¢Â¥';
   position: absolute;
   bottom: -40px;
   right: -25px;
@@ -3266,7 +3266,7 @@ header.scrolled .brand-name {
 }
 
 .decorative-grass-wrapper .footer-links li a::before {
-  content: 'â™¥';
+  content: 'Ã¢â„¢Â¥';
   color: var(--playful-pink);
   font-size: 0.8rem;
   transition: transform var(--transition-fast);
@@ -4504,7 +4504,7 @@ header.scrolled .brand-name {
 }
 
 .founder-info-3d .quote-box::before {
-  content: 'â€œ';
+  content: 'Ã¢â‚¬Å“';
   font-size: 3.5rem;
   color: rgba(233, 30, 99, 0.08);
   position: absolute;
@@ -5899,4 +5899,34 @@ header.scrolled .brand-name {
   0% { transform: translate(0, 0) scale(1); }
   50% { transform: translate(30px, -40px) scale(1.1); }
   100% { transform: translate(-30px, 40px) scale(0.9); }
+}
+
+
+/* Animated Cloud Transition */
+.cloud-container {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 3;
+  line-height: 0;
+}
+
+.cloud-wrapper {
+  display: flex;
+  width: 200%;
+  animation: moveCloudsRight 30s linear infinite;
+}
+
+.cloud-wrapper img {
+  width: 50%;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg) !important;
+}
+
+@keyframes moveCloudsRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }

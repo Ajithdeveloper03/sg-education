@@ -88,7 +88,7 @@ export default function SGEarlyBuddingPage() {
       <section className="eb-hero" style={{ 
         backgroundImage: 'url("/sg-education/sg early budding banner.png")'
       }}>
-        <div className="eb-hero-overlay" style={{ backgroundColor: 'transparent' }}></div>
+        <div className="eb-hero-overlay" style={{ backgroundColor: 'rgba(17, 24, 39, 0.45)' }}></div>
         <div className="eb-hero-content">
           <h1 className="eb-hero-title">Welcome to SG Early Budding</h1>
           <p className="eb-hero-desc">
@@ -394,4 +394,6 @@ We believe that small habits shape great individuals. Our unique approach, &quot
     </main>
   );
 }
+
+
 
