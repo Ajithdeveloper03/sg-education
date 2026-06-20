@@ -99,9 +99,7 @@ export default function SGEarlyBuddingPage() {
           }}>
             <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
             <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
-            <span>About Us</span>
-            <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
-            <span style={{ color: '#FFC300' }}>SG Early Budding</span>
+            <span style={{ color: '#FFC300' }}>Early Budding</span>
           </div>
         </div>
         

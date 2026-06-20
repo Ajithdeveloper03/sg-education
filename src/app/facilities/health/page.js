@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import "./health-advanced.css"; // We will rename the classes in health-advanced.css or just use beyond CSS. Actually, since the user said swap the *design and layout*, I should just use the exact CSS rules. The easiest way is to literally copy beyond-advanced.css to health and vice-versa, or just swap the class names in the files. Let's just import beyond's CSS for Health and Health's CSS for Beyond to save time, OR I can rename them. Let's stick to using the existing CSS files and just applying the classes.
@@ -24,8 +24,6 @@ export default function HealthPage() {
           </p>
           <div className="vm-pagination">
             <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
-            <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
-            <span style={{ color: '#fff' }}>Facilities</span>
             <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
             <span style={{ color: '#FFC300' }}>Health & Well-being</span>
           </div>

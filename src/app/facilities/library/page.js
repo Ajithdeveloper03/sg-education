@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import "./library-advanced.css"; // The new advanced CSS
@@ -22,8 +22,6 @@ export default function LibraryPage() {
           </p>
           <div className="vm-pagination">
             <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
-            <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
-            <span style={{ color: '#fff' }}>Facilities</span>
             <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
             <span style={{ color: '#FFC300' }}>Library</span>
           </div>
