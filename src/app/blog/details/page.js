@@ -1,21 +1,40 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import "./blog-details.css";
 
-export default function BlogDetailsPage() {
-  const [activeSection, setActiveSection] = useState("introduction");
+function BlogDetailsContent() {
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id');
 
-  // Sample blog data since this is a static demonstration
-  const article = {
-    title: "Find Your Ideal Early Learning Path for Creativity",
-    category: "EDUCATION",
-    date: "February 7, 2026",
-    author: "Admin",
-    readTime: "6 min read",
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80"
-  };
+  const [activeSection, setActiveSection] = useState("introduction");
+  const [isTocOpen, setIsTocOpen] = useState(false);
+  const [article, setArticle] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (!id) {
+      setLoading(false);
+      return;
+    }
+    
+    const fetchArticle = async () => {
+      try {
+        const res = await fetch(`http://localhost/php-backend/api_blog.php?id=${id}`);
+        const data = await res.json();
+        if (data.status === 'success') {
+          setArticle(data.data);
+        }
+      } catch (err) {
+        console.error("Failed to fetch article", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchArticle();
+  }, [id]);
 
   useEffect(() => {
     // Scroll spy for Table of Contents
@@ -39,9 +58,10 @@ export default function BlogDetailsPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (e, id) => {
+  const scrollToSection = (e, targetId) => {
     e.preventDefault();
-    const element = document.getElementById(id);
+    setIsTocOpen(false); // Close mobile menu on click
+    const element = document.getElementById(targetId);
     if (element) {
       window.scrollTo({
         top: element.offsetTop - 100, // offset for fixed header
@@ -50,18 +70,21 @@ export default function BlogDetailsPage() {
     }
   };
 
+  if (loading) return <div style={{ padding: '100px', textAlign: 'center' }}>Loading article...</div>;
+  if (!article) return <div style={{ padding: '100px', textAlign: 'center' }}>Article not found. <Link href="/blog">Return to blog</Link></div>;
+
   return (
     <main style={{ backgroundColor: '#F8F9FA', minHeight: '100vh', overflowX: 'hidden' }}>
       
       {/* Hero Section */}
-      <section className="blog-details-hero" style={{ backgroundImage: `url(${article.image})` }}>
+      <section className="blog-details-hero" style={{ backgroundImage: `url(${article.image_url || "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1600&q=80"})` }}>
         <div className="blog-details-hero-content container">
-          <div className="blog-details-badge">{article.category}</div>
+          <div className="blog-details-badge">{article.category || 'EDUCATION'}</div>
           <h1 className="blog-details-title">{article.title}</h1>
           <div className="blog-details-meta">
-            <span><i className="fa-solid fa-user"></i> By {article.author}</span>
-            <span><i className="fa-regular fa-calendar"></i> {article.date}</span>
-            <span><i className="fa-regular fa-clock"></i> {article.readTime}</span>
+            <span><i className="fa-solid fa-user"></i> By {article.author || 'Admin'}</span>
+            <span><i className="fa-regular fa-calendar"></i> {new Date(article.created_at).toLocaleDateString()}</span>
+            <span><i className="fa-regular fa-clock"></i> {article.read_time || '5 min read'}</span>
           </div>
         </div>
       </section>
@@ -76,49 +99,7 @@ export default function BlogDetailsPage() {
               <i className="fa-solid fa-arrow-left-long"></i> Back to Blog
             </Link>
 
-            <div id="introduction">
-              <h2>Introduction</h2>
-              <p>
-                Early childhood is the most critical phase in human development. During these formative years, a child&apos;s brain develops at an astonishing rate, absorbing information like a sponge. Cultivating creativity during this period isn&apos;t just about teaching them to paint or draw; it&apos;s about teaching them how to think, solve problems, and express themselves confidently.
-              </p>
-              <p>
-                At SG Education, we believe that every child is born with an innate sense of wonder and creativity. The challenge for educators and parents is to find the right learning path that nurtures this creativity rather than stifling it with rigid structures.
-              </p>
-            </div>
-
-            <div id="main-content">
-              <h2>The Core Methodologies</h2>
-              <p>
-                To build a strong foundation for innovative thinking, we must step away from rote memorization and embrace experiential learning. When children are allowed to touch, feel, and experience the world around them, their cognitive boundaries expand.
-              </p>
-              <blockquote>
-                &quot;Play is the highest form of research.&quot; – Albert Einstein
-              </blockquote>
-              <p>
-                Our curriculum integrates the <strong>ANBC (Ancient Bharath Culture) CPC Methodology</strong>. This unique approach perfectly blends modern corporate educational standards with traditional values. By teaching children ancient stories, morals, and customs alongside modern problem-solving techniques, we provide a holistic brain-development environment.
-              </p>
-            </div>
-
-            <div id="key-points">
-              <h2>Key Points for Fostering Creativity</h2>
-              <p>If you are looking to enhance your child&apos;s creative potential at home, consider these fundamental strategies:</p>
-              <ul>
-                <li><strong>Encourage Open-Ended Play:</strong> Provide materials that can be used in multiple ways—like blocks, clay, and blank paper—rather than toys that only do one specific thing.</li>
-                <li><strong>Embrace the Mess:</strong> Creative exploration is often messy. Allow children the freedom to get their hands dirty while painting or playing outdoors.</li>
-                <li><strong>Ask Thought-Provoking Questions:</strong> Instead of giving them the answers, ask "What do you think will happen if...?" or "How can we solve this?"</li>
-                <li><strong>Limit Screen Time:</strong> Passive consumption of media limits the brain&apos;s need to imagine. Replace screen time with interactive reading and physical play.</li>
-              </ul>
-            </div>
-
-            <div id="conclusion">
-              <h2>Conclusion</h2>
-              <p>
-                Finding the ideal early learning path requires patience, observation, and a willingness to let children lead the way. By choosing an educational environment like SG Early Budding that prioritizes holistic, joyful, and cultural learning, you are setting the stage for a lifetime of innovative thinking.
-              </p>
-              <p>
-                Remember, the goal isn&apos;t to mold a child into a specific shape, but to give them the tools to shape their own brilliant future.
-              </p>
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: article.content }}></div>
           </div>
 
           {/* Sidebar */}
@@ -184,5 +165,13 @@ export default function BlogDetailsPage() {
 
       </section>
     </main>
+  );
+}
+
+export default function BlogDetailsPage() {
+  return (
+    <Suspense fallback={<div style={{ padding: '100px', textAlign: 'center' }}>Loading article...</div>}>
+      <BlogDetailsContent />
+    </Suspense>
   );
 }

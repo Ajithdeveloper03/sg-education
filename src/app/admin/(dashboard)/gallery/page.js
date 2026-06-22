@@ -9,7 +9,7 @@ export default function GalleryManager() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   
-  const [formData, setFormData] = useState({ id: "", title: "", category: "Events", existing_image: "" });
+  const [formData, setFormData] = useState({ id: "", title: "", category: "events", existing_image: "" });
   const fileInputRef = useRef(null);
 
   const fetchGallery = async () => {
@@ -75,7 +75,7 @@ export default function GalleryManager() {
   };
 
   const resetForm = () => {
-    setFormData({ id: "", title: "", category: "Events", existing_image: "" });
+    setFormData({ id: "", title: "", category: "events", existing_image: "" });
     setView("list"); setSuccess(""); setError("");
   };
 
@@ -126,10 +126,10 @@ export default function GalleryManager() {
             <div style={{ marginBottom: '20px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Category</label>
               <select name="category" value={formData.category} onChange={handleInputChange} className="admin-input" required>
-                <option value="Events">Events</option>
-                <option value="Activities">Activities</option>
-                <option value="Campus">Campus</option>
-                <option value="Kids">Kids</option>
+                <option value="events">Events</option>
+                <option value="learning">Learning</option>
+                <option value="campus">Campus</option>
+                <option value="playtime">Playtime</option>
               </select>
             </div>
 

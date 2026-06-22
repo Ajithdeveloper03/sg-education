@@ -63,6 +63,9 @@ export default function AdminDashboardLayout({ children }) {
           </Link>
           
           <div className="admin-sidebar-footer">
+            <Link href="/" target="_blank" className="admin-nav-link view-site-btn" style={{ marginBottom: '10px' }}>
+              <i className="fa-solid fa-globe"></i> View Live Site
+            </Link>
             <button onClick={handleLogout} className="admin-nav-link logout-btn">
               <i className="fa-solid fa-right-from-bracket"></i> Logout
             </button>

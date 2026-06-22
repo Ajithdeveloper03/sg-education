@@ -15,11 +15,6 @@ export default function Footer() {
 
       {/* Playful Decorative Grass Footer (Light Background, Navy elements for absolute visibility) */}
       <div className="decorative-grass-wrapper" style={{ position: 'relative' }}>
-        {/* Layered Decorative Image (Above Grass) */}
-        <div style={{ position: 'absolute', bottom: '0', left: '0', width: '100%', height: '100%', pointerEvents: 'none', zIndex: 2, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', overflow: 'hidden' }}>
-          <img src="/sg-education/backgroung remove.png" alt="Decorative Kids" style={{ maxWidth: '80%', height: 'auto', maxHeight: '350px', objectFit: 'contain', marginBottom: '2rem' }} />
-        </div>
-        
         <div className="grass-doodles"></div>
 
         <div className="container footer-content-grid">
