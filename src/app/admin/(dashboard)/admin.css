@@ -1,0 +1,82 @@
+.admin-nav-link {
+  display: block;
+  padding: 12px 20px;
+  color: #cfd8dc;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.admin-nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+.admin-nav-link.active {
+  background-color: #ECC440;
+  color: #1d2a44;
+  font-weight: bold;
+  border-left: 4px solid #fff;
+}
+
+.admin-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+.admin-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.admin-btn:hover {
+  opacity: 0.9;
+}
+
+.admin-btn-primary {
+  background-color: #1d2a44;
+  color: #fff;
+}
+
+.admin-btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.admin-btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.admin-table th {
+  background-color: #f8f9fa;
+  color: #555;
+  font-weight: bold;
+}
