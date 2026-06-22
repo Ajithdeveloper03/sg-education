@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const pathname = usePathname();
-  if (pathname === '/admission') return null;
+  const isAdminRoute = pathname?.startsWith('/admin');
+  if (pathname === '/admission' || isAdminRoute) return null;
 
   return (
     <section className="newsletter-section section-padding" style={{ backgroundColor: '#FAF8F0', paddingBottom: '0' }}>

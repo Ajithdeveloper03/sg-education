@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import "./blog.css";
@@ -57,7 +57,7 @@ export default function BlogPage() {
                   <div className="author-avatar"><i className="fa-solid fa-user"></i></div>
                   <span className="author-name">By Admin</span>
                 </div>
-                <Link href="/blog" className="blog-read-link">Read Article <i className="fa-solid fa-arrow-right"></i></Link>
+                <Link href="/blog/details" className="blog-read-link">Read Article <i className="fa-solid fa-arrow-right"></i></Link>
               </div>
             </article>
 

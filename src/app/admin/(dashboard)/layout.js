@@ -11,6 +11,7 @@ export default function AdminDashboardLayout({ children }) {
   const pathname = usePathname();
   const [isAuth, setIsAuth] = useState(false);
   const [username, setUsername] = useState("");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem("admin_token");
@@ -34,42 +35,57 @@ export default function AdminDashboardLayout({ children }) {
 
   return (
     <div className="admin-layout" style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#f4f6f9' }}>
+      
+      {/* Mobile Sidebar Overlay */}
+      <div 
+        className={`sidebar-overlay ${mobileMenuOpen ? 'show' : ''}`} 
+        onClick={() => setMobileMenuOpen(false)}
+      ></div>
+
       {/* Sidebar */}
-      <aside style={{ width: '250px', backgroundColor: '#1d2a44', color: '#fff', position: 'fixed', height: '100vh', overflowY: 'auto' }}>
-        <div style={{ padding: '20px', textAlign: 'center', borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
-          <h3 style={{ margin: 0, color: '#ECC440' }}>SG Education</h3>
-          <p style={{ margin: 0, fontSize: '0.85rem', opacity: 0.8 }}>Admin Panel</p>
+      <aside className={`admin-sidebar ${mobileMenuOpen ? 'open' : ''}`}>
+        <div className="admin-sidebar-header">
+          <div className="admin-sidebar-logo-wrapper">
+            <img src="/sg-education/logo.webp" alt="SG Education" className="admin-sidebar-logo" />
+          </div>
+          <h3>SG EDUCATIONS</h3>
+          <p className="admin-sidebar-title">Admin Panel</p>
         </div>
-        <nav style={{ padding: '20px 0' }}>
-          <Link href="/admin/dashboard" className={`admin-nav-link ${pathname === '/admin/dashboard' ? 'active' : ''}`}>
-            <i className="fa-solid fa-gauge" style={{ width: '25px' }}></i> Dashboard
+        <nav className="admin-sidebar-nav">
+          <Link href="/admin/dashboard" className={`admin-nav-link ${pathname === '/admin/dashboard' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>
+            <i className="fa-solid fa-gauge"></i> Dashboard
           </Link>
-          <Link href="/admin/blog" className={`admin-nav-link ${pathname === '/admin/blog' ? 'active' : ''}`}>
-            <i className="fa-solid fa-blog" style={{ width: '25px' }}></i> Blog Management
+          <Link href="/admin/blog" className={`admin-nav-link ${pathname === '/admin/blog' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>
+            <i className="fa-solid fa-blog"></i> Blog Management
           </Link>
-          <Link href="/admin/gallery" className={`admin-nav-link ${pathname === '/admin/gallery' ? 'active' : ''}`}>
-            <i className="fa-solid fa-images" style={{ width: '25px' }}></i> Gallery Management
+          <Link href="/admin/gallery" className={`admin-nav-link ${pathname === '/admin/gallery' ? 'active' : ''}`} onClick={() => setMobileMenuOpen(false)}>
+            <i className="fa-solid fa-images"></i> Gallery Management
           </Link>
           
-          <div style={{ marginTop: '50px', borderTop: '1px solid rgba(255,255,255,0.1)', padding: '20px 0' }}>
-            <button onClick={handleLogout} className="admin-nav-link" style={{ width: '100%', textAlign: 'left', background: 'none', border: 'none', color: '#ff6b6b', cursor: 'pointer' }}>
-              <i className="fa-solid fa-right-from-bracket" style={{ width: '25px' }}></i> Logout
+          <div className="admin-sidebar-footer">
+            <button onClick={handleLogout} className="admin-nav-link logout-btn">
+              <i className="fa-solid fa-right-from-bracket"></i> Logout
             </button>
           </div>
         </nav>
       </aside>
 
       {/* Main Content Area */}
-      <main style={{ flex: 1, marginLeft: '250px', padding: '30px' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '30px', backgroundColor: '#fff', padding: '15px 20px', borderRadius: '10px', boxShadow: '0 2px 10px rgba(0,0,0,0.05)' }}>
-          <h2 style={{ margin: 0, fontSize: '1.5rem', color: '#333' }}>
-            {pathname === '/admin/dashboard' ? 'Dashboard Overview' : 
-             pathname === '/admin/blog' ? 'Blog Content Management' : 
-             pathname === '/admin/gallery' ? 'Gallery Content Management' : 'Admin Panel'}
-          </h2>
+      <main className="admin-main-content">
+        <div className="admin-header">
           <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
-            <span style={{ fontWeight: 'bold', color: '#1d2a44' }}>Welcome, {username}</span>
-            <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#ECC440', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#1d2a44', fontWeight: 'bold' }}>
+            <button className="admin-mobile-toggle" onClick={() => setMobileMenuOpen(true)}>
+              <i className="fa-solid fa-bars"></i>
+            </button>
+            <h2 className="admin-page-title">
+              {pathname === '/admin/dashboard' ? 'Dashboard Overview' : 
+               pathname === '/admin/blog' ? 'Blog Content Management' : 
+               pathname === '/admin/gallery' ? 'Gallery Content Management' : 'Admin Panel'}
+            </h2>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+            <span className="admin-username">Welcome, {username}</span>
+            <div className="admin-avatar">
               {username.charAt(0).toUpperCase()}
             </div>
           </div>
