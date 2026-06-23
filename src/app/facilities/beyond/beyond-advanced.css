@@ -1,4 +1,4 @@
-﻿/* src/app/facilities/beyond/beyond-advanced.css */
+/* src/app/facilities/beyond/beyond-advanced.css */
 
 /* --- General Variables specific to Beyond Academics Page --- */
 :root {
@@ -115,13 +115,16 @@
   font-size: 0.9rem;
   color: #777;
   line-height: 1.5;
+  text-align: left !important;
+  word-break: normal !important;
 }
 
 /* Center Image Override */
 .beyond-s1-card.featured {
   padding: 0;
   grid-column: span 2;
-  height: 250px;
+  height: auto;
+  min-height: 250px;
   border-radius: 24px;
 }
 

@@ -380,3 +380,16 @@
   }
 }
 
+@media (max-width: 576px) {
+  .health-s3-glass-panel {
+    padding: 1.5rem 1rem !important;
+  }
+  .health-s3-glass-panel .health-text-main {
+    text-align: left !important;
+    word-break: normal !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    font-size: 1rem !important;
+  }
+}
+

@@ -120,34 +120,41 @@ export default function BlogManager() {
           </div>
           
           {loading ? <p>Loading blogs...</p> : (
+            <div className="table-responsive">
             <table className="admin-table">
               <thead>
                 <tr>
-                  <th>Image</th>
                   <th>Title</th>
                   <th>Category</th>
+                  <th>Author</th>
                   <th>Date</th>
                   <th>Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {blogs.length === 0 ? <tr><td colSpan="5" style={{ textAlign: 'center' }}>No blogs found.</td></tr> : null}
-                {blogs.map(b => (
-                  <tr key={b.id}>
+                {blogs.length === 0 && (
+                  <tr><td colSpan="5" style={{ textAlign: 'center' }}>No blogs found.</td></tr>
+                )}
+                {blogs.map(blog => (
+                  <tr key={blog.id}>
                     <td>
-                      {b.image_url ? <img src={b.image_url} alt="" style={{ width: '60px', height: '40px', objectFit: 'cover', borderRadius: '4px' }} /> : 'No Image'}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                        <img src={blog.image_url} alt="thumbnail" style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '5px' }} />
+                        <strong>{blog.title}</strong>
+                      </div>
                     </td>
-                    <td style={{ fontWeight: 'bold' }}>{b.title}</td>
-                    <td>{b.category}</td>
-                    <td>{new Date(b.created_at).toLocaleDateString()}</td>
+                    <td>{blog.category}</td>
+                    <td>{blog.author}</td>
+                    <td>{new Date(blog.created_at).toLocaleDateString()}</td>
                     <td>
-                      <button onClick={() => handleEdit(b)} className="admin-btn" style={{ background: '#17a2b8', color: '#fff', marginRight: '10px', padding: '6px 12px' }}>Edit</button>
-                      <button onClick={() => handleDelete(b.id)} className="admin-btn admin-btn-danger" style={{ padding: '6px 12px' }}>Delete</button>
+                      <button onClick={() => handleEdit(blog)} className="admin-btn" style={{ marginRight: '10px', padding: '5px 10px', background: '#17a2b8', color: '#fff' }}>Edit</button>
+                      <button onClick={() => handleDelete(blog.id)} className="admin-btn admin-btn-danger" style={{ padding: '5px 10px' }}>Delete</button>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+          </div>
           )}
         </div>
       )}
@@ -157,7 +164,7 @@ export default function BlogManager() {
           <h3>{view === 'add' ? 'Create New Blog' : 'Edit Blog'}</h3>
           <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '20px', marginBottom: '20px' }}>
+            <div className="admin-form-grid grid-cols-2-1">
               <div>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Blog Title</label>
                 <input type="text" name="title" value={formData.title} onChange={handleInputChange} className="admin-input" required />
@@ -168,7 +175,7 @@ export default function BlogManager() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
+            <div className="admin-form-grid grid-cols-1-1">
               <div>
                 <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Author</label>
                 <input type="text" name="author" value={formData.author} onChange={handleInputChange} className="admin-input" />

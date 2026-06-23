@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import "./health/health-advanced.css"; // For Discovering Hidden Talents and Learning Through Participation
@@ -181,13 +181,13 @@ export default function FacilitiesPage() {
                 </div>
               </div>
               {/* Digital Learning Wide Card */}
-              <div className="beyond-s1-card featured" style={{ display: 'flex', alignItems: 'center', textAlign: 'left', padding: '1.5rem', gridColumn: 'span 2' }}>
-                <div style={{ flex: 1 }}>
+              <div className="beyond-s1-card featured" style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', textAlign: 'left', padding: '1.5rem', gridColumn: 'span 2' }}>
+                <div style={{ flex: '1 1 200px', minWidth: 0, marginBottom: '1rem' }}>
                   <div className="beyond-s1-card-icon" style={{ background: '#00C853', margin: '0 0 1rem 0' }}><i className="fa-solid fa-laptop-file"></i></div>
                   <h4>Digital Learning</h4>
                   <p>Access to e-books and online materials.</p>
                 </div>
-                <div style={{ flex: 1, paddingLeft: '1rem' }}>
+                <div style={{ flex: '1 1 200px', minWidth: 0 }}>
                   <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Digital Learning" style={{ width: '100%', height: '140px', borderRadius: '15px', objectFit: 'cover' }} />
                 </div>
               </div>

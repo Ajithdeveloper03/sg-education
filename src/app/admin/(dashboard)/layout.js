@@ -76,7 +76,7 @@ export default function AdminDashboardLayout({ children }) {
       {/* Main Content Area */}
       <main className="admin-main-content">
         <div className="admin-header">
-          <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '15px', flex: 1, minWidth: 0 }}>
             <button className="admin-mobile-toggle" onClick={() => setMobileMenuOpen(true)}>
               <i className="fa-solid fa-bars"></i>
             </button>
