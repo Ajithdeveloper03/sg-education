@@ -1,8 +1,7 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
-import "./health/health-advanced.css"; // For Discovering Hidden Talents and Learning Through Participation
-import "./beyond/beyond-advanced.css"; // For Healthy Habits
+import "./facilities.css";
 import "../about/vision-mission/vision-mission.css"; // Reuse banner styles
 
 export default function FacilitiesPage() {
@@ -75,7 +74,7 @@ export default function FacilitiesPage() {
             {/* Right Organic Image */}
             <div style={{ position: 'relative', zIndex: 5 }}>
               <div className="health-s1-organic-frame">
-                <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=800&q=80" alt="Health and Well-being" />
+                <img src="/sg-education/HEALTH & WELL-BEING.png" alt="Health and Well-being" />
               </div>
             </div>
 
@@ -107,7 +106,7 @@ export default function FacilitiesPage() {
                 </div>
               </div>
               <div className="health-s2-image">
-                <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80" alt="Extracurricular Arts" />
+                <img src="/sg-education/Extracurriculars & Arts.png" alt="Extracurricular Arts" />
               </div>
             </div>
 
@@ -123,7 +122,7 @@ export default function FacilitiesPage() {
                 </div>
               </div>
               <div className="health-s2-image">
-                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80" alt="Sports and Leadership" />
+                <img src="/sg-education/Sports & Leadership.png" alt="Sports and Leadership" />
               </div>
             </div>
 
@@ -139,7 +138,7 @@ export default function FacilitiesPage() {
                 </div>
               </div>
               <div className="health-s2-image">
-                <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=800&q=80" alt="Enrichment Programs" />
+                <img src="/sg-education/Clubs & Enrichment Programs.png" alt="Enrichment Programs" />
               </div>
             </div>
 
@@ -199,7 +198,7 @@ export default function FacilitiesPage() {
       {/* ==========================================
           SECTION 4: Transportation (Using Health's Spotlight Glass Panel)
           ========================================== */}
-      <section className="health-s3-spotlight" style={{ overflow: 'hidden', backgroundImage: "url('/sg-education/transport/school-bus-bg.jpg')" }}>
+      <section className="health-s3-spotlight" style={{ overflow: 'hidden', backgroundImage: "url('/sg-education/transport background.PNG')" }}>
         <div className="health-s3-overlay" style={{ background: 'linear-gradient(135deg, rgba(20, 25, 40, 0.8) 0%, rgba(10, 15, 25, 0.7) 100%)' }}></div>
         
         <div className="container health-s3-container" style={{ zIndex: 10 }}>
