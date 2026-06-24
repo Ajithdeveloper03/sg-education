@@ -75,8 +75,6 @@ export default function SchoolMottoPage() {
           <div className="vm-pagination">
             <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
             <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
-            <Link href="/about" className="breadcrumb-link" style={{ color: '#fff', textDecoration: 'none' }}>About SG</Link>
-            <span style={{ margin: '0 0.8rem', color: '#FFC300' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
             <span style={{ color: '#FFC300' }}>School Motto</span>
           </div>
         </div>

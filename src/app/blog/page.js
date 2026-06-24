@@ -1,9 +1,30 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import "./blog.css";
 
 export default function BlogPage() {
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const res = await fetch("http://localhost/php-backend/api_blog.php");
+        const data = await res.json();
+        if (data.status === 'success') {
+          setBlogs(data.data);
+        }
+      } catch (err) {
+        console.error("Failed to fetch blogs", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchBlogs();
+  }, []);
+
   return (
     <main style={{ backgroundColor: '#F8F9FA', paddingTop: '0', minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
       
@@ -21,7 +42,7 @@ export default function BlogPage() {
             Parenting tips, early learning guides, and joyful success stories<br />
             from our thriving kids&apos; educational ecosystem.
           </p>
-          <div className="blog-hero-meta">DISCOVERED 11 ARTICLES</div>
+          <div className="blog-hero-meta">DISCOVERED {blogs.length} ARTICLES</div>
         </div>
         
         {/* Cloud Transition */}
@@ -38,29 +59,35 @@ export default function BlogPage() {
         <div className="container">
           <div className="blog-grid">
             
-            {/* Blog Post 1 */}
-            <article className="blog-card">
-              <div className="blog-card-image">
-                <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80" alt="Blog 1" />
-                <div className="blog-card-badge">EDUCATION</div>
-              </div>
-              <div className="blog-card-content">
-                <div className="blog-card-meta">
-                  <span><i className="fa-regular fa-calendar"></i> February 7, 2026</span>
-                  <span><i className="fa-regular fa-clock"></i> 6 min read</span>
-                </div>
-                <h2 className="blog-card-title">Find Your Ideal Early Learning Path for Creativity</h2>
-                <p className="blog-card-text">Discover the best approaches to innovative thinking. Explore methodologies, vibrant community interactions, and how it can elevate your child&apos;s educational experience.</p>
-              </div>
-              <div className="blog-card-footer">
-                <div className="blog-author">
-                  <div className="author-avatar"><i className="fa-solid fa-user"></i></div>
-                  <span className="author-name">By Admin</span>
-                </div>
-                <Link href="/blog" className="blog-read-link">Read Article <i className="fa-solid fa-arrow-right"></i></Link>
-              </div>
-            </article>
-
+            {loading ? (
+              <div style={{ textAlign: 'center', gridColumn: '1 / -1', padding: '50px' }}>Loading articles...</div>
+            ) : blogs.length === 0 ? (
+              <div style={{ textAlign: 'center', gridColumn: '1 / -1', padding: '50px' }}>No articles found.</div>
+            ) : (
+              blogs.map((blog) => (
+                <article key={blog.id} className="blog-card">
+                  <div className="blog-card-image">
+                    <img src={blog.image_url || "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80"} alt={blog.title} />
+                    <div className="blog-card-badge">{blog.category || 'EDUCATION'}</div>
+                  </div>
+                  <div className="blog-card-content">
+                    <div className="blog-card-meta">
+                      <span><i className="fa-regular fa-calendar"></i> {new Date(blog.created_at).toLocaleDateString()}</span>
+                      <span><i className="fa-regular fa-clock"></i> {blog.read_time || '5 min read'}</span>
+                    </div>
+                    <h2 className="blog-card-title">{blog.title}</h2>
+                    <p className="blog-card-text">{blog.excerpt}</p>
+                  </div>
+                  <div className="blog-card-footer">
+                    <div className="blog-author">
+                      <div className="author-avatar"><i className="fa-solid fa-user"></i></div>
+                      <span className="author-name">By {blog.author || 'Admin'}</span>
+                    </div>
+                    <Link href={`/blog/details?id=${blog.id}`} className="blog-read-link">Read Article <i className="fa-solid fa-arrow-right"></i></Link>
+                  </div>
+                </article>
+              ))
+            )}
 
           </div>
         </div>

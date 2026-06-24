@@ -148,7 +148,7 @@ export default function OurProgramsPage() {
                 <i className="fa-solid fa-baby-carriage"></i>
               </div>
               <h3 className="jc-title" style={{ color: '#E65100' }}>Day Care</h3>
-              <span className="jc-age">6 Months - 2 Years</span>
+              <span className="jc-age">9 Months - 2 Years</span>
               <p className="jc-desc">Care, comfort & sensory exploration</p>
             </div>
 

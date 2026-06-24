@@ -65,13 +65,11 @@ export default function FoundersMessagePage() {
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title">Founders Message</h1>
           <p className="vm-banner-desc">
-            Empowering the next generation through a unique blend of ancient Ancient Bharath’s Culture with Corporate Culture.<br />
+            Empowering the next generation through a unique blend of ancient Bharath’s Culture with Corporate Culture.<br />
             Dedicated to shaping character, fostering innovation, and building future-ready leaders.
           </p>
           <div className="vm-pagination">
             <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
-            <span style={{ margin: '0 0.8rem', color: '#FF2A7A' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
-            <Link href="/about" className="breadcrumb-link" style={{ color: '#fff', textDecoration: 'none' }}>About SG</Link>
             <span style={{ margin: '0 0.8rem', color: '#FF2A7A' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
             <span style={{ color: '#FF2A7A' }}>Founders Message</span>
           </div>
