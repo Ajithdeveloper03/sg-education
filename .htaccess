@@ -1,0 +1,16 @@
+DirectoryIndex index.html index.php
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /sg-education/
+
+  # Next.js static export error page mapping
+  ErrorDocument 404 /sg-education/404.html
+
+  # Optional: If a requested file doesn't exist, but an .html version does, serve it seamlessly
+  # (This provides a fallback just in case some links don't have trailing slashes)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>

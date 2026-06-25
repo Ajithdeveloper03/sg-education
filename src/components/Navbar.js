@@ -18,9 +18,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isAdminRoute = pathname?.startsWith('/admin');
+  const isAdminRoute = pathname?.includes('/admin');
+  const isAdmissionRoute = pathname?.includes('/admission');
 
-  if (pathname === '/admission' || isAdminRoute) return null;
+  if (isAdmissionRoute || isAdminRoute) return null;
 
   return (
     <>

@@ -11,7 +11,7 @@ export default function BlogPage() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("http://localhost/php-backend/api_blog.php");
+        const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_blog.php");
         const data = await res.json();
         if (data.status === 'success') {
           setBlogs(data.data);

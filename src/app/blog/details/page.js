@@ -22,7 +22,7 @@ function BlogDetailsContent() {
     
     const fetchArticle = async () => {
       try {
-        const res = await fetch(`http://localhost/php-backend/api_blog.php?id=${id}`);
+        const res = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_blog.php?id=${id}`);
         const data = await res.json();
         if (data.status === 'success') {
           setArticle(data.data);

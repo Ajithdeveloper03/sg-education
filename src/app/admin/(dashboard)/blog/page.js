@@ -19,7 +19,7 @@ export default function BlogManager() {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost/php-backend/api_blog.php");
+      const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_blog.php");
       const data = await res.json();
       if (data.status === 'success') {
         setBlogs(data.data);
@@ -55,7 +55,7 @@ export default function BlogManager() {
   const handleDelete = async (id) => {
     if (!confirm("Are you sure you want to delete this blog?")) return;
     try {
-      const res = await fetch(`http://localhost/php-backend/api_blog.php?id=${id}`, { method: 'DELETE' });
+      const res = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_blog.php?id=${id}`, { method: 'DELETE' });
       const data = await res.json();
       if (data.status === 'success') {
         setSuccess("Blog deleted successfully!");
@@ -80,7 +80,7 @@ export default function BlogManager() {
     }
 
     try {
-      const res = await fetch("http://localhost/php-backend/api_blog.php", {
+      const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_blog.php", {
         method: "POST", // API handles both insert and update via POST
         body: submitData
       });

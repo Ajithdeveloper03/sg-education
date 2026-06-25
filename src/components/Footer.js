@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const pathname = usePathname();
-  const isAdminRoute = pathname?.startsWith('/admin');
-  if (pathname === '/admission' || isAdminRoute) return null;
+  const isAdminRoute = pathname?.includes('/admin');
+  const isAdmissionRoute = pathname?.includes('/admission');
+  if (isAdmissionRoute || isAdminRoute) return null;
 
   return (
     <section className="newsletter-section section-padding" style={{ backgroundColor: '#FAF8F0', paddingBottom: '0' }}>
@@ -15,10 +16,7 @@ export default function Footer() {
 
       {/* Playful Decorative Grass Footer (Light Background, Navy elements for absolute visibility) */}
       <div className="decorative-grass-wrapper" style={{ position: 'relative' }}>
-<<<<<<< HEAD
-       
-=======
->>>>>>> 0131bbac197a2eaa4e6dd0c6b670be063779115d
+
         <div className="grass-doodles"></div>
 
         <div className="container footer-content-grid">

@@ -14,7 +14,7 @@ export default function GalleryPage() {
   useEffect(() => {
     const fetchGallery = async () => {
       try {
-        const res = await fetch("http://localhost/php-backend/api_gallery.php");
+        const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_gallery.php");
         const data = await res.json();
         if (data.status === 'success') {
           setGalleryData(data.data);

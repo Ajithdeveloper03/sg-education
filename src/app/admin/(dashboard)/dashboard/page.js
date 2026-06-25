@@ -8,7 +8,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost/php-backend/api_dashboard.php")
+    fetch("https://inymartlabs.com/sg-education/php-backend/api_dashboard.php")
       .then(res => res.json())
       .then(data => {
         if (data.status === 'success') setStats(data.data);
