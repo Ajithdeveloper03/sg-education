@@ -7,6 +7,8 @@ import './admission.css';
 export default function AdmissionPage() {
   const [step, setStep] = useState(1);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [apiError, setApiError] = useState(null);
   const [errors, setErrors] = useState({});
 
   const [formData, setFormData] = useState({
@@ -85,12 +87,48 @@ export default function AdmissionPage() {
     setStep(prev => prev - 1);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitted(true);
-    }, 500);
+    setIsSubmitting(true);
+    setApiError(null);
+
+    try {
+      console.log('Sending request to /sg-education/api/admission with data:', formData);
+      const response = await fetch('/sg-education/api/admission', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log('Response Status:', response.status);
+      console.log('Response Headers:', Object.fromEntries(response.headers.entries()));
+
+      const contentType = response.headers.get('content-type');
+      let data;
+
+      if (contentType && contentType.includes('application/json')) {
+        data = await response.json();
+        console.log('Response JSON Body:', data);
+        
+        if (response.ok) {
+          setIsSubmitted(true);
+        } else {
+          setApiError(data.message || 'An error occurred during submission.');
+        }
+      } else {
+        const textData = await response.text();
+        console.error('Non-JSON Response Body:', textData);
+        setApiError(`Server Error (${response.status}): The server did not return a valid response. Please check server logs.`);
+      }
+
+    } catch (error) {
+      console.error('Submission or Parsing error:', error);
+      setApiError('Network error or unexpected response. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -347,10 +385,17 @@ export default function AdmissionPage() {
                     </div>
                   )}
 
+                  {/* Error Message Display */}
+                  {apiError && (
+                    <div style={{ color: '#e53e3e', backgroundColor: '#fff5f5', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', border: '1px solid #feb2b2' }}>
+                      <i className="fa-solid fa-circle-exclamation"></i> {apiError}
+                    </div>
+                  )}
+
                   {/* Navigation Actions */}
                   <div className="adm-form-actions" style={{ alignItems: 'center' }}>
                     {step > 1 ? (
-                      <button type="button" className="adm-btn adm-btn-secondary" onClick={handleBack}><i className="fa-solid fa-arrow-left"></i> Back</button>
+                      <button type="button" className="adm-btn adm-btn-secondary" onClick={handleBack} disabled={isSubmitting}><i className="fa-solid fa-arrow-left"></i> Back</button>
                     ) : <div></div>}
 
                     <div style={{ display: 'flex', gap: '1rem' }}>
@@ -362,7 +407,9 @@ export default function AdmissionPage() {
                       {step < 3 ? (
                         <button type="button" className="adm-btn adm-btn-primary" onClick={handleNext}>Next <i className="fa-solid fa-arrow-right"></i></button>
                       ) : (
-                        <button type="button" className="adm-btn adm-btn-primary" onClick={handleSubmit}>Submit <i className="fa-solid fa-paper-plane"></i></button>
+                        <button type="button" className="adm-btn adm-btn-primary" onClick={handleSubmit} disabled={isSubmitting}>
+                          {isSubmitting ? 'Submitting...' : 'Submit'} <i className="fa-solid fa-paper-plane"></i>
+                        </button>
                       )}
                     </div>
                   </div>

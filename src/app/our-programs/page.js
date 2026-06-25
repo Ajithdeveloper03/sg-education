@@ -112,7 +112,7 @@ export default function OurProgramsPage() {
             </div>
           </div>
 
-          <Link href="/our-programs" className="op-btn-explore">
+          <Link href="/contact" className="op-btn-explore">
             Explore Our Programs <i className="fa-solid fa-arrow-right"></i>
           </Link>
         </div>
@@ -321,7 +321,7 @@ export default function OurProgramsPage() {
                 </div>
              </div>
              <div className="op-ad-right">
-                <button className="op-btn-book">Book a Visit Today <i className="fa-solid fa-arrow-right"></i></button>
+                <Link href="/admission" className="op-btn-book">Book a Visit Today <i className="fa-solid fa-arrow-right"></i></Link>
                 <p className="ad-btn-subtext">Come. Explore. Experience the Difference.</p>
              </div>
           </div>
