@@ -73,6 +73,7 @@ export default function Navbar() {
                       <Link href="/about/vision-mission" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Vision & Mission</Link>
                       <Link href="/about/founders-message" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Meet Our Team</Link>
                       <Link href="/about/school-motto" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>School Motto</Link>
+                      <Link href="/facilities" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Facilities</Link>
                     </div>
                   </li>
                   
@@ -81,7 +82,7 @@ export default function Navbar() {
                   </li>
                   
                   <li className="nav-item">
-                    <Link href="/facilities" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Facilities</Link>
+                    <Link href="/franchise" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Franchise</Link>
                   </li>
                   
                   <li className="nav-item"><Link href="/gallery" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Gallery</Link></li>
