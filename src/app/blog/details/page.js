@@ -99,7 +99,45 @@ function BlogDetailsContent() {
               <i className="fa-solid fa-arrow-left-long"></i> Back to Blog
             </Link>
 
-            <div dangerouslySetInnerHTML={{ __html: article.content }}></div>
+            {(() => {
+              try {
+                const parsed = JSON.parse(article.content);
+                if (parsed.sections || parsed.faqs) {
+                  return (
+                    <div className="structured-article">
+                      {parsed.sections && parsed.sections.map((section, idx) => (
+                        <div key={idx} id={`section-${idx}`} className="article-section" style={{marginBottom: '40px'}}>
+                          {section.heading && <h2 style={{color: '#1d2a44', fontSize: '1.8rem', marginBottom: '20px'}}>{section.heading}</h2>}
+                          {section.body && <p style={{lineHeight: '1.8', color: '#555', marginBottom: '20px', whiteSpace: 'pre-wrap'}}>{section.body}</p>}
+                          {section.bullets && section.bullets.length > 0 && (
+                            <ul style={{marginBottom: '20px', paddingLeft: '20px'}}>
+                              {section.bullets.map(b => (
+                                <li key={b.id} style={{marginBottom: '10px', color: '#555'}}>{b.text}</li>
+                              ))}
+                            </ul>
+                          )}
+                        </div>
+                      ))}
+                      
+                      {parsed.faqs && parsed.faqs.length > 0 && (
+                        <div className="article-faqs" style={{marginTop: '50px', paddingTop: '30px', borderTop: '1px solid #eee'}}>
+                          <h2 style={{color: '#1d2a44', fontSize: '1.8rem', marginBottom: '20px'}}>Frequently Asked Questions</h2>
+                          {parsed.faqs.map((faq, idx) => (
+                            <div key={idx} style={{marginBottom: '20px'}}>
+                              <h4 style={{margin: '0 0 10px 0', color: '#1d2a44'}}>{faq.question}</h4>
+                              <p style={{color: '#555', margin: 0}}>{faq.answer}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  );
+                }
+              } catch (e) {
+                // Not JSON, fallback to raw HTML
+              }
+              return <div dangerouslySetInnerHTML={{ __html: article.content }}></div>;
+            })()}
           </div>
 
           {/* Sidebar */}

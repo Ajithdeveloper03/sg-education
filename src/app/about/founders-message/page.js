@@ -103,7 +103,7 @@ export default function FoundersMessagePage() {
               onMouseLeave={() => handleMouseLeaveTilt(founder1Ref)}
             >
               <div className="founder-img-wrapper-3d">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=500&q=80" alt="Founder Mamatha M.C" />
+                <img src="/sg-education/mamtha 1.png" alt="Founder Mamatha M.C" />
                 <span className="founder-role-badge">Founder</span>
               </div>
               <div className="founder-info-3d">
@@ -146,7 +146,7 @@ export default function FoundersMessagePage() {
             {/* Left: Slanted Image Card */}
             <div className="eb-founder-card-left">
               <div className="eb-founder-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Mamatha M.C - Founder" />
+                <img src="/sg-education/mamtha 2.png" alt="Mamatha M.C - Founder" />
                 <div className="eb-founder-orange-bar" style={{ backgroundColor: '#FF2A7A' }}></div>
               </div>
             </div>
