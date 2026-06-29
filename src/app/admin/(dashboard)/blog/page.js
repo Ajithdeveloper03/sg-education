@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import ConfirmModal from "../../../../components/ConfirmModal";
 
 export default function BlogManager() {
   const [blogs, setBlogs] = useState([]);
@@ -9,6 +10,15 @@ export default function BlogManager() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  
+  // Modal State
+  const [modalConfig, setModalConfig] = useState({
+    isOpen: false,
+    title: "",
+    message: "",
+    confirmText: "",
+    action: null
+  });
   
   // Basic Form State
   const [id, setId] = useState("");
@@ -88,8 +98,18 @@ export default function BlogManager() {
     setSuccess(""); setError("");
   };
 
-  const handleDelete = async (deleteId) => {
-    if (!confirm("Are you sure you want to delete this blog?")) return;
+  const requestDelete = (deleteId) => {
+    setModalConfig({
+      isOpen: true,
+      title: "Confirm Deletion",
+      message: "Are you sure you want to delete this blog? This action cannot be undone.",
+      confirmText: "YES, DELETE BLOG",
+      action: () => executeDelete(deleteId)
+    });
+  };
+
+  const executeDelete = async (deleteId) => {
+    setModalConfig({ ...modalConfig, isOpen: false });
     try {
       const res = await fetch(`http://localhost/php-backend/api_blog.php?id=${deleteId}`, { method: 'DELETE' });
       const data = await res.json();
@@ -104,8 +124,19 @@ export default function BlogManager() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const requestSubmit = (e) => {
     e.preventDefault();
+    setModalConfig({
+      isOpen: true,
+      title: id ? "Confirm Article Update" : "Confirm Article Creation",
+      message: id ? "You are about to update this article. It will be visible on the live website." : "You are about to publish a new article. It will be visible on the live website.",
+      confirmText: id ? "YES, UPDATE ARTICLE" : "YES, PUBLISH ARTICLE",
+      action: () => executeSubmit()
+    });
+  };
+
+  const executeSubmit = async () => {
+    setModalConfig({ ...modalConfig, isOpen: false });
     setLoading(true); setError(""); setSuccess("");
     
     const submitData = new FormData();
@@ -305,8 +336,8 @@ export default function BlogManager() {
                       <td style={{color: '#666', fontSize: '0.9rem'}}>{new Date(blog.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
                       <td><span className="status-badge live">&bull; LIVE</span></td>
                       <td>
-                        <button onClick={() => handleEdit(blog)} className="admin-btn" style={{ background: '#17a2b8', color: '#fff', padding: '5px 15px', marginRight: '5px' }}>Edit</button>
-                        <button onClick={() => handleDelete(blog.id)} className="admin-btn admin-btn-danger" style={{ padding: '5px 15px' }}>Delete</button>
+                        <button onClick={() => handleEdit(blog)} className="admin-btn admin-btn-secondary" style={{ padding: '5px 15px', marginRight: '10px' }}>Edit</button>
+                        <button onClick={() => requestDelete(blog.id)} className="admin-btn admin-btn-danger" style={{ padding: '5px 15px' }}>Delete</button>
                       </td>
                     </tr>
                   )})}
@@ -318,8 +349,8 @@ export default function BlogManager() {
         </>
       )}
 
-      {(view === 'add' || view === 'edit') && (
-        <form onSubmit={handleSubmit}>
+      {view === "add" || view === "edit" ? (
+        <form onSubmit={requestSubmit}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
             <div>
               <span onClick={resetForm} style={{color: '#FF6B00', cursor: 'pointer', fontWeight: 'bold'}}>&larr; All Articles</span>
@@ -495,7 +526,16 @@ export default function BlogManager() {
             </div>
           </div>
         </form>
-      )}
+      ) : null}
+
+      <ConfirmModal 
+        isOpen={modalConfig.isOpen}
+        title={modalConfig.title}
+        message={modalConfig.message}
+        confirmText={modalConfig.confirmText}
+        onConfirm={modalConfig.action}
+        onCancel={() => setModalConfig({ ...modalConfig, isOpen: false })}
+      />
     </div>
   );
 }

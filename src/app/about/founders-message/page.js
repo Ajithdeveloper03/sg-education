@@ -65,7 +65,7 @@ export default function FoundersMessagePage() {
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title">Founders Message</h1>
           <p className="vm-banner-desc">
-            Empowering the next generation through a unique blend of ancient Bharath’s Culture with Corporate Culture.<br />
+            Empowering the next generation through a unique blend of ancient Bharath’s Culture with Corporate Culture.
             Dedicated to shaping character, fostering innovation, and building future-ready leaders.
           </p>
           <div className="vm-pagination">
@@ -95,26 +95,6 @@ export default function FoundersMessagePage() {
           </div>
 
           <div className="founders-grid" style={{ margin: '0 auto' }}>
-            {/* Founder 1 */}
-            <div 
-              ref={founder1Ref}
-              className="founder-card-3d main-founder-theme"
-              onMouseMove={(e) => handleMouseMoveTilt(e, founder1Ref)}
-              onMouseLeave={() => handleMouseLeaveTilt(founder1Ref)}
-            >
-              <div className="founder-img-wrapper-3d">
-                <img src="/sg-education/mamtha 1.png" alt="Founder Mamatha M.C" />
-                <span className="founder-role-badge">Founder</span>
-              </div>
-              <div className="founder-info-3d">
-                <h3>Mamatha M.C</h3>
-                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Founder of SG Educations & Co-founder of Sarathi Groups</p>
-                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;She is the Founder of SG Education and the Co-Founder of Sarathi Groups. She also serves as the Managing Director of SGNL and SG Health & Care, Director of SG Builders Pvt. Ltd., and Vice President of NSR Social Welfare Trust.&quot;</p>
-                </div>
-              </div>
-            </div>
-
             {/* Founder 2 */}
             <div 
               ref={founder2Ref}
@@ -128,9 +108,33 @@ export default function FoundersMessagePage() {
               </div>
               <div className="founder-info-3d">
                 <h3>Shashi Kiran K.N</h3>
-                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor at SG Education & Visionary Leader</p>
+                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor, SG Education & Visionary Leader 
+</p>
                 <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished leader, entrepreneur, and visionary. He is committed to education, social welfare, and national development, inspiring individuals through his leadership and dedication to creating a positive impact on society.&quot;</p>
+                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished mentor, entrepreneur, and visionary leader. Through his guidance and strategic insights, he supports SG Education's mission of empowering young minds through quality education, ethical values, innovation, and
+leadership development. His dedication to social progress and nation-building continues to inspire students, educators, and communities alike.
+&quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Founder 1 */}
+            <div 
+              ref={founder1Ref}
+              className="founder-card-3d main-founder-theme"
+              onMouseMove={(e) => handleMouseMoveTilt(e, founder1Ref)}
+              onMouseLeave={() => handleMouseLeaveTilt(founder1Ref)}
+            >
+              <div className="founder-img-wrapper-3d">
+                <img src="/sg-education/mamtha 1.png" alt="Founder Mamatha M.C" />
+                <span className="founder-role-badge">Founder</span>
+              </div>
+              <div className="founder-info-3d">
+                <h3>Mamatha M.C</h3>
+                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Founder & Chairperson, SG Education | Co-Founder, Sarathi Groups 
+</p>
+                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
+                  <p>&quot;Ms. Mamatha M.C. is the visionary Founder & Chairperson of SG Education and Co-Founder of Sarathi Groups. She is committed to creating a transformative educational environment that combines academic excellence, cultural values, leadership development, and holistic learning. Her vision is to nurture confident, responsible, and future-ready individuals who contribute positively to society. &quot;</p>
                 </div>
               </div>
             </div>
@@ -160,24 +164,33 @@ export default function FoundersMessagePage() {
               
               <div className="eb-founder-identity">
                 <h3 className="eb-founder-name">Ms. Mamatha M.C</h3>
-                <span className="eb-founder-designation">Founder & Chairman, SG Education</span>
+                <span className="eb-founder-designation">Founder & Chairperson, SG Education 
+</span>
               </div>
               
               <div className="eb-founder-vision-statement">
                 <p>
-                  &quot;Ms. Mamatha M.C is the driving force behind SG Education, envisioning an institution that merges ancient Bharath&apos;s wisdom with modern corporate excellence to create future-ready individuals. Her leadership is rooted in the belief that education should not only impart knowledge but also shape character, discipline, and leadership qualities.&quot;
+                  <strong>Welcome to SG Education.</strong>
                 </p>
-                <p style={{ marginTop: '1rem' }}>
-                  As the Founder of SG Education, she has been instrumental in building a learning environment that nurtures intellectual growth, ethical values, and practical skills. Her commitment to education led to the establishment of SG Early Budding in Gokul Nagar, Hosur, where young minds are given the best foundation to succeed in an evolving world.
+                <p style={{ marginTop: '10px' }}>
+                  At SG Education, we believe that education is the foundation for building not only knowledge but also character, values, and leadership. Our vision is to create an inspiring learning environment that nurtures young minds and prepares them to excel in a rapidly evolving world.
+                </p>
+                <p style={{ marginTop: '10px' }}>
+                  We are committed to integrating Ancient Noble Bharat Culture (ANBC) with Corporate Professional Culture (CPC), enabling students to develop strong moral values while acquiring the skills and confidence required for future success. Through this unique approach, we strive to cultivate responsible, compassionate, and future-ready individuals.
+                </p>
+                <p style={{ marginTop: '10px' }}>
+                  At SG Early Budding and our future educational institutions, every child is encouraged to explore, learn, create, and grow in a safe and supportive environment. We focus on holistic development by fostering intellectual curiosity, creativity, discipline, leadership, and social responsibility.
+                </p>
+                <p style={{ marginTop: '10px' }}>
+                  Our mission is to empower every student with the knowledge, values, and life skills necessary to become a positive force in society and contribute meaningfully to the nation. We thank all parents, educators, and well-wishers for being part of this journey as we continue to shape the leaders of tomorrow.
+                </p>
+                <p style={{ marginTop: '1.5rem', fontStyle: 'italic', fontWeight: '500', color: 'var(--playful-pink)' }}>
+                  &quot;Inspiring Minds, Building Character, Creating Future Leaders.&quot;<br/>
+                  <span style={{ color: 'var(--kidza-navy)', fontStyle: 'normal' }}>– Ms. Mamatha M.C.<br/>Founder &amp; Chairperson, SG Education</span>
                 </p>
               </div>
 
-              <ul className="eb-founder-highlights">
-                <li><i className="fa-solid fa-check" style={{color: '#FF2A7A'}}></i> Holistic Development Approach</li>
-                <li><i className="fa-solid fa-check" style={{color: '#FF2A7A'}}></i> Bridging Tradition & Innovation</li>
-                <li><i className="fa-solid fa-check" style={{color: '#FF2A7A'}}></i> Empowering Young Minds</li>
-                <li><i className="fa-solid fa-check" style={{color: '#FF2A7A'}}></i> Fostering Moral Integrity</li>
-              </ul>
+
             </div>
           </div>
         </div>

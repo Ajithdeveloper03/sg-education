@@ -142,12 +142,12 @@ export default function OurProgramsPage() {
           </div>
 
           <div className="journey-grid-container">
-            {/* Card 1: Day Care */}
+            {/* Card 1: Toddlers Care */}
             <div className="journey-card jc-daycare">
               <div className="jc-icon">
                 <i className="fa-solid fa-baby-carriage"></i>
               </div>
-              <h3 className="jc-title" style={{ color: '#E65100' }}>Day Care</h3>
+              <h3 className="jc-title" style={{ color: '#E65100' }}>Toddlers Care</h3>
               <span className="jc-age">9 Months - 2 Years</span>
               <p className="jc-desc">Care, comfort & sensory exploration</p>
             </div>
@@ -292,13 +292,13 @@ export default function OurProgramsPage() {
              </div>
 
              <div className="op-card-right">
-                <h3 className="op-card-title title-blue">A Campus Where Children Thrive</h3>
-                <div className="op-thrive-grid">
-                   <div className="op-thrive-item"><div className="thrive-icon"><i className="fa-solid fa-shield-halved text-blue"></i></div>Safe & Secure<br/>Campus</div>
-                   <div className="op-thrive-item"><div className="thrive-icon"><i className="fa-solid fa-display text-green"></i></div>Smart<br/>Classrooms</div>
-                   <div className="op-thrive-item"><div className="thrive-icon"><i className="fa-solid fa-puzzle-piece text-green2"></i></div>Indoor & Outdoor<br/>Play Areas</div>
-                   <div className="op-thrive-item"><div className="thrive-icon"><i className="fa-solid fa-apple-whole text-orange"></i></div>Hygienic Meals<br/>& Care</div>
-                </div>
+                 <h3 className="op-card-title title-blue">A Safe Place to Learn, Play & Grow</h3>
+                 <div className="op-thrive-grid">
+                    <div className="op-thrive-item"><div className="thrive-icon"><i className="fa-solid fa-shield-halved text-blue"></i></div>Safe<br/>Campus</div>
+                    <div className="op-thrive-item"><div className="thrive-icon"><i className="fa-solid fa-display text-green"></i></div>Smart<br/>Learning</div>
+                    <div className="op-thrive-item"><div className="thrive-icon"><i className="fa-solid fa-puzzle-piece text-green2"></i></div>Fun<br/>Play Areas</div>
+                    <div className="op-thrive-item"><div className="thrive-icon"><i className="fa-solid fa-apple-whole text-orange"></i></div>Healthy Food<br/>Chart Habit</div>
+                 </div>
                 <div className="op-quote-box">
                    <div className="op-quote-icon"><i className="fa-solid fa-quote-left text-blue"></i></div>
                    <p className="op-quote-text text-blue">We don&apos;t just prepare<br/>children for school,<br/>we prepare them for life.</p>

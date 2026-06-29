@@ -263,6 +263,109 @@
   font-weight: bold;
 }
 
+/* =========================================
+   CUSTOM CONFIRM MODAL (REACT)
+   ========================================= */
+.custom-confirm-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(40, 45, 60, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+}
+
+.custom-confirm-modal {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 460px;
+  padding: 30px 35px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes modalPop {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.cc-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.cc-icon-wrapper {
+  background-color: #FFF2E8;
+  color: #ED7D31;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.cc-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.cc-body p {
+  margin: 0 0 25px 0;
+  font-size: 0.95rem;
+  color: #6B7280;
+  line-height: 1.6;
+}
+
+.cc-footer {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.cc-btn-cancel,
+.cc-btn-confirm {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  letter-spacing: 0.5px;
+}
+
+.cc-btn-cancel {
+  background-color: #ffffff;
+  color: #6B7280;
+  border: 1px solid #E5E7EB;
+}
+
+.cc-btn-cancel:hover {
+  background-color: #F9FAFB;
+  color: #374151;
+}
+
+.cc-btn-confirm {
+  background-color: #ED7D31;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(237, 125, 49, 0.2);
+}
+
+.cc-btn-confirm:hover {
+  background-color: #E06C22;
+  box-shadow: 0 6px 16px rgba(237, 125, 49, 0.3);
+}
+
 /* Responsive Table */
 .table-responsive {
   width: 100%;

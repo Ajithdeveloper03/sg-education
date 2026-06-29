@@ -182,6 +182,7 @@ export default function Home() {
   const [testiIndex, setTestiIndex] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
 
   const pinWrapperRef = useRef(null);
@@ -221,14 +222,6 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, []);
-
-  // Auto slider for testimonials (5 items)
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTestiIndex((prev) => (prev + 1) % TESTIMONIALS.length);
-    }, 5500);
-    return () => clearInterval(interval);
   }, []);
 
 
@@ -347,11 +340,18 @@ export default function Home() {
 
         <div className="container hero-container" style={{ position: "relative", zIndex: 5 }}>
           <div className="hero-center-content">
-            <h1 className="hero-title" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2.5rem' }}>
+              <Link href="#" className="hero-pill-btn">
+                Educate, Empower, Elevate
+              </Link>
+            </div>
+            <h1 className="hero-title" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)', marginBottom: '0.5rem' }}>
               Welcome to <span className="text-yellow">SG Educations</span>
             </h1>
+            
+            
             <p className="hero-subtitle" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-              SG Education, established in 2023 under Sarathi Groups, provides quality education by blending Ancient Bharath’s Culture with Corporate Culture. We nurture knowledgeable, disciplined, and future-ready individuals.Educate, Empower, Elevate. 
+             SG Education, established in 2023 under Sarathi Groups, provides quality education by blending Ancient Noble Bharat Culture(ANBC) with Corporate Professional Culture(CPC). We nurture knowledgeable, disciplined, and future-ready individuals.  
             </p>
           </div>
         </div>
@@ -414,10 +414,12 @@ export default function Home() {
               <div>
                 <span className="label-brand color-blue">Welcome to SG Educations</span>
                 <h2 className="about-main-title">
-                  Blending <span className="highlight-text-gradient">Ancient Bharath’s Culture </span> with Corporate Culture
+                  Blending <span className="highlight-text-gradient">Ancient Noble Bharat Culture </span> with Corporate Professional Culture
                 </h2>
                 <p className="about-lead-text">
-                  Sarathi Groups is a successful organization contributing to economic growth through professional services.SG Education established in 2023, aims to provide quality education by combining traditional Ancient Bharath’s Culture with Corporate Culture learning standards. Through SG Early Budding in Hosur, it focuses on building strong foundations for young learners and shaping  future leaders with knowledge, discipline, and leadership skills.
+                  Sarathi Groups is a successful organization contributing to economic growth through 
+professional services.SG Education established in 2023, aims to provide quality education by combining traditional Ancient Noble Bharat Culture with Corporate Professional Culture learning standards. Through SG Early Budding starts from July 2023 in Hosur. It focuses on building strong foundations for young learners and shaping future leaders with knowledge, discipline, and leadership skills. 
+
                 </p>
               </div>
 
@@ -426,15 +428,15 @@ export default function Home() {
                 <div className="highlight-row">
                   <div className="h-icon blue"><i className="fa-solid fa-om"></i></div>
                   <div className="h-info">
-                    <h4>Ancient Bharath’s Culture </h4>
-                    <p>Fostering respect and cultural traditions.</p>
+                    <h4>Ancient Noble Bharat Culture </h4>
+                    <p>Fostering respect and cultural traditions. </p>
                   </div>
                 </div>
 
                 <div className="highlight-row">
                   <div className="h-icon pink"><i className="fa-solid fa-building"></i></div>
                   <div className="h-info">
-                    <h4>Corporate Culture</h4>
+                    <h4>Corporate Professional Culture</h4>
                     <p>Preparing young minds for future excellence.</p>
                   </div>
                 </div>
@@ -507,22 +509,22 @@ export default function Home() {
         
         <div className="container">
           <div className="video-section-container" style={{ padding: '4rem 0 4rem 0', gap: '2rem' }}>
-            <div className="vs-video-thumb hover-lift">
-              <img src="https://images.pexels.com/photos/31864391/pexels-photo-31864391.jpeg" alt="Video thumbnail" />
-              <div className="vs-play-btn"><i className="fa-solid fa-play"></i></div>
+            <div className="vs-video-thumb hover-lift" onClick={() => setIsVideoModalOpen(true)} style={{ cursor: 'pointer' }}>
+              <img src="https://img.youtube.com/vi/EngW7tLk6R8/maxresdefault.jpg" alt="Video thumbnail" style={{ width: '100%', display: 'block', objectFit: 'cover' }} />
+              <div className="vs-play-btn"><i className="fa-solid fa-play" style={{ color: 'white', fontSize: '2rem' }}></i></div>
             </div>
+
             <div className="vs-content">
               <div className="vs-doodle bee"><i className="fa-solid fa-bug"></i></div>
               <div className="vs-doodle hands"><i className="fa-solid fa-hands-clapping"></i></div>
               
-              <div className="vs-badge">
-                <i className="fa-solid fa-brain"></i>Educate – Empower – Elevate
-              </div>
-              <h2 className="vs-title"></h2>
+              <h2 className="vs-title" style={{ fontWeight: '800', lineHeight: '1.2', margin: '1rem 0', color: '#fff' }}>
+                <i className="fa-solid fa-brain" style={{ marginRight: '10px' }}></i>Educate – Empower – Elevate
+              </h2>
               <p className="vs-desc">
                 We provide quality education that builds strong knowledge, values, and lifelong learning habits.We nurture confidence, leadership, communication, and practical skills to prepare students for real-world challenges.We inspire students to achieve their full potential and grow into responsible, successful, and future-ready individuals.
               </p>
-              <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem', position: 'relative', zIndex: 20 }}>
+              <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '1.5rem', position: 'relative', zIndex: 20 }}>
                 <Link href="/contact" className="vs-btn" style={{ textDecoration: 'none' }}>JOIN US NOW</Link>
               </div>
               
@@ -565,96 +567,48 @@ export default function Home() {
               <button
                 className="purple-nav-btn"
                 aria-label="Previous Testimonials Set"
-                onClick={() => {
-                  // Interactive carousel slide triggers (handled gracefully via CSS scroll-behaviors)
-                }}
+                onClick={() => setTestiIndex((prev) => (prev - 1 + 5) % 5)}
               >
                 <i className="fa-solid fa-arrow-left"></i>
               </button>
 
               <div className="testimonial-grid-three">
-
-                {/* CARD 1 */}
-                <div className="speech-bubble-card green-theme hover-lift">
-                  <div className="speech-avatar">
-                    <img
-                      src="https://images.pexels.com/photos/16562722/pexels-photo-16562722.jpeg"
-                      alt="William John"
-                    />
-                  </div>
-                  <div className="speech-stars">
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                  </div>
-                  <p className="speech-quote">
-                    &quot;Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet&quot;
-                  </p>
-                  <h4 className="speech-author">Priyanka</h4>
-                  <span className="speech-subtitle">Student Mother</span>
-
-
-                </div>
-
-                {/* CARD 2 */}
-                <div className="speech-bubble-card blue-theme hover-lift">
-                  <div className="speech-avatar">
-                    <img
-                      src="https://images.pexels.com/photos/14673049/pexels-photo-14673049.jpeg"
-                      alt="Devis Taylor"
-                    />
-                  </div>
-                  <div className="speech-stars">
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                  </div>
-                  <p className="speech-quote">
-                    &quot;Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet&quot;
-                  </p>
-                  <h4 className="speech-author">Deepan</h4>
-                  <span className="speech-subtitle">Student Father</span>
-
-
-                </div>
-
-                {/* CARD 3 */}
-                <div className="speech-bubble-card orange-theme hover-lift">
-                  <div className="speech-avatar">
-                    <img
-                      src="https://images.pexels.com/photos/20133860/pexels-photo-20133860.jpeg"
-                      alt="Sarah Taylor"
-                    />
-                  </div>
-                  <div className="speech-stars">
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                    <i className="fa-solid fa-star"></i>
-                  </div>
-                  <p className="speech-quote">
-                    &quot;Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet&quot;
-                  </p>
-                  <h4 className="speech-author">Sharmila</h4>
-                  <span className="speech-subtitle">Student Mother</span>
-
-
-                </div>
-
+                {[0, 1, 2].map(offset => {
+                  const idx = (testiIndex + offset) % 5;
+                  const item = [
+                    { name: "Priyanka", role: "Student Mother", quote: "Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet", stars: 5, theme: "green", img: "https://images.pexels.com/photos/16562722/pexels-photo-16562722.jpeg" },
+                    { name: "Deepan", role: "Student Father", quote: "Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet", stars: 5, theme: "blue", img: "https://images.pexels.com/photos/14673049/pexels-photo-14673049.jpeg" },
+                    { name: "Sharmila", role: "Student Mother", quote: "Flexible Classes refers to the process of acquiring knowledge or skills the use of digital Supply and the Internet", stars: 5, theme: "orange", img: "https://images.pexels.com/photos/20133860/pexels-photo-20133860.jpeg" },
+                    { name: "Ramesh Kumar", role: "Student Father", quote: "The curriculum perfectly balances traditional values and modern learning. My son looks forward to school every day!", stars: 5, theme: "purple", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" },
+                    { name: "Anita Desai", role: "Student Mother", quote: "SG Education has built a fantastic foundation for my daughter. Highly recommend their unique approach to education.", stars: 4.5, theme: "pink", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" }
+                  ][idx];
+                  return (
+                    <div key={idx} className={`speech-bubble-card ${item.theme}-theme hover-lift`}>
+                      <div className="speech-avatar">
+                        <img src={item.img} alt={item.name} />
+                      </div>
+                      <div className="speech-stars">
+                        {Array.from({ length: 5 }).map((_, i) => {
+                          if (i < Math.floor(item.stars)) return <i key={i} className="fa-solid fa-star"></i>;
+                          if (i < item.stars) return <i key={i} className="fa-solid fa-star-half-stroke"></i>;
+                          return null;
+                        })}
+                      </div>
+                      <p className="speech-quote">
+                        &quot;{item.quote}&quot;
+                      </p>
+                      <h4 className="speech-author">{item.name}</h4>
+                      <span className="speech-subtitle">{item.role}</span>
+                    </div>
+                  );
+                })}
               </div>
 
               {/* Right purple navigation arrow gutter */}
               <button
                 className="purple-nav-btn"
                 aria-label="Next Testimonials Set"
-                onClick={() => {
-                  // Interactive carousel slide triggers (handled gracefully via CSS scroll-behaviors)
-                }}
+                onClick={() => setTestiIndex((prev) => (prev + 1) % 5)}
               >
                 <i className="fa-solid fa-arrow-right"></i>
               </button>
@@ -767,7 +721,7 @@ export default function Home() {
               <div className="b-icon pink"><i className="fa-solid fa-check"></i></div>
               <div className="b-text">
                 <h4>Direct Coordinator helpline</h4>
-                <p>Talk to our Hosur admissions coordinators instantly: <strong>+91 7339475210</strong>.</p>
+                <p>Talk to our Hosur admissions coordinators instantly: <strong>+91 9994664346</strong>.</p>
               </div>
             </div>
           </div>
@@ -802,7 +756,7 @@ export default function Home() {
                     type="tel"
                     id="phone_num"
                     className={`chalk-input ${phoneInvalid ? "invalid" : ""}`}
-                    placeholder="e.g. 7339475210"
+                    placeholder="e.g. 9994664346"
                     value={phoneNum}
                     onChange={(e) => {
                       setPhoneNum(e.target.value);
@@ -894,6 +848,28 @@ export default function Home() {
       )}
 
       {/* Footer is now globally imported in layout.js */}
+
+      {isVideoModalOpen && (
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'rgba(0,0,0,0.9)', zIndex: 999999, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <button 
+            onClick={() => setIsVideoModalOpen(false)}
+            style={{ position: 'absolute', top: '1.5rem', right: '2rem', background: 'transparent', border: 'none', color: 'white', fontSize: '2rem', cursor: 'pointer', zIndex: 100000 }}
+            aria-label="Close modal"
+          >
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+          <div style={{ width: '90%', maxWidth: '900px', aspectRatio: '16/9', position: 'relative' }}>
+            <iframe 
+              src="https://www.youtube.com/embed/EngW7tLk6R8?autoplay=1" 
+              title="SG Education Sample Video" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen
+              style={{ width: '100%', height: '100%', display: 'block' }}
+            ></iframe>
+          </div>
+        </div>
+      )}
     </>
   );
 }

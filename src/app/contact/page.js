@@ -98,7 +98,7 @@ export default function ContactPage() {
                 <div className="contact-card-icon cc-pink"><i className="fa-solid fa-phone-volume"></i></div>
                 <div className="contact-card-text">
                   <h3>Call Us</h3>
-                  <p>+91 73394 75210</p>
+                  <p>+91 9994664346</p>
                   <p>Mon - Sat: 9:00 AM - 5:00 PM</p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                 <div className="contact-card-icon cc-green"><i className="fa-solid fa-envelope"></i></div>
                 <div className="contact-card-text">
                   <h3>Email Us</h3>
-                  <p>support@sgeducations.com</p>
+                  <p>sg.educations.org@gmail.com</p>
                   <p>info@sgeducations.com</p>
                 </div>
               </div>

@@ -29,12 +29,12 @@ export default function Navbar() {
           <div className="container top-bar-content">
             <div className="top-info-left">
               <span><i className="fa-solid fa-map-location-dot"></i> Gokul Nagar, Hosur</span>
-              <span><i className="fa-solid fa-phone-volume"></i> +91 7339475210</span>
+              <span><i className="fa-solid fa-phone-volume"></i> +91 9994664346</span>
             </div>
             <div className="top-social-right">
-              <a href="#" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-              <a href="#" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
+              <a href="https://www.facebook.com/share/1FcMDCoN6F/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/sg_early_budding?igsh=MWJlejYwOHVpajRtdg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@SGEDUCATIONS" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
             </div>
           </div>
         </div>

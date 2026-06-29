@@ -28,16 +28,16 @@ export default function Footer() {
             </p>
             <div className="footer-contact-info" style={{ marginBottom: '1.5rem' }}>
               <p style={{ margin: '0 0 8px 0', fontSize: '0.95rem', color: '#555', display: 'flex', alignItems: 'center' }}>
-                <i className="fa-solid fa-envelope" style={{ marginRight: '10px', color: '#E95D2A', fontSize: '1.1rem' }}></i> support@sgeducations.com
+                <i className="fa-solid fa-envelope" style={{ marginRight: '10px', color: '#E95D2A', fontSize: '1.1rem' }}></i> sg.educations.org@gmail.com
               </p>
               <p style={{ margin: 0, fontSize: '0.95rem', color: '#555', display: 'flex', alignItems: 'center' }}>
-                <i className="fa-solid fa-phone" style={{ marginRight: '10px', color: '#E95D2A', fontSize: '1.1rem' }}></i> +91 73394 75210
+                <i className="fa-solid fa-phone" style={{ marginRight: '10px', color: '#E95D2A', fontSize: '1.1rem' }}></i> +91 9994664346
               </p>
             </div>
             <div className="social-icons">
-              <a href="#" className="soc-btn" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
-              <a href="#" className="soc-btn" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
-              <a href="#" className="soc-btn" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
+              <a href="https://www.facebook.com/share/1FcMDCoN6F/" target="_blank" rel="noopener noreferrer" className="soc-btn" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com/sg_early_budding?igsh=MWJlejYwOHVpajRtdg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" className="soc-btn" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+              <a href="https://www.youtube.com/@SGEDUCATIONS" target="_blank" rel="noopener noreferrer" className="soc-btn" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
             </div>
           </div>
 
@@ -54,6 +54,7 @@ export default function Footer() {
 
           <div className="footer-col contact-col">
             <h3>Location</h3>
+            <p style={{ color: 'var(--playful-pink)', fontWeight: 'bold', fontSize: '0.95rem', marginBottom: '1.2rem', marginTop: '-0.5rem' }}>Your Kids Second Home!!</p>
             <div className="contact-row" style={{ alignItems: 'flex-start', marginBottom: '1rem' }}>
               <div className="c-icon" style={{ marginTop: '4px' }}><i className="fa-solid fa-map-location-dot"></i></div>
               <div>

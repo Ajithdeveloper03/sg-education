@@ -435,6 +435,7 @@
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
+  flex-wrap: wrap; /* Allows text to flow into two lines instead of being squeezed */
   gap: 0.5rem;
 }
 
@@ -503,6 +504,7 @@
 .culture-btn {
   width: 40px;
   height: 40px;
+  flex-shrink: 0; /* Prevents the button from being distorted on mobile */
   border-radius: 50%;
   border: none;
   color: #fff;
@@ -573,7 +575,7 @@
 
 .eb-highlight-box {
   background: linear-gradient(135deg, #000000, #2A3F63);
-  padding: 3rem;
+  padding: 1.5rem;
   border-radius: 30px;
   color: #fff;
   position: relative;
@@ -930,7 +932,7 @@
 
 /* Left: Image Card */
 .eb-founder-card-left {
-  flex: 0 0 38%;
+  flex: 1;
   position: relative;
 }
 
@@ -1015,11 +1017,10 @@
 }
 
 .eb-founder-vision-statement {
-  font-size: 1.15rem;
+  font-size: 0.95rem;
   color: #d1d5db;
-  line-height: 1.8;
+  line-height: 1.6;
   margin-bottom: 2.5rem;
-  font-style: italic;
   position: relative;
 }
 
@@ -1078,6 +1079,29 @@
   .eb-founder-large-heading {
     font-size: 1.8rem;
   }
+}
+
+/* =========================================
+   9. Mobile Typography Adjustments (Headings)
+   ========================================= */
+@media (max-width: 768px) {
+  .eb-hero-title { font-size: 1.8rem !important; }
+  .eb-tab-details h2 { font-size: 1.4rem !important; }
+  .eb-section-header h2 { font-size: 1.6rem !important; }
+  .culture-info-card h3 { font-size: 1.2rem !important; }
+  .eb-highlight-box h3 { font-size: 1.5rem !important; }
+  .eb-party-title-area h3 { font-size: 1.1rem !important; }
+  .eb-horizontal-card-title { font-size: 1rem !important; }
+  .eb-founder-large-heading { font-size: 1.8rem !important; }
+  .eb-founder-name { font-size: 1.3rem !important; }
+}
+
+@media (max-width: 576px) {
+  .eb-hero-title { font-size: 1.5rem !important; }
+  .eb-section-header h2 { font-size: 1.4rem !important; }
+  .eb-founder-large-heading { font-size: 1.5rem !important; }
+  .eb-tab-details h2 { font-size: 1.15rem !important; }
+  .eb-tab-details { padding: 1.2rem 1rem !important; }
 }
 
 

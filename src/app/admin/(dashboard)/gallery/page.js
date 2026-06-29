@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import ConfirmModal from "../../../../components/ConfirmModal";
 
 export default function GalleryManager() {
   const [gallery, setGallery] = useState([]);
@@ -9,6 +10,14 @@ export default function GalleryManager() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   
+  const [modalConfig, setModalConfig] = useState({
+    isOpen: false,
+    title: "",
+    message: "",
+    confirmText: "",
+    action: null
+  });
+
   const [formData, setFormData] = useState({ id: "", title: "", category: "events", existing_image: "" });
   const fileInputRef = useRef(null);
 
@@ -34,8 +43,18 @@ export default function GalleryManager() {
     setSuccess(""); setError("");
   };
 
-  const handleDelete = async (id) => {
-    if (!confirm("Delete this gallery image?")) return;
+  const requestDelete = (id) => {
+    setModalConfig({
+      isOpen: true,
+      title: "Confirm Deletion",
+      message: "Are you sure you want to delete this gallery image? This action cannot be undone.",
+      confirmText: "YES, DELETE IMAGE",
+      action: () => executeDelete(id)
+    });
+  };
+
+  const executeDelete = async (id) => {
+    setModalConfig({ ...modalConfig, isOpen: false });
     try {
       const res = await fetch(`http://localhost/php-backend/api_gallery.php?id=${id}`, { method: 'DELETE' });
       const data = await res.json();
@@ -50,8 +69,19 @@ export default function GalleryManager() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const requestSubmit = (e) => {
     e.preventDefault();
+    setModalConfig({
+      isOpen: true,
+      title: formData.id ? "Confirm Image Update" : "Confirm Image Upload",
+      message: formData.id ? "You are about to update this gallery image." : "You are about to upload a new gallery image.",
+      confirmText: formData.id ? "YES, UPDATE IMAGE" : "YES, UPLOAD IMAGE",
+      action: () => executeSubmit()
+    });
+  };
+
+  const executeSubmit = async () => {
+    setModalConfig({ ...modalConfig, isOpen: false });
     setLoading(true); setError(""); setSuccess("");
     
     const submitData = new FormData();
@@ -104,7 +134,7 @@ export default function GalleryManager() {
                     <span style={{ display: 'inline-block', background: '#e9ecef', padding: '2px 8px', borderRadius: '4px', fontSize: '0.8rem', marginBottom: '10px' }}>{g.category}</span>
                     <div style={{ display: 'flex', gap: '10px' }}>
                       <button onClick={() => handleEdit(g)} className="admin-btn" style={{ flex: 1, padding: '5px', background: '#17a2b8', color: '#fff', fontSize: '0.9rem' }}>Edit</button>
-                      <button onClick={() => handleDelete(g.id)} className="admin-btn admin-btn-danger" style={{ flex: 1, padding: '5px', fontSize: '0.9rem' }}>Delete</button>
+                      <button onClick={() => requestDelete(g.id)} className="admin-btn admin-btn-danger" style={{ flex: 1, padding: '5px', fontSize: '0.9rem' }}>Delete</button>
                     </div>
                   </div>
                 </div>
@@ -117,7 +147,7 @@ export default function GalleryManager() {
       {(view === 'add' || view === 'edit') && (
         <div className="admin-card" style={{ maxWidth: '600px' }}>
           <h3>{view === 'add' ? 'Upload New Image' : 'Edit Image Info'}</h3>
-          <form onSubmit={handleSubmit} style={{ marginTop: '20px' }}>
+          <form onSubmit={requestSubmit} style={{ marginTop: '20px' }}>
             <div style={{ marginBottom: '20px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Image Title/Caption</label>
               <input type="text" name="title" value={formData.title} onChange={handleInputChange} className="admin-input" required />
@@ -150,6 +180,15 @@ export default function GalleryManager() {
           </form>
         </div>
       )}
+
+      <ConfirmModal 
+        isOpen={modalConfig.isOpen}
+        title={modalConfig.title}
+        message={modalConfig.message}
+        confirmText={modalConfig.confirmText}
+        onConfirm={modalConfig.action}
+        onCancel={() => setModalConfig({ ...modalConfig, isOpen: false })}
+      />
     </div>
   );
 }
