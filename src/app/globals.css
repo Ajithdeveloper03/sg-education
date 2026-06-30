@@ -4424,9 +4424,10 @@ header.scrolled .brand-name {
 
 .founders-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 2rem auto 0;
   gap: 3.5rem;
-  margin-top: 2rem;
 }
 
 @media (max-width: 991px) {
@@ -4946,14 +4947,44 @@ header.scrolled .brand-name {
 @media (max-width: 991px) {
   .testimonial-grid-three {
     grid-template-columns: 1fr;
-    gap: 4.5rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
-  .testimonial-carousel-row {
-    padding: 0 1rem;
-  }
-  .purple-nav-btn {
+  
+  /* Show only 1 card on mobile */
+  .testimonial-grid-three > div:not(:first-child) {
     display: none;
+  }
+  
+  .testimonial-carousel-row {
+    position: relative;
+    padding-top: 70px; /* Space for top-left arrows */
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .purple-nav-btn {
+    display: flex !important;
+    position: absolute;
+    top: 0;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #e0e0e0;
+    width: 48px;
+    height: 48px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  }
+  
+  .purple-nav-btn:hover {
+    background-color: #f9f9f9 !important;
+    transform: none;
+  }
+  
+  .testimonial-carousel-row > .purple-nav-btn:first-of-type {
+    left: 1rem;
+  }
+  
+  .testimonial-carousel-row > .purple-nav-btn:last-of-type {
+    left: calc(1rem + 60px); /* 48px width + 12px gap */
   }
 }
 
@@ -5303,7 +5334,7 @@ header.scrolled .brand-name {
   gap: 10px;
 }
 .vs-title {
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.5rem;
@@ -5498,7 +5529,7 @@ header.scrolled .brand-name {
   gap: 10px;
 }
 .vs-title {
-  font-size: 3.5rem;
+  font-size: 2.2rem;
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 1.5rem;
@@ -5652,8 +5683,16 @@ header.scrolled .brand-name {
     line-height: 1.2 !important;
   }
   .hero-subtitle {
-    font-size: 1.1rem !important;
+    font-size: 11px !important;
     margin-bottom: 2rem !important;
+    line-height: 1.6 !important;
+  }
+  .hero-edu-badge {
+    font-size: 10px !important;
+    padding: 10px 18px !important;
+    letter-spacing: 0.5px !important;
+    white-space: normal !important;
+    line-height: 1.6 !important;
   }
   .hero-shapes {
     display: none !important; /* Hide floating doodles to prevent offscreen layout expansion */
@@ -5662,10 +5701,33 @@ header.scrolled .brand-name {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.8rem !important;
+    font-size: 1.6rem !important;
   }
   .hero-subtitle {
+    font-size: 0.85rem !important;
+  }
+  .about-main-title {
+    font-size: 1.4rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word;
+  }
+  .vs-title {
+    font-size: 1.3rem !important;
+    white-space: normal !important;
+  }
+  .btn-chalk-submit {
     font-size: 1rem !important;
+    padding: 10px 20px !important;
+  }
+  h2 { font-size: 1.8rem !important; }
+  h3 { font-size: 1.4rem !important; }
+  p { font-size: 0.9rem !important; line-height: 1.6 !important; }
+  .hero-edu-badge {
+    font-size: 10px !important;
+    padding: 10px 18px !important;
+    letter-spacing: 0.5px !important;
+    white-space: normal !important;
+    line-height: 1.6 !important;
   }
 }
 
@@ -5792,7 +5854,7 @@ header.scrolled .brand-name {
     gap: 2rem !important;
   }
   .vs-title {
-    font-size: 2rem !important;
+    font-size: 1.2rem !important;
   }
   .vs-desc {
     font-size: 1rem !important;
@@ -5992,6 +6054,16 @@ header.scrolled .brand-name {
   transform: translateY(-5px);
 }
 
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 80px; /* Push it up to avoid blocking footer elements/testimonial arrows */
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+
 @keyframes moveCloudsRight {
   0% { transform: translateX(-50%); }
   100% { transform: translateX(0); }
@@ -6033,5 +6105,38 @@ header.scrolled .brand-name {
   }
   .chalk-board {
     padding: 1.5rem !important;
+  }
+}
+
+/* =========================================
+   HERO BUTTON RESPONSIVENESS
+   ========================================= */
+.hero-pill-btn {
+  display: inline-block;
+  padding: 12px 35px;
+  background-color: rgba(65, 65, 55, 0.85);
+  border: 1.5px solid #F4B400;
+  border-radius: 50px;
+  color: #F4B400;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.hero-pill-btn:hover {
+  background-color: #F4B400;
+  color: #1A1A1A;
+  box-shadow: 0 6px 20px rgba(244, 180, 0, 0.4);
+}
+
+@media (max-width: 500px) {
+  .hero-pill-btn {
+    font-size: 8px; /* Match the user's devtools screenshot exactly */
+    padding: 12px 20px; /* Slight padding reduction to fit better */
+    letter-spacing: 1px;
   }
 }

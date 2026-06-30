@@ -1,0 +1,524 @@
+/* src/app/franchise/franchise.css */
+
+.franchise-page {
+  font-family: var(--font-quicksand), sans-serif;
+  overflow-x: hidden;
+  background-color: #f8f9fa;
+}
+
+/* -----------------------------------------
+   1. HERO SECTION (The Hook)
+----------------------------------------- */
+.franchise-hero {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1a2942 0%, #0f172a 100%);
+  color: #fff;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.franchise-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-image: url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=2000&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.franchise-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.franchise-tag {
+  background-color: rgba(236, 196, 64, 0.2);
+  color: #ECC440;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  border: 1px solid rgba(236, 196, 64, 0.4);
+}
+
+.franchise-hero h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 20px;
+  color: #ffffff;
+  margin-top: 2rem;
+}
+
+.franchise-hero h1 span {
+  color: #ECC440;
+}
+
+.franchise-hero p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+.franchise-cta-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-franchise-primary {
+  background-color: #ECC440;
+  color: #1a2942;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid #ECC440;
+}
+
+.btn-franchise-primary:hover {
+  background-color: transparent;
+  color: #ECC440;
+}
+
+.btn-franchise-secondary {
+  background-color: transparent;
+  color: #fff;
+  padding: 15px 35px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-franchise-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+/* -----------------------------------------
+   2. WHY FRANCHISE WITH US (Benefits)
+----------------------------------------- */
+.franchise-benefits {
+  padding: 60px 0;
+  background-color: #ffffff;
+}
+
+.section-header-centered {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header-centered h2 {
+  font-size: 2.5rem;
+  color: #1d2a44;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.section-header-centered p {
+  color: #64748b;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 1px solid #f1f5f9;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, #1d2a44, #ECC440);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-card:hover::before {
+  transform: scaleX(1);
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  background: rgba(236, 196, 64, 0.1);
+  color: #ECC440;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 25px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+  background: #ECC440;
+  color: #fff;
+}
+
+.benefit-card h3 {
+  font-size: 1.4rem;
+  color: #1d2a44;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.benefit-card p {
+  color: #64748b;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* -----------------------------------------
+   3. THE JOURNEY (Process Timeline)
+----------------------------------------- */
+.franchise-process {
+  padding: 60px 0;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Center line */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #e2e8f0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  margin-bottom: 60px;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-item::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  right: -12px;
+  background-color: #fff;
+  border: 4px solid #1d2a44;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-item.right::after {
+  left: -12px;
+}
+
+.timeline-content {
+  padding: 30px;
+  background-color: #ffffff;
+  position: relative;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border: 1px solid #f1f5f9;
+}
+
+.step-number {
+  font-size: 4rem;
+  font-weight: 900;
+  color: rgba(29, 42, 68, 0.05);
+  position: absolute;
+  top: -10px;
+  right: 20px;
+  line-height: 1;
+}
+
+.timeline-content h3 {
+  font-size: 1.4rem;
+  color: #1d2a44;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
+}
+
+.timeline-content p {
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* -----------------------------------------
+   RESPONSIVE DESIGN
+----------------------------------------- */
+@media screen and (max-width: 992px) {
+  .franchise-hero h1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .franchise-hero {
+    padding: 80px 20px;
+  }
+  
+  .franchise-hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .franchise-cta-group {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .btn-franchise-primary, .btn-franchise-secondary {
+    width: 100%;
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 1rem;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  /* Timeline mobile fixes */
+  .timeline::after {
+    left: 31px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .timeline-item.left::after, .timeline-item.right::after {
+    left: 19px;
+  }
+  
+  .timeline-item.right {
+    left: 0%;
+  }
+}
+
+/* =========================================
+   6. FRANCHISE TESTIMONIALS SLIDER
+   ========================================= */
+.franchise-testimonials-section {
+  padding: 4rem 0;
+  background-color: #F8F9FA;
+  overflow: hidden;
+}
+
+.franchise-testimonial-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.carousel-viewport {
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  background: #fff;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.carousel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.franchise-testimonial-card {
+  padding: 4rem;
+  text-align: center;
+}
+
+.ft-quote-icon {
+  font-size: 3rem;
+  color: #E91E63;
+  opacity: 0.15;
+  margin-bottom: 1.5rem;
+}
+
+.ft-quote-text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.ft-author-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.ft-author-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #E91E63;
+}
+
+.ft-author-info h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1A202C;
+  margin-bottom: 0.2rem;
+}
+
+.ft-author-info span {
+  font-size: 0.85rem;
+  color: #718096;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.ft-stars {
+  color: #F59E0B;
+  font-size: 0.9rem;
+}
+
+.carousel-nav-btn {
+  background: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #1A202C;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.carousel-nav-btn:hover {
+  background: #E91E63;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #CBD5E0;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #E91E63;
+  transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+  .franchise-testimonial-carousel {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .carousel-nav-btn {
+    display: none; /* Hide arrows on mobile, rely on dots or swipes if implemented */
+  }
+  .franchise-testimonial-card {
+    padding: 2.5rem 1.5rem;
+  }
+  .ft-quote-text {
+    font-size: 1.1rem;
+  }
+  .ft-author-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -90,7 +90,12 @@ export default function SGEarlyBuddingPage() {
       }}>
         <div className="eb-hero-overlay" style={{ backgroundColor: 'rgba(17, 24, 39, 0.45)' }}></div>
         <div className="eb-hero-content" style={{ paddingBottom: '30px' }}>
-          <h1 className="eb-hero-title">Welcome to SG Early Budding</h1>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
+            <span className="hero-pill-btn">
+              Sowing Seeds of Knowledge
+            </span>
+          </div>
+          <h1 className="eb-hero-title" style={{ marginTop: '0' }}>Welcome to SG Early Budding</h1>
           <p className="eb-hero-desc">
             Nurturing young minds with a balanced approach of traditional values, modern learning techniques, creativity, and essential life skills.
           </p>
@@ -183,7 +188,7 @@ export default function SGEarlyBuddingPage() {
           <div className="eb-section-header">
             <h2>Our <span style={{ color: '#E95D2A' }}>Unique Approach</span></h2>
             <p style={{ color: '#666', fontSize: '1.1rem', maxWidth: '800px', margin: '1rem auto 0', textAlign: 'center' }}>
-              SG Education integrates the profound wisdom of Ancient Bharath Culture with the dynamic skills of Corporate Culture to nurture well-rounded, future-ready individuals.
+              At SG Education, we believe that true education extends beyond academics. Our unique educational philosophy integrates the profound wisdom of Ancient Noble Bharat Culture (ANBC) with the dynamic skills of Corporate Professional Culture (CPC),creating confident, ethical, and future-ready individuals.
             </p>
           </div>
 
@@ -195,8 +200,10 @@ export default function SGEarlyBuddingPage() {
                 <img src="/sg-education/Ancient Bharath Culture.png" />
               </div>
               <div className="culture-info-card anbc-theme">
-                <h3>Ancient Bharath Culture <span className="acronym">(ANBC)</span></h3>
-                <p className="culture-intro">Ancient Bharath has a rich heritage of educational practices that emphasize holistic development, moral values, and the pursuit of knowledge. We are incorporating the following elements:</p>
+                <h3>Ancient Noble Bharat Culture <span className="acronym">(ANBC)</span></h3>
+                <p className="culture-intro">Ancient Noble Bharat Culture represents the rich heritage, timeless values, knowledge systems, traditions, and ethical principles of ancient Bharath that nurtured responsible, wise, and compassionate individuals. 
+Our curriculum helps students develop strong character, self-discipline, respect, and social responsibility. 
+</p>
                 <ul className="culture-list" style={{ listStyleType: 'none', paddingLeft: 0 }}>
                   <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-om" style={{color: '#E95D2A', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Gurukul System</strong> </li>
                   <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-hands-holding-child" style={{color: '#E95D2A', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Value-Based Education</strong> </li>
@@ -207,7 +214,7 @@ export default function SGEarlyBuddingPage() {
                 </ul>
                 <div className="culture-card-bottom">
                   <div className="culture-highlight">
-                    <strong>Focus</strong> <span className="highlight-text">Traditional Values</span>
+                    <strong>Purpose :</strong> <span className="highlight-text" style={{ fontSize: '0.9rem', lineHeight: '1.4' }}>To build morally strong, disciplined, compassionate, and responsible human beings.</span>
                   </div>
                   <button className="culture-btn"><i className="fa-solid fa-plus"></i></button>
                 </div>
@@ -220,18 +227,21 @@ export default function SGEarlyBuddingPage() {
                 <img src="/sg-education/Corporate Culture.png" alt="Corporate Culture" />
               </div>
               <div className="culture-info-card cpc-theme">
-                <h3>Corporate Culture <span className="acronym">(CPC)</span></h3>
-                <p className="culture-intro">Corporate Culture refers to the set of beliefs and behaviors that guide how a person can manage internet and handle external thing in a modern world.</p>
+                <h3>Corporate Professional Culture <span className="acronym">(CPC)</span></h3>
+                <p className="culture-intro">Corporate Professional Culture prepares students with the essential skills, attitudes, and professional behaviours required for success in modern education, careers, entrepreneurship, and leadership. </p>
                 <ul className="culture-list" style={{ listStyleType: 'none', paddingLeft: 0 }}>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-comments" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Communication</strong> </li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-book-open-reader" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Usage of Vocabulary</strong> </li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-handshake-angle" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Gesture</strong> </li>
-                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-users" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>People Handling</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-comments" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Effective Communication</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-book-open-reader" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Vocabulary Development</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-handshake-angle" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Positive Body Language & Gestures</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-users" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>People Management</strong> </li>
                   <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-ear-listen" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Active Listening</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-users-gear" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Leadership & Teamwork</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-brain" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Critical Thinking</strong> </li>
+                  <li style={{ marginBottom: '8px' }}><i className="fa-solid fa-arrow-trend-up" style={{color: '#ECC440', marginRight: '10px', width: '20px', textAlign: 'center'}}></i><strong>Confidence Building</strong> </li>
                 </ul>
                 <div className="culture-card-bottom">
                   <div className="culture-highlight">
-                    <strong>Focus</strong> <span className="highlight-text">Modern Skills</span>
+                    <strong>Purpose :</strong> <span className="highlight-text" style={{ fontSize: '0.9rem', lineHeight: '1.4' }}>To prepare students for professional excellence, innovation, and future leadership.</span>
                   </div>
                   <button className="culture-btn"><i className="fa-solid fa-plus"></i></button>
                 </div>

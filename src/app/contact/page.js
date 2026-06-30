@@ -89,8 +89,16 @@ export default function ContactPage() {
               <div className="contact-card">
                 <div className="contact-card-icon cc-blue"><i className="fa-solid fa-location-dot"></i></div>
                 <div className="contact-card-text">
-                  <h3>Our Location</h3>
-                  <p>Flat no. D337, near Nanthavanam, Gokul Nagar, Agraharam, Hosur, Tamil Nadu - 635109</p>
+                  <h3>SG Early Budding</h3>
+                  <p>181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur - 635109</p>
+                </div>
+              </div>
+
+              <div className="contact-card">
+                <div className="contact-card-icon cc-blue"><i className="fa-solid fa-location-dot"></i></div>
+                <div className="contact-card-text">
+                  <h3>SG Educations</h3>
+                  <p>Rangopanditha Agraharam Village, Gokul Nagar, Hosur - 635109</p>
                 </div>
               </div>
 
@@ -98,7 +106,7 @@ export default function ContactPage() {
                 <div className="contact-card-icon cc-pink"><i className="fa-solid fa-phone-volume"></i></div>
                 <div className="contact-card-text">
                   <h3>Call Us</h3>
-                  <p>+91 73394 75210</p>
+                  <p>+91 9994664346</p>
                   <p>Mon - Sat: 9:00 AM - 5:00 PM</p>
                 </div>
               </div>
@@ -107,7 +115,7 @@ export default function ContactPage() {
                 <div className="contact-card-icon cc-green"><i className="fa-solid fa-envelope"></i></div>
                 <div className="contact-card-text">
                   <h3>Email Us</h3>
-                  <p>support@sgeducations.com</p>
+                  <p>sg.educations.org@gmail.com</p>
                   <p>info@sgeducations.com</p>
                 </div>
               </div>

@@ -1,4 +1,4 @@
-﻿/* src/app/our-programs/our-programs.css */
+/* src/app/our-programs/our-programs.css */
 
 .programs-page-wrapper {
   background-color: #fff;
@@ -183,7 +183,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 150px;
+  flex: 1 1 calc(50% - 1rem); /* Allow 2 columns without hardcoded max-width */
+  min-width: 130px;
 }
 
 .op-feature-icon {
@@ -337,12 +338,33 @@
 
 .journey-grid-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.5rem;
   margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .journey-grid-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.journey-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .journey-arrow {
+    transform: rotate(0deg);
+    margin: 0;
+  }
 }
 
 .journey-card {

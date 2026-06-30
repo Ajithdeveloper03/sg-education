@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import ConfirmModal from "../../../../components/ConfirmModal";
 
 export default function BlogManager() {
   const [blogs, setBlogs] = useState([]);
@@ -9,6 +10,15 @@ export default function BlogManager() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  
+  // Modal State
+  const [modalConfig, setModalConfig] = useState({
+    isOpen: false,
+    title: "",
+    message: "",
+    confirmText: "",
+    action: null
+  });
   
   // Basic Form State
   const [id, setId] = useState("");
@@ -88,8 +98,18 @@ export default function BlogManager() {
     setSuccess(""); setError("");
   };
 
-  const handleDelete = async (deleteId) => {
-    if (!confirm("Are you sure you want to delete this blog?")) return;
+  const requestDelete = (deleteId) => {
+    setModalConfig({
+      isOpen: true,
+      title: "Confirm Deletion",
+      message: "Are you sure you want to delete this blog? This action cannot be undone.",
+      confirmText: "YES, DELETE BLOG",
+      action: () => executeDelete(deleteId)
+    });
+  };
+
+  const executeDelete = async (deleteId) => {
+    setModalConfig({ ...modalConfig, isOpen: false });
     try {
 <<<<<<< HEAD
       const res = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_blog.php?id=${id}`, { method: 'DELETE' });
@@ -108,8 +128,19 @@ export default function BlogManager() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const requestSubmit = (e) => {
     e.preventDefault();
+    setModalConfig({
+      isOpen: true,
+      title: id ? "Confirm Article Update" : "Confirm Article Creation",
+      message: id ? "You are about to update this article. It will be visible on the live website." : "You are about to publish a new article. It will be visible on the live website.",
+      confirmText: id ? "YES, UPDATE ARTICLE" : "YES, PUBLISH ARTICLE",
+      action: () => executeSubmit()
+    });
+  };
+
+  const executeSubmit = async () => {
+    setModalConfig({ ...modalConfig, isOpen: false });
     setLoading(true); setError(""); setSuccess("");
     
     const submitData = new FormData();
@@ -154,20 +185,20 @@ export default function BlogManager() {
 
   // Dynamic Section Handlers
   const addSection = () => {
-    setSections([...sections, { id: Date.now(), heading: "", body: "", bullets: [] }]);
+    setSections(prev => [...prev, { id: Date.now(), heading: "", body: "", bullets: [] }]);
   };
   
   const updateSection = (secId, field, value) => {
-    setSections(sections.map(s => s.id === secId ? { ...s, [field]: value } : s));
+    setSections(prev => prev.map(s => s.id === secId ? { ...s, [field]: value } : s));
   };
   
   const removeSection = (secId) => {
-    setSections(sections.filter(s => s.id !== secId));
+    setSections(prev => prev.filter(s => s.id !== secId));
   };
 
   // Dynamic Bullets Handlers
   const addBullet = (secId) => {
-    setSections(sections.map(s => {
+    setSections(prev => prev.map(s => {
       if (s.id === secId) {
         return { ...s, bullets: [...(s.bullets || []), { id: Date.now(), text: "" }] };
       }
@@ -176,7 +207,7 @@ export default function BlogManager() {
   };
 
   const updateBullet = (secId, bulletId, text) => {
-    setSections(sections.map(s => {
+    setSections(prev => prev.map(s => {
       if (s.id === secId) {
         return { ...s, bullets: s.bullets.map(b => b.id === bulletId ? { ...b, text } : b) };
       }
@@ -185,7 +216,7 @@ export default function BlogManager() {
   };
 
   const removeBullet = (secId, bulletId) => {
-    setSections(sections.map(s => {
+    setSections(prev => prev.map(s => {
       if (s.id === secId) {
         return { ...s, bullets: s.bullets.filter(b => b.id !== bulletId) };
       }
@@ -195,15 +226,35 @@ export default function BlogManager() {
 
   // Dynamic FAQ Handlers
   const addFaq = () => {
-    setFaqs([...faqs, { id: Date.now(), question: "", answer: "" }]);
+    setFaqs(prev => [...prev, { id: Date.now(), question: "", answer: "" }]);
   };
 
   const updateFaq = (faqId, field, value) => {
-    setFaqs(faqs.map(f => f.id === faqId ? { ...f, [field]: value } : f));
+    setFaqs(prev => prev.map(f => f.id === faqId ? { ...f, [field]: value } : f));
   };
 
   const removeFaq = (faqId) => {
-    setFaqs(faqs.filter(f => f.id !== faqId));
+    setFaqs(prev => prev.filter(f => f.id !== faqId));
+  };
+
+  const handleSectionImageUpload = async (secId, file) => {
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("image", file);
+    try {
+      const res = await fetch("http://localhost/php-backend/api_upload.php", {
+        method: "POST",
+        body: formData
+      });
+      const data = await res.json();
+      if (data.status === 'success') {
+        updateSection(secId, 'image_url', data.data.url);
+      } else {
+        alert("Upload failed: " + data.message);
+      }
+    } catch (err) {
+      alert("Upload error.");
+    }
   };
 
   const totalBullets = sections.reduce((sum, sec) => sum + (sec.bullets ? sec.bullets.length : 0), 0);
@@ -309,8 +360,8 @@ export default function BlogManager() {
                       <td style={{color: '#666', fontSize: '0.9rem'}}>{new Date(blog.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
                       <td><span className="status-badge live">&bull; LIVE</span></td>
                       <td>
-                        <button onClick={() => handleEdit(blog)} className="admin-btn" style={{ background: '#17a2b8', color: '#fff', padding: '5px 15px', marginRight: '5px' }}>Edit</button>
-                        <button onClick={() => handleDelete(blog.id)} className="admin-btn admin-btn-danger" style={{ padding: '5px 15px' }}>Delete</button>
+                        <button onClick={() => handleEdit(blog)} className="admin-btn admin-btn-secondary" style={{ padding: '5px 15px', marginRight: '10px' }}>Edit</button>
+                        <button onClick={() => requestDelete(blog.id)} className="admin-btn admin-btn-danger" style={{ padding: '5px 15px' }}>Delete</button>
                       </td>
                     </tr>
                   )})}
@@ -322,8 +373,8 @@ export default function BlogManager() {
         </>
       )}
 
-      {(view === 'add' || view === 'edit') && (
-        <form onSubmit={handleSubmit}>
+      {view === "add" || view === "edit" ? (
+        <form onSubmit={requestSubmit}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
             <div>
               <span onClick={resetForm} style={{color: '#FF6B00', cursor: 'pointer', fontWeight: 'bold'}}>&larr; All Articles</span>
@@ -402,10 +453,17 @@ export default function BlogManager() {
 
                       <div style={{ marginTop: '15px' }}>
                         <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.8rem', color: '#666', fontWeight: 'bold' }}>SECTION IMAGE (OPTIONAL)</label>
-                        <div className="dotted-upload">
+                        {section.image_url && (
+                          <div style={{ marginBottom: '10px' }}>
+                            <img src={"http://localhost" + section.image_url} alt="Section" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '5px', objectFit: 'contain' }} />
+                            <div style={{ marginTop: '5px', cursor: 'pointer', color: '#FF6B00', fontSize: '0.9rem' }} onClick={() => updateSection(section.id, 'image_url', '')}>Remove Image</div>
+                          </div>
+                        )}
+                        <label className="dotted-upload" style={{ display: 'block', cursor: 'pointer' }}>
                           <i className="fa-regular fa-image" style={{fontSize: '2rem', marginBottom: '10px', color: '#ccc'}}></i>
-                          <div>UPLOAD IMAGE</div>
-                        </div>
+                          <div>{section.image_url ? 'CHANGE IMAGE' : 'UPLOAD IMAGE'}</div>
+                          <input type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleSectionImageUpload(section.id, e.target.files[0])} />
+                        </label>
                       </div>
                     </div>
                   ))}
@@ -499,7 +557,16 @@ export default function BlogManager() {
             </div>
           </div>
         </form>
-      )}
+      ) : null}
+
+      <ConfirmModal 
+        isOpen={modalConfig.isOpen}
+        title={modalConfig.title}
+        message={modalConfig.message}
+        confirmText={modalConfig.confirmText}
+        onConfirm={modalConfig.action}
+        onCancel={() => setModalConfig({ ...modalConfig, isOpen: false })}
+      />
     </div>
   );
 }
