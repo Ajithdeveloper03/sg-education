@@ -133,13 +133,8 @@ export default function BlogManager() {
     }
 
     try {
-<<<<<<< HEAD
       const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_blog.php", {
         method: "POST", // API handles both insert and update via POST
-=======
-      const res = await fetch("http://localhost/php-backend/api_blog.php", {
-        method: "POST", 
->>>>>>> 9bf2892fc7d77435d51adf4af06f6f615e5cb2ca
         body: submitData
       });
       const data = await res.json();

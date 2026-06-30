@@ -62,11 +62,9 @@ export default function Navbar() {
                 <span></span>
                 <span></span>
               </button>
-
               <nav className={`nav-menu ${mobileMenuOpen ? "open" : ""}`} id="nav-menu">
                 <ul className="nav-list">
                   <li className="nav-item"><Link href="/" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
-                  
                   <li className="nav-item">
                     <span className="nav-link" style={{ cursor: 'pointer' }}>About Us <i className="fa-solid fa-chevron-down" style={{fontSize: '0.7rem'}}></i></span>
                     <div className="dropdown-menu">
@@ -77,7 +75,6 @@ export default function Navbar() {
                       <Link href="/facilities" className="dropdown-link" onClick={() => setMobileMenuOpen(false)}>Facilities</Link>
                     </div>
                   </li>
-                  
                   <li className="nav-item">
                     <Link href="/our-programs" className="nav-link" onClick={() => setMobileMenuOpen(false)}>Our Programs</Link>
                   </li>
@@ -103,4 +100,3 @@ export default function Navbar() {
     </>
   );
 }
-
