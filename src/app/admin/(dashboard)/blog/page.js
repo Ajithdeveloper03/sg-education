@@ -181,20 +181,20 @@ export default function BlogManager() {
 
   // Dynamic Section Handlers
   const addSection = () => {
-    setSections([...sections, { id: Date.now(), heading: "", body: "", bullets: [] }]);
+    setSections(prev => [...prev, { id: Date.now(), heading: "", body: "", bullets: [] }]);
   };
   
   const updateSection = (secId, field, value) => {
-    setSections(sections.map(s => s.id === secId ? { ...s, [field]: value } : s));
+    setSections(prev => prev.map(s => s.id === secId ? { ...s, [field]: value } : s));
   };
   
   const removeSection = (secId) => {
-    setSections(sections.filter(s => s.id !== secId));
+    setSections(prev => prev.filter(s => s.id !== secId));
   };
 
   // Dynamic Bullets Handlers
   const addBullet = (secId) => {
-    setSections(sections.map(s => {
+    setSections(prev => prev.map(s => {
       if (s.id === secId) {
         return { ...s, bullets: [...(s.bullets || []), { id: Date.now(), text: "" }] };
       }
@@ -203,7 +203,7 @@ export default function BlogManager() {
   };
 
   const updateBullet = (secId, bulletId, text) => {
-    setSections(sections.map(s => {
+    setSections(prev => prev.map(s => {
       if (s.id === secId) {
         return { ...s, bullets: s.bullets.map(b => b.id === bulletId ? { ...b, text } : b) };
       }
@@ -212,7 +212,7 @@ export default function BlogManager() {
   };
 
   const removeBullet = (secId, bulletId) => {
-    setSections(sections.map(s => {
+    setSections(prev => prev.map(s => {
       if (s.id === secId) {
         return { ...s, bullets: s.bullets.filter(b => b.id !== bulletId) };
       }
@@ -222,15 +222,35 @@ export default function BlogManager() {
 
   // Dynamic FAQ Handlers
   const addFaq = () => {
-    setFaqs([...faqs, { id: Date.now(), question: "", answer: "" }]);
+    setFaqs(prev => [...prev, { id: Date.now(), question: "", answer: "" }]);
   };
 
   const updateFaq = (faqId, field, value) => {
-    setFaqs(faqs.map(f => f.id === faqId ? { ...f, [field]: value } : f));
+    setFaqs(prev => prev.map(f => f.id === faqId ? { ...f, [field]: value } : f));
   };
 
   const removeFaq = (faqId) => {
-    setFaqs(faqs.filter(f => f.id !== faqId));
+    setFaqs(prev => prev.filter(f => f.id !== faqId));
+  };
+
+  const handleSectionImageUpload = async (secId, file) => {
+    if (!file) return;
+    const formData = new FormData();
+    formData.append("image", file);
+    try {
+      const res = await fetch("http://localhost/php-backend/api_upload.php", {
+        method: "POST",
+        body: formData
+      });
+      const data = await res.json();
+      if (data.status === 'success') {
+        updateSection(secId, 'image_url', data.data.url);
+      } else {
+        alert("Upload failed: " + data.message);
+      }
+    } catch (err) {
+      alert("Upload error.");
+    }
   };
 
   const totalBullets = sections.reduce((sum, sec) => sum + (sec.bullets ? sec.bullets.length : 0), 0);
@@ -429,10 +449,17 @@ export default function BlogManager() {
 
                       <div style={{ marginTop: '15px' }}>
                         <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.8rem', color: '#666', fontWeight: 'bold' }}>SECTION IMAGE (OPTIONAL)</label>
-                        <div className="dotted-upload">
+                        {section.image_url && (
+                          <div style={{ marginBottom: '10px' }}>
+                            <img src={"http://localhost" + section.image_url} alt="Section" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '5px', objectFit: 'contain' }} />
+                            <div style={{ marginTop: '5px', cursor: 'pointer', color: '#FF6B00', fontSize: '0.9rem' }} onClick={() => updateSection(section.id, 'image_url', '')}>Remove Image</div>
+                          </div>
+                        )}
+                        <label className="dotted-upload" style={{ display: 'block', cursor: 'pointer' }}>
                           <i className="fa-regular fa-image" style={{fontSize: '2rem', marginBottom: '10px', color: '#ccc'}}></i>
-                          <div>UPLOAD IMAGE</div>
-                        </div>
+                          <div>{section.image_url ? 'CHANGE IMAGE' : 'UPLOAD IMAGE'}</div>
+                          <input type="file" accept="image/*" style={{ display: 'none' }} onChange={(e) => handleSectionImageUpload(section.id, e.target.files[0])} />
+                        </label>
                       </div>
                     </div>
                   ))}

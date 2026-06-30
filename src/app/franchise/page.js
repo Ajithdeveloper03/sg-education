@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import './franchise.css';
+import FranchiseTestimonials from './FranchiseTestimonials';
 
 export const metadata = {
   title: 'Franchise Opportunities | SG Education',
@@ -16,12 +17,10 @@ export default function FranchisePage() {
         <section className="franchise-hero">
           <div className="container">
             <div className="franchise-hero-container">
-              <span className="franchise-tag">Franchise Opportunities</span>
               <h1>Partner with SG Education:<br/><span>Shape the Future</span></h1>
               <p>
-                Join a legacy of academic excellence and holistic child development. 
-                Our proven franchise model empowers you to build a successful 
-                educational institution while making a lasting impact in your community.
+                Join a legacy of academic excellence. Our proven franchise model empowers 
+                you to build a successful educational institution in your community.
               </p>
               <div className="franchise-cta-group">
                 <Link href="/contact" className="btn-franchise-primary">
@@ -82,6 +81,22 @@ export default function FranchisePage() {
                 </div>
                 <h3>Marketing Support</h3>
                 <p>Leverage our strong brand presence. We assist with local marketing strategies, digital campaigns, and enrollment drives.</p>
+              </div>
+
+              <div className="benefit-card">
+                <div className="benefit-icon">
+                  <i className="fa-solid fa-gears"></i>
+                </div>
+                <h3>Operational Guidance</h3>
+                <p>Detailed standard operating procedures (SOPs) for daily operations, quality control, and seamless administration.</p>
+              </div>
+
+              <div className="benefit-card">
+                <div className="benefit-icon">
+                  <i className="fa-solid fa-network-wired"></i>
+                </div>
+                <h3>Community Network</h3>
+                <p>Connect with a vast network of successful franchisees to exchange ideas, strategies, and best practices for growth.</p>
               </div>
             </div>
           </div>
@@ -144,6 +159,9 @@ export default function FranchisePage() {
             </div>
           </div>
         </section>
+
+        {/* 4. TESTIMONIALS */}
+        <FranchiseTestimonials />
 
       </main>
     </>

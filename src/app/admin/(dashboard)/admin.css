@@ -468,6 +468,7 @@
   margin: 0;
   font-size: 1.5rem;
   font-weight: bold;
+  color: #fff;
 }
 
 .stat-card-info p {
@@ -476,6 +477,7 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   opacity: 0.9;
+  color: #fff;
 }
 
 /* Toolbar */
@@ -495,7 +497,27 @@
   padding: 10px 15px;
   border-radius: 5px;
   width: 300px;
+  max-width: 100%;
   outline: none;
+}
+
+@media screen and (max-width: 768px) {
+  .blog-stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .blog-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .blog-search-input {
+    width: 100%;
+  }
+  .blog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
 }
 
 .blog-filters {
