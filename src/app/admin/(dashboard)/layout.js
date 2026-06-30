@@ -18,6 +18,7 @@ export default function AdminDashboardLayout({ children }) {
     if (!token) {
       router.push("/admin");
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsAuth(true);
       setUsername(localStorage.getItem("admin_username") || "Admin");
     }

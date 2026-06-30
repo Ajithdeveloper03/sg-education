@@ -5559,7 +5559,7 @@ header.scrolled .brand-name {
   opacity: 0.9;
 }
 .vs-doodle.bee { top: -50px; left: -20px; font-size: 3rem; transform: rotate(-15deg); }
-.vs-doodle.hands { top: -20px; right: 0; font-size: 3rem; transform: rotate(15deg); }
+.vs-doodle.hands { top: -40px; right: -50px; font-size: 3rem; transform: rotate(15deg); }
 .vs-doodle.bike { bottom: -80px; right: 20px; font-size: 5rem; }
 
 @media (max-width: 991px) {

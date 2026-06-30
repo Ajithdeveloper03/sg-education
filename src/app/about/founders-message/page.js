@@ -111,7 +111,7 @@ export default function FoundersMessagePage() {
                 <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor, SG Education & Visionary Leader 
 </p>
                 <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished mentor, entrepreneur, and visionary leader. Through his guidance and strategic insights, he supports SG Education's mission of empowering young minds through quality education, ethical values, innovation, and
+                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished mentor, entrepreneur, and visionary leader. Through his guidance and strategic insights, he supports SG Education&apos;s mission of empowering young minds through quality education, ethical values, innovation, and
 leadership development. His dedication to social progress and nation-building continues to inspire students, educators, and communities alike.
 &quot;</p>
                 </div>
@@ -173,7 +173,7 @@ leadership development. His dedication to social progress and nation-building co
                   <strong>Welcome to SG Education.</strong>
                 </p>
                 <p style={{ marginTop: '10px' }}>
-                  At SG Education, we believe that education is the foundation for building not only knowledge but also character, values, and leadership. Our vision is to create an inspiring learning environment that nurtures young minds and prepares them to excel in a rapidly evolving world.
+                   SG Education was built on a dream — a dream to create a space where every child&apos;s unique potential is celebrated, nurtured, and guided toward excellence. Our vision is to create an inspiring learning environment that nurtures young minds and prepares them to excel in a rapidly evolving world.
                 </p>
                 <p style={{ marginTop: '10px' }}>
                   We are committed to integrating Ancient Noble Bharat Culture (ANBC) with Corporate Professional Culture (CPC), enabling students to develop strong moral values while acquiring the skills and confidence required for future success. Through this unique approach, we strive to cultivate responsible, compassionate, and future-ready individuals.

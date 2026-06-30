@@ -50,6 +50,7 @@ export default function BlogManager() {
     setLoading(false);
   };
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { fetchBlogs(); }, []);
 
   const resetForm = () => {
@@ -85,12 +86,12 @@ export default function BlogManager() {
         setFaqs(parsed.faqs || []);
       } else {
         // Fallback for old raw HTML content: put it in a single section
-        setSections([{ id: Date.now(), heading: 'Main Content', body: blog.content, bullets: [] }]);
+        setSections([{ id: "legacy-content", heading: 'Main Content', body: blog.content, bullets: [] }]);
         setFaqs([]);
       }
     } catch (e) {
       // Not JSON, it's old raw HTML
-      setSections([{ id: Date.now(), heading: 'Main Content', body: blog.content, bullets: [] }]);
+      setSections([{ id: "legacy-content", heading: 'Main Content', body: blog.content, bullets: [] }]);
       setFaqs([]);
     }
 

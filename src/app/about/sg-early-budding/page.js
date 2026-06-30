@@ -197,7 +197,7 @@ export default function SGEarlyBuddingPage() {
             {/* ANBC Card */}
             <div className="culture-card-container">
               <div className="culture-img-wrapper">
-                <img src="/sg-education/Ancient Bharath Culture.png" />
+                <img src="/sg-education/Ancient Bharath Culture.png" alt="Ancient Bharath Culture" />
               </div>
               <div className="culture-info-card anbc-theme">
                 <h3>Ancient Noble Bharat Culture <span className="acronym">(ANBC)</span></h3>

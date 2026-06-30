@@ -78,7 +78,7 @@ export default function OurProgramsPage() {
           <h1 className="op-hero-title-sub">Bright Beginnings</h1>
           
           <p className="op-hero-subtitle">
-            From Day Care to 5th Standard – <br />
+            From Toddlers Care to 5th Standard – <br />
             Building <span>Strong Foundations</span> for Life.
           </p>
 
