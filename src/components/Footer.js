@@ -56,17 +56,23 @@ export default function Footer() {
             <h3>Location</h3>
             <p style={{ color: 'var(--playful-pink)', fontWeight: 'bold', fontSize: '0.95rem', marginBottom: '1.2rem', marginTop: '-0.5rem' }}>Your Kids Second Home!!</p>
             <div className="contact-row" style={{ alignItems: 'flex-start', marginBottom: '1rem' }}>
-              <div className="c-icon" style={{ marginTop: '4px' }}><i className="fa-solid fa-map-location-dot"></i></div>
-              <div>
-                <strong style={{ display: 'block', color: '#1D2A44', marginBottom: '4px', fontSize: '0.9rem' }}>SG Education</strong>
-                <p className="footer-contact-p" style={{ margin: 0 }}>Flat no. D337, near Nanthavanam, Gokul Nagar, Agraharam, Hosur, Tamil Nadu - 635109</p>
+              <div className="footer-contact-item" style={{ display: 'flex', gap: '10px', marginBottom: '1rem' }}>
+                <div className="footer-contact-icon">
+                  <i className="fa-solid fa-location-dot" style={{ color: '#E95D2A' }}></i>
+                </div>
+                <div>
+                  <h4 style={{ margin: '0 0 5px 0', fontSize: '1rem', color: '#1d2a44' }}>SG Early Budding</h4>
+                  <p className="footer-contact-p" style={{ margin: 0, fontSize: '0.9rem', color: '#555' }}>181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur - 635109</p>
+                </div>
               </div>
-            </div>
-            <div className="contact-row" style={{ alignItems: 'flex-start' }}>
-              <div className="c-icon" style={{ marginTop: '4px' }}><i className="fa-solid fa-map-location-dot"></i></div>
-              <div>
-                <strong style={{ display: 'block', color: '#1D2A44', marginBottom: '4px', fontSize: '0.9rem' }}>SG Early Budding</strong>
-                <p className="footer-contact-p" style={{ margin: 0 }}>Flat no. D337, near Nanthavanam, Gokul Nagar, Agraharam, Hosur, Tamil Nadu - 635109</p>
+              <div className="footer-contact-item" style={{ display: 'flex', gap: '10px' }}>
+                <div className="footer-contact-icon">
+                  <i className="fa-solid fa-location-dot" style={{ color: '#E95D2A' }}></i>
+                </div>
+                <div>
+                  <h4 style={{ margin: '0 0 5px 0', fontSize: '1rem', color: '#1d2a44' }}>SG Educations</h4>
+                  <p className="footer-contact-p" style={{ margin: 0, fontSize: '0.9rem', color: '#555' }}>Rangopanditha Agraharam Village, Gokul Nagar, Hosur - 635109</p>
+                </div>
               </div>
             </div>
           </div>

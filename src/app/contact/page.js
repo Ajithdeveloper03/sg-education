@@ -89,8 +89,16 @@ export default function ContactPage() {
               <div className="contact-card">
                 <div className="contact-card-icon cc-blue"><i className="fa-solid fa-location-dot"></i></div>
                 <div className="contact-card-text">
-                  <h3>Our Location</h3>
-                  <p>Flat no. D337, near Nanthavanam, Gokul Nagar, Agraharam, Hosur, Tamil Nadu - 635109</p>
+                  <h3>SG Early Budding</h3>
+                  <p>181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur - 635109</p>
+                </div>
+              </div>
+
+              <div className="contact-card">
+                <div className="contact-card-icon cc-blue"><i className="fa-solid fa-location-dot"></i></div>
+                <div className="contact-card-text">
+                  <h3>SG Educations</h3>
+                  <p>Rangopanditha Agraharam Village, Gokul Nagar, Hosur - 635109</p>
                 </div>
               </div>
 

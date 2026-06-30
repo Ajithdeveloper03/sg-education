@@ -56,11 +56,12 @@
 }
 
 .franchise-hero h1 {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
   line-height: 1.3;
   margin-bottom: 20px;
   color: #ffffff;
+  margin-top: 2rem;
 }
 
 .franchise-hero h1 span {
