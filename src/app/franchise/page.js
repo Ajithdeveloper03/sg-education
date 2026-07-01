@@ -17,10 +17,9 @@ export default function FranchisePage() {
         <section className="franchise-hero">
           <div className="container">
             <div className="franchise-hero-container">
-              <h1>Partner with SG Education:<br/><span>Shape the Future</span></h1>
+              <h1>Partner with SG Education</h1>
               <p>
-                Join a legacy of academic excellence. Our proven franchise model empowers 
-                you to build a successful educational institution in your community.
+                Join our proven franchise model and build a successful educational institution in your community.
               </p>
               <div className="franchise-cta-group">
                 <Link href="/contact" className="btn-franchise-primary">
@@ -36,8 +35,8 @@ export default function FranchisePage() {
           {/* Cloud Transition */}
           <div className="cloud-container">
             <div className="cloud-wrapper">
-              <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-              <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+              <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+              <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
             </div>
           </div>
         </section>

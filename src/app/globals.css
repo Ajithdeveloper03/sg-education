@@ -7,6 +7,15 @@
 @tailwind utilities;
 
 /* ==========================================================================
+   GLOBAL ITALIC OVERRIDE
+   Mandatory non-italic font style across the entire website text
+   (Excluding icons to avoid breaking FontAwesome rendering)
+   ========================================================================== */
+html, body, p, h1, h2, h3, h4, h5, h6, span, a, div, li, ul, blockquote, em, strong, b, button, input, textarea, select, label {
+  font-style: normal !important;
+}
+
+/* ==========================================================================
    SG EDUCATION - SUPERCHARGED DESIGN SYSTEM (KIDZA STYLING SPEC)
    ========================================================================== */
 
@@ -1644,6 +1653,17 @@ header.scrolled .brand-name {
   width: 100%;
 }
 
+@keyframes testiSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .testimonial-grid-three {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -3159,7 +3179,7 @@ header.scrolled .brand-name {
   left: 0;
   width: 100%;
   height: 500px;
-  background-image: url('/sg-education/decorative-grass.png');
+  background-image: url('/sg-education/decorative-grass.webp');
   background-repeat: repeat-x;
   background-size: contain;
   background-position: bottom center;
@@ -5559,7 +5579,7 @@ header.scrolled .brand-name {
   opacity: 0.9;
 }
 .vs-doodle.bee { top: -50px; left: -20px; font-size: 3rem; transform: rotate(-15deg); }
-.vs-doodle.hands { top: -20px; right: 0; font-size: 3rem; transform: rotate(15deg); }
+.vs-doodle.hands { top: -40px; right: -50px; font-size: 3rem; transform: rotate(15deg); }
 .vs-doodle.bike { bottom: -80px; right: 20px; font-size: 5rem; }
 
 @media (max-width: 991px) {
@@ -5854,7 +5874,7 @@ header.scrolled .brand-name {
     gap: 2rem !important;
   }
   .vs-title {
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
   }
   .vs-desc {
     font-size: 1rem !important;
@@ -6127,11 +6147,6 @@ header.scrolled .brand-name {
   transition: all 0.3s ease;
 }
 
-.hero-pill-btn:hover {
-  background-color: #F4B400;
-  color: #1A1A1A;
-  box-shadow: 0 6px 20px rgba(244, 180, 0, 0.4);
-}
 
 @media (max-width: 500px) {
   .hero-pill-btn {

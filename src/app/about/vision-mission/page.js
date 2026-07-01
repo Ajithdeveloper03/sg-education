@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
@@ -27,8 +27,8 @@ export default function VisionMissionPage() {
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title">Vision & Mission</h1>
           <p className="vm-banner-desc">
-            Empowering minds through ancient wisdom and modern education.<br/>
-            Building character, leadership, and a brighter future.
+            Empowering minds through Ancient Noble Bharat Culture with Corporate Professional Culture.
+Building character, leadership, and a brighter future.
           </p>
           <div className="vm-pagination">
             <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
@@ -40,8 +40,8 @@ export default function VisionMissionPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -103,7 +103,7 @@ export default function VisionMissionPage() {
             {/* Right Image Setup */}
             <div className="vm-image-container">
               <div className="vm-main-img-wrapper outline-white">
-                <img src="/sg-education/mission.png" alt="Students in class" className="vm-main-img" />
+                <img src="/sg-education/mission.webp" alt="Students in class" className="vm-main-img" />
               </div>
               <div className="vm-overlay-card overlay-pink">
                 <img src="/sg-education/2 mission.png" alt="Student studying" className="vm-overlay-img" />
@@ -129,7 +129,7 @@ export default function VisionMissionPage() {
             {/* Left Image Setup (Swapped) */}
             <div className="vm-image-container">
               <div className="vm-main-img-wrapper outline-white">
-                <img src="/sg-education/vision.png" alt="Stack of books" className="vm-main-img" />
+                <img src="/sg-education/vision.webp" alt="Stack of books" className="vm-main-img" />
               </div>
               <div className="vm-overlay-card overlay-green" style={{ left: '-15px', right: 'auto' }}>
                 <img src="/sg-education/2 vision.png" alt="Classroom" className="vm-overlay-img" />
@@ -162,7 +162,7 @@ export default function VisionMissionPage() {
                   <div className="vm-c-icon icon-green"><i className="fa-solid fa-om"></i></div>
                   <div className="vm-c-text">
                     <h4>ANBC</h4>
-                    <p>Ancient Bharath Culture</p>
+                    <p>Ancient Noble Bharat Culture</p>
                   </div>
                 </div>
                 
@@ -170,7 +170,7 @@ export default function VisionMissionPage() {
                   <div className="vm-c-icon icon-pink"><i className="fa-solid fa-briefcase"></i></div>
                   <div className="vm-c-text">
                     <h4>CPC</h4>
-                    <p>Corporate Culture</p>
+                    <p>Corporate Professional Culture</p>
                   </div>
                 </div>
                 

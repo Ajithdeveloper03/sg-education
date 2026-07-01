@@ -58,8 +58,8 @@ export default function GalleryPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -70,10 +70,11 @@ export default function GalleryPage() {
           
           <div className="gallery-filters">
             <button className={`filter-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>All</button>
-            <button className={`filter-btn ${filter === 'campus' ? 'active' : ''}`} onClick={() => setFilter('campus')}>Campus</button>
-            <button className={`filter-btn ${filter === 'learning' ? 'active' : ''}`} onClick={() => setFilter('learning')}>Learning</button>
-            <button className={`filter-btn ${filter === 'playtime' ? 'active' : ''}`} onClick={() => setFilter('playtime')}>Playtime</button>
-            <button className={`filter-btn ${filter === 'events' ? 'active' : ''}`} onClick={() => setFilter('events')}>Events</button>
+            <button className={`filter-btn ${filter === 'yoga day' ? 'active' : ''}`} onClick={() => setFilter('yoga day')}>Yoga Day</button>
+            <button className={`filter-btn ${filter === 'fancy dress day' ? 'active' : ''}`} onClick={() => setFilter('fancy dress day')}>Fancy Dress Day</button>
+            <button className={`filter-btn ${filter === 'green day' ? 'active' : ''}`} onClick={() => setFilter('green day')}>Green Day</button>
+            <button className={`filter-btn ${filter === 'culturals' ? 'active' : ''}`} onClick={() => setFilter('culturals')}>Culturals</button>
+            <button className={`filter-btn ${filter === 'blue day' ? 'active' : ''}`} onClick={() => setFilter('blue day')}>Blue Day</button>
           </div>
 
           <div className="gallery-grid">

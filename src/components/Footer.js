@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="container footer-content-grid">
           <div className="footer-col brand-col">
             <Link href="/" className="footer-logo">
-              <img src="/sg-education/logo.webp" alt="SG Education Logo" />
+              <img src="/sg-education/SG logo.webp" alt="SG Education Logo" />
               <span className="logo-text">SG Education</span>
             </Link>
             <p className="footer-about-text" style={{ marginBottom: '1.5rem' }}>
@@ -30,10 +30,10 @@ export default function Footer() {
             </p>
             <div className="footer-contact-info" style={{ marginBottom: '1.5rem' }}>
               <p style={{ margin: '0 0 8px 0', fontSize: '0.95rem', color: '#555', display: 'flex', alignItems: 'center' }}>
-                <i className="fa-solid fa-envelope" style={{ marginRight: '10px', color: '#E95D2A', fontSize: '1.1rem' }}></i> sg.educations.org@gmail.com
+                <i className="fa-solid fa-envelope" style={{ marginRight: '10px', color: '#e10b76ff', fontSize: '1.1rem' }}></i> sg.educations.org@gmail.com
               </p>
               <p style={{ margin: 0, fontSize: '0.95rem', color: '#555', display: 'flex', alignItems: 'center' }}>
-                <i className="fa-solid fa-phone" style={{ marginRight: '10px', color: '#E95D2A', fontSize: '1.1rem' }}></i> +91 9994664346
+                <i className="fa-solid fa-phone" style={{ marginRight: '10px', color: '#ea0675ff', fontSize: '1.1rem' }}></i> +91 9994664346
               </p>
             </div>
             <div className="social-icons">
@@ -49,6 +49,7 @@ export default function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about/sg-early-budding">SG Early Budding</Link></li>
               <li><Link href="/facilities">Facilities</Link></li>
+              <li><Link href="/our-programs">Our Programs</Link></li>
               <li><Link href="/gallery">Memory Clips</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>
@@ -57,10 +58,10 @@ export default function Footer() {
           <div className="footer-col contact-col">
             <h3>Location</h3>
             <p style={{ color: 'var(--playful-pink)', fontWeight: 'bold', fontSize: '0.95rem', marginBottom: '1.2rem', marginTop: '-0.5rem' }}>Your Kids Second Home!!</p>
-            <div className="contact-row" style={{ alignItems: 'flex-start', marginBottom: '1rem' }}>
+            <div className="contact-row" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginBottom: '1rem' }}>
               <div className="footer-contact-item" style={{ display: 'flex', gap: '10px', marginBottom: '1rem' }}>
                 <div className="footer-contact-icon">
-                  <i className="fa-solid fa-location-dot" style={{ color: '#E95D2A' }}></i>
+                  <i className="fa-solid fa-location-dot" style={{ color: ' #ea0675ff' }}></i>
                 </div>
                 <div>
                   <h4 style={{ margin: '0 0 5px 0', fontSize: '1rem', color: '#1d2a44' }}>SG Early Budding</h4>
@@ -69,7 +70,7 @@ export default function Footer() {
               </div>
               <div className="footer-contact-item" style={{ display: 'flex', gap: '10px' }}>
                 <div className="footer-contact-icon">
-                  <i className="fa-solid fa-location-dot" style={{ color: '#E95D2A' }}></i>
+                  <i className="fa-solid fa-location-dot" style={{ color: '#ea0675ff' }}></i>
                 </div>
                 <div>
                   <h4 style={{ margin: '0 0 5px 0', fontSize: '1rem', color: '#1d2a44' }}>SG Educations</h4>

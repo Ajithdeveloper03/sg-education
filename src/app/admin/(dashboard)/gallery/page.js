@@ -18,7 +18,7 @@ export default function GalleryManager() {
     action: null
   });
 
-  const [formData, setFormData] = useState({ id: "", title: "", category: "events", existing_image: "" });
+  const [formData, setFormData] = useState({ id: "", title: "", category: "yoga day", existing_image: "" });
   const fileInputRef = useRef(null);
 
   const fetchGallery = async () => {
@@ -33,6 +33,7 @@ export default function GalleryManager() {
     setLoading(false);
   };
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { fetchGallery(); }, []);
 
   const handleInputChange = (e) => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
@@ -105,7 +106,7 @@ export default function GalleryManager() {
   };
 
   const resetForm = () => {
-    setFormData({ id: "", title: "", category: "events", existing_image: "" });
+    setFormData({ id: "", title: "", category: "yoga day", existing_image: "" });
     setView("list"); setSuccess(""); setError("");
   };
 
@@ -156,10 +157,11 @@ export default function GalleryManager() {
             <div style={{ marginBottom: '20px' }}>
               <label style={{ display: 'block', marginBottom: '5px', fontWeight: 'bold' }}>Category</label>
               <select name="category" value={formData.category} onChange={handleInputChange} className="admin-input" required>
-                <option value="events">Events</option>
-                <option value="learning">Learning</option>
-                <option value="campus">Campus</option>
-                <option value="playtime">Playtime</option>
+                <option value="yoga day">Yoga Day</option>
+                <option value="fancy dress day">Fancy Dress Day</option>
+                <option value="green day">Green Day</option>
+                <option value="culturals">Culturals</option>
+                <option value="blue day">Blue Day</option>
               </select>
             </div>
 

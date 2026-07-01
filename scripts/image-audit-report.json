@@ -1,0 +1,557 @@
+{
+  "used": [
+    "2 mission.png",
+    "2 our values.png",
+    "2 vision.png",
+    "about sge 1.png",
+    "about sge 2.png",
+    "about sge 3.png",
+    "about sge 4.png",
+    "about sge 5.png",
+    "about-student.webp",
+    "Ancient Bharath Culture.png",
+    "banner page.png",
+    "blog banner.png",
+    "boy_thumbs_up.webp",
+    "cloud.webp",
+    "Clubs & Enrichment Programs.png",
+    "Corporate Culture.png",
+    "decorative-grass.webp",
+    "early budding logo.png",
+    "Extracurriculars & Arts.png",
+    "facilities banner.png",
+    "Fun Learning.png",
+    "gallery banner.png",
+    "girl_writing.webp",
+    "HEALTH & WELL-BEING.png",
+    "Hygiene.webp",
+    "logo.webp",
+    "mamtha 1.png",
+    "mamtha 2.png",
+    "meet our team.png",
+    "mentor.webp",
+    "mission.webp",
+    "One Day One.png",
+    "our values.png",
+    "pillars1.webp",
+    "pillars2.webp",
+    "pillars3.webp",
+    "pillars4.webp",
+    "program banner.png",
+    "school motto banner.png",
+    "sg early budding banner.png",
+    "Skill Identity.png",
+    "Sports & Leadership.png",
+    "Traditional Customs.png",
+    "transport background.png",
+    "TRANSPORTATION.webp",
+    "vision.webp"
+  ],
+  "unused": [
+    {
+      "filename": "1.jpg",
+      "urlPath": "1.jpg",
+      "sizeKB": 31,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\1.jpg"
+    },
+    {
+      "filename": "2 mission.webp",
+      "urlPath": "2 mission.webp",
+      "sizeKB": 89,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\2 mission.webp"
+    },
+    {
+      "filename": "2 our values.webp",
+      "urlPath": "2 our values.webp",
+      "sizeKB": 236,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\2 our values.webp"
+    },
+    {
+      "filename": "2 vision.webp",
+      "urlPath": "2 vision.webp",
+      "sizeKB": 235,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\2 vision.webp"
+    },
+    {
+      "filename": "5.png",
+      "urlPath": "5.png",
+      "sizeKB": 99,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\5.png"
+    },
+    {
+      "filename": "5.webp",
+      "urlPath": "5.webp",
+      "sizeKB": 50,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\5.webp"
+    },
+    {
+      "filename": "about sge 1.webp",
+      "urlPath": "about sge 1.webp",
+      "sizeKB": 141,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\about sge 1.webp"
+    },
+    {
+      "filename": "about sge 2.webp",
+      "urlPath": "about sge 2.webp",
+      "sizeKB": 349,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\about sge 2.webp"
+    },
+    {
+      "filename": "about sge 3.webp",
+      "urlPath": "about sge 3.webp",
+      "sizeKB": 264,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\about sge 3.webp"
+    },
+    {
+      "filename": "about sge 4.webp",
+      "urlPath": "about sge 4.webp",
+      "sizeKB": 266,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\about sge 4.webp"
+    },
+    {
+      "filename": "about sge 5.webp",
+      "urlPath": "about sge 5.webp",
+      "sizeKB": 214,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\about sge 5.webp"
+    },
+    {
+      "filename": "about-student.png",
+      "urlPath": "about-student.png",
+      "sizeKB": 76,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\about-student.png"
+    },
+    {
+      "filename": "Ancient Bharath Culture.webp",
+      "urlPath": "Ancient Bharath Culture.webp",
+      "sizeKB": 284,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Ancient Bharath Culture.webp"
+    },
+    {
+      "filename": "banner page.webp",
+      "urlPath": "banner page.webp",
+      "sizeKB": 294,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\banner page.webp"
+    },
+    {
+      "filename": "blog banner.webp",
+      "urlPath": "blog banner.webp",
+      "sizeKB": 140,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\blog banner.webp"
+    },
+    {
+      "filename": "boy_thumbs_up.png",
+      "urlPath": "boy_thumbs_up.png",
+      "sizeKB": 536,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\boy_thumbs_up.png"
+    },
+    {
+      "filename": "cloud design.png",
+      "urlPath": "cloud design.png",
+      "sizeKB": 2,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\cloud design.png"
+    },
+    {
+      "filename": "cloud design.webp",
+      "urlPath": "cloud design.webp",
+      "sizeKB": 2,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\cloud design.webp"
+    },
+    {
+      "filename": "cloud.png",
+      "urlPath": "cloud.png",
+      "sizeKB": 2,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\cloud.png"
+    },
+    {
+      "filename": "Clubs & Enrichment Programs.webp",
+      "urlPath": "Clubs & Enrichment Programs.webp",
+      "sizeKB": 188,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Clubs & Enrichment Programs.webp"
+    },
+    {
+      "filename": "Corporate Culture.webp",
+      "urlPath": "Corporate Culture.webp",
+      "sizeKB": 187,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Corporate Culture.webp"
+    },
+    {
+      "filename": "decorative-grass.png",
+      "urlPath": "decorative-grass.png",
+      "sizeKB": 427,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\decorative-grass.png"
+    },
+    {
+      "filename": "early budding logo.webp",
+      "urlPath": "early budding logo.webp",
+      "sizeKB": 9,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\early budding logo.webp"
+    },
+    {
+      "filename": "Extracurriculars & Arts.webp",
+      "urlPath": "Extracurriculars & Arts.webp",
+      "sizeKB": 162,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Extracurriculars & Arts.webp"
+    },
+    {
+      "filename": "facilities banner.webp",
+      "urlPath": "facilities banner.webp",
+      "sizeKB": 265,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\facilities banner.webp"
+    },
+    {
+      "filename": "file.svg",
+      "urlPath": "file.svg",
+      "sizeKB": 0,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\file.svg"
+    },
+    {
+      "filename": "Fun Learning.webp",
+      "urlPath": "Fun Learning.webp",
+      "sizeKB": 227,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Fun Learning.webp"
+    },
+    {
+      "filename": "gallery banner.webp",
+      "urlPath": "gallery banner.webp",
+      "sizeKB": 204,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\gallery banner.webp"
+    },
+    {
+      "filename": "girl_writing.png",
+      "urlPath": "girl_writing.png",
+      "sizeKB": 568,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\girl_writing.png"
+    },
+    {
+      "filename": "globe.svg",
+      "urlPath": "globe.svg",
+      "sizeKB": 1,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\globe.svg"
+    },
+    {
+      "filename": "HEALTH & WELL-BEING.webp",
+      "urlPath": "HEALTH & WELL-BEING.webp",
+      "sizeKB": 202,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\HEALTH & WELL-BEING.webp"
+    },
+    {
+      "filename": "Hygiene.png",
+      "urlPath": "Hygiene.png",
+      "sizeKB": 715,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Hygiene.png"
+    },
+    {
+      "filename": "kids-dream-lead.png",
+      "urlPath": "kids-dream-lead.png",
+      "sizeKB": 567,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\kids-dream-lead.png"
+    },
+    {
+      "filename": "kids-dream-lead.webp",
+      "urlPath": "kids-dream-lead.webp",
+      "sizeKB": 100,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\kids-dream-lead.webp"
+    },
+    {
+      "filename": "kids_dream_lead.png",
+      "urlPath": "kids_dream_lead.png",
+      "sizeKB": 567,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\kids_dream_lead.png"
+    },
+    {
+      "filename": "kids_dream_lead.webp",
+      "urlPath": "kids_dream_lead.webp",
+      "sizeKB": 100,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\kids_dream_lead.webp"
+    },
+    {
+      "filename": "logo.png",
+      "urlPath": "logo.png",
+      "sizeKB": 12,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\logo.png"
+    },
+    {
+      "filename": "mamtha 1.webp",
+      "urlPath": "mamtha 1.webp",
+      "sizeKB": 84,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\mamtha 1.webp"
+    },
+    {
+      "filename": "mamtha 2.webp",
+      "urlPath": "mamtha 2.webp",
+      "sizeKB": 76,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\mamtha 2.webp"
+    },
+    {
+      "filename": "mamtha.png",
+      "urlPath": "mamtha.png",
+      "sizeKB": 574,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\mamtha.png"
+    },
+    {
+      "filename": "mamtha.webp",
+      "urlPath": "mamtha.webp",
+      "sizeKB": 55,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\mamtha.webp"
+    },
+    {
+      "filename": "meet our team.webp",
+      "urlPath": "meet our team.webp",
+      "sizeKB": 166,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\meet our team.webp"
+    },
+    {
+      "filename": "mentor.png",
+      "urlPath": "mentor.png",
+      "sizeKB": 426,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\mentor.png"
+    },
+    {
+      "filename": "mission.png",
+      "urlPath": "mission.png",
+      "sizeKB": 794,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\mission.png"
+    },
+    {
+      "filename": "motto teacher.png",
+      "urlPath": "motto teacher.png",
+      "sizeKB": 69,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\motto teacher.png"
+    },
+    {
+      "filename": "motto teacher.webp",
+      "urlPath": "motto teacher.webp",
+      "sizeKB": 18,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\motto teacher.webp"
+    },
+    {
+      "filename": "next.svg",
+      "urlPath": "next.svg",
+      "sizeKB": 1,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\next.svg"
+    },
+    {
+      "filename": "One Day One.webp",
+      "urlPath": "One Day One.webp",
+      "sizeKB": 218,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\One Day One.webp"
+    },
+    {
+      "filename": "our values.webp",
+      "urlPath": "our values.webp",
+      "sizeKB": 146,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\our values.webp"
+    },
+    {
+      "filename": "pillars1.png",
+      "urlPath": "pillars1.png",
+      "sizeKB": 741,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\pillars1.png"
+    },
+    {
+      "filename": "pillars2.png",
+      "urlPath": "pillars2.png",
+      "sizeKB": 755,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\pillars2.png"
+    },
+    {
+      "filename": "pillars3.png",
+      "urlPath": "pillars3.png",
+      "sizeKB": 770,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\pillars3.png"
+    },
+    {
+      "filename": "pillars4.png",
+      "urlPath": "pillars4.png",
+      "sizeKB": 787,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\pillars4.png"
+    },
+    {
+      "filename": "program banner.webp",
+      "urlPath": "program banner.webp",
+      "sizeKB": 133,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\program banner.webp"
+    },
+    {
+      "filename": "school motto banner.webp",
+      "urlPath": "school motto banner.webp",
+      "sizeKB": 115,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\school motto banner.webp"
+    },
+    {
+      "filename": "sg early budding banner.webp",
+      "urlPath": "sg early budding banner.webp",
+      "sizeKB": 141,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\sg early budding banner.webp"
+    },
+    {
+      "filename": "SG EB (2).png",
+      "urlPath": "SG EB (2).png",
+      "sizeKB": 12,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\SG EB (2).png"
+    },
+    {
+      "filename": "SG EB (2).webp",
+      "urlPath": "SG EB (2).webp",
+      "sizeKB": 9,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\SG EB (2).webp"
+    },
+    {
+      "filename": "SG EB(2).webp",
+      "urlPath": "SG EB(2).webp",
+      "sizeKB": 28,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\SG EB(2).webp"
+    },
+    {
+      "filename": "sg-eb-logo.webp",
+      "urlPath": "sg-eb-logo.webp",
+      "sizeKB": 28,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\sg-eb-logo.webp"
+    },
+    {
+      "filename": "Skill Identity.webp",
+      "urlPath": "Skill Identity.webp",
+      "sizeKB": 196,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Skill Identity.webp"
+    },
+    {
+      "filename": "Sports & Leadership 2.png",
+      "urlPath": "Sports & Leadership 2.png",
+      "sizeKB": 726,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Sports & Leadership 2.png"
+    },
+    {
+      "filename": "Sports & Leadership 2.webp",
+      "urlPath": "Sports & Leadership 2.webp",
+      "sizeKB": 246,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Sports & Leadership 2.webp"
+    },
+    {
+      "filename": "Sports & Leadership.webp",
+      "urlPath": "Sports & Leadership.webp",
+      "sizeKB": 214,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Sports & Leadership.webp"
+    },
+    {
+      "filename": "Traditional Customs.webp",
+      "urlPath": "Traditional Customs.webp",
+      "sizeKB": 208,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\Traditional Customs.webp"
+    },
+    {
+      "filename": "school-bus-bg.jpg",
+      "urlPath": "transport/school-bus-bg.jpg",
+      "sizeKB": 55,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\transport\\school-bus-bg.jpg"
+    },
+    {
+      "filename": "school-bus-bg.webp",
+      "urlPath": "transport/school-bus-bg.webp",
+      "sizeKB": 42,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\transport\\school-bus-bg.webp"
+    },
+    {
+      "filename": "transport background.webp",
+      "urlPath": "transport background.webp",
+      "sizeKB": 181,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\transport background.webp"
+    },
+    {
+      "filename": "TRANSPORTATION.png",
+      "urlPath": "TRANSPORTATION.png",
+      "sizeKB": 198,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\TRANSPORTATION.png"
+    },
+    {
+      "filename": "vercel.svg",
+      "urlPath": "vercel.svg",
+      "sizeKB": 0,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\vercel.svg"
+    },
+    {
+      "filename": "vision.png",
+      "urlPath": "vision.png",
+      "sizeKB": 786,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\vision.png"
+    },
+    {
+      "filename": "window.svg",
+      "urlPath": "window.svg",
+      "sizeKB": 0,
+      "absPath": "C:\\Users\\user\\Desktop\\sg-education-main\\sg-education\\public\\window.svg"
+    }
+  ],
+  "overLimit": [],
+  "duplicates": [
+    [
+      "early budding logo.webp",
+      "logo.webp",
+      "SG EB (2).webp"
+    ],
+    [
+      "early budding logo.png",
+      "logo.png",
+      "SG EB (2).png"
+    ],
+    [
+      "SG EB(2).webp",
+      "sg-eb-logo.webp"
+    ],
+    [
+      "1.jpg",
+      "mentor.webp"
+    ],
+    [
+      "mamtha.webp",
+      "school-bus-bg.jpg"
+    ],
+    [
+      "about-student.png",
+      "mamtha 2.webp"
+    ],
+    [
+      "kids-dream-lead.webp",
+      "kids_dream_lead.webp"
+    ],
+    [
+      "about sge 1.webp",
+      "sg early budding banner.webp"
+    ],
+    [
+      "pillars3.webp",
+      "transport background.webp"
+    ],
+    [
+      "gallery banner.webp",
+      "Hygiene.webp"
+    ],
+    [
+      "about sge 5.webp",
+      "Sports & Leadership.webp"
+    ],
+    [
+      "kids-dream-lead.png",
+      "kids_dream_lead.png"
+    ],
+    [
+      "Clubs & Enrichment Programs.png",
+      "Sports & Leadership 2.png"
+    ],
+    [
+      "about sge 3.png",
+      "pillars3.png"
+    ],
+    [
+      "Ancient Bharath Culture.png",
+      "our values.png"
+    ],
+    [
+      "Fun Learning.png",
+      "pillars4.png"
+    ],
+    [
+      "gallery banner.png",
+      "Skill Identity.png"
+    ]
+  ]
+}

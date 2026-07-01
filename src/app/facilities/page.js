@@ -30,8 +30,8 @@ export default function FacilitiesPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" />
           </div>
         </div>
       </section>
@@ -222,7 +222,7 @@ export default function FacilitiesPage() {
             </div>
             
             <div className="transportation-image-wrapper">
-              <img src="/sg-education/TRANSPORTATION.png" alt="School Transportation" className="transportation-img" />
+              <img src="/sg-education/TRANSPORTATION.webp" alt="School Transportation" className="transportation-img" />
             </div>
           </div>
         </div>

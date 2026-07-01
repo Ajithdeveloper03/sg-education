@@ -117,28 +117,28 @@ const FOUR_PILLARS = [
     desc: "Children explore concepts by questioning, doing, and playing. No rote learning. We encourage curiosity and self-discovery.",
     icon: "fa-child-reaching",
     color: "#ECC440",
-    img: "/sg-education/pillars1.png"
+    img: "/sg-education/pillars1.webp"
   },
   {
     title: "ANBC Culture",
     desc: "Connecting kids to their roots. Value-based lessons, moral stories, yoga, and meditation elements in our daily schedule.",
     icon: "fa-om",
     color: "#FF2A7A",
-    img: "/sg-education/pillars2.png"
+    img: "/sg-education/pillars2.webp"
   },
   {
     title: "CPC Foundations",
     desc: "Developing essential professional skills like dynamic communication, public speaking, tech integration, and polite gestures.",
     icon: "fa-laptop-code",
     color: "#5A49E3",
-    img: "/sg-education/pillars3.png"
+    img: "/sg-education/pillars3.webp"
   },
   {
     title: "Parent Partnership",
     desc: "Continuous parent engagement, developmental workshops, and interactive tools to align home guidance with school learning.",
     icon: "fa-handshake-angle",
     color: "#FFC300",
-    img: "/sg-education/pillars4.png"
+    img: "/sg-education/pillars4.webp"
   }
 ];
 
@@ -180,6 +180,7 @@ const row4Images = [
 
 export default function Home() {
   const [testiIndex, setTestiIndex] = useState(0);
+  const testiAutoRef = useRef(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -222,6 +223,22 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
+  }, []);
+
+  // Auto-scroll testimonials every 4 seconds
+  const startTestiAutoScroll = () => {
+    if (testiAutoRef.current) clearInterval(testiAutoRef.current);
+    testiAutoRef.current = setInterval(() => {
+      setTestiIndex((prev) => (prev + 1) % 5);
+    }, 4000);
+  };
+
+  useEffect(() => {
+    startTestiAutoScroll();
+    return () => {
+      if (testiAutoRef.current) clearInterval(testiAutoRef.current);
+    };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
 
@@ -341,9 +358,9 @@ export default function Home() {
         <div className="container hero-container" style={{ position: "relative", zIndex: 5 }}>
           <div className="hero-center-content">
             <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2.5rem' }}>
-              <Link href="#" className="hero-pill-btn">
+              <div className="hero-pill-btn">
                 Educate, Empower, Elevate
-              </Link>
+              </div>
             </div>
             <h1 className="hero-title" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)', marginBottom: '0.5rem' }}>
               Welcome to <span className="text-yellow">SG Educations</span>
@@ -567,12 +584,21 @@ professional services.SG Education established in 2023, aims to provide quality 
               <button
                 className="purple-nav-btn"
                 aria-label="Previous Testimonials Set"
-                onClick={() => setTestiIndex((prev) => (prev - 1 + 5) % 5)}
+                onClick={() => {
+                  setTestiIndex((prev) => (prev - 1 + 5) % 5);
+                  startTestiAutoScroll();
+                }}
               >
                 <i className="fa-solid fa-arrow-left"></i>
               </button>
 
-              <div className="testimonial-grid-three">
+              <div
+                className="testimonial-grid-three"
+                key={testiIndex}
+                style={{
+                  animation: 'testiSlideIn 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both'
+                }}
+              >
                 {[0, 1, 2].map(offset => {
                   const idx = (testiIndex + offset) % 5;
                   const item = [
@@ -608,7 +634,10 @@ professional services.SG Education established in 2023, aims to provide quality 
               <button
                 className="purple-nav-btn"
                 aria-label="Next Testimonials Set"
-                onClick={() => setTestiIndex((prev) => (prev + 1) % 5)}
+                onClick={() => {
+                  setTestiIndex((prev) => (prev + 1) % 5);
+                  startTestiAutoScroll();
+                }}
               >
                 <i className="fa-solid fa-arrow-right"></i>
               </button>

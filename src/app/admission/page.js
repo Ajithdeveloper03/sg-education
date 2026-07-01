@@ -145,7 +145,7 @@ export default function AdmissionPage() {
         <div className="adm-page-content">
           
           <div className="adm-header-title">
-            <img src="/sg-education/logo.webp" alt="SG Education Logo" className="adm-header-logo" style={{ height: '160px', objectFit: 'contain' }} />
+            <img src="/sg-education/SG logo.webp" alt="SG Education Logo" className="adm-header-logo" style={{ height: '160px', objectFit: 'contain' }} />
             <div className="adm-header-text">
               <h2>Join SG Education</h2>
               <p>Embark on your learning journey with us!</p>

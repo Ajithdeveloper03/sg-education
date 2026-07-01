@@ -82,8 +82,8 @@ export default function SchoolMottoPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -108,7 +108,7 @@ export default function SchoolMottoPage() {
 
           {/* Right Decorative Image */}
           <div className="motto-img-wrapper motto-side-img-2">
-            <img src="/sg-education/about-student.png" alt="Student learning" />
+            <img src="/sg-education/about-student.webp" alt="Student learning" />
           </div>
 
         </div>

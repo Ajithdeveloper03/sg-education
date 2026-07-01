@@ -50,6 +50,7 @@ export default function BlogManager() {
     setLoading(false);
   };
 
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(() => { fetchBlogs(); }, []);
 
   const resetForm = () => {
@@ -85,12 +86,12 @@ export default function BlogManager() {
         setFaqs(parsed.faqs || []);
       } else {
         // Fallback for old raw HTML content: put it in a single section
-        setSections([{ id: Date.now(), heading: 'Main Content', body: blog.content, bullets: [] }]);
+        setSections([{ id: "legacy-content", heading: 'Main Content', body: blog.content, bullets: [] }]);
         setFaqs([]);
       }
     } catch (e) {
       // Not JSON, it's old raw HTML
-      setSections([{ id: Date.now(), heading: 'Main Content', body: blog.content, bullets: [] }]);
+      setSections([{ id: "legacy-content", heading: 'Main Content', body: blog.content, bullets: [] }]);
       setFaqs([]);
     }
 
@@ -281,7 +282,7 @@ export default function BlogManager() {
                 <p>PUBLISHED LIVE</p>
               </div>
             </div>
-            <div className="stat-card bg-orange">
+            <div className="stat-card bg-blue">
               <i className="fa-regular fa-pen-to-square"></i>
               <div className="stat-card-info">
                 <h4>0</h4>
@@ -310,7 +311,7 @@ export default function BlogManager() {
           <div className="admin-card">
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px', alignItems: 'center' }}>
               <span style={{color: '#666'}}>Showing {blogs.length} of {blogs.length} articles</span>
-              <button className="admin-btn" style={{background: 'none', color: '#FF6B00'}} onClick={fetchBlogs}>
+              <button className="admin-btn" style={{background: 'none', color: '#3b82f6'}} onClick={fetchBlogs}>
                 <i className="fa-solid fa-rotate-right"></i> Refresh
               </button>
             </div>
@@ -377,13 +378,13 @@ export default function BlogManager() {
         <form onSubmit={requestSubmit}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
             <div>
-              <span onClick={resetForm} style={{color: '#FF6B00', cursor: 'pointer', fontWeight: 'bold'}}>&larr; All Articles</span>
-              <span style={{marginLeft: '15px', color: '#FF6B00', fontWeight: 'bold', textTransform: 'uppercase'}}>{view === 'add' ? 'NEW ARTICLE' : 'EDIT ARTICLE'}</span>
+              <span onClick={resetForm} style={{color: '#3b82f6', cursor: 'pointer', fontWeight: 'bold'}}>&larr; All Articles</span>
+              <span style={{marginLeft: '15px', color: '#3b82f6', fontWeight: 'bold', textTransform: 'uppercase'}}>{view === 'add' ? 'NEW ARTICLE' : 'EDIT ARTICLE'}</span>
             </div>
             <div style={{ display: 'flex', gap: '10px' }}>
               <button type="button" className="admin-btn" style={{ background: '#f8f9fa', border: '1px solid #ddd' }}>Draft</button>
               <button type="button" onClick={resetForm} className="admin-btn" style={{ background: '#f8f9fa', border: '1px solid #ddd' }}>Cancel</button>
-              <button type="submit" disabled={loading} className="btn-orange">
+              <button type="submit" disabled={loading} className="admin-btn admin-btn-primary">
                 {loading ? 'Saving...' : 'Publish Article'}
               </button>
             </div>
@@ -406,7 +407,7 @@ export default function BlogManager() {
               {activeTab === 'content' && (
                 <>
                   <div style={{ marginBottom: '20px' }}>
-                    <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.8rem', color: '#FF6B00', fontWeight: 'bold' }}>ARTICLE TITLE *</label>
+                    <label style={{ display: 'block', marginBottom: '5px', fontSize: '0.8rem', color: '#3b82f6', fontWeight: 'bold' }}>ARTICLE TITLE *</label>
                     <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="article-title-input" placeholder="Write a compelling title..." required />
                   </div>
                   
@@ -439,12 +440,12 @@ export default function BlogManager() {
 
                       <div className="bullet-points-container">
                         <div className="bullet-points-header">
-                          <span style={{color: '#FF6B00'}}>&gt; BULLET POINTS</span>
+                          <span style={{color: '#3b82f6'}}>&gt; BULLET POINTS</span>
                           <button type="button" onClick={() => addBullet(section.id)} className="add-point-btn">+ Add Point</button>
                         </div>
                         {section.bullets && section.bullets.map((bullet, bIndex) => (
                           <div key={bullet.id} className="bullet-input-row">
-                            <span style={{color: '#FF6B00'}}>•</span>
+                            <span style={{color: '#3b82f6'}}>•</span>
                             <input type="text" value={bullet.text} onChange={(e) => updateBullet(section.id, bullet.id, e.target.value)} className="admin-input" placeholder={`Bullet point ${bIndex + 1}...`} />
                             <span style={{cursor: 'pointer', color: '#ccc'}} onClick={() => removeBullet(section.id, bullet.id)}><i className="fa-solid fa-xmark"></i></span>
                           </div>
@@ -456,7 +457,7 @@ export default function BlogManager() {
                         {section.image_url && (
                           <div style={{ marginBottom: '10px' }}>
                             <img src={"http://localhost" + section.image_url} alt="Section" style={{ maxWidth: '100%', maxHeight: '200px', borderRadius: '5px', objectFit: 'contain' }} />
-                            <div style={{ marginTop: '5px', cursor: 'pointer', color: '#FF6B00', fontSize: '0.9rem' }} onClick={() => updateSection(section.id, 'image_url', '')}>Remove Image</div>
+                            <div style={{ marginTop: '5px', cursor: 'pointer', color: '#3b82f6', fontSize: '0.9rem' }} onClick={() => updateSection(section.id, 'image_url', '')}>Remove Image</div>
                           </div>
                         )}
                         <label className="dotted-upload" style={{ display: 'block', cursor: 'pointer' }}>
@@ -543,15 +544,15 @@ export default function BlogManager() {
                 <h4>ARTICLE STATS</h4>
                 <div className="stat-row">
                   <span>Sections</span>
-                  <span style={{fontWeight: 'bold', color: '#FF6B00'}}>{sections.length}</span>
+                  <span style={{fontWeight: 'bold', color: '#3b82f6'}}>{sections.length}</span>
                 </div>
                 <div className="stat-row">
                   <span>Total Bullets</span>
-                  <span style={{fontWeight: 'bold', color: '#FF6B00'}}>{totalBullets}</span>
+                  <span style={{fontWeight: 'bold', color: '#3b82f6'}}>{totalBullets}</span>
                 </div>
                 <div className="stat-row">
                   <span>FAQs</span>
-                  <span style={{fontWeight: 'bold', color: '#FF6B00'}}>{faqs.length}</span>
+                  <span style={{fontWeight: 'bold', color: '#3b82f6'}}>{faqs.length}</span>
                 </div>
               </div>
             </div>
