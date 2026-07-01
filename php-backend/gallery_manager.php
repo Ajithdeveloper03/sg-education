@@ -156,10 +156,11 @@ if ($action == 'edit' && isset($_GET['id'])) {
                             <div class="mb-3">
                                 <label class="form-label">Category</label>
                                 <select name="category" class="form-select" required>
-                                    <option value="Events" <?php echo (isset($editItem['category']) && $editItem['category']=='Events') ? 'selected' : ''; ?>>Events</option>
-                                    <option value="Activities" <?php echo (isset($editItem['category']) && $editItem['category']=='Activities') ? 'selected' : ''; ?>>Activities</option>
-                                    <option value="Campus" <?php echo (isset($editItem['category']) && $editItem['category']=='Campus') ? 'selected' : ''; ?>>Campus</option>
-                                    <option value="Kids" <?php echo (isset($editItem['category']) && $editItem['category']=='Kids') ? 'selected' : ''; ?>>Kids</option>
+                                    <option value="yoga day" <?php echo (isset($editItem['category']) && $editItem['category']=='yoga day') ? 'selected' : ''; ?>>Yoga Day</option>
+                                    <option value="fancy dress day" <?php echo (isset($editItem['category']) && $editItem['category']=='fancy dress day') ? 'selected' : ''; ?>>Fancy Dress Day</option>
+                                    <option value="green day" <?php echo (isset($editItem['category']) && $editItem['category']=='green day') ? 'selected' : ''; ?>>Green Day</option>
+                                    <option value="culturals" <?php echo (isset($editItem['category']) && $editItem['category']=='culturals') ? 'selected' : ''; ?>>Culturals</option>
+                                    <option value="blue day" <?php echo (isset($editItem['category']) && $editItem['category']=='blue day') ? 'selected' : ''; ?>>Blue Day</option>
                                 </select>
                             </div>
                             

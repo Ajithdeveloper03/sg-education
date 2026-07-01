@@ -20,7 +20,7 @@ export default function Footer() {
         <div className="container footer-content-grid">
           <div className="footer-col brand-col">
             <Link href="/" className="footer-logo">
-              <img src="/sg-education/logo.webp" alt="SG Education Logo" />
+              <img src="/sg-education/SG logo.webp" alt="SG Education Logo" />
               <span className="logo-text">SG Education</span>
             </Link>
             <p className="footer-about-text" style={{ marginBottom: '1.5rem' }}>
@@ -47,6 +47,7 @@ export default function Footer() {
               <li><Link href="/">Home</Link></li>
               <li><Link href="/about/sg-early-budding">SG Early Budding</Link></li>
               <li><Link href="/facilities">Facilities</Link></li>
+              <li><Link href="/our-programs">Our Programs</Link></li>
               <li><Link href="/gallery">Memory Clips</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>

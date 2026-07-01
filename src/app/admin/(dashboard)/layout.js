@@ -47,7 +47,7 @@ export default function AdminDashboardLayout({ children }) {
       <aside className={`admin-sidebar ${mobileMenuOpen ? 'open' : ''}`}>
         <div className="admin-sidebar-header">
           <div className="admin-sidebar-logo-wrapper">
-            <img src="/sg-education/logo.webp" alt="SG Education" className="admin-sidebar-logo" />
+            <img src="/sg-education/SG logo.webp" alt="SG Education" className="admin-sidebar-logo" />
           </div>
           <h3>SG EDUCATIONS</h3>
           <p className="admin-sidebar-title">Admin Panel</p>

@@ -65,7 +65,7 @@ export default function FoundersMessagePage() {
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingBottom: '30px' }}>
           <h1 className="vm-banner-title">Founders Message</h1>
           <p className="vm-banner-desc">
-            Empowering the next generation through a unique blend of ancient Bharath’s Culture with Corporate Culture.
+            Empowering the next generation through a unique blend of Ancient Noble Bharat Culture with Corporate Professional Culture.
             Dedicated to shaping character, fostering innovation, and building future-ready leaders.
           </p>
           <div className="vm-pagination">
@@ -78,8 +78,8 @@ export default function FoundersMessagePage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -95,29 +95,6 @@ export default function FoundersMessagePage() {
           </div>
 
           <div className="founders-grid" style={{ margin: '0 auto' }}>
-            {/* Founder 2 */}
-            <div 
-              ref={founder2Ref}
-              className="founder-card-3d sub-founder-theme"
-              onMouseMove={(e) => handleMouseMoveTilt(e, founder2Ref)}
-              onMouseLeave={() => handleMouseLeaveTilt(founder2Ref)}
-            >
-              <div className="founder-img-wrapper-3d">
-                <img src="/sg-education/mentor.png" alt="Mentor Shashi Kiran" />
-                <span className="founder-role-badge">Mentor</span>
-              </div>
-              <div className="founder-info-3d">
-                <h3>Shashi Kiran K.N</h3>
-                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor, SG Education & Visionary Leader 
-</p>
-                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished mentor, entrepreneur, and visionary leader. Through his guidance and strategic insights, he supports SG Education&apos;s mission of empowering young minds through quality education, ethical values, innovation, and
-leadership development. His dedication to social progress and nation-building continues to inspire students, educators, and communities alike.
-&quot;</p>
-                </div>
-              </div>
-            </div>
-
             {/* Founder 1 */}
             <div 
               ref={founder1Ref}
@@ -135,6 +112,29 @@ leadership development. His dedication to social progress and nation-building co
 </p>
                 <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
                   <p>&quot;Ms. Mamatha M.C. is the visionary Founder & Chairperson of SG Education and Co-Founder of Sarathi Groups. She is committed to creating a transformative educational environment that combines academic excellence, cultural values, leadership development, and holistic learning. Her vision is to nurture confident, responsible, and future-ready individuals who contribute positively to society. &quot;</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Founder 2 */}
+            <div 
+              ref={founder2Ref}
+              className="founder-card-3d sub-founder-theme"
+              onMouseMove={(e) => handleMouseMoveTilt(e, founder2Ref)}
+              onMouseLeave={() => handleMouseLeaveTilt(founder2Ref)}
+            >
+              <div className="founder-img-wrapper-3d">
+                <img src="/sg-education/mentor.webp" alt="Mentor Shashi Kiran" />
+                <span className="founder-role-badge">Mentor</span>
+              </div>
+              <div className="founder-info-3d">
+                <h3>Shashi Kiran K.N</h3>
+                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Mentor, SG Education & Visionary Leader 
+</p>
+                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
+                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished mentor, entrepreneur, and visionary leader. Through his guidance and strategic insights, he supports SG Education&apos;s mission of empowering young minds through quality education, ethical values, innovation, and
+ leadership development. His dedication to social progress and nation-building continues to inspire students, educators, and communities alike.
+ &quot;</p>
                 </div>
               </div>
             </div>
@@ -184,7 +184,7 @@ leadership development. His dedication to social progress and nation-building co
                 <p style={{ marginTop: '10px' }}>
                   Our mission is to empower every student with the knowledge, values, and life skills necessary to become a positive force in society and contribute meaningfully to the nation. We thank all parents, educators, and well-wishers for being part of this journey as we continue to shape the leaders of tomorrow.
                 </p>
-                <p style={{ marginTop: '1.5rem', fontStyle: 'italic', fontWeight: '500', color: 'var(--playful-pink)' }}>
+                <p style={{ marginTop: '1.5rem', fontStyle: 'normal', fontWeight: '500', color: 'var(--playful-pink)' }}>
                   &quot;Inspiring Minds, Building Character, Creating Future Leaders.&quot;<br/>
                   <span style={{ color: 'var(--kidza-navy)', fontStyle: 'normal' }}>– Ms. Mamatha M.C.<br/>Founder &amp; Chairperson, SG Education</span>
                 </p>
@@ -335,7 +335,7 @@ leadership development. His dedication to social progress and nation-building co
             {/* Right (Visuals): Slanted Image Card */}
             <div className="eb-founder-card-left">
               <div className="eb-founder-image-wrapper">
-                <img src="/sg-education/mentor.png" alt="Shashi Kiran K.N - Mentor" />
+                <img src="/sg-education/mentor.webp" alt="Shashi Kiran K.N - Mentor" />
                 <div className="eb-founder-orange-bar"></div>
               </div>
             </div>

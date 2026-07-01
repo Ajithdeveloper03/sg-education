@@ -13,7 +13,7 @@ export default function SGEarlyBuddingPage() {
       number: "01",
       title: "Hygiene – Safe & Healthy",
       icon: "fa-hands-bubbles",
-      image: "/sg-education/Hygiene.png",
+      image: "/sg-education/Hygiene.webp",
       content: {
         badge: "Pillar 01",
         heading: "A Safe & Healthy Learning Environment",
@@ -111,8 +111,8 @@ export default function SGEarlyBuddingPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.png" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -263,7 +263,7 @@ Our curriculum helps students develop strong character, self-discipline, respect
           <div className="eb-section-header" style={{ marginBottom: '3rem' }}>
             <h2 style={{ fontSize: '2rem' }}>Why Choose <span style={{ color: '#ECC440' }}>SG Early Budding?</span></h2>
             <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '1rem', lineHeight: '1.8', maxWidth: '800px', margin: '1rem auto 0', textAlign: 'center' }}>
-              The integration of Ancient Bharath’s Culture with Corporate Culture offers a balanced framework for developing individuals who are not only efficient but also grounded in strong ethical and cultural values. This fusion can nurture qualities such as discipline, respect, responsibility, and holistic thinking in students, enabling them to stand out both personally and professionally.</p>
+              The integration of Ancient Noble Bharat Culture with Corporate Professional Culture offers a balanced framework for developing individuals who are not only efficient but also grounded in strong ethical and cultural values. This fusion can nurture qualities such as discipline, respect, responsibility, and holistic thinking in students, enabling them to stand out both personally and professionally.</p>
           </div>
 
           <div className="eb-asym-grid">
@@ -281,7 +281,7 @@ We believe that small habits shape great individuals. Our unique approach, &quot
                   <img src="/sg-education/about sge 1.png" alt="Project-Based Learning" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
                     <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-book-open" style={{ color: 'var(--playful-pink)' }}></i> Holistic Development</h4>
-                    <p className="eb-horizontal-card-desc">Ancient Bharath culture emphasizes moral values, community living, and self-discipline, which complements the corporate focus on professionalism, leadership and teamwork.</p>
+                    <p className="eb-horizontal-card-desc">Ancient Noble Bharat culture emphasizes moral values, community living, and self-discipline, which complements the corporate focus on professionalism, leadership and teamwork.</p>
                   </div>
                 </div>
 
@@ -289,7 +289,7 @@ We believe that small habits shape great individuals. Our unique approach, &quot
                   <img src="/sg-education/about sge 2.png" alt="Leadership & Communication" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
                     <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-comments" style={{ color: 'var(--sky-blue)' }}></i> Ethical Leadership</h4>
-                    <p className="eb-horizontal-card-desc">The spiritual and philosophical teachings of Bharath culture help individuals develop mental resilience and adaptability—qualities essential in the ever-evolving corporate world.</p>
+                    <p className="eb-horizontal-card-desc">Combining the Ancient Noble Bharath culture with modern management techniques encourages ethical decision-making, integrity and accountability.</p>
                   </div>
                 </div>
 
@@ -297,7 +297,7 @@ We believe that small habits shape great individuals. Our unique approach, &quot
                   <img src="/sg-education/about sge 3.png" alt="Time Management" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
                     <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-clock" style={{ color: 'var(--lime-green)' }}></i> Adaptability and Resilience</h4>
-                    <p className="eb-horizontal-card-desc">The spiritual and philosophical teachings of Bharath culture help individuals develop mental resilience and adaptability—qualities essential in the ever-evolving corporate world.</p>
+                    <p className="eb-horizontal-card-desc">The spiritual and philosophical teachings of Ancient Noble Bharath culture help individuals develop mental resilience and adaptability—qualities essential in the ever-evolving corporate world.</p>
                   </div>
                 </div>
 
