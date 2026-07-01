@@ -111,11 +111,11 @@ export default function BlogManager() {
   const executeDelete = async (deleteId) => {
     setModalConfig({ ...modalConfig, isOpen: false });
     try {
-<<<<<<< HEAD
+
       const res = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_blog.php?id=${id}`, { method: 'DELETE' });
-=======
-      const res = await fetch(`http://localhost/php-backend/api_blog.php?id=${deleteId}`, { method: 'DELETE' });
->>>>>>> 9bf2892fc7d77435d51adf4af06f6f615e5cb2ca
+
+      // const res = await fetch(`http://localhost/php-backend/api_blog.php?id=${deleteId}`, { method: 'DELETE' });
+
       const data = await res.json();
       if (data.status === 'success') {
         setSuccess("Blog deleted successfully!");
