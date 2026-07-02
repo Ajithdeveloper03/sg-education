@@ -78,8 +78,8 @@ export default function OurProgramsPage() {
           <h1 className="op-hero-title-sub">Bright Beginnings</h1>
           
           <p className="op-hero-subtitle">
-            From Toddlers Care to 5th Standard – <br />
-            Building <span>Strong Foundations</span> for Life.
+            From Toddler Care to 5th Standard  <br />
+            Building   <span>Strong Foundations</span> for Life.
           </p>
 
           <div className="op-hero-features">
@@ -137,7 +137,7 @@ export default function OurProgramsPage() {
           
           <div className="text-center" style={{ marginBottom: '3rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
             <i className="fa-solid fa-leaf" style={{ color: '#4CAF50', fontSize: '1.2rem' }}></i>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1D2A44', margin: 0, textAlign: 'center' }}>A Journey of Growth from Day Care to 5th Standard</h2>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#1D2A44', margin: 0, textAlign: 'center' }}>A Journey of Growth from Toddler Care to 5th Standard</h2>
             <i className="fa-solid fa-leaf" style={{ color: '#4CAF50', fontSize: '1.2rem' }}></i>
           </div>
 
@@ -147,7 +147,7 @@ export default function OurProgramsPage() {
               <div className="jc-icon">
                 <i className="fa-solid fa-baby-carriage"></i>
               </div>
-              <h3 className="jc-title" style={{ color: '#E65100' }}>Toddlers Care</h3>
+              <h3 className="jc-title" style={{ color: '#E65100' }}>Toddler Care</h3>
               <span className="jc-age">9 Months - 2 Years</span>
               <p className="jc-desc">Care, comfort & sensory exploration</p>
             </div>
@@ -317,7 +317,7 @@ export default function OurProgramsPage() {
                 <div className="ad-grad-icon"><i className="fa-solid fa-graduation-cap"></i></div>
                 <div className="ad-center-text">
                    <strong>Admissions Open</strong><br/>
-                   for Day Care to 5th Standard
+                   for Toddler Care to 5th Standard
                 </div>
              </div>
              <div className="op-ad-right">

@@ -261,7 +261,7 @@ Our curriculum helps students develop strong character, self-discipline, respect
         <div className="container">
           
           <div className="eb-section-header" style={{ marginBottom: '3rem' }}>
-            <h2 style={{ fontSize: '2rem' }}>Why Choose <span style={{ color: '#ECC440' }}>SG Early Budding?</span></h2>
+            <h2 style={{ fontSize: '2rem' }}>Why Choose <span style={{ color: '#ECC440' }}>Us ?</span></h2>
             <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '1rem', lineHeight: '1.8', maxWidth: '800px', margin: '1rem auto 0', textAlign: 'center' }}>
               The integration of Ancient Noble Bharat Culture with Corporate Professional Culture offers a balanced framework for developing individuals who are not only efficient but also grounded in strong ethical and cultural values. This fusion can nurture qualities such as discipline, respect, responsibility, and holistic thinking in students, enabling them to stand out both personally and professionally.</p>
           </div>

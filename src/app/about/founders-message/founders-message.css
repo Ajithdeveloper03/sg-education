@@ -204,180 +204,143 @@
 }
 
 /* =========================================
-   2. Leadership Section (Card & List Layout)
+   2. Expertise Section (Modern Grid Layout)
    ========================================= */
-.fm-leadership-section-new {
+.fm-expertise-section {
   position: relative;
   overflow: hidden;
+  padding: 4rem 0;
+  background-color: #f8f9fa;
 }
 
-.fm-leadership-grid-new {
+.fm-expertise-grid {
   display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: 2rem; /* Match vm-grid gap */
-  align-items: stretch;
-  position: relative;
-  z-index: 1;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
-/* Left Vertical Gradient Card */
-.fm-leadership-left-card {
-  background: linear-gradient(135deg, #4a90e2 0%, #1a4aa6 100%);
-  border-radius: 30px;
-  border-bottom-left-radius: 120px;
-  border-bottom-right-radius: 120px;
-  color: white;
-  padding: 2rem;
-  text-align: center;
-  box-shadow: 0 15px 30px rgba(26, 74, 166, 0.2);
-  height: 100%;
-  min-height: 250px;
+.fm-expertise-card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 60px; /* Pill shape */
+  padding: 1.5rem 2rem 1.5rem 1.5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   overflow: hidden;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  min-height: 140px;
+  border: 1px solid rgba(0,0,0,0.03);
+  text-decoration: none;
 }
 
-.fm-leadership-left-card:hover {
-  box-shadow: 0 0 25px 8px rgba(255, 255, 255, 0.8);
-  transform: translateY(-5px);
+.fm-expertise-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
 
-.fm-leadership-left-image {
+/* Background Image and Dark Overlay */
+.fm-expertise-card-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
   z-index: 0;
-  transition: transform 0.4s ease;
+  transition: transform 0.6s ease;
 }
-.fm-leadership-left-card:hover .fm-leadership-left-image {
+
+.fm-expertise-card:hover .fm-expertise-card-bg {
   transform: scale(1.05);
 }
 
-.fm-leadership-left-overlay {
+.fm-expertise-card-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.8) 100%);
+  background: linear-gradient(135deg, rgba(10, 15, 30, 0.9) 0%, rgba(20, 30, 50, 0.8) 100%);
   z-index: 1;
 }
 
-.fm-leadership-left-content {
+.fm-expertise-icon-box {
   position: relative;
   z-index: 2;
-  margin-top: auto; /* push content towards bottom a bit */
-}
-
-.fm-leadership-left-card::before {
-  content: '';
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  width: 60px;
-  height: 150px;
-  border-radius: 30px;
-  background: linear-gradient(180deg, rgba(210, 225, 255, 0.8) 0%, rgba(210, 225, 255, 0) 100%);
-  z-index: -1;
-}
-
-.fm-leadership-subtitle {
-  font-size: 0.8rem;
-  letter-spacing: 2px;
-  margin-bottom: 1rem;
-  display: block;
-  opacity: 0.9;
-  font-weight: 700;
-}
-
-.fm-leadership-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  line-height: 1.2;
-  font-family: var(--font-comfortaa), sans-serif;
-}
-
-/* Right Vertical List */
-.fm-leadership-right-list {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  gap: 1rem;
-}
-
-.fm-leadership-list-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.2rem;
-  padding: 1rem;
-  border-radius: 16px;
-  background: transparent;
-  transition: all 0.3s ease;
-}
-
-.fm-leadership-list-item:hover {
-  background: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transform: translateX(10px);
-}
-.fm-leadership-list-item:hover .fm-leadership-item-thumbnail img {
-  transform: scale(1.1);
-}
-
-.fm-leadership-item-thumbnail {
-  width: 75px;
-  height: 75px;
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-size: 1.8rem;
   flex-shrink: 0;
-  border: 3px solid #fff;
-  margin-top: 2px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.fm-leadership-item-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.fm-leadership-item-content {
+.fm-expertise-content {
+  position: relative;
+  z-index: 2;
   flex: 1;
 }
 
-.fm-leadership-item-title {
-  font-size: 1.05rem;
+.fm-expertise-card-title {
+  font-size: 1.3rem;
   font-weight: 700;
-  color: #000000;
-  margin-bottom: 0.1rem;
+  color: #ffffff; /* White text for dark overlay */
+  margin-bottom: 0.2rem;
   font-family: var(--font-comfortaa), sans-serif;
 }
 
-.fm-leadership-item-role {
-  font-size: 0.8rem;
-  color: #ECC440; /* Use Mission & Vision blue */
-  font-weight: 700;
-  margin-bottom: 0.3rem;
-}
-
-.fm-leadership-item-desc {
-  font-size: 0.85rem;
-  color: #555;
-  margin-bottom: 0.4rem;
+.fm-expertise-card-role {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
   line-height: 1.4;
+  margin-bottom: 0.5rem;
 }
 
-.fm-leadership-item-divider {
-  height: 1px;
-  background: linear-gradient(to right, rgba(26, 74, 166, 0.2), transparent);
-  width: 100%;
+.fm-expertise-card-desc {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Color Themes for Icons */
+.fm-card-education .fm-expertise-icon-box { color: #FF2A7A; background: rgba(255, 255, 255, 0.9); }
+.fm-card-business .fm-expertise-icon-box { color: #00C853; background: rgba(255, 255, 255, 0.9); }
+.fm-card-realestate .fm-expertise-icon-box { color: #ECC440; background: rgba(255, 255, 255, 0.9); }
+.fm-card-healthcare .fm-expertise-icon-box { color: #29B6F6; background: rgba(255, 255, 255, 0.9); }
+.fm-card-banking .fm-expertise-icon-box { color: #8E24AA; background: rgba(255, 255, 255, 0.9); }
+.fm-card-enterprise .fm-expertise-icon-box { color: #FF7043; background: rgba(255, 255, 255, 0.9); }
+
+/* Centered Vision Text Container (Left Aligned Content) */
+.fm-vision-text-centered {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+.fm-vision-text-centered .vm-tag {
+  margin: 0 0 1rem 0;
+  display: inline-block;
+}
+.fm-vision-text-centered .eb-founder-identity {
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+.fm-vision-text-centered .eb-founder-vision-statement p {
+  text-align: justify;
+}
+.fm-vision-text-centered .eb-founder-vision-statement p:last-child {
+  text-align: left;
 }
 
 /* =========================================
@@ -502,7 +465,7 @@
    ========================================= */
 @media (max-width: 992px) {
   .fm-visionary-grid, 
-  .fm-leadership-grid-new,
+  .fm-expertise-grid,
   .fm-impact-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -723,3 +686,17 @@
   font-size: 0.95rem; /* Reduced from 1.05rem */
 }
 
+
+/* =========================================
+   Mobile Responsiveness for Expertise Cards
+   ========================================= */
+@media (max-width: 768px) {
+  .fm-expertise-card {
+    flex-direction: column;
+    text-align: center;
+    border-radius: 30px;
+    padding: 2.5rem 1.5rem;
+    gap: 1.2rem;
+    min-height: auto;
+  }
+}
