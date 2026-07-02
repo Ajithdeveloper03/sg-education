@@ -9,6 +9,8 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const isInnerPage = pathname !== '/';
+  // Use .endsWith() so this works correctly with or without basePath prefix
+  const isEarlyBudding = pathname?.endsWith('/about/sg-early-budding');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,9 +46,9 @@ export default function Navbar() {
         <div className="container navbar">
           <Link href="/" className="logo-container" id="logo-link">
             <img 
-              src={pathname === '/about/sg-early-budding' ? "/sg-education/early budding logo.png" : "/sg-education/SG logo.webp"} 
+              src={isEarlyBudding ? "/sg-education/early-budding-logo.png" : "/sg-education/SG logo.webp"} 
               className="logo-img" 
-              alt={pathname === '/about/sg-early-budding' ? "SG Early Budding Logo" : "SG Education Logo"} 
+              alt={isEarlyBudding ? "SG Early Budding Logo" : "SG Education Logo"} 
             />
           </Link>
 

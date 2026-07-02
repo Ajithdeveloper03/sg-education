@@ -133,7 +133,7 @@ function BlogDetailsContent() {
                   
                   {section.image_url && (
                     <div style={{ margin: '30px 0', borderRadius: '12px', overflow: 'hidden' }}>
-                      <img src={"http://localhost" + section.image_url} alt={section.heading || 'Section Image'} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                      <img src={section.image_url} alt={section.heading || 'Section Image'} style={{ width: '100%', height: 'auto', display: 'block' }} />
                     </div>
                   )}
 

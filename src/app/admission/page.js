@@ -93,8 +93,7 @@ export default function AdmissionPage() {
     setApiError(null);
 
     try {
-      console.log('Sending request to /sg-education/api/admission with data:', formData);
-      const response = await fetch('/sg-education/api/admission', {
+      const response = await fetch('http://localhost/php-backend/api_admission.php', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -102,17 +101,13 @@ export default function AdmissionPage() {
         body: JSON.stringify(formData),
       });
 
-      console.log('Response Status:', response.status);
-      console.log('Response Headers:', Object.fromEntries(response.headers.entries()));
-
       const contentType = response.headers.get('content-type');
       let data;
 
       if (contentType && contentType.includes('application/json')) {
         data = await response.json();
-        console.log('Response JSON Body:', data);
-        
-        if (response.ok) {
+
+        if (data.success) {
           setIsSubmitted(true);
         } else {
           setApiError(data.message || 'An error occurred during submission.');
@@ -124,7 +119,7 @@ export default function AdmissionPage() {
       }
 
     } catch (error) {
-      console.error('Submission or Parsing error:', error);
+      console.error('Submission error:', error);
       setApiError('Network error or unexpected response. Please try again.');
     } finally {
       setIsSubmitting(false);
@@ -212,13 +207,16 @@ export default function AdmissionPage() {
                           <div className="adm-input-wrapper">
                             <select name="applyingFor" value={formData.applyingFor} onChange={handleInputChange} className="adm-form-control">
                               <option value="">Select Standard</option>
+                              <option value="Toddler Care">Toddler Care</option>
+                              <option value="Play Group">Play Group</option>
+                              <option value="Nursery">Nursery</option>
                               <option value="LKG">LKG</option>
                               <option value="UKG">UKG</option>
-                              <option value="Standard 1">Standard 1</option>
-                              <option value="Standard 2">Standard 2</option>
-                              <option value="Standard 3">Standard 3</option>
-                              <option value="Standard 4">Standard 4</option>
-                              <option value="Standard 5">Standard 5</option>
+                              <option value="1st Standard">1st Standard</option>
+                              <option value="2nd Standard">2nd Standard</option>
+                              <option value="3rd Standard">3rd Standard</option>
+                              <option value="4th Standard">4th Standard</option>
+                              <option value="5th Standard">5th Standard</option>
                             </select>
                           </div>
                           {errors.applyingFor && <span className="adm-form-error">{errors.applyingFor}</span>}
@@ -387,8 +385,15 @@ export default function AdmissionPage() {
 
                   {/* Error Message Display */}
                   {apiError && (
-                    <div style={{ color: '#e53e3e', backgroundColor: '#fff5f5', padding: '1rem', borderRadius: '8px', marginBottom: '1rem', border: '1px solid #feb2b2' }}>
-                      <i className="fa-solid fa-circle-exclamation"></i> {apiError}
+                    <div style={{ 
+                      color: apiError.toLowerCase().includes('success') ? '#047857' : '#e53e3e', 
+                      backgroundColor: apiError.toLowerCase().includes('success') ? '#d1fae5' : '#fff5f5', 
+                      padding: '1rem', 
+                      borderRadius: '8px', 
+                      marginBottom: '1rem', 
+                      border: apiError.toLowerCase().includes('success') ? '1px solid #6ee7b7' : '1px solid #feb2b2' 
+                    }}>
+                      <i className={apiError.toLowerCase().includes('success') ? "fa-solid fa-circle-check" : "fa-solid fa-circle-exclamation"}></i> {apiError}
                     </div>
                   )}
 
