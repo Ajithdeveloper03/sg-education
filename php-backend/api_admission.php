@@ -5,6 +5,14 @@
  * saves to DB and sends email notification.
  */
 
+// Start output buffering to prevent any stray output (FPDF, PHP warnings, etc.)
+// from corrupting the JSON response.
+ob_start();
+
+// Suppress display errors so PHP warnings don't pollute the response
+ini_set('display_errors', 0);
+error_reporting(E_ALL);
+
 // CORS headers - allow the static site to call this
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
@@ -252,6 +260,9 @@ $message .= $pdfBase64 . "\r\n";
 $message .= "--{$boundary}--";
 
 $mailSent = mail($toEmail, $subject, $message, $headers);
+
+// Discard any stray output captured by ob_start() before sending JSON
+ob_end_clean();
 
 if ($mailSent) {
     echo json_encode(['success' => true, 'message' => 'Application submitted successfully']);

@@ -4,6 +4,11 @@
  * Receives JSON POST from the contact form and sends email notification.
  */
 
+// Start output buffering to prevent stray output from corrupting JSON response
+ob_start();
+ini_set('display_errors', 0);
+error_reporting(E_ALL);
+
 // CORS headers
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
@@ -89,6 +94,9 @@ $headers = implode("\r\n", [
 ]);
 
 $mailSent = mail($toEmail, $mailSubject, $htmlBody, $headers);
+
+// Discard any stray output before sending JSON
+ob_end_clean();
 
 if ($mailSent) {
     echo json_encode(['success' => true, 'message' => 'Your message has been sent successfully!']);
