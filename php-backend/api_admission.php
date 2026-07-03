@@ -10,27 +10,6 @@ ob_start();
 ini_set('display_errors', 0);
 error_reporting(E_ALL);
 
-set_error_handler(function($errno, $errstr, $errfile, $errline) {
-    if (ob_get_length()) ob_end_clean();
-    echo json_encode(['success' => false, 'message' => "PHP Error [$errno]: $errstr in $errfile on line $errline"]);
-    exit();
-});
-
-set_exception_handler(function($e) {
-    if (ob_get_length()) ob_end_clean();
-    echo json_encode(['success' => false, 'message' => "Uncaught Exception: " . $e->getMessage()]);
-    exit();
-});
-
-register_shutdown_function(function() {
-    $error = error_get_last();
-    if ($error !== null && in_array($error['type'], [E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR])) {
-        if (ob_get_length()) ob_end_clean();
-        echo json_encode(['success' => false, 'message' => "Fatal Error: " . $error['message'] . " in " . $error['file'] . " on line " . $error['line']]);
-        exit();
-    }
-});
-
 // CORS headers
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
@@ -164,6 +143,12 @@ try {
     if (!file_exists(__DIR__ . '/fpdf.php')) {
         throw new Exception("fpdf.php file is missing on the server! Please upload it.");
     }
+    
+    // Explicitly define font path so it doesn't try to look in the root
+    if (!defined('FPDF_FONTPATH')) {
+        define('FPDF_FONTPATH', __DIR__ . '/fpdf_dir/font/');
+    }
+    
     require_once __DIR__ . '/fpdf.php';
 
     if (!class_exists('PDF')) {
