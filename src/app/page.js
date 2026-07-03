@@ -493,7 +493,7 @@ professional services.SG Education established in 2023, aims to provide quality 
         <div className="container">
           <div className="video-section-container" style={{ padding: '4rem 0 4rem 0', gap: '2rem' }}>
             <div className="vs-video-thumb hover-lift" onClick={() => setIsVideoModalOpen(true)} style={{ cursor: 'pointer' }}>
-              <img src="https://img.youtube.com/vi/EngW7tLk6R8/maxresdefault.jpg" alt="Video thumbnail" style={{ width: '100%', display: 'block', objectFit: 'cover' }} />
+              <img src="https://img.youtube.com/vi/TZj4cIfW4YU/maxresdefault.jpg" alt="Video thumbnail" style={{ width: '100%', display: 'block', objectFit: 'cover' }} />
               <div className="vs-play-btn"><i className="fa-solid fa-play" style={{ color: 'white', fontSize: '2rem' }}></i></div>
             </div>
 
@@ -883,7 +883,7 @@ professional services.SG Education established in 2023, aims to provide quality 
           </button>
           <div style={{ width: '90%', maxWidth: '900px', aspectRatio: '16/9', position: 'relative' }}>
             <iframe 
-              src="https://www.youtube.com/embed/EngW7tLk6R8?autoplay=1" 
+              src="https://www.youtube.com/embed/0FATcRHSiXw?autoplay=1" 
               title="SG Education Sample Video" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
