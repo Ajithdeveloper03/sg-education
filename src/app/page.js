@@ -142,41 +142,7 @@ const FOUR_PILLARS = [
   }
 ];
 
-const row1Images = [
-  "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1587691592099-24045742c181?auto=format&fit=crop&w=500&q=80"
-];
 
-const row2Images = [
-  "https://images.pexels.com/photos/618116/pexels-photo-618116.jpeg",
-  "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1536337005238-94b997371b40?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1576267423445-b2e0074d68a4?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1602052793312-b99c2a9ee797?auto=format&fit=crop&w=500&q=80"
-];
-
-const row3Images = [
-  "https://images.pexels.com/photos/31864392/pexels-photo-31864392.jpeg",
-  "https://images.pexels.com/photos/35493021/pexels-photo-35493021.jpeg",
-  "https://images.unsplash.com/photo-1511629091441-ee46146481b6?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1567057419565-4349c49d8a04?auto=format&fit=crop&w=500&q=80"
-];
-
-const row4Images = [
-  "https://images.pexels.com/photos/12818151/pexels-photo-12818151.jpeg",
-  "https://images.unsplash.com/photo-1510531704581-5b2870972060?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1471286174240-e67f29dbb499?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=500&q=80",
-  "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80"
-];
 
 export default function Home() {
   const [testiIndex, setTestiIndex] = useState(0);
@@ -401,18 +367,18 @@ export default function Home() {
                 {/* Main Portrait */}
                 <div className="sc-main-portrait hover-lift">
                   <img 
-                    src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=700&q=80" 
+                    src="/sg-education/about sg1.png" 
                     alt="Portrait smiling" 
                   />
                 </div>
 
                 {/* Floating Elements */}
                 <div className="sc-float-card sc-left-card float-anim-1">
-                  <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&w=300&q=80" alt="Activity" />
+                  <img src="/sg-education/about sg3.jpg" alt="Activity" />
                 </div>
 
                 <div className="sc-float-card sc-right-card float-anim-2">
-                  <img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?auto=format&fit=crop&w=300&q=80" alt="Outdoors" />
+                  <img src="/sg-education/about sg4.jpg" alt="Outdoors" />
                 </div>
 
                 {/* Stickers */}
@@ -527,7 +493,7 @@ professional services.SG Education established in 2023, aims to provide quality 
         <div className="container">
           <div className="video-section-container" style={{ padding: '4rem 0 4rem 0', gap: '2rem' }}>
             <div className="vs-video-thumb hover-lift" onClick={() => setIsVideoModalOpen(true)} style={{ cursor: 'pointer' }}>
-              <img src="https://img.youtube.com/vi/EngW7tLk6R8/maxresdefault.jpg" alt="Video thumbnail" style={{ width: '100%', display: 'block', objectFit: 'cover' }} />
+              <img src="https://img.youtube.com/vi/TZj4cIfW4YU/maxresdefault.jpg" alt="Video thumbnail" style={{ width: '100%', display: 'block', objectFit: 'cover' }} />
               <div className="vs-play-btn"><i className="fa-solid fa-play" style={{ color: 'white', fontSize: '2rem' }}></i></div>
             </div>
 
@@ -663,45 +629,73 @@ professional services.SG Education established in 2023, aims to provide quality 
           
           <div className="kimono-gallery-grid">
             <div className="k-item k-item-1">
-              <img src={row1Images[0]} alt="Gallery 1" />
+              <img src="/sg-education/home gallery 1.jpg" alt="Gallery 1" />
               <div className="k-item-overlay">
-                <h3>Creative Arts</h3>
-                <p>View Details</p>
+                <h3>Culturals</h3>
+                <p>Annual Cultural Celebration</p>
               </div>
             </div>
             <div className="k-item k-item-2">
-              <img src={row1Images[1]} alt="Gallery 2" />
+              <img src="/sg-education/home gallery 2.jpg" alt="Gallery 2" />
               <div className="k-item-overlay">
-                <h3>Learning</h3>
-                <p>View Details</p>
+                <h3>Yoga</h3>
+                <p>Morning Yoga Session</p>
               </div>
             </div>
             <div className="k-item k-item-3">
-              <img src={row2Images[0]} alt="Gallery 3" />
+              <img src="/sg-education/home gallery 3.jpg" alt="Gallery 3" />
               <div className="k-item-overlay">
-                <h3>Playtime</h3>
-                <p>View Details</p>
+                <h3>Green Day</h3>
+                <p>Green Day Celebration</p>
               </div>
             </div>
             <div className="k-item k-item-4">
-              <img src={row2Images[1]} alt="Gallery 4" />
+              <img src="/sg-education/home gallery 4.jpg" alt="Gallery 4" />
               <div className="k-item-overlay">
-                <h3>Nature</h3>
-                <p>View Details</p>
+                <h3>Green Day</h3>
+                <p>Little Nature Lover</p>
               </div>
             </div>
             <div className="k-item k-item-5">
-              <img src={row3Images[0]} alt="Gallery 5" />
+              <img src="/sg-education/home gallery 7.jpeg" alt="Gallery 5" />
               <div className="k-item-overlay">
                 <h3>Joy</h3>
-                <p>View Details</p>
+                <p>Kids Showcasing Their Creativity</p>
               </div>
             </div>
             <div className="k-item k-item-6">
-              <img src={row4Images[0]} alt="Gallery 6" />
+              <img src="/sg-education/home gallery 6.jpg" alt="Gallery 6" />
               <div className="k-item-overlay">
                 <h3>Exploration</h3>
-                <p>View Details</p>
+                <p>Best Costume Moments</p>
+              </div>
+            </div>
+            <div className="k-item k-item-7">
+              <img src="/sg-education/home gallery 5.jpg" alt="Gallery 7" />
+              <div className="k-item-overlay">
+                <h3>Yoga Day</h3>
+                <p>Kids Performing Yoga</p>
+              </div>
+            </div>
+            <div className="k-item k-item-8">
+              <img src="/sg-education/home gallery 8.jpeg" alt="Gallery 8" />
+              <div className="k-item-overlay">
+                <h3>Cultural</h3>
+                <p>Celebration of Talent</p>
+              </div>
+            </div>
+            <div className="k-item k-item-9">
+              <img src="/sg-education/home gallery 9.jpg" alt="Gallery 9" />
+              <div className="k-item-overlay">
+                <h3>Music & Dance</h3>
+                <p>Kids Showcasing Their Talents</p>
+              </div>
+            </div>
+            <div className="k-item k-item-10">
+              <img src="/sg-education/home gallery 10.jpeg" alt="Gallery 10" />
+              <div className="k-item-overlay">
+                <h3>Teamwork</h3>
+                <p>Students in Blue Attire</p>
               </div>
             </div>
           </div>
@@ -889,7 +883,7 @@ professional services.SG Education established in 2023, aims to provide quality 
           </button>
           <div style={{ width: '90%', maxWidth: '900px', aspectRatio: '16/9', position: 'relative' }}>
             <iframe 
-              src="https://www.youtube.com/embed/EngW7tLk6R8?autoplay=1" 
+              src="https://www.youtube.com/embed/0FATcRHSiXw?autoplay=1" 
               title="SG Education Sample Video" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
