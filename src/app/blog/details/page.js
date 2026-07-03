@@ -23,7 +23,16 @@ function BlogDetailsContent() {
     
     const fetchArticle = async () => {
       try {
-        const res = await fetch(`http://localhost/php-backend/api_blog.php?id=${id}`);
+        const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost';
+
+        // Helper: resolve relative image paths to absolute URLs
+        const resolveImageUrl = (url) => {
+          if (!url) return null;
+          if (url.startsWith('http')) return url;
+          return `${apiBase}${url}`;
+        };
+
+        const res = await fetch(`${apiBase}/php-backend/api_blog.php?id=${id}`);
         const data = await res.json();
         if (data.status === 'success') {
           setArticle(data.data);
@@ -31,7 +40,10 @@ function BlogDetailsContent() {
             const parsed = JSON.parse(data.data.content);
             if (parsed && typeof parsed === 'object') {
               setStructuredContent({
-                sections: parsed.sections || [],
+                sections: (parsed.sections || []).map(section => ({
+                  ...section,
+                  image_url: resolveImageUrl(section.image_url)
+                })),
                 faqs: parsed.faqs || []
               });
             } else {

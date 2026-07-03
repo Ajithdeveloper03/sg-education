@@ -93,7 +93,8 @@ export default function AdmissionPage() {
     setApiError(null);
 
     try {
-      const response = await fetch('http://localhost/php-backend/api_admission.php', {
+      const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost';
+      const response = await fetch(`${apiBase}/php-backend/api_admission.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
