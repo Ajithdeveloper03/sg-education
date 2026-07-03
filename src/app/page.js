@@ -288,13 +288,13 @@ export default function Home() {
       setIsSubmitting(true);
       try {
         const payload = {
-          student_name: childName,
+          studentName: childName,
           dob: childDob,
-          parent_name: parentName,
-          mobile_number: phoneNum,
-          email_address: emailId,
-          residential_address: place,
-          applying_for: "SG Early Budding"
+          parentName: parentName,
+          mobileNumber: phoneNum,
+          emailAddress: emailId,
+          residentialAddress: place,
+          applyingFor: "SG Early Budding"
         };
 
         const response = await fetch("https://sgeducations.in/php-backend/api_admission.php", {
