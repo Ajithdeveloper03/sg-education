@@ -138,74 +138,78 @@ $htmlBody = "
 </body></html>
 ";
 
-// ── Generate PDF attachment using FPDF ───────────────────────────────────────
-require_once __DIR__ . '/fpdf.php';
-
-class PDF extends FPDF {
-    function Header() {
-        $this->SetFont('Arial', 'B', 15);
-        $this->SetTextColor(29, 42, 68);
-        $this->Cell(0, 10, 'SG Education - Admission Application', 0, 1, 'C');
-        $this->Ln(5);
-    }
-    function Footer() {
-        $this->SetY(-15);
-        $this->SetFont('Arial', 'I', 8);
-        $this->SetTextColor(128);
-        $this->Cell(0, 10, 'Page ' . $this->PageNo(), 0, 0, 'C');
-    }
-    function SectionTitle($title) {
-        $this->SetFont('Arial', 'B', 12);
-        $this->SetFillColor(240, 240, 240);
-        $this->Cell(0, 8, $title, 0, 1, 'L', true);
-        $this->Ln(2);
-    }
-    function Row($label, $value) {
-        $this->SetFont('Arial', 'B', 10);
-        $this->Cell(50, 6, $label . ':', 0, 0, 'L');
-        $this->SetFont('Arial', '', 10);
-        $this->MultiCell(0, 6, $value);
-    }
-}
-
-$pdf = new PDF();
-$pdf->AddPage();
-$pdf->SetFont('Arial', '', 10);
-$pdf->Cell(0, 6, 'Submitted on: ' . date('d M Y, h:i A'), 0, 1, 'R');
-$pdf->Ln(5);
-
-$pdf->SectionTitle('Student Details');
-$pdf->Row('Name', $studentName);
-$pdf->Row('Gender', $gender);
-$pdf->Row('Date of Birth', $dob);
-$pdf->Row('Applying For', $applyingFor);
-$pdf->Row('Previous School', $previousSchool);
-$pdf->Ln(5);
-
-$pdf->SectionTitle('Parent / Guardian Details');
-$pdf->Row('Name', $parentName . ' (' . $relationship . ')');
-$pdf->Row('Mobile Number', $mobileNumber);
-$pdf->Row('Email Address', $emailAddress);
-$pdf->Row('Occupation', $occupation);
-$pdf->Row('Address', $residentialAddress);
-$pdf->Ln(5);
-
-if ($isDirectVisit) {
-    $pdf->SectionTitle('Direct Visit Request');
-    $pdf->Row('Preferred Date', $preferredVisitDate);
-    $pdf->Row('Preferred Time', $preferredVisitTime);
-    $pdf->Row('Parent Name', $directVisitParentName);
-    $pdf->Row('Purpose', $purposeOfVisit);
-    $pdf->Row('Comments', $additionalComments);
-}
-
-$pdfContent = $pdf->Output('S'); // 'S' = return as string, don't send to browser
-
-// ── Send email via PHPMailer SMTP ────────────────────────────────────────────
+// ── Generate PDF attachment and Send Email ─────────────────────────────────────
 try {
+    if (!file_exists(__DIR__ . '/fpdf.php')) {
+        throw new Exception("fpdf.php file is missing on the server! Please upload it.");
+    }
+    require_once __DIR__ . '/fpdf.php';
+
+    if (!class_exists('PDF')) {
+        class PDF extends FPDF {
+            function Header() {
+                $this->SetFont('Arial', 'B', 15);
+                $this->SetTextColor(29, 42, 68);
+                $this->Cell(0, 10, 'SG Education - Admission Application', 0, 1, 'C');
+                $this->Ln(5);
+            }
+            function Footer() {
+                $this->SetY(-15);
+                $this->SetFont('Arial', 'I', 8);
+                $this->SetTextColor(128);
+                $this->Cell(0, 10, 'Page ' . $this->PageNo(), 0, 0, 'C');
+            }
+            function SectionTitle($title) {
+                $this->SetFont('Arial', 'B', 12);
+                $this->SetFillColor(240, 240, 240);
+                $this->Cell(0, 8, $title, 0, 1, 'L', true);
+                $this->Ln(2);
+            }
+            function Row($label, $value) {
+                $this->SetFont('Arial', 'B', 10);
+                $this->Cell(50, 6, $label . ':', 0, 0, 'L');
+                $this->SetFont('Arial', '', 10);
+                $this->MultiCell(0, 6, $value);
+            }
+        }
+    }
+
+    $pdf = new PDF();
+    $pdf->AddPage();
+    $pdf->SetFont('Arial', '', 10);
+    $pdf->Cell(0, 6, 'Submitted on: ' . date('d M Y, h:i A'), 0, 1, 'R');
+    $pdf->Ln(5);
+
+    $pdf->SectionTitle('Student Details');
+    $pdf->Row('Name', $studentName);
+    $pdf->Row('Gender', $gender);
+    $pdf->Row('Date of Birth', $dob);
+    $pdf->Row('Applying For', $applyingFor);
+    $pdf->Row('Previous School', $previousSchool);
+    $pdf->Ln(5);
+
+    $pdf->SectionTitle('Parent / Guardian Details');
+    $pdf->Row('Name', $parentName . ' (' . $relationship . ')');
+    $pdf->Row('Mobile Number', $mobileNumber);
+    $pdf->Row('Email Address', $emailAddress);
+    $pdf->Row('Occupation', $occupation);
+    $pdf->Row('Address', $residentialAddress);
+    $pdf->Ln(5);
+
+    if ($isDirectVisit) {
+        $pdf->SectionTitle('Direct Visit Request');
+        $pdf->Row('Preferred Date', $preferredVisitDate);
+        $pdf->Row('Preferred Time', $preferredVisitTime);
+        $pdf->Row('Parent Name', $directVisitParentName);
+        $pdf->Row('Purpose', $purposeOfVisit);
+        $pdf->Row('Comments', $additionalComments);
+    }
+
+    $pdfContent = $pdf->Output('S'); // 'S' = return as string
+
+    // ── Send email via PHPMailer SMTP ────────────────────────────────────────────
     $mail = createMailer();
 
-    // Recipient
     // Add all recipients defined in config
     $recipients = explode(',', MAIL_TO);
     foreach ($recipients as $recipient) {
