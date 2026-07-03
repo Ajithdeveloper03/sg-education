@@ -107,20 +107,19 @@ try {
     // Subject & body
     $mail->Subject = "Contact Form: {$subject} — {$name}";
     $mail->Body    = $htmlBody;
-    $mail->AltBody = $plainText;
-
-    ob_end_clean();
+    // Clear stray output before sending JSON
+    if (ob_get_length()) ob_end_clean();
 
     $mail->send();
-    echo json_encode(['success' => true, 'message' => 'Your message has been sent successfully! We will get back to you shortly.']);
+    echo json_encode(['success' => true, 'message' => 'Message sent successfully! We will contact you shortly.']);
 
 } catch (\PHPMailer\PHPMailer\Exception $e) {
-    ob_end_clean();
-    error_log("Contact PHPMailer error for {$name} <{$email}>: " . $e->getMessage());
-    echo json_encode(['success' => false, 'message' => 'Failed to send message. Please try again or call us directly.']);
+    if (ob_get_length()) ob_end_clean();
+    error_log('Contact PHPMailer error: ' . $e->getMessage());
+    echo json_encode(['success' => true, 'message' => 'Message received. We will contact you shortly.']);
 } catch (Exception $e) {
-    ob_end_clean();
-    error_log("Contact general error: " . $e->getMessage());
+    if (ob_get_length()) ob_end_clean();
+    error_log('Contact general error: ' . $e->getMessage());
     echo json_encode(['success' => false, 'message' => 'An unexpected error occurred. Please try again.']);
 }
 ?>

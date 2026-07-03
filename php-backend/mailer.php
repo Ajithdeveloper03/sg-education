@@ -25,7 +25,7 @@ require_once __DIR__ . '/vendor/autoload.php';
  * @return PHPMailer
  * @throws Exception
  */
-function createMailer(): PHPMailer {
+function createMailer() {
     $mail = new PHPMailer(true); // true = exceptions enabled
 
     // ── SMTP Settings ────────────────────────────────────────────────────────
