@@ -14,11 +14,11 @@ define('UPLOAD_DIR', __DIR__ . '/upload/');
 define('SMTP_HOST',       'smtp.gmail.com');       // Gmail SMTP host
 define('SMTP_PORT',       587);                     // 587 = STARTTLS (recommended for Gmail)
 define('SMTP_ENCRYPTION', 'tls');                   // 'tls' = STARTTLS on port 587
-define('SMTP_USER',       'inymartlabs@gmail.com'); // Gmail address
+define('SMTP_USER',       'inymart@gmail.com'); // Gmail address
 define('SMTP_PASS',       'wuzsvfcczinhddey');       // Gmail App Password (no spaces)
-define('SMTP_FROM_EMAIL', 'inymartlabs@gmail.com'); // Must match SMTP_USER for Gmail
+define('SMTP_FROM_EMAIL', 'inymart@gmail.com'); // Must match SMTP_USER for Gmail
 define('SMTP_FROM_NAME',  'SG Education');           // Sender display name
-define('MAIL_TO',         'inymartlabs@gmail.com,sg.educations.org@gmail.com'); // Where form submissions go
+define('MAIL_TO',         'inymart@gmail.com,sg.educations.org@gmail.com'); // Where form submissions go
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Hide PHP warnings/notices from breaking JSON output
