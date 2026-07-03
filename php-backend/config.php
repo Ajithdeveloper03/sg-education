@@ -12,8 +12,8 @@ define('UPLOAD_DIR', __DIR__ . '/upload/');
 
 // ─── SMTP Configuration (PHPMailer + Gmail) ────────────────────────────────
 define('SMTP_HOST',       'smtp.gmail.com');       // Gmail SMTP host
-define('SMTP_PORT',       587);                     // 587 = STARTTLS (recommended for Gmail)
-define('SMTP_ENCRYPTION', 'tls');                   // 'tls' = STARTTLS on port 587
+define('SMTP_PORT',       465);                     // 465 = SSL (better for Hostinger)
+define('SMTP_ENCRYPTION', 'ssl');                   // 'ssl' on port 465
 define('SMTP_USER',       'inymartlabs@gmail.com'); // Gmail address
 define('SMTP_PASS',       'wuzsvfcczinhddey');       // Gmail App Password (spaces removed)
 define('SMTP_FROM_EMAIL', 'inymartlabs@gmail.com'); // Must match SMTP_USER for Gmail
