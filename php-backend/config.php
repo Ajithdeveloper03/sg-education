@@ -10,17 +10,15 @@ define('DB_NAME', 'u508480125_sgeducation');
 define('SITE_URL', 'https://inymartlabs.com/sg-education/php-backend');
 define('UPLOAD_DIR', __DIR__ . '/upload/');
 
-// ─── SMTP Configuration (PHPMailer) ─────────────────────────────────────────
-// Hostinger SMTP — create an email account in Hostinger hPanel first
-// then fill in the credentials below.
-define('SMTP_HOST',       'smtp.hostinger.com');   // Hostinger SMTP host
-define('SMTP_PORT',       465);                     // 465 = SSL | 587 = TLS
-define('SMTP_ENCRYPTION', 'ssl');                   // 'ssl' for port 465, 'tls' for 587
-define('SMTP_USER',       'noreply@inymartlabs.com'); // ← Your Hostinger email address
-define('SMTP_PASS',       'YourEmailPassword123');    // ← Your Hostinger email password
-define('SMTP_FROM_EMAIL', 'noreply@inymartlabs.com'); // Sender address (must match SMTP_USER)
-define('SMTP_FROM_NAME',  'SG Education');            // Sender display name
-define('MAIL_TO',         'inymartlabs@gmail.com');   // Where form submissions go
+// ─── SMTP Configuration (PHPMailer + Gmail) ────────────────────────────────
+define('SMTP_HOST',       'smtp.gmail.com');       // Gmail SMTP host
+define('SMTP_PORT',       587);                     // 587 = STARTTLS (recommended for Gmail)
+define('SMTP_ENCRYPTION', 'tls');                   // 'tls' = STARTTLS on port 587
+define('SMTP_USER',       'inymartlabs@gmail.com'); // Gmail address
+define('SMTP_PASS',       'wuzsvfcczinhddey');       // Gmail App Password (spaces removed)
+define('SMTP_FROM_EMAIL', 'inymartlabs@gmail.com'); // Must match SMTP_USER for Gmail
+define('SMTP_FROM_NAME',  'SG Education');           // Sender display name
+define('MAIL_TO',         'inymartlabs@gmail.com'); // Where form submissions go
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Hide PHP warnings/notices from breaking JSON output

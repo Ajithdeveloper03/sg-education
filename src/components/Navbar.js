@@ -9,8 +9,12 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [headerScrolled, setHeaderScrolled] = useState(false);
   const isInnerPage = pathname !== '/';
-  // Use .endsWith() so this works correctly with or without basePath prefix
-  const isEarlyBudding = pathname?.endsWith('/about/sg-early-budding');
+  // Use includes() so this works with or without a trailing slash.
+  // With trailingSlash:true in next.config, live URLs have a trailing slash:
+  //   local:  /about/sg-early-budding
+  //   live:   /about/sg-early-budding/
+  // endsWith() would fail on live — includes() matches both.
+  const isEarlyBudding = pathname?.includes('/about/sg-early-budding');
 
   useEffect(() => {
     const handleScroll = () => {

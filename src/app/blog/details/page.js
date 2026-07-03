@@ -25,11 +25,14 @@ function BlogDetailsContent() {
       try {
         const apiBase = "https://inymartlabs.com/sg-education";
 
-        // Helper: resolve relative image paths to absolute URLs
+        // Helper: resolve relative image paths stored in DB (e.g. /php-backend/upload/x.jpg)
+        // to full absolute URLs using the production base path including subdirectory.
         const resolveImageUrl = (url) => {
           if (!url) return null;
           if (url.startsWith('http')) return url;
-          return `https://inymartlabs.com${url}`;
+          // apiBase already includes /sg-education, so this produces:
+          // https://inymartlabs.com/sg-education/php-backend/upload/x.jpg
+          return `${apiBase}${url}`;
         };
 
         const res = await fetch(`${apiBase}/php-backend/api_blog.php?id=${id}`);
