@@ -243,7 +243,7 @@ export default function BlogManager() {
     const formData = new FormData();
     formData.append("image", file);
     try {
-      const res = await fetch("http://localhost/php-backend/api_upload.php", {
+      const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_upload.php", {
         method: "POST",
         body: formData
       });

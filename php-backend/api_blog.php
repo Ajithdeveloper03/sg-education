@@ -5,12 +5,12 @@ require_once 'api_helpers.php';
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 $method = $_SERVER['REQUEST_METHOD'];
 
-// Helper to format image URLs
+// Helper to format image URLs - always uses production base URL
+define('SITE_BASE_URL', 'https://inymartlabs.com/sg-education');
 function formatImageUrl($url) {
     if (empty($url)) return null;
     if (strpos($url, 'http') === 0) return $url;
-    $site_url = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]";
-    return $site_url . $url;
+    return SITE_BASE_URL . $url;
 }
 
 if ($method === 'GET') {

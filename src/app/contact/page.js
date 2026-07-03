@@ -26,7 +26,9 @@ export default function ContactPage() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let newErrors = {};
 
@@ -36,11 +38,29 @@ export default function ContactPage() {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-    } else {
-      // Simulate API call
-      setIsSuccess(true);
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-      setTimeout(() => setIsSuccess(false), 5000);
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://inymartlabs.com/sg-education/php-backend/api_contact.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        setIsSuccess(true);
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+        setTimeout(() => setIsSuccess(false), 6000);
+      } else {
+        setErrors({ form: data.message || "Failed to send message. Please try again." });
+      }
+    } catch (err) {
+      console.error("Contact form error:", err);
+      setErrors({ form: "Network error. Please try again or contact us directly." });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -197,7 +217,15 @@ export default function ContactPage() {
                   {errors.message && <span className="error-text">{errors.message}</span>}
                 </div>
 
-                <button type="submit" className="submit-btn">Send Message <i className="fa-solid fa-paper-plane" style={{ marginLeft: '0.5rem' }}></i></button>
+                {errors.form && (
+                  <div style={{ color: '#e53e3e', background: '#fff5f5', border: '1px solid #feb2b2', borderRadius: '8px', padding: '0.8rem 1rem', marginBottom: '1rem', fontSize: '0.95rem' }}>
+                    <i className="fa-solid fa-circle-exclamation" style={{ marginRight: '0.5rem' }}></i>{errors.form}
+                  </div>
+                )}
+
+                <button type="submit" className="submit-btn" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'} <i className="fa-solid fa-paper-plane" style={{ marginLeft: '0.5rem' }}></i>
+                </button>
               </form>
             </div>
 

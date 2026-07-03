@@ -23,20 +23,16 @@ function BlogDetailsContent() {
     
     const fetchArticle = async () => {
       try {
-<<<<<<< HEAD
-        const res = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_blog.php?id=${id}`);
-=======
-        const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost';
+        const apiBase = "https://inymartlabs.com/sg-education";
 
         // Helper: resolve relative image paths to absolute URLs
         const resolveImageUrl = (url) => {
           if (!url) return null;
           if (url.startsWith('http')) return url;
-          return `${apiBase}${url}`;
+          return `https://inymartlabs.com${url}`;
         };
 
         const res = await fetch(`${apiBase}/php-backend/api_blog.php?id=${id}`);
->>>>>>> 971db32a89484062f9f777f354bd2a61972347db
         const data = await res.json();
         if (data.status === 'success') {
           setArticle(data.data);

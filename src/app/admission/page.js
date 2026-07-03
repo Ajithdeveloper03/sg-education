@@ -93,8 +93,7 @@ export default function AdmissionPage() {
     setApiError(null);
 
     try {
-      const apiBase = process.env.NEXT_PUBLIC_API_BASE || 'http://localhost';
-      const response = await fetch(`${apiBase}/php-backend/api_admission.php`, {
+      const response = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_admission.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
