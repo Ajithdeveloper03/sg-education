@@ -73,6 +73,28 @@ if (!$message) {
     exit();
 }
 
+// ── Save to database (non-fatal if it fails) ─────────────────────────────────
+try {
+    // Auto-create table if it doesn't exist (helpful for Hostinger deployment)
+    $pdo->exec("CREATE TABLE IF NOT EXISTS `contacts` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `name` varchar(255) NOT NULL,
+      `email` varchar(255) NOT NULL,
+      `phone` varchar(50) DEFAULT NULL,
+      `subject` varchar(255) DEFAULT NULL,
+      `message` text NOT NULL,
+      `submitted_at` datetime DEFAULT CURRENT_TIMESTAMP,
+      PRIMARY KEY (`id`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;");
+
+    $stmt = $pdo->prepare("
+        INSERT INTO contacts (name, email, phone, subject, message, submitted_at)
+        VALUES (?, ?, ?, ?, ?, NOW())
+    ");
+    $stmt->execute([$name, $email, $phone, $subject, $message]);
+} catch (Exception $e) {
+    error_log('Contact DB save error: ' . $e->getMessage());
+}
 // ── Build HTML email body ─────────────────────────────────────────────────────
 $htmlBody = "
 <html><body style='font-family:Arial,sans-serif;color:#333;'>
