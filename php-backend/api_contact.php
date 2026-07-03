@@ -143,9 +143,9 @@ try {
     if (ob_get_length()) ob_end_clean();
     error_log('Contact PHPMailer error: ' . $e->getMessage());
     echo json_encode(['success' => false, 'message' => 'SMTP Error: ' . $e->getMessage()]);
-} catch (Exception $e) {
+} catch (\Throwable $e) {
     if (ob_get_length()) ob_end_clean();
     error_log('Contact general error: ' . $e->getMessage());
-    echo json_encode(['success' => false, 'message' => 'General Error: ' . $e->getMessage()]);
+    echo json_encode(['success' => false, 'message' => 'Server Crash: ' . $e->getMessage() . ' in ' . $e->getFile() . ' on line ' . $e->getLine()]);
 }
 ?>

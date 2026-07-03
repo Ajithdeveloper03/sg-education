@@ -2,9 +2,9 @@
 // config.php
 // Database Configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'u508480125_sgeducation');
-define('DB_PASS', 'Inymart@Shield#58!'); // Default XAMPP password is empty
-define('DB_NAME', 'u508480125_sgeducation');
+define('DB_USER', 'u675988897_sgeducations');
+define('DB_PASS', 'm2=KS$JM&N'); // Default XAMPP password is empty
+define('DB_NAME', 'u675988897_sgeducations');
 
 // Application Configuration
 define('SITE_URL', 'https://sgeducations.in/php-backend');
