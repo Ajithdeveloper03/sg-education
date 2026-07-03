@@ -22,6 +22,7 @@ CREATE TABLE IF NOT EXISTS `blogs` (
   `category` varchar(100) DEFAULT 'EDUCATION',
   `author` varchar(100) DEFAULT 'Admin',
   `read_time` varchar(50) DEFAULT '5 min read',
+  `status` varchar(20) DEFAULT 'LIVE',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

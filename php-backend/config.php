@@ -41,4 +41,11 @@ try {
 if (!is_dir(UPLOAD_DIR)) {
     @mkdir(UPLOAD_DIR, 0755, true);
 }
+
+// Auto-migrate: Add 'status' column to blogs table if it doesn't exist
+try {
+    $pdo->exec("ALTER TABLE blogs ADD COLUMN status VARCHAR(20) DEFAULT 'LIVE'");
+} catch(PDOException $e) {
+    // Ignore error if column already exists
+}
 ?>

@@ -77,6 +77,7 @@ export default function BlogManager() {
     setReadTime(blog.read_time);
     setExcerpt(blog.excerpt);
     setExistingImage(blog.image_url);
+    setStatus(blog.status || "LIVE");
     
     // Attempt to parse structured content
     try {
@@ -113,9 +114,7 @@ export default function BlogManager() {
     setModalConfig({ ...modalConfig, isOpen: false });
     try {
 
-      const res = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_blog.php?id=${id}`, { method: 'DELETE' });
-
-      // const res = await fetch(`http://localhost/php-backend/api_blog.php?id=${deleteId}`, { method: 'DELETE' });
+      const res = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_blog.php?id=${deleteId}`, { method: 'DELETE' });
 
       const data = await res.json();
       if (data.status === 'success') {
@@ -134,8 +133,8 @@ export default function BlogManager() {
     setModalConfig({
       isOpen: true,
       title: id ? "Confirm Article Update" : "Confirm Article Creation",
-      message: id ? "You are about to update this article. It will be visible on the live website." : "You are about to publish a new article. It will be visible on the live website.",
-      confirmText: id ? "YES, UPDATE ARTICLE" : "YES, PUBLISH ARTICLE",
+      message: id ? `You are about to update this article (${status}).` : `You are about to save a new article (${status}).`,
+      confirmText: id ? "YES, UPDATE ARTICLE" : "YES, SAVE ARTICLE",
       action: () => executeSubmit()
     });
   };
@@ -152,6 +151,7 @@ export default function BlogManager() {
     submitData.append("read_time", readTime);
     submitData.append("excerpt", excerpt);
     submitData.append("existing_image", existingImage);
+    submitData.append("status", status); // Send status to backend
     
     // Stringify structured content
     const structuredContent = JSON.stringify({
@@ -359,7 +359,7 @@ export default function BlogManager() {
                       <td style={{color: '#666', fontSize: '0.9rem'}}>{secCount} sections</td>
                       <td style={{color: '#666', fontSize: '0.9rem'}}>{faqCount} FAQs</td>
                       <td style={{color: '#666', fontSize: '0.9rem'}}>{new Date(blog.created_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</td>
-                      <td><span className="status-badge live">&bull; LIVE</span></td>
+                      <td><span className={`status-badge ${blog.status === 'DRAFT' ? 'draft' : 'live'}`} style={{ textTransform: 'uppercase' }}>&bull; {blog.status || 'LIVE'}</span></td>
                       <td>
                         <button onClick={() => handleEdit(blog)} className="admin-btn admin-btn-secondary" style={{ padding: '5px 15px', marginRight: '10px' }}>Edit</button>
                         <button onClick={() => requestDelete(blog.id)} className="admin-btn admin-btn-danger" style={{ padding: '5px 15px' }}>Delete</button>
@@ -382,10 +382,10 @@ export default function BlogManager() {
               <span style={{marginLeft: '15px', color: '#3b82f6', fontWeight: 'bold', textTransform: 'uppercase'}}>{view === 'add' ? 'NEW ARTICLE' : 'EDIT ARTICLE'}</span>
             </div>
             <div style={{ display: 'flex', gap: '10px' }}>
-              <button type="button" className="admin-btn" style={{ background: '#f8f9fa', border: '1px solid #ddd' }}>Draft</button>
+              <button type="button" onClick={(e) => { setStatus('DRAFT'); requestSubmit(e); }} className="admin-btn" style={{ background: '#f8f9fa', border: '1px solid #ddd' }}>Save Draft</button>
               <button type="button" onClick={resetForm} className="admin-btn" style={{ background: '#f8f9fa', border: '1px solid #ddd' }}>Cancel</button>
-              <button type="submit" disabled={loading} className="admin-btn admin-btn-primary">
-                {loading ? 'Saving...' : 'Publish Article'}
+              <button type="button" onClick={(e) => { setStatus('LIVE'); requestSubmit(e); }} disabled={loading} className="admin-btn admin-btn-primary">
+                {loading ? 'Saving...' : (id && status === 'LIVE' ? 'Update LIVE' : 'Publish LIVE')}
               </button>
             </div>
           </div>

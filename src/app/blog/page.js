@@ -14,7 +14,9 @@ export default function BlogPage() {
         const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_blog.php");
         const data = await res.json();
         if (data.status === 'success') {
-          setBlogs(data.data);
+          // Filter out draft blogs so they don't appear on the public site
+          const liveBlogs = data.data.filter(blog => blog.status !== 'DRAFT');
+          setBlogs(liveBlogs);
         }
       } catch (err) {
         console.error("Failed to fetch blogs", err);

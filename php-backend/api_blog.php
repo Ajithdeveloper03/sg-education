@@ -54,6 +54,7 @@ if ($method === 'POST') {
     $excerpt = trim($_POST['excerpt'] ?? '');
     $content = trim($_POST['content'] ?? '');
     $image_url = $_POST['existing_image'] ?? '';
+    $status = $_POST['status'] ?? 'LIVE';
 
     if (empty($title) || empty($content)) {
         sendJson('error', 'Title and content are required');
@@ -76,13 +77,13 @@ if ($method === 'POST') {
     }
 
     if ($id) {
-        $stmt = $pdo->prepare("UPDATE blogs SET title=?, category=?, author=?, read_time=?, excerpt=?, content=?, image_url=? WHERE id=?");
-        if ($stmt->execute([$title, $category, $author, $read_time, $excerpt, $content, $image_url, $id])) {
+        $stmt = $pdo->prepare("UPDATE blogs SET title=?, category=?, author=?, read_time=?, excerpt=?, content=?, image_url=?, status=? WHERE id=?");
+        if ($stmt->execute([$title, $category, $author, $read_time, $excerpt, $content, $image_url, $status, $id])) {
             sendJson('success', 'Blog updated successfully');
         }
     } else {
-        $stmt = $pdo->prepare("INSERT INTO blogs (title, category, author, read_time, excerpt, content, image_url) VALUES (?, ?, ?, ?, ?, ?, ?)");
-        if ($stmt->execute([$title, $category, $author, $read_time, $excerpt, $content, $image_url])) {
+        $stmt = $pdo->prepare("INSERT INTO blogs (title, category, author, read_time, excerpt, content, image_url, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        if ($stmt->execute([$title, $category, $author, $read_time, $excerpt, $content, $image_url, $status])) {
             sendJson('success', 'Blog created successfully');
         }
     }
