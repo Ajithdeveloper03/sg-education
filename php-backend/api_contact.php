@@ -1,10 +1,10 @@
 <?php
 /**
  * Contact Form Handler - PHP Backend
- * Receives JSON POST from the contact form and sends email notification.
+ * Receives JSON POST from the contact form and sends email via PHPMailer SMTP.
  */
 
-// Start output buffering to prevent stray output from corrupting JSON response
+// Output buffering to prevent stray output from corrupting JSON
 ob_start();
 ini_set('display_errors', 0);
 error_reporting(E_ALL);
@@ -23,15 +23,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
 // Only accept POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    ob_end_clean();
     echo json_encode(['success' => false, 'message' => 'Method not allowed.']);
     exit();
 }
+
+// Load config (SMTP constants)
+require_once __DIR__ . '/config.php';
+
+// Load PHPMailer helper
+require_once __DIR__ . '/mailer.php';
 
 // Read and decode JSON body
 $input = file_get_contents('php://input');
 $data  = json_decode($input, true);
 
 if (!$data) {
+    ob_end_clean();
     echo json_encode(['success' => false, 'message' => 'Invalid request data.']);
     exit();
 }
@@ -48,21 +56,24 @@ $phone   = clean($data['phone']   ?? '');
 $subject = clean($data['subject'] ?? 'General Inquiry');
 $message = clean($data['message'] ?? '');
 
-// Validate required fields
+// Validate
 if (!$name) {
+    ob_end_clean();
     echo json_encode(['success' => false, 'message' => 'Name is required.']);
     exit();
 }
 if (!$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    ob_end_clean();
     echo json_encode(['success' => false, 'message' => 'A valid email address is required.']);
     exit();
 }
 if (!$message) {
+    ob_end_clean();
     echo json_encode(['success' => false, 'message' => 'Message is required.']);
     exit();
 }
 
-// Build HTML email body
+// ── Build HTML email body ─────────────────────────────────────────────────────
 $htmlBody = "
 <html><body style='font-family:Arial,sans-serif;color:#333;'>
 <h2 style='color:#1d2a44;'>New Contact Form Message</h2>
@@ -70,7 +81,7 @@ $htmlBody = "
 
 <table style='width:100%;border-collapse:collapse;'>
   <tr><td style='padding:8px 12px;font-weight:bold;width:140px;background:#f8f9fa;'>Name</td><td style='padding:8px 12px;'>{$name}</td></tr>
-  <tr><td style='padding:8px 12px;font-weight:bold;background:#fff;'>Email</td><td style='padding:8px 12px;'>{$email}</td></tr>
+  <tr><td style='padding:8px 12px;font-weight:bold;background:#fff;'>Email</td><td style='padding:8px 12px;'><a href='mailto:{$email}'>{$email}</a></td></tr>
   <tr><td style='padding:8px 12px;font-weight:bold;background:#f8f9fa;'>Phone</td><td style='padding:8px 12px;'>" . ($phone ?: 'N/A') . "</td></tr>
   <tr><td style='padding:8px 12px;font-weight:bold;background:#fff;'>Subject</td><td style='padding:8px 12px;'>{$subject}</td></tr>
   <tr><td style='padding:8px 12px;font-weight:bold;background:#f8f9fa;vertical-align:top;'>Message</td><td style='padding:8px 12px;white-space:pre-wrap;'>{$message}</td></tr>
@@ -81,28 +92,35 @@ $htmlBody = "
 </body></html>
 ";
 
-// Send email
-$toEmail = 'inymartlabs@gmail.com';
-$mailSubject = "Contact Form: {$subject} - {$name}";
+$plainText = "Name: {$name}\nEmail: {$email}\nPhone: " . ($phone ?: 'N/A') . "\nSubject: {$subject}\n\nMessage:\n{$message}";
 
-$headers = implode("\r\n", [
-    "From: {$name} <{$email}>",
-    "Reply-To: {$email}",
-    "MIME-Version: 1.0",
-    "Content-Type: text/html; charset=UTF-8",
-    "X-Mailer: PHP/" . phpversion(),
-]);
+// ── Send email via PHPMailer SMTP ────────────────────────────────────────────
+try {
+    $mail = createMailer();
 
-$mailSent = mail($toEmail, $mailSubject, $htmlBody, $headers);
+    // Recipient
+    $mail->addAddress(MAIL_TO, 'SG Education');
 
-// Discard any stray output before sending JSON
-ob_end_clean();
+    // Reply-To so you can directly reply to the sender
+    $mail->addReplyTo($email, $name);
 
-if ($mailSent) {
-    echo json_encode(['success' => true, 'message' => 'Your message has been sent successfully!']);
-} else {
-    error_log("Contact form mail() failed for: {$name} <{$email}>");
-    // Still return success so user isn't confused — log the failure server-side
-    echo json_encode(['success' => true, 'message' => 'Message received. We will get back to you shortly.']);
+    // Subject & body
+    $mail->Subject = "Contact Form: {$subject} — {$name}";
+    $mail->Body    = $htmlBody;
+    $mail->AltBody = $plainText;
+
+    ob_end_clean();
+
+    $mail->send();
+    echo json_encode(['success' => true, 'message' => 'Your message has been sent successfully! We will get back to you shortly.']);
+
+} catch (\PHPMailer\PHPMailer\Exception $e) {
+    ob_end_clean();
+    error_log("Contact PHPMailer error for {$name} <{$email}>: " . $e->getMessage());
+    echo json_encode(['success' => false, 'message' => 'Failed to send message. Please try again or call us directly.']);
+} catch (Exception $e) {
+    ob_end_clean();
+    error_log("Contact general error: " . $e->getMessage());
+    echo json_encode(['success' => false, 'message' => 'An unexpected error occurred. Please try again.']);
 }
 ?>

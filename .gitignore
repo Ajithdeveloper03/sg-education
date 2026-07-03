@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# PHP Composer dependencies (install on server with: composer install)
+php-backend/vendor/
