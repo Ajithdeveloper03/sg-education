@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="container footer-content-grid">
           <div className="footer-col brand-col">
             <Link href="/" className="footer-logo">
-              <img src="/sg-education/SG logo.webp" alt="SG Education Logo" />
+              <img src="/SG logo.webp" alt="SG Education Logo" />
               <span className="logo-text">SG Education</span>
             </Link>
             <p className="footer-about-text" style={{ marginBottom: '1.5rem' }}>

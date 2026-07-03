@@ -51,7 +51,7 @@ export default function Navbar() {
         <div className="container navbar">
           <Link href="/" className="logo-container" id="logo-link">
             <img 
-              src={isEarlyBudding ? "/sg-education/early-budding-logo.png" : "/sg-education/SG logo.webp"} 
+              src={isEarlyBudding ? "/early-budding-logo.png" : "/SG logo.webp"} 
               className="logo-img" 
               alt={isEarlyBudding ? "SG Early Budding Logo" : "SG Education Logo"} 
             />

@@ -58,7 +58,7 @@ export default function FoundersMessagePage() {
       {/* Upgraded Page Banner */}
       <section style={{ 
         position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
-        backgroundImage: 'url("/sg-education/meet our team.png")', 
+        backgroundImage: 'url("/meet our team.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
@@ -78,8 +78,8 @@ export default function FoundersMessagePage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -103,7 +103,7 @@ export default function FoundersMessagePage() {
               onMouseLeave={() => handleMouseLeaveTilt(founder1Ref)}
             >
               <div className="founder-img-wrapper-3d">
-                <img src="/sg-education/mamtha 1.png" alt="Founder Mamatha M.C" />
+                <img src="/mamtha 1.png" alt="Founder Mamatha M.C" />
                 <span className="founder-role-badge">Founder</span>
               </div>
               <div className="founder-info-3d">
@@ -279,7 +279,7 @@ export default function FoundersMessagePage() {
               style={{ maxWidth: '800px', width: '100%', margin: '0' }}
             >
               <div className="founder-img-wrapper-3d">
-                <img src="/sg-education/mentor.webp" alt="Mentor Shashi Kiran" />
+                <img src="/mentor.webp" alt="Mentor Shashi Kiran" />
                 <span className="founder-role-badge">Mentor</span>
               </div>
               <div className="founder-info-3d">

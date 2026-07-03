@@ -7,7 +7,7 @@ define('DB_PASS', 'Inymart@Shield#58!'); // Default XAMPP password is empty
 define('DB_NAME', 'u508480125_sgeducation');
 
 // Application Configuration
-define('SITE_URL', 'https://inymartlabs.com/sg-education/php-backend');
+define('SITE_URL', 'https://sgeducations.in/php-backend');
 define('UPLOAD_DIR', __DIR__ . '/upload/');
 
 // ─── SMTP Configuration (PHPMailer + Gmail) ────────────────────────────────

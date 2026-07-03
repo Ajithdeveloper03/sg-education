@@ -23,7 +23,7 @@ function BlogDetailsContent() {
     
     const fetchArticle = async () => {
       try {
-        const apiBase = "https://inymartlabs.com/sg-education";
+        const apiBase = "https://sgeducations.in";
 
         // Helper: resolve relative image paths stored in DB (e.g. /php-backend/upload/x.jpg)
         // to full absolute URLs using the production base path including subdirectory.
@@ -31,7 +31,7 @@ function BlogDetailsContent() {
           if (!url) return null;
           if (url.startsWith('http')) return url;
           // apiBase already includes /sg-education, so this produces:
-          // https://inymartlabs.com/sg-education/php-backend/upload/x.jpg
+          // https://sgeducations.in/php-backend/upload/x.jpg
           return `${apiBase}${url}`;
         };
 

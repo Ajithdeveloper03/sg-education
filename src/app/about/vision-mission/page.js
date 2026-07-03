@@ -20,7 +20,7 @@ export default function VisionMissionPage() {
       {/* Page Banner */}
       <section style={{ 
         position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
-        backgroundImage: 'url("/sg-education/banner page.png")', 
+        backgroundImage: 'url("/banner page.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
@@ -40,8 +40,8 @@ Building character, leadership, and a brighter future.
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -103,10 +103,10 @@ Building character, leadership, and a brighter future.
             {/* Right Image Setup */}
             <div className="vm-image-container">
               <div className="vm-main-img-wrapper outline-white">
-                <img src="/sg-education/mission.webp" alt="Students in class" className="vm-main-img" />
+                <img src="/mission.webp" alt="Students in class" className="vm-main-img" />
               </div>
               <div className="vm-overlay-card overlay-pink">
-                <img src="/sg-education/2 mission.png" alt="Student studying" className="vm-overlay-img" />
+                <img src="/2 mission.png" alt="Student studying" className="vm-overlay-img" />
                 <div className="vm-overlay-label bg-pink">
                   <i className="fa-solid fa-heart" style={{ fontSize: '1.2rem' }}></i> Dream Big, Little One
                 </div>
@@ -129,10 +129,10 @@ Building character, leadership, and a brighter future.
             {/* Left Image Setup (Swapped) */}
             <div className="vm-image-container">
               <div className="vm-main-img-wrapper outline-white">
-                <img src="/sg-education/vision.webp" alt="Stack of books" className="vm-main-img" />
+                <img src="/vision.webp" alt="Stack of books" className="vm-main-img" />
               </div>
               <div className="vm-overlay-card overlay-green" style={{ left: '-15px', right: 'auto' }}>
-                <img src="/sg-education/2 vision.png" alt="Classroom" className="vm-overlay-img" />
+                <img src="/2 vision.png" alt="Classroom" className="vm-overlay-img" />
                 <div className="vm-overlay-label bg-green">
                   <i className="fa-solid fa-leaf" style={{ fontSize: '1.2rem' }}></i> Little Minds, Big Futures
                 </div>
@@ -249,10 +249,10 @@ Building character, leadership, and a brighter future.
             {/* Right Image Setup (Swapped) */}
             <div className="vm-image-container">
               <div className="vm-main-img-wrapper outline-white">
-                <img src="/sg-education/our values.png" alt="Students collaborating" className="vm-main-img" />
+                <img src="/our values.png" alt="Students collaborating" className="vm-main-img" />
               </div>
               <div className="vm-overlay-card" style={{ right: '-15px', bottom: '-15px', border: '6px solid #fff' }}>
-                <img src="/sg-education/2 our values.png" alt="Leadership" className="vm-overlay-img" />
+                <img src="/2 our values.png" alt="Leadership" className="vm-overlay-img" />
                 <div className="vm-overlay-label bg-blue">
                   <i className="fa-solid fa-face-smile-beam" style={{ fontSize: '1.2rem' }}></i> Happy Kids, Bright Futures
                 </div>

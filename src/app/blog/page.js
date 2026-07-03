@@ -11,7 +11,7 @@ export default function BlogPage() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_blog.php");
+        const res = await fetch("https://sgeducations.in/php-backend/api_blog.php");
         const data = await res.json();
         if (data.status === 'success') {
           // Filter out draft blogs so they don't appear on the public site
@@ -33,7 +33,7 @@ export default function BlogPage() {
       {/* Blog Hero Section */}
       <section className="blog-hero" style={{ 
         position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
-        backgroundImage: 'url("/sg-education/blog banner.png")', 
+        backgroundImage: 'url("/blog banner.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
@@ -50,8 +50,8 @@ export default function BlogPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>

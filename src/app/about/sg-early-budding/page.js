@@ -13,7 +13,7 @@ export default function SGEarlyBuddingPage() {
       number: "01",
       title: "Hygiene – Safe & Healthy",
       icon: "fa-hands-bubbles",
-      image: "/sg-education/Hygiene.webp",
+      image: "/Hygiene.webp",
       content: {
         badge: "Pillar 01",
         heading: "A Safe & Healthy Learning Environment",
@@ -31,7 +31,7 @@ export default function SGEarlyBuddingPage() {
       number: "02",
       title: "Traditional Customs",
       icon: "fa-om",
-      image: "/sg-education/Traditional Customs.png",
+      image: "/Traditional Customs.png",
       content: {
         badge: "Pillar 02",
         heading: "Preserving Our Rich Heritage",
@@ -49,7 +49,7 @@ export default function SGEarlyBuddingPage() {
       number: "03",
       title: "Fun Learning",
       icon: "fa-shapes",
-      image: "/sg-education/Fun Learning.png",
+      image: "/Fun Learning.png",
       content: {
         badge: "Pillar 03",
         heading: "Knowledge with Creativity",
@@ -67,7 +67,7 @@ export default function SGEarlyBuddingPage() {
       number: "04",
       title: "Skill Identity",
       icon: "fa-medal",
-      image: "/sg-education/Skill Identity.png",
+      image: "/Skill Identity.png",
       content: {
         badge: "Pillar 04",
         heading: "Recognizing & Enhancing Talents",
@@ -86,7 +86,7 @@ export default function SGEarlyBuddingPage() {
     <main>
       {/* 1. Welcome to SG Early Budding (Hero Section) */}
       <section className="eb-hero" style={{ 
-        backgroundImage: 'url("/sg-education/sg early budding banner.png")'
+        backgroundImage: 'url("/sg early budding banner.png")'
       }}>
         <div className="eb-hero-overlay" style={{ backgroundColor: 'rgba(17, 24, 39, 0.45)' }}></div>
         <div className="eb-hero-content" style={{ paddingBottom: '30px' }}>
@@ -111,8 +111,8 @@ export default function SGEarlyBuddingPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -197,7 +197,7 @@ export default function SGEarlyBuddingPage() {
             {/* ANBC Card */}
             <div className="culture-card-container">
               <div className="culture-img-wrapper">
-                <img src="/sg-education/Ancient Bharath Culture.png" alt="Ancient Bharath Culture" />
+                <img src="/Ancient Bharath Culture.png" alt="Ancient Bharath Culture" />
               </div>
               <div className="culture-info-card anbc-theme">
                 <h3>Ancient Noble Bharat Culture <span className="acronym">(ANBC)</span></h3>
@@ -224,7 +224,7 @@ Our curriculum helps students develop strong character, self-discipline, respect
             {/* CPC Card */}
             <div className="culture-card-container">
               <div className="culture-img-wrapper">
-                <img src="/sg-education/Corporate Culture.png" alt="Corporate Culture" />
+                <img src="/Corporate Culture.png" alt="Corporate Culture" />
               </div>
               <div className="culture-info-card cpc-theme">
                 <h3>Corporate Professional Culture <span className="acronym">(CPC)</span></h3>
@@ -272,13 +272,13 @@ Our curriculum helps students develop strong character, self-discipline, respect
               <h3><i className="fa-solid fa-star"></i> One Day One Good Thing</h3>
               <p style={{ color: '#fff', textAlign: 'justify', marginBottom: '2rem' }}>
 We believe that small habits shape great individuals. Our unique approach, &quot;One Day, One Good Thing,&quot; is designed to instill positive values, discipline, and essential life skills in children from an early age. Each day, our children learn one simple yet impactful habit that contributes to their personal growth, social awareness, and overall well-being. These habits help them develop a strong character, responsibility, and respect for others, forming the foundation of a successful life.</p>
-              <img src="/sg-education/One Day One.png" alt="Children learning positive habits" className="eb-highlight-img" />
+              <img src="/One Day One.png" alt="Children learning positive habits" className="eb-highlight-img" />
             </div>
 
             <div>
               <div className="eb-horizontal-cards-container">
                 <div className="eb-horizontal-card eb-hc-pink">
-                  <img src="/sg-education/about sge 1.png" alt="Project-Based Learning" className="eb-horizontal-card-img" />
+                  <img src="/about sge 1.png" alt="Project-Based Learning" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
                     <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-book-open" style={{ color: 'var(--playful-pink)' }}></i> Holistic Development</h4>
                     <p className="eb-horizontal-card-desc">Ancient Noble Bharat culture emphasizes moral values, community living, and self-discipline, which complements the corporate focus on professionalism, leadership and teamwork.</p>
@@ -286,7 +286,7 @@ We believe that small habits shape great individuals. Our unique approach, &quot
                 </div>
 
                 <div className="eb-horizontal-card eb-hc-blue">
-                  <img src="/sg-education/about sge 2.png" alt="Leadership & Communication" className="eb-horizontal-card-img" />
+                  <img src="/about sge 2.png" alt="Leadership & Communication" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
                     <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-comments" style={{ color: 'var(--sky-blue)' }}></i> Ethical Leadership</h4>
                     <p className="eb-horizontal-card-desc">Combining the Ancient Noble Bharath culture with modern management techniques encourages ethical decision-making, integrity and accountability.</p>
@@ -294,7 +294,7 @@ We believe that small habits shape great individuals. Our unique approach, &quot
                 </div>
 
                 <div className="eb-horizontal-card eb-hc-green">
-                  <img src="/sg-education/about sge 3.png" alt="Time Management" className="eb-horizontal-card-img" />
+                  <img src="/about sge 3.png" alt="Time Management" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
                     <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-clock" style={{ color: 'var(--lime-green)' }}></i> Adaptability and Resilience</h4>
                     <p className="eb-horizontal-card-desc">The spiritual and philosophical teachings of Ancient Noble Bharath culture help individuals develop mental resilience and adaptability—qualities essential in the ever-evolving corporate world.</p>
@@ -302,14 +302,14 @@ We believe that small habits shape great individuals. Our unique approach, &quot
                 </div>
 
                 <div className="eb-horizontal-card eb-hc-orange">
-                  <img src="/sg-education/about sge 4.png" alt="Technology Integration" className="eb-horizontal-card-img" />
+                  <img src="/about sge 4.png" alt="Technology Integration" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
                     <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-laptop" style={{ color: 'var(--kidza-orange)' }}></i> Purpose-Driven Life</h4>
                     <p className="eb-horizontal-card-desc">Bharath’s rich heritage instills a sense of purpose beyond material success, motivating individuals to contribute positively to society while excelling in their careers.🌱✨</p>
                   </div>
                 </div>
                  <div className="eb-horizontal-card eb-hc-blue">
-                  <img src="/sg-education/about sge 5.png" alt="Leadership & Communication" className="eb-horizontal-card-img" />
+                  <img src="/about sge 5.png" alt="Leadership & Communication" className="eb-horizontal-card-img" />
                   <div className="eb-horizontal-card-content">
                     <h4 className="eb-horizontal-card-title"><i className="fa-solid fa-comments" style={{ color: 'var(--sky-blue)' }}></i> Strong Work Ethic and Dedication</h4>
                     <p className="eb-horizontal-card-desc">The disciplined lifestyle promoted by ancient traditions translates into a strong work ethic and a sense of dedication in professional settings.</p>

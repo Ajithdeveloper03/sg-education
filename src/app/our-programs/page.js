@@ -9,7 +9,7 @@ export default function OurProgramsPage() {
     <main className="programs-page-wrapper">
       
       {/* Page Banner Section */}
-      <section className="op-page-banner" style={{ backgroundImage: 'url("/sg-education/program banner.png")' }}>
+      <section className="op-page-banner" style={{ backgroundImage: 'url("/program banner.png")' }}>
         <div className="op-banner-overlay"></div>
         <div className="op-banner-content" style={{ paddingBottom: '30px' }}>
           <h1 className="op-banner-title">A UNIT OF SG EDUCATIONS</h1>
@@ -24,8 +24,8 @@ export default function OurProgramsPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -119,7 +119,7 @@ export default function OurProgramsPage() {
 
         <div className="op-hero-right">
           <div className="op-hero-image-wrapper">
-            <img src="/sg-education/banner page.png" alt="Children Learning" />
+            <img src="/banner page.png" alt="Children Learning" />
             <div className="op-pink-circle">
               Every Child.<br/>
               Every Talent.<br/>
@@ -286,7 +286,7 @@ export default function OurProgramsPage() {
                    <li><i className="fa-solid fa-square-check text-orange"></i> Personalized Attention & Care</li>
                    <li><i className="fa-solid fa-square-check text-green"></i> Continuous Parent Partnership</li>
                 </ul>
-                <img src="/sg-education/girl_writing.webp" alt="Girl writing" className="op-card-img-left" />
+                <img src="/girl_writing.webp" alt="Girl writing" className="op-card-img-left" />
                 <div className="op-deco" style={{ top: '20px', right: '40px', fontSize: '1.5rem' }}><i className="fa-regular fa-star text-pink"></i></div>
                 <div className="op-deco" style={{ bottom: '80px', left: '60px', fontSize: '1.2rem' }}><i className="fa-regular fa-star text-green"></i></div>
              </div>
@@ -304,7 +304,7 @@ export default function OurProgramsPage() {
                    <p className="op-quote-text text-blue">We don&apos;t just prepare<br/>children for school,<br/>we prepare them for life.</p>
                    <i className="fa-regular fa-heart text-pink quote-heart"></i>
                 </div>
-                <img src="/sg-education/boy_thumbs_up.webp" alt="Boy thumbs up" className="op-card-img-right" />
+                <img src="/boy_thumbs_up.webp" alt="Boy thumbs up" className="op-card-img-right" />
              </div>
           </div>
 

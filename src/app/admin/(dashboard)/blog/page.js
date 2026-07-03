@@ -39,7 +39,7 @@ export default function BlogManager() {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_blog.php");
+      const res = await fetch("https://sgeducations.in/php-backend/api_blog.php");
       const data = await res.json();
       if (data.status === 'success') {
         setBlogs(data.data);
@@ -114,7 +114,7 @@ export default function BlogManager() {
     setModalConfig({ ...modalConfig, isOpen: false });
     try {
 
-      const res = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_blog.php?id=${deleteId}`, { method: 'DELETE' });
+      const res = await fetch(`https://sgeducations.in/php-backend/api_blog.php?id=${deleteId}`, { method: 'DELETE' });
 
       const data = await res.json();
       if (data.status === 'success') {
@@ -165,7 +165,7 @@ export default function BlogManager() {
     }
 
     try {
-      const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_blog.php", {
+      const res = await fetch("https://sgeducations.in/php-backend/api_blog.php", {
         method: "POST", // API handles both insert and update via POST
         body: submitData
       });
@@ -243,7 +243,7 @@ export default function BlogManager() {
     const formData = new FormData();
     formData.append("image", file);
     try {
-      const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_upload.php", {
+      const res = await fetch("https://sgeducations.in/php-backend/api_upload.php", {
         method: "POST",
         body: formData
       });

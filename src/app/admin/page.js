@@ -24,7 +24,7 @@ export default function AdminLogin() {
     setLoading(true);
 
     try {
-      const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_auth.php?action=login", {
+      const res = await fetch("https://sgeducations.in/php-backend/api_auth.php?action=login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

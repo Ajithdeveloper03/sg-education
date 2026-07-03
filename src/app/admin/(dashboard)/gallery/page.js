@@ -24,7 +24,7 @@ export default function GalleryManager() {
   const fetchGallery = async () => {
     setLoading(true);
     try {
-      const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_gallery.php");
+      const res = await fetch("https://sgeducations.in/php-backend/api_gallery.php");
       const data = await res.json();
       if (data.status === 'success') setGallery(data.data);
     } catch (err) {
@@ -57,7 +57,7 @@ export default function GalleryManager() {
   const executeDelete = async (id) => {
     setModalConfig({ ...modalConfig, isOpen: false });
     try {
-      const res = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_gallery.php?id=${id}`, { method: 'DELETE' });
+      const res = await fetch(`https://sgeducations.in/php-backend/api_gallery.php?id=${id}`, { method: 'DELETE' });
       const data = await res.json();
       if (data.status === 'success') {
         setSuccess("Image deleted successfully!");
@@ -90,7 +90,7 @@ export default function GalleryManager() {
     if (fileInputRef.current?.files[0]) submitData.append("image", fileInputRef.current.files[0]);
 
     try {
-      const res = await fetch("https://inymartlabs.com/sg-education/php-backend/api_gallery.php", { method: "POST", body: submitData });
+      const res = await fetch("https://sgeducations.in/php-backend/api_gallery.php", { method: "POST", body: submitData });
       const data = await res.json();
       if (data.status === 'success') {
         setSuccess(data.message);

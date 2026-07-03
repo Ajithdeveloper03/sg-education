@@ -6,7 +6,7 @@ $action = isset($_GET['action']) ? $_GET['action'] : '';
 $method = $_SERVER['REQUEST_METHOD'];
 
 // Helper to format image URLs - always uses production base URL
-define('SITE_BASE_URL', 'https://inymartlabs.com/sg-education');
+define('SITE_BASE_URL', 'https://sgeducations.in');
 function formatImageUrl($url) {
     if (empty($url)) return null;
     if (strpos($url, 'http') === 0) return $url;

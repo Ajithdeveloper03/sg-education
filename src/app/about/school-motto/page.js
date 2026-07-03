@@ -62,7 +62,7 @@ export default function SchoolMottoPage() {
       {/* Page Banner */}
       <section style={{ 
         position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
-        backgroundImage: 'url("/sg-education/school motto banner.png")', 
+        backgroundImage: 'url("/school motto banner.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
       }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
@@ -82,8 +82,8 @@ export default function SchoolMottoPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
+            <img src="/cloud.webp" alt="Cloud Transition" style={{ filter: 'brightness(0) invert(0.98) sepia(0.05) hue-rotate(180deg)' }} />
           </div>
         </div>
       </section>
@@ -108,7 +108,7 @@ export default function SchoolMottoPage() {
 
           {/* Right Decorative Image */}
           <div className="motto-img-wrapper motto-side-img-2">
-            <img src="/sg-education/about-student.webp" alt="Student learning" />
+            <img src="/about-student.webp" alt="Student learning" />
           </div>
 
         </div>

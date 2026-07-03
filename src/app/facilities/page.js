@@ -11,7 +11,7 @@ export default function FacilitiesPage() {
       {/* Page Banner */}
       <section style={{ 
         position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
-        backgroundImage: 'url("/sg-education/facilities banner.png")', 
+        backgroundImage: 'url("/facilities banner.png")', 
         backgroundSize: 'cover', backgroundPosition: 'center', overflow: 'hidden'
       }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
@@ -30,8 +30,8 @@ export default function FacilitiesPage() {
         {/* Cloud Transition */}
         <div className="cloud-container">
           <div className="cloud-wrapper">
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" />
-            <img src="/sg-education/cloud.webp" alt="Cloud Transition" />
+            <img src="/cloud.webp" alt="Cloud Transition" />
+            <img src="/cloud.webp" alt="Cloud Transition" />
           </div>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function FacilitiesPage() {
             {/* Right Organic Image */}
             <div style={{ position: 'relative', zIndex: 5 }}>
               <div className="health-s1-organic-frame">
-                <img src="/sg-education/HEALTH & WELL-BEING.png" alt="Health and Well-being" />
+                <img src="/HEALTH & WELL-BEING.png" alt="Health and Well-being" />
               </div>
             </div>
 
@@ -106,7 +106,7 @@ export default function FacilitiesPage() {
                 </div>
               </div>
               <div className="health-s2-image">
-                <img src="/sg-education/Extracurriculars & Arts.png" alt="Extracurricular Arts" />
+                <img src="/Extracurriculars & Arts.png" alt="Extracurricular Arts" />
               </div>
             </div>
 
@@ -122,7 +122,7 @@ export default function FacilitiesPage() {
                 </div>
               </div>
               <div className="health-s2-image">
-                <img src="/sg-education/Sports & Leadership.png" alt="Sports and Leadership" />
+                <img src="/Sports & Leadership.png" alt="Sports and Leadership" />
               </div>
             </div>
 
@@ -138,7 +138,7 @@ export default function FacilitiesPage() {
                 </div>
               </div>
               <div className="health-s2-image">
-                <img src="/sg-education/Clubs & Enrichment Programs.png" alt="Enrichment Programs" />
+                <img src="/Clubs & Enrichment Programs.png" alt="Enrichment Programs" />
               </div>
             </div>
 
@@ -198,7 +198,7 @@ export default function FacilitiesPage() {
       {/* ==========================================
           SECTION 4: Transportation (Using Health's Spotlight Glass Panel)
           ========================================== */}
-      <section className="health-s3-spotlight" style={{ overflow: 'hidden', backgroundImage: "url('/sg-education/transport background.png')" }}>
+      <section className="health-s3-spotlight" style={{ overflow: 'hidden', backgroundImage: "url('/transport background.png')" }}>
         <div className="health-s3-overlay" style={{ background: 'linear-gradient(135deg, rgba(20, 25, 40, 0.8) 0%, rgba(10, 15, 25, 0.7) 100%)' }}></div>
         
         <div className="container health-s3-container" style={{ zIndex: 10 }}>
@@ -222,7 +222,7 @@ export default function FacilitiesPage() {
             </div>
             
             <div className="transportation-image-wrapper">
-              <img src="/sg-education/TRANSPORTATION.webp" alt="School Transportation" className="transportation-img" />
+              <img src="/TRANSPORTATION.webp" alt="School Transportation" className="transportation-img" />
             </div>
           </div>
         </div>

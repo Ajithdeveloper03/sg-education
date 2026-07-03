@@ -93,7 +93,7 @@ export default function AdmissionPage() {
     setApiError(null);
 
     try {
-      const response = await fetch(`https://inymartlabs.com/sg-education/php-backend/api_admission.php`, {
+      const response = await fetch(`https://sgeducations.in/php-backend/api_admission.php`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ export default function AdmissionPage() {
         <div className="adm-page-content">
           
           <div className="adm-header-title">
-            <img src="/sg-education/SG logo.webp" alt="SG Education Logo" className="adm-header-logo" style={{ height: '160px', objectFit: 'contain' }} />
+            <img src="/SG logo.webp" alt="SG Education Logo" className="adm-header-logo" style={{ height: '160px', objectFit: 'contain' }} />
             <div className="adm-header-text">
               <h2>Join SG Education</h2>
               <p>Embark on your learning journey with us!</p>

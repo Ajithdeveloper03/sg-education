@@ -117,28 +117,28 @@ const FOUR_PILLARS = [
     desc: "Children explore concepts by questioning, doing, and playing. No rote learning. We encourage curiosity and self-discovery.",
     icon: "fa-child-reaching",
     color: "#ECC440",
-    img: "/sg-education/pillars1.webp"
+    img: "/pillars1.webp"
   },
   {
     title: "ANBC Culture",
     desc: "Connecting kids to their roots. Value-based lessons, moral stories, yoga, and meditation elements in our daily schedule.",
     icon: "fa-om",
     color: "#FF2A7A",
-    img: "/sg-education/pillars2.webp"
+    img: "/pillars2.webp"
   },
   {
     title: "CPC Foundations",
     desc: "Developing essential professional skills like dynamic communication, public speaking, tech integration, and polite gestures.",
     icon: "fa-laptop-code",
     color: "#5A49E3",
-    img: "/sg-education/pillars3.webp"
+    img: "/pillars3.webp"
   },
   {
     title: "Parent Partnership",
     desc: "Continuous parent engagement, developmental workshops, and interactive tools to align home guidance with school learning.",
     icon: "fa-handshake-angle",
     color: "#FFC300",
-    img: "/sg-education/pillars4.webp"
+    img: "/pillars4.webp"
   }
 ];
 
@@ -297,7 +297,7 @@ export default function Home() {
           applying_for: "SG Early Budding"
         };
 
-        const response = await fetch("https://inymartlabs.com/sg-education/php-backend/api_admission.php", {
+        const response = await fetch("https://sgeducations.in/php-backend/api_admission.php", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
@@ -332,7 +332,7 @@ export default function Home() {
            ========================================== */}
       <section className="hero-section" id="hero" style={{ padding: "1rem 0" }}>
         <video 
-          src="/sg-education/kids.mp4" 
+          src="/kids.mp4" 
           autoPlay={true} 
           loop={true} 
           muted={true} 
@@ -397,18 +397,18 @@ export default function Home() {
                 {/* Main Portrait */}
                 <div className="sc-main-portrait hover-lift">
                   <img 
-                    src="/sg-education/about sg1.png" 
+                    src="/about sg1.png" 
                     alt="Portrait smiling" 
                   />
                 </div>
 
                 {/* Floating Elements */}
                 <div className="sc-float-card sc-left-card float-anim-1">
-                  <img src="/sg-education/about sg3.jpg" alt="Activity" />
+                  <img src="/about sg3.jpg" alt="Activity" />
                 </div>
 
                 <div className="sc-float-card sc-right-card float-anim-2">
-                  <img src="/sg-education/about sg4.jpg" alt="Outdoors" />
+                  <img src="/Corporate Culture.png" alt="Outdoors" />
                 </div>
 
                 {/* Stickers */}
@@ -598,7 +598,7 @@ professional services.SG Education established in 2023, aims to provide quality 
                 {[0, 1, 2].map(offset => {
                   const idx = (testiIndex + offset) % 5;
                   const item = [
-                    { name: "Seerthi", role: "Student Mother", quote: "It's a wonderful place to join and grow . I am very happy with their mother-teacher care . They guide them well in healthy habits. Making them eat Nutri rich foods and motivating them by rewards are all excellent. I suggest many parents make use of their service. As a teacher I was fully satisfied with their teaching and activities . As a mother I was relieved that my daughter is in the right hand. Thank you for the management too 👍", stars: 5, theme: "green", img: "https://images.pexels.com/photos/16562722/pexels-photo-16562722.jpeg" },
+                    { name: "Seerthi", role: "Student Mother", quote: "It's a wonderful place to join and grow . I am very happy with their mother-teacher care .  As a mother I was relieved that my daughter is in the right hand. Thank you for the management too 👍", stars: 5, theme: "green", img: "https://images.pexels.com/photos/16562722/pexels-photo-16562722.jpeg" },
                     { name: "Nehna", role: "Parent", quote: "We appreciate the teachers dedication. My daughter comes home energized and excited about what she's learning without feeling burdened.. also this school takes more care and responsibilities with the kids securely...", stars: 5, theme: "blue", img: "https://images.pexels.com/photos/14673049/pexels-photo-14673049.jpeg" },
                     { name: "Rithun", role: "Parent", quote: "Good education system and well training given to the students and taking care of student health with nutrition food chart..And encouraging the students.", stars: 5, theme: "orange", img: "https://images.pexels.com/photos/20133860/pexels-photo-20133860.jpeg" },
                     { name: "Ramesh Kumar", role: "Student Father", quote: "The curriculum perfectly balances traditional values and modern learning. My son looks forward to school every day!", stars: 5, theme: "purple", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" },
@@ -659,70 +659,70 @@ professional services.SG Education established in 2023, aims to provide quality 
           
           <div className="kimono-gallery-grid">
             <div className="k-item k-item-1">
-              <img src="/sg-education/home gallery 1.jpg" alt="Gallery 1" />
+              <img src="/home gallery 1.jpg" alt="Gallery 1" />
               <div className="k-item-overlay">
                 <h3>Culturals</h3>
                 <p>Annual Cultural Celebration</p>
               </div>
             </div>
             <div className="k-item k-item-2">
-              <img src="/sg-education/home gallery 2.jpg" alt="Gallery 2" />
+              <img src="/home gallery 2.jpg" alt="Gallery 2" />
               <div className="k-item-overlay">
                 <h3>Yoga</h3>
                 <p>Morning Yoga Session</p>
               </div>
             </div>
             <div className="k-item k-item-3">
-              <img src="/sg-education/home gallery 3.jpg" alt="Gallery 3" />
+              <img src="/home gallery 3.jpg" alt="Gallery 3" />
               <div className="k-item-overlay">
                 <h3>Green Day</h3>
                 <p>Green Day Celebration</p>
               </div>
             </div>
             <div className="k-item k-item-4">
-              <img src="/sg-education/home gallery 4.jpg" alt="Gallery 4" />
+              <img src="/home gallery 4.jpg" alt="Gallery 4" />
               <div className="k-item-overlay">
                 <h3>Green Day</h3>
                 <p>Little Nature Lover</p>
               </div>
             </div>
             <div className="k-item k-item-5">
-              <img src="/sg-education/home gallery 7.jpeg" alt="Gallery 5" />
+              <img src="/home gallery 7.jpeg" alt="Gallery 5" />
               <div className="k-item-overlay">
                 <h3>Joy</h3>
                 <p>Kids Showcasing Their Creativity</p>
               </div>
             </div>
             <div className="k-item k-item-6">
-              <img src="/sg-education/home gallery 6.jpg" alt="Gallery 6" />
+              <img src="/home gallery 6.jpg" alt="Gallery 6" />
               <div className="k-item-overlay">
                 <h3>Exploration</h3>
                 <p>Best Costume Moments</p>
               </div>
             </div>
             <div className="k-item k-item-7">
-              <img src="/sg-education/home gallery 5.jpg" alt="Gallery 7" />
+              <img src="/home gallery 5.jpg" alt="Gallery 7" />
               <div className="k-item-overlay">
                 <h3>Yoga Day</h3>
                 <p>Kids Performing Yoga</p>
               </div>
             </div>
             <div className="k-item k-item-8">
-              <img src="/sg-education/home gallery 8.jpeg" alt="Gallery 8" />
+              <img src="/home gallery 8.jpeg" alt="Gallery 8" />
               <div className="k-item-overlay">
                 <h3>Cultural</h3>
                 <p>Celebration of Talent</p>
               </div>
             </div>
             <div className="k-item k-item-9">
-              <img src="/sg-education/home gallery 9.jpg" alt="Gallery 9" />
+              <img src="/home gallery 9.jpg" alt="Gallery 9" />
               <div className="k-item-overlay">
                 <h3>Music & Dance</h3>
                 <p>Kids Showcasing Their Talents</p>
               </div>
             </div>
             <div className="k-item k-item-10">
-              <img src="/sg-education/home gallery 10.jpeg" alt="Gallery 10" />
+              <img src="/home gallery 10.jpeg" alt="Gallery 10" />
               <div className="k-item-overlay">
                 <h3>Teamwork</h3>
                 <p>Students in Blue Attire</p>
