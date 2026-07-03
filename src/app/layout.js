@@ -21,9 +21,9 @@ export const metadata = {
   description: "Welcome to SG Education and SG Early Budding, Hosur. Inspired by Kidzee's playful layout, we blend Ancient Bharath Culture (ANBC) with Modern Corporate standards to nurture tomorrow's leaders.",
   keywords: "SG Education, SG Early Budding, pre-school Hosur, kidzee style school, play school Hosur, Hosur primary education, ANBC CPC curriculum",
   icons: {
-    icon: "/SG%20logo.webp",
-    shortcut: "/SG%20logo.webp",
-    apple: "/SG%20logo.webp",
+    icon: "/favicon.webp",
+    shortcut: "/favicon.webp",
+    apple: "/favicon.webp",
   },
 };
 

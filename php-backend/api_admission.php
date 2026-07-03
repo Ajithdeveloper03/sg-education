@@ -206,7 +206,11 @@ try {
     $mail = createMailer();
 
     // Recipient
-    $mail->addAddress(MAIL_TO, 'SG Education Admin');
+    // Add all recipients defined in config
+    $recipients = explode(',', MAIL_TO);
+    foreach ($recipients as $recipient) {
+        $mail->addAddress(trim($recipient), 'Admin');
+    }
 
     // Reply-To is the applicant so you can reply directly
     $mail->addReplyTo($emailAddress, $parentName);

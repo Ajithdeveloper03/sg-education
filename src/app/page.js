@@ -404,7 +404,7 @@ export default function Home() {
 
                 {/* Floating Elements */}
                 <div className="sc-float-card sc-left-card float-anim-1">
-                  <img src="/about sg3.jpg" alt="Activity" />
+                  <img src="/about sg3.JPG" alt="Activity" />
                 </div>
 
                 <div className="sc-float-card sc-right-card float-anim-2">
@@ -659,28 +659,28 @@ professional services.SG Education established in 2023, aims to provide quality 
           
           <div className="kimono-gallery-grid">
             <div className="k-item k-item-1">
-              <img src="/home gallery 1.jpg" alt="Gallery 1" />
+              <img src="/home gallery 1.JPG" alt="Gallery 1" />
               <div className="k-item-overlay">
                 <h3>Culturals</h3>
                 <p>Annual Cultural Celebration</p>
               </div>
             </div>
             <div className="k-item k-item-2">
-              <img src="/home gallery 2.jpg" alt="Gallery 2" />
+              <img src="/home gallery 2.JPG" alt="Gallery 2" />
               <div className="k-item-overlay">
                 <h3>Yoga</h3>
                 <p>Morning Yoga Session</p>
               </div>
             </div>
             <div className="k-item k-item-3">
-              <img src="/home gallery 3.jpg" alt="Gallery 3" />
+              <img src="/home gallery 3.JPG" alt="Gallery 3" />
               <div className="k-item-overlay">
                 <h3>Green Day</h3>
                 <p>Green Day Celebration</p>
               </div>
             </div>
             <div className="k-item k-item-4">
-              <img src="/home gallery 4.jpg" alt="Gallery 4" />
+              <img src="/home gallery 4.JPG" alt="Gallery 4" />
               <div className="k-item-overlay">
                 <h3>Green Day</h3>
                 <p>Little Nature Lover</p>
@@ -694,14 +694,14 @@ professional services.SG Education established in 2023, aims to provide quality 
               </div>
             </div>
             <div className="k-item k-item-6">
-              <img src="/home gallery 6.jpg" alt="Gallery 6" />
+              <img src="/home gallery 6.JPG" alt="Gallery 6" />
               <div className="k-item-overlay">
                 <h3>Exploration</h3>
                 <p>Best Costume Moments</p>
               </div>
             </div>
             <div className="k-item k-item-7">
-              <img src="/home gallery 5.jpg" alt="Gallery 7" />
+              <img src="/home gallery 5.JPG" alt="Gallery 7" />
               <div className="k-item-overlay">
                 <h3>Yoga Day</h3>
                 <p>Kids Performing Yoga</p>
@@ -715,7 +715,7 @@ professional services.SG Education established in 2023, aims to provide quality 
               </div>
             </div>
             <div className="k-item k-item-9">
-              <img src="/home gallery 9.jpg" alt="Gallery 9" />
+              <img src="/home gallery 9.JPG" alt="Gallery 9" />
               <div className="k-item-overlay">
                 <h3>Music & Dance</h3>
                 <p>Kids Showcasing Their Talents</p>

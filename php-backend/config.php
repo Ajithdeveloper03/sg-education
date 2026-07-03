@@ -18,7 +18,7 @@ define('SMTP_USER',       'inymartlabs@gmail.com'); // Gmail address
 define('SMTP_PASS',       'wuzsvfcczinhddey');       // Gmail App Password (no spaces)
 define('SMTP_FROM_EMAIL', 'inymartlabs@gmail.com'); // Must match SMTP_USER for Gmail
 define('SMTP_FROM_NAME',  'SG Education');           // Sender display name
-define('MAIL_TO',         'inymartlabs@gmail.com'); // Where form submissions go
+define('MAIL_TO',         'inymartlabs@gmail.com,sg.educations.org@gmail.com'); // Where form submissions go
 // ─────────────────────────────────────────────────────────────────────────────
 
 // Hide PHP warnings/notices from breaking JSON output
