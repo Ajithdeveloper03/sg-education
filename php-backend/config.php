@@ -2,9 +2,9 @@
 // config.php
 // Database Configuration
 define('DB_HOST', 'localhost');
-define('DB_USER', 'u508480125_sgeducation');
-define('DB_PASS', 'Inymart@Shield#58!'); // Default XAMPP password is empty
-define('DB_NAME', 'u508480125_sgeducation');
+define('DB_USER', 'root');
+define('DB_PASS', ''); // Default XAMPP password is empty
+define('DB_NAME', 'sg_education'); // Use your local XAMPP database name
 
 // Application Configuration
 define('SITE_URL', 'https://sgeducations.in/php-backend');
@@ -33,7 +33,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 } catch(PDOException $e) {
     header('Content-Type: application/json');
-    echo json_encode(["status" => "error", "message" => "Database connection failed. Please check Hostinger credentials."]);
+    echo json_encode(["success" => false, "message" => "Database connection failed. Please check credentials."]);
     exit;
 }
 
