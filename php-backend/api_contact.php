@@ -116,10 +116,10 @@ try {
 } catch (\PHPMailer\PHPMailer\Exception $e) {
     if (ob_get_length()) ob_end_clean();
     error_log('Contact PHPMailer error: ' . $e->getMessage());
-    echo json_encode(['success' => true, 'message' => 'Message received. We will contact you shortly.']);
+    echo json_encode(['success' => false, 'message' => 'SMTP Error: ' . $e->getMessage()]);
 } catch (Exception $e) {
     if (ob_get_length()) ob_end_clean();
     error_log('Contact general error: ' . $e->getMessage());
-    echo json_encode(['success' => false, 'message' => 'An unexpected error occurred. Please try again.']);
+    echo json_encode(['success' => false, 'message' => 'General Error: ' . $e->getMessage()]);
 }
 ?>

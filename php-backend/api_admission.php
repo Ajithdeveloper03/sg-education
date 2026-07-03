@@ -229,11 +229,10 @@ try {
 } catch (\PHPMailer\PHPMailer\Exception $e) {
     if (ob_get_length()) ob_end_clean();
     error_log('Admission PHPMailer error: ' . $e->getMessage());
-    // Data is saved in DB even if email fails — still inform the user
-    echo json_encode(['success' => true, 'message' => 'Application received. We will contact you shortly.']);
+    echo json_encode(['success' => false, 'message' => 'SMTP Error: ' . $e->getMessage()]);
 } catch (Exception $e) {
     if (ob_get_length()) ob_end_clean();
     error_log('Admission general error: ' . $e->getMessage());
-    echo json_encode(['success' => false, 'message' => 'An unexpected error occurred. Please try again.']);
+    echo json_encode(['success' => false, 'message' => 'General Error: ' . $e->getMessage()]);
 }
 ?>
