@@ -13,8 +13,8 @@ export default function Navbar() {
   // With trailingSlash:true in next.config, live URLs have a trailing slash:
   //   local:  /about/sg-early-budding
   //   live:   /about/sg-early-budding/
-  // endsWith() would fail on live — includes() matches both.
-  const isEarlyBudding = pathname?.includes('/about/sg-early-budding');
+  // endsWith() would fail on live — includes() matches both. Case-insensitive for safety.
+  const isEarlyBudding = pathname?.toLowerCase().includes('/about/sg-early-budding');
 
   useEffect(() => {
     const handleScroll = () => {
