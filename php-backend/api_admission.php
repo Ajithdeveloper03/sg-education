@@ -3,9 +3,10 @@
  * Admission Form Handler - PHP Backend
  * Receives JSON POST from the admission form,
  * saves to DB and sends email notification via PHPMailer SMTP.
+ * NOTE: PDF generation removed - uses HTML email only (same pattern as api_contact.php)
  */
 
-// Output buffering: prevent FPDF or PHP warnings from corrupting JSON
+// Output buffering to prevent stray output from corrupting JSON
 ob_start();
 ini_set('display_errors', 0);
 error_reporting(E_ALL);
@@ -102,11 +103,11 @@ if ($isDirectVisit) {
     $directVisitHtml = "
 <h3 style='color:#1d2a44;border-bottom:1px solid #ddd;margin-top:24px;'>Direct Visit Request</h3>
 <table style='width:100%;border-collapse:collapse;'>
-  <tr><td style='padding:6px 12px;font-weight:bold;width:180px;'>Preferred Date</td><td style='padding:6px 12px;'>{$preferredVisitDate}</td></tr>
-  <tr style='background:#f8f9fa;'><td style='padding:6px 12px;font-weight:bold;'>Preferred Time</td><td style='padding:6px 12px;'>{$preferredVisitTime}</td></tr>
-  <tr><td style='padding:6px 12px;font-weight:bold;'>Parent Name</td><td style='padding:6px 12px;'>{$directVisitParentName}</td></tr>
-  <tr style='background:#f8f9fa;'><td style='padding:6px 12px;font-weight:bold;'>Purpose</td><td style='padding:6px 12px;'>{$purposeOfVisit}</td></tr>
-  <tr><td style='padding:6px 12px;font-weight:bold;'>Comments</td><td style='padding:6px 12px;'>{$additionalComments}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;width:180px;background:#f8f9fa;'>Preferred Date</td><td style='padding:6px 12px;'>{$preferredVisitDate}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#fff;'>Preferred Time</td><td style='padding:6px 12px;'>{$preferredVisitTime}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#f8f9fa;'>Parent Name</td><td style='padding:6px 12px;'>{$directVisitParentName}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#fff;'>Purpose</td><td style='padding:6px 12px;'>{$purposeOfVisit}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#f8f9fa;'>Comments</td><td style='padding:6px 12px;'>{$additionalComments}</td></tr>
 </table>";
 }
 
@@ -117,20 +118,20 @@ $htmlBody = "
 
 <h3 style='color:#1d2a44;border-bottom:1px solid #ddd;'>Student Details</h3>
 <table style='width:100%;border-collapse:collapse;'>
-  <tr><td style='padding:6px 12px;font-weight:bold;width:180px;'>Name</td><td style='padding:6px 12px;'>{$studentName}</td></tr>
-  <tr style='background:#f8f9fa;'><td style='padding:6px 12px;font-weight:bold;'>Gender</td><td style='padding:6px 12px;'>{$gender}</td></tr>
-  <tr><td style='padding:6px 12px;font-weight:bold;'>Date of Birth</td><td style='padding:6px 12px;'>{$dob}</td></tr>
-  <tr style='background:#f8f9fa;'><td style='padding:6px 12px;font-weight:bold;'>Applying For</td><td style='padding:6px 12px;'>{$applyingFor}</td></tr>
-  <tr><td style='padding:6px 12px;font-weight:bold;'>Previous School</td><td style='padding:6px 12px;'>{$previousSchool}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;width:180px;background:#f8f9fa;'>Name</td><td style='padding:6px 12px;'>{$studentName}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#fff;'>Gender</td><td style='padding:6px 12px;'>{$gender}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#f8f9fa;'>Date of Birth</td><td style='padding:6px 12px;'>{$dob}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#fff;'>Applying For</td><td style='padding:6px 12px;'>{$applyingFor}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#f8f9fa;'>Previous School</td><td style='padding:6px 12px;'>{$previousSchool}</td></tr>
 </table>
 
 <h3 style='color:#1d2a44;border-bottom:1px solid #ddd;margin-top:24px;'>Parent / Guardian Details</h3>
 <table style='width:100%;border-collapse:collapse;'>
-  <tr><td style='padding:6px 12px;font-weight:bold;width:180px;'>Name</td><td style='padding:6px 12px;'>{$parentName} ({$relationship})</td></tr>
-  <tr style='background:#f8f9fa;'><td style='padding:6px 12px;font-weight:bold;'>Mobile</td><td style='padding:6px 12px;'>{$mobileNumber}</td></tr>
-  <tr><td style='padding:6px 12px;font-weight:bold;'>Email</td><td style='padding:6px 12px;'>{$emailAddress}</td></tr>
-  <tr style='background:#f8f9fa;'><td style='padding:6px 12px;font-weight:bold;'>Occupation</td><td style='padding:6px 12px;'>{$occupation}</td></tr>
-  <tr><td style='padding:6px 12px;font-weight:bold;'>Address</td><td style='padding:6px 12px;'>{$residentialAddress}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;width:180px;background:#f8f9fa;'>Name</td><td style='padding:6px 12px;'>{$parentName} ({$relationship})</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#fff;'>Mobile</td><td style='padding:6px 12px;'>{$mobileNumber}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#f8f9fa;'>Email</td><td style='padding:6px 12px;'>{$emailAddress}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#fff;'>Occupation</td><td style='padding:6px 12px;'>{$occupation}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#f8f9fa;'>Address</td><td style='padding:6px 12px;'>{$residentialAddress}</td></tr>
 </table>
 {$directVisitHtml}
 <br><hr>
@@ -138,82 +139,10 @@ $htmlBody = "
 </body></html>
 ";
 
-// ── Generate PDF attachment and Send Email ─────────────────────────────────────
+$plainText = "New Admission Application\n\nStudent: {$studentName}\nGender: {$gender}\nDOB: {$dob}\nApplying For: {$applyingFor}\nPrevious School: {$previousSchool}\n\nParent: {$parentName} ({$relationship})\nMobile: {$mobileNumber}\nEmail: {$emailAddress}\nOccupation: {$occupation}\nAddress: {$residentialAddress}";
+
+// ── Send email via PHPMailer SMTP ────────────────────────────────────────────
 try {
-    if (!file_exists(__DIR__ . '/fpdf.php')) {
-        throw new Exception("fpdf.php file is missing on the server! Please upload it.");
-    }
-    
-    // Explicitly define font path so it doesn't try to look in the root
-    if (!defined('FPDF_FONTPATH')) {
-        define('FPDF_FONTPATH', __DIR__ . '/fpdf_dir/font/');
-    }
-    
-    require_once __DIR__ . '/fpdf.php';
-
-    if (!class_exists('PDF')) {
-        class PDF extends FPDF {
-            function Header() {
-                $this->SetFont('Arial', 'B', 15);
-                $this->SetTextColor(29, 42, 68);
-                $this->Cell(0, 10, 'SG Education - Admission Application', 0, 1, 'C');
-                $this->Ln(5);
-            }
-            function Footer() {
-                $this->SetY(-15);
-                $this->SetFont('Arial', 'I', 8);
-                $this->SetTextColor(128);
-                $this->Cell(0, 10, 'Page ' . $this->PageNo(), 0, 0, 'C');
-            }
-            function SectionTitle($title) {
-                $this->SetFont('Arial', 'B', 12);
-                $this->SetFillColor(240, 240, 240);
-                $this->Cell(0, 8, $title, 0, 1, 'L', true);
-                $this->Ln(2);
-            }
-            function Row($label, $value) {
-                $this->SetFont('Arial', 'B', 10);
-                $this->Cell(50, 6, $label . ':', 0, 0, 'L');
-                $this->SetFont('Arial', '', 10);
-                $this->MultiCell(0, 6, $value);
-            }
-        }
-    }
-
-    $pdf = new PDF();
-    $pdf->AddPage();
-    $pdf->SetFont('Arial', '', 10);
-    $pdf->Cell(0, 6, 'Submitted on: ' . date('d M Y, h:i A'), 0, 1, 'R');
-    $pdf->Ln(5);
-
-    $pdf->SectionTitle('Student Details');
-    $pdf->Row('Name', $studentName);
-    $pdf->Row('Gender', $gender);
-    $pdf->Row('Date of Birth', $dob);
-    $pdf->Row('Applying For', $applyingFor);
-    $pdf->Row('Previous School', $previousSchool);
-    $pdf->Ln(5);
-
-    $pdf->SectionTitle('Parent / Guardian Details');
-    $pdf->Row('Name', $parentName . ' (' . $relationship . ')');
-    $pdf->Row('Mobile Number', $mobileNumber);
-    $pdf->Row('Email Address', $emailAddress);
-    $pdf->Row('Occupation', $occupation);
-    $pdf->Row('Address', $residentialAddress);
-    $pdf->Ln(5);
-
-    if ($isDirectVisit) {
-        $pdf->SectionTitle('Direct Visit Request');
-        $pdf->Row('Preferred Date', $preferredVisitDate);
-        $pdf->Row('Preferred Time', $preferredVisitTime);
-        $pdf->Row('Parent Name', $directVisitParentName);
-        $pdf->Row('Purpose', $purposeOfVisit);
-        $pdf->Row('Comments', $additionalComments);
-    }
-
-    $pdfContent = $pdf->Output('S'); // 'S' = return as string
-
-    // ── Send email via PHPMailer SMTP ────────────────────────────────────────────
     $mail = createMailer();
 
     // Add all recipients defined in config
@@ -228,13 +157,9 @@ try {
     // Subject & body
     $mail->Subject = "New Admission Application - {$studentName}";
     $mail->Body    = $htmlBody;
-    $mail->AltBody = "New admission application from {$studentName}. Parent: {$parentName}. Mobile: {$mobileNumber}. Email: {$emailAddress}.";
+    $mail->AltBody = $plainText;
 
-    // Attach PDF
-    $pdfFilename = 'Admission_Application_' . preg_replace('/[^a-zA-Z0-9]/', '_', $studentName) . '.pdf';
-    $mail->addStringAttachment($pdfContent, $pdfFilename, 'base64', 'application/pdf');
-
-    // Clear stray output from FPDF before sending JSON
+    // Clear stray output before sending JSON
     if (ob_get_length()) ob_end_clean();
 
     $mail->send();
