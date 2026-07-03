@@ -270,7 +270,9 @@ export default function Home() {
     };
   }, []);
 
-  const handleAdmissionSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleAdmissionSubmit = async (e) => {
     e.preventDefault();
     let err = false;
 
@@ -283,13 +285,41 @@ export default function Home() {
     if (cleanPhone.length < 10) { setPhoneInvalid(true); err = true; } else { setPhoneInvalid(false); }
 
     if (!err) {
-      setParentName("");
-      setPhoneNum("");
-      setEmailId("");
-      setChildName("");
-      setChildDob("");
-      setPlace("");
-      setSuccessOpen(true);
+      setIsSubmitting(true);
+      try {
+        const payload = {
+          student_name: childName,
+          dob: childDob,
+          parent_name: parentName,
+          mobile_number: phoneNum,
+          email_address: emailId,
+          residential_address: place,
+          applying_for: "SG Early Budding"
+        };
+
+        const response = await fetch("https://inymartlabs.com/sg-education/php-backend/api_admission.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+        
+        const data = await response.json();
+        if (data.success) {
+          setParentName("");
+          setPhoneNum("");
+          setEmailId("");
+          setChildName("");
+          setChildDob("");
+          setPlace("");
+          setSuccessOpen(true);
+        } else {
+          alert("Submission failed: " + (data.message || "Please try again."));
+        }
+      } catch (error) {
+        console.error("Admission form error:", error);
+        alert("A network error occurred. Please try again.");
+      }
+      setIsSubmitting(false);
     }
   };
 
@@ -844,8 +874,8 @@ professional services.SG Education established in 2023, aims to provide quality 
                   />
                 </div>
 
-                <button type="submit" className="btn btn-chalk-submit">
-                  Submit Application
+                <button type="submit" className="btn btn-chalk-submit" disabled={isSubmitting}>
+                  {isSubmitting ? "Submitting Application..." : "Submit Application"}
                 </button>
               </form>
             </div>
