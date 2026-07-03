@@ -10,6 +10,27 @@ ob_start();
 ini_set('display_errors', 0);
 error_reporting(E_ALL);
 
+set_error_handler(function($errno, $errstr, $errfile, $errline) {
+    if (ob_get_length()) ob_end_clean();
+    echo json_encode(['success' => false, 'message' => "PHP Error [$errno]: $errstr in $errfile on line $errline"]);
+    exit();
+});
+
+set_exception_handler(function($e) {
+    if (ob_get_length()) ob_end_clean();
+    echo json_encode(['success' => false, 'message' => "Uncaught Exception: " . $e->getMessage()]);
+    exit();
+});
+
+register_shutdown_function(function() {
+    $error = error_get_last();
+    if ($error !== null && in_array($error['type'], [E_ERROR, E_CORE_ERROR, E_COMPILE_ERROR, E_USER_ERROR])) {
+        if (ob_get_length()) ob_end_clean();
+        echo json_encode(['success' => false, 'message' => "Fatal Error: " . $error['message'] . " in " . $error['file'] . " on line " . $error['line']]);
+        exit();
+    }
+});
+
 // CORS headers
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
