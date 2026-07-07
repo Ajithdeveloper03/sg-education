@@ -102,11 +102,11 @@ $htmlBody = "
 <p>Submitted on: <strong>" . date('d M Y, h:i A') . "</strong></p>
 
 <table style='width:100%;border-collapse:collapse;'>
-  <tr><td style='padding:8px 12px;font-weight:bold;width:140px;background:#f8f9fa;'>Name</td><td style='padding:8px 12px;'>{$name}</td></tr>
-  <tr><td style='padding:8px 12px;font-weight:bold;background:#fff;'>Email</td><td style='padding:8px 12px;'><a href='mailto:{$email}'>{$email}</a></td></tr>
-  <tr><td style='padding:8px 12px;font-weight:bold;background:#f8f9fa;'>Phone</td><td style='padding:8px 12px;'>" . ($phone ?: 'N/A') . "</td></tr>
-  <tr><td style='padding:8px 12px;font-weight:bold;background:#fff;'>Subject</td><td style='padding:8px 12px;'>{$subject}</td></tr>
-  <tr><td style='padding:8px 12px;font-weight:bold;background:#f8f9fa;vertical-align:top;'>Message</td><td style='padding:8px 12px;white-space:pre-wrap;'>{$message}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;width:140px;background:#f8f9fa;'>Name</td><td style='padding:8px 12px;'>{$name}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#fff;'>Email</td><td style='padding:8px 12px;'><a href='mailto:{$email}'>{$email}</a></td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#f8f9fa;'>Phone</td><td style='padding:8px 12px;'>" . ($phone ?: 'N/A') . "</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#fff;'>Subject</td><td style='padding:8px 12px;'>{$subject}</td></tr>
+  <tr><td style='padding:6px 12px;font-weight:bold;background:#f8f9fa;vertical-align:top;'>Message</td><td style='padding:8px 12px;white-space:pre-wrap;'>{$message}</td></tr>
 </table>
 
 <br><hr>
