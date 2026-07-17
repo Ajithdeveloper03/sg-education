@@ -79,35 +79,35 @@ const TESTIMONIALS = [
     quote: "SG Early Budding is simply magical! Best futuristic campus in Hosur. Aarav now tidies his play space, greets elders with folded hands, and runs happily to school.",
     name: "Priyanka Sharma",
     role: "Mother of Aarav",
-    img: "https://images.pexels.com/photos/16562722/pexels-photo-16562722.jpeg"
+    img: "fa-person-dress"
   },
   {
     stars: 5,
     quote: "The blend of traditional moral stories with modern speech training has boosted my daughter's confidence immensely.",
     name: "Rajesh Balan",
     role: "Father of Deepthi",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80"
+    img: "fa-person"
   },
   {
     stars: 5,
     quote: "Safe campus, warm teachers, and beautiful cultural exposure in a modern way. It is exactly what my child Kabir needed.",
     name: "Sarah Taylor",
     role: "Mother of Kabir",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80"
+    img: "fa-person-dress"
   },
   {
     stars: 5,
     quote: "The safety measures and clean classrooms give me complete peace of mind. Vihaan has blossomed here.",
     name: "Dr. Anjali R.",
     role: "Mother of Vihaan",
-    img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80"
+    img: "fa-person-dress"
   },
   {
     stars: 5,
     quote: "SG's unique approach of blending tradition with logic/coding sets them apart. Advait loves the coding games and stories!",
     name: "Karthik Meyyappan",
     role: "Father of Advait",
-    img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=120&q=80"
+    img: "fa-person"
   }
 ];
 
@@ -138,7 +138,7 @@ const FOUR_PILLARS = [
     desc: "Continuous parent engagement, developmental workshops, and interactive tools to align home guidance with school learning.",
     icon: "fa-handshake-angle",
     color: "#FFC300",
-    img: "/pillars4.webp"
+    img: "/pillars4.png"
   }
 ];
 
@@ -598,16 +598,20 @@ professional services.SG Education established in 2023, aims to provide quality 
                 {[0, 1, 2].map(offset => {
                   const idx = (testiIndex + offset) % 5;
                   const item = [
-                    { name: "Seerthi", role: "Student Mother", quote: "It's a wonderful place to join and grow . I am very happy with their mother-teacher care .  As a mother I was relieved that my daughter is in the right hand. Thank you for the management too 👍", stars: 5, theme: "green", img: "https://images.pexels.com/photos/16562722/pexels-photo-16562722.jpeg" },
-                    { name: "Nehna", role: "Parent", quote: "We appreciate the teachers dedication. My daughter comes home energized and excited about what she's learning without feeling burdened.. also this school takes more care and responsibilities with the kids securely...", stars: 5, theme: "blue", img: "https://images.pexels.com/photos/14673049/pexels-photo-14673049.jpeg" },
-                    { name: "Rithun", role: "Parent", quote: "Good education system and well training given to the students and taking care of student health with nutrition food chart..And encouraging the students.", stars: 5, theme: "orange", img: "https://images.pexels.com/photos/20133860/pexels-photo-20133860.jpeg" },
-                    { name: "Ramesh Kumar", role: "Student Father", quote: "The curriculum perfectly balances traditional values and modern learning. My son looks forward to school every day!", stars: 5, theme: "purple", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" },
-                    { name: "Anita Desai", role: "Student Mother", quote: "SG Education has built a fantastic foundation for my daughter. Highly recommend their unique approach to education.", stars: 4.5, theme: "pink", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" }
+                    { name: "Seerthi", role: "Student Mother", quote: "It's a wonderful place to join and grow . I am very happy with their mother-teacher care .  As a mother I was relieved that my daughter is in the right hand. Thank you for the management too 👍", stars: 5, theme: "green", img: "fa-person-dress", gender: "female" },
+                    { name: "Nehna", role: "Parent", quote: "We appreciate the teachers dedication. My daughter comes home energized and excited about what she's learning without feeling burdened.. also this school takes more care and responsibilities with the kids securely...", stars: 5, theme: "blue", img: "fa-person-dress", gender: "female" },
+                    { name: "Rithun", role: "Parent", quote: "Good education system and well training given to the students and taking care of student health with nutrition food chart..And encouraging the students.", stars: 5, theme: "orange", img: "fa-person", gender: "male" },
+                    { name: "Ramesh Kumar", role: "Student Father", quote: "The curriculum perfectly balances traditional values and modern learning. My son looks forward to school every day!", stars: 5, theme: "purple", img: "fa-person", gender: "male" },
+                    { name: "Anita Desai", role: "Student Mother", quote: "SG Education has built a fantastic foundation for my daughter. Highly recommend their unique approach to education.", stars: 4.5, theme: "pink", img: "fa-person-dress", gender: "female" }
                   ][idx];
                   return (
                     <div key={idx} className={`speech-bubble-card ${item.theme}-theme hover-lift`}>
-                      <div className="speech-avatar">
-                        <img src={item.img} alt={item.name} />
+                      <div className="speech-avatar" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#e0e0e0' }}>
+                        {item.img.startsWith('http') || item.img.startsWith('/') ? (
+                          <img src={item.img} alt={item.name} />
+                        ) : (
+                          <i className={`fa-solid ${item.img}`} style={{ fontSize: '40px', color: item.gender === 'male' ? '#4A90E2' : '#E91E63' }}></i>
+                        )}
                       </div>
                       <div className="speech-stars">
                         {Array.from({ length: 5 }).map((_, i) => {

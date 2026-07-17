@@ -148,7 +148,7 @@ export default function OurProgramsPage() {
                 <i className="fa-solid fa-baby-carriage"></i>
               </div>
               <h3 className="jc-title" style={{ color: '#E65100' }}>Toddler Care</h3>
-              <span className="jc-age">9 Months - 2 Years</span>
+              <span className="jc-age">1.2 Years - 2 Years</span>
               <p className="jc-desc">Care, comfort & sensory exploration</p>
             </div>
 
@@ -286,7 +286,7 @@ export default function OurProgramsPage() {
                    <li><i className="fa-solid fa-square-check text-orange"></i> Personalized Attention & Care</li>
                    <li><i className="fa-solid fa-square-check text-green"></i> Continuous Parent Partnership</li>
                 </ul>
-                <img src="/girl_writing.webp" alt="Girl writing" className="op-card-img-left" />
+                <img src="/girl_writing.png" alt="Girl writing" className="op-card-img-left" />
                 <div className="op-deco" style={{ top: '20px', right: '40px', fontSize: '1.5rem' }}><i className="fa-regular fa-star text-pink"></i></div>
                 <div className="op-deco" style={{ bottom: '80px', left: '60px', fontSize: '1.2rem' }}><i className="fa-regular fa-star text-green"></i></div>
              </div>
@@ -304,7 +304,7 @@ export default function OurProgramsPage() {
                    <p className="op-quote-text text-blue">We don&apos;t just prepare<br/>children for school,<br/>we prepare them for life.</p>
                    <i className="fa-regular fa-heart text-pink quote-heart"></i>
                 </div>
-                <img src="/boy_thumbs_up.webp" alt="Boy thumbs up" className="op-card-img-right" />
+                <img src="/boy_thumbs_up.png" alt="Boy thumbs up" className="op-card-img-right" />
              </div>
           </div>
 

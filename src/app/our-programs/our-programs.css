@@ -627,7 +627,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 200px;
+  width: 300px;
   z-index: 1;
 }
 
@@ -695,7 +695,7 @@
   position: absolute;
   bottom: 0;
   right: 20px;
-  width: 200px;
+  width: 300px;
   z-index: 1;
 }
 
