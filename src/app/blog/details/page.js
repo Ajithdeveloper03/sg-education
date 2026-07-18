@@ -13,6 +13,7 @@ function BlogDetailsContent() {
   const [article, setArticle] = useState(null);
   const [loading, setLoading] = useState(true);
   const [structuredContent, setStructuredContent] = useState({ sections: [], faqs: [] });
+  const [relatedBlogs, setRelatedBlogs] = useState([]);
 
   useEffect(() => {
     if (!id) {
@@ -39,6 +40,20 @@ function BlogDetailsContent() {
         const data = await res.json();
         if (data.status === 'success') {
           setArticle(data.data);
+
+          try {
+            const blogsRes = await fetch(`${apiBase}/php-backend/api_blog.php`);
+            const blogsData = await blogsRes.json();
+            if (blogsData.status === 'success') {
+              const liveBlogs = blogsData.data
+                .filter(b => b.status !== 'DRAFT' && b.id.toString() !== id.toString())
+                .map(b => ({ ...b, image_url: resolveImageUrl(b.image_url) }));
+              setRelatedBlogs(liveBlogs.slice(0, 3));
+            }
+          } catch (e) {
+            console.error("Failed to fetch related blogs", e);
+          }
+
           try {
             const parsed = JSON.parse(data.data.content);
             if (parsed && typeof parsed === 'object') {
@@ -218,29 +233,26 @@ function BlogDetailsContent() {
               )}
 
               {/* Read More Articles Section */}
-              <div className="toc-card">
-                <h3 className="toc-title">Read More Articles</h3>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                  <Link href="/blog" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }} className="read-more-item">
-                      <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=150&q=80" alt="Article" style={{ width: '70px', height: '60px', borderRadius: '8px', objectFit: 'cover' }} />
-                      <div>
-                        <h4 style={{ margin: '0 0 5px 0', fontSize: '0.95rem', color: '#111827', lineHeight: '1.4' }}>The Power of Content Marketing</h4>
-                        <span style={{ fontSize: '0.8rem', color: '#6b7280' }}>Oct 10, 2023</span>
-                      </div>
-                    </div>
-                  </Link>
-                  <Link href="/blog" style={{ textDecoration: 'none', color: 'inherit' }}>
-                    <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }} className="read-more-item">
-                      <img src="https://images.unsplash.com/photo-1432821596592-e2c18b78144f?auto=format&fit=crop&w=150&q=80" alt="Article" style={{ width: '70px', height: '60px', borderRadius: '8px', objectFit: 'cover' }} />
-                      <div>
-                        <h4 style={{ margin: '0 0 5px 0', fontSize: '0.95rem', color: '#111827', lineHeight: '1.4' }}>Mastering Local SEO</h4>
-                        <span style={{ fontSize: '0.8rem', color: '#6b7280' }}>Oct 05, 2023</span>
-                      </div>
-                    </div>
-                  </Link>
+              {relatedBlogs.length > 0 && (
+                <div className="toc-card">
+                  <h3 className="toc-title">Read More Articles</h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    {relatedBlogs.map((b) => (
+                      <Link key={b.id} href={`/blog/details?id=${b.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                        <div style={{ display: 'flex', gap: '15px', alignItems: 'center' }} className="read-more-item">
+                          <img src={b.image_url || "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=150&q=80"} alt={b.title} style={{ width: '70px', height: '60px', borderRadius: '8px', objectFit: 'cover' }} />
+                          <div>
+                            <h4 style={{ margin: '0 0 5px 0', fontSize: '0.95rem', color: '#111827', lineHeight: '1.4', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{b.title}</h4>
+                            <span style={{ fontSize: '0.8rem', color: '#6b7280' }}>
+                              {new Date(b.created_at).toLocaleDateString('en-US', { month: 'short', day: '2-digit', year: 'numeric' })}
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </aside>
 
