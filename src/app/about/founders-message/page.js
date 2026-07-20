@@ -103,7 +103,7 @@ export default function FoundersMessagePage() {
               onMouseLeave={() => handleMouseLeaveTilt(founder1Ref)}
             >
               <div className="founder-img-wrapper-3d">
-                <img src="/mamtha 1.png" alt="Founder Mamatha M.C" />
+                <img src="/mamtha 1.jpeg" alt="Founder Mamatha M.C" />
                 <span className="founder-role-badge">Founder</span>
               </div>
               <div className="founder-info-3d">
