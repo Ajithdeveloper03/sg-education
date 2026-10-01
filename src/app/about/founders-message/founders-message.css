@@ -1,4 +1,4 @@
-﻿/* Founders Message CSS */
+/* Founders Message CSS */
 
 @keyframes fm-float {
   0% { transform: translateY(0px) rotate(0deg); }
@@ -8,6 +8,54 @@
 
 .fm-section-padding {
   padding: 6rem 0;
+}
+
+.fm-2col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (max-width: 992px) {
+  .fm-2col-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.fm-profiles-container {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+}
+
+.fm-profile-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.fm-profile-card.with-border {
+  padding-left: 3rem;
+  border-left: 2px solid #ddd;
+}
+
+@media (max-width: 768px) {
+  .fm-profile-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .fm-profile-card.with-border {
+    padding-left: 0;
+    border-left: none;
+    padding-top: 2rem;
+    border-top: 2px solid #ddd;
+  }
 }
 
 /* =========================================

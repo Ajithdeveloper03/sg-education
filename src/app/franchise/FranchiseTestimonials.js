@@ -4,25 +4,18 @@ import React, { useState } from 'react';
 
 const TESTIMONIALS = [
   {
-    name: "Arun Sharma",
-    location: "Franchise Partner, Bangalore",
-    quote: "Partnering with SG Education was the best decision for our community. Their curriculum is highly engaging, and the continuous support from their team made setting up the center a breeze. We've seen incredible growth in just our first year!",
+    name: "Mr. Arun Sharma",
+    location: "Franchise Partner",
+    quote: "What truly sets SG Education apart is their holistic approach to learning. The training provided to our teaching staff was exceptional, ensuring that we could deliver the highest quality education from day one. Our parents are absolutely thrilled with their children's character and speech development.",
     stars: 5,
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
   },
   {
-    name: "Meera Patel",
-    location: "Franchise Partner, Ahmedabad",
-    quote: "What sets SG Education apart is their holistic approach to learning. The training provided to our staff was exceptional, ensuring that we could deliver the highest quality education from day one. Our parents are absolutely thrilled.",
+    name: "Ms. Meera Patel",
+    location: "Franchise Partner",
+    quote: "We were searching for an education franchise that shared our deep cultural values without compromising on modern standards. SG Education's blend of ANBC philosophy and modern pedagogy resonated perfectly with our community. The localized marketing support provided during our admissions launch was outstanding.",
     stars: 5,
     img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
-  },
-  {
-    name: "Vikram & Anjali Rao",
-    location: "Franchise Partners, Pune",
-    quote: "We were looking for an education franchise that shared our values. SG Education's blend of modern pedagogy and traditional values resonated perfectly. The marketing support provided during our launch was outstanding.",
-    stars: 4.5,
-    img: "https://images.pexels.com/photos/16562722/pexels-photo-16562722.jpeg"
   }
 ];
 

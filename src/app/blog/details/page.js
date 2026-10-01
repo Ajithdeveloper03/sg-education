@@ -183,10 +183,12 @@ function BlogDetailsContent() {
                 <div style={{ marginTop: '50px' }}>
                   <h2 id="section-faqs">Frequently Asked Questions</h2>
                   {structuredContent.faqs.map(faq => (
-                    <div key={faq.id} style={{ marginBottom: '20px' }}>
-                      <h4 style={{ color: '#111827', margin: '0 0 10px 0', fontSize: '1.2rem' }}>Q: {faq.question}</h4>
-                      <p style={{ margin: 0 }}>A: {faq.answer}</p>
-                    </div>
+                    <details key={faq.id} className="faq-accordion" name="faq-group" style={{ marginBottom: '10px', backgroundColor: '#fcfcfc', borderRadius: '8px', border: '1px solid #eee', overflow: 'hidden' }}>
+                      <summary style={{ padding: '1rem', cursor: 'pointer', outline: 'none', margin: 0, fontWeight: 'bold', color: '#111827', fontSize: '1.1rem' }}>
+                        {faq.question}
+                      </summary>
+                      <p style={{ margin: 0, padding: '0 1rem 1rem 1rem', color: '#555' }}>{faq.answer}</p>
+                    </details>
                   ))}
                 </div>
               )}

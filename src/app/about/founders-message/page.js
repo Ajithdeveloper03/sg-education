@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import "./founders-message.css";
 import "../vision-mission/vision-mission.css";
@@ -8,25 +8,6 @@ import "../sg-early-budding/sg-early-budding.css";
 
 export default function FoundersMessagePage() {
   const [isMobile, setIsMobile] = useState(false);
-  const founder1Ref = useRef(null);
-  const founder2Ref = useRef(null);
-
-  // Holographic 3D tilt effect on hover
-  const handleMouseMoveTilt = (e, ref) => {
-    if (typeof window !== "undefined" && window.innerWidth <= 768) return;
-    if (!ref.current) return;
-    const { left, top, width, height } = ref.current.getBoundingClientRect();
-    const x = (e.clientX - left) / width;
-    const y = (e.clientY - top) / height;
-    const tiltX = (y - 0.5) * -15; // Max 15 degree X rotation
-    const tiltY = (x - 0.5) * 15;  // Max 15 degree Y rotation
-    ref.current.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.03, 1.03, 1.03)`;
-  };
-  
-  const handleMouseLeaveTilt = (ref) => {
-    if (!ref.current) return;
-    ref.current.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
-  };
 
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
@@ -57,21 +38,29 @@ export default function FoundersMessagePage() {
 
       {/* Upgraded Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', minHeight: '550px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("/meet our team.png")', 
-        backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
+        backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '130px', paddingBottom: '40px', overflow: 'hidden'
       }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 2, textAlign: 'center', paddingBottom: '30px' }}>
-          <h1 className="vm-banner-title">Founder Message</h1>
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem' }}>
+            <span style={{ backgroundColor: 'rgba(255,255,255,0.2)', padding: '0.4rem 1.2rem', borderRadius: '30px', color: '#fff', fontSize: '0.9rem', fontWeight: 'bold', border: '1px solid rgba(255,255,255,0.5)' }}>
+              Leadership & Inspiration | Hosur
+            </span>
+          </div>
+          <h1 className="vm-banner-title" style={{ fontSize: '2.5rem' }}>Founder&apos;s Message: Nurturing Values, Inspiring Excellence</h1>
           <p className="vm-banner-desc">
-            Empowering the next generation through a unique blend of Ancient Noble Bharat Culture with Corporate Professional Culture.
-            Dedicated to shaping character, fostering innovation, and building future-ready leaders.
+            Welcome to SG Education and SG Early Budding, Hosur. Founded by Ms. Mamatha M.C. with strategic guidance from Mr. Shashi Kiran K.N., our institution is dedicated to harmonizing timeless Ancient Noble Bharat Culture (ANBC) with Corporate Professional Culture (CPC) to nurture ethical, joyful, and future-ready young leaders.
           </p>
-          <div className="vm-pagination">
+          <div className="vm-pagination" style={{ marginBottom: '1rem' }}>
             <Link href="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
             <span style={{ margin: '0 0.8rem', color: '#FF2A7A' }}><i className="fa-solid fa-chevron-right" style={{fontSize: '0.7rem'}}></i></span>
-            <span style={{ color: '#FF2A7A' }}>Founder Message</span>
+            <span style={{ color: '#FF2A7A' }}>Founder&apos;s Message</span>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/admission" className="btn btn-orange" style={{ padding: '0.8rem 1.5rem', backgroundColor: '#E95D2A', color: '#fff', borderRadius: '30px', textDecoration: 'none', fontWeight: 'bold' }}>Schedule a Campus Tour</Link>
+            <Link href="/our-programs" className="btn btn-red" style={{ padding: '0.8rem 1.5rem', backgroundColor: '#fff', color: '#333', borderRadius: '30px', textDecoration: 'none', fontWeight: 'bold' }}>Explore Our Programs</Link>
           </div>
         </div>
 
@@ -85,290 +74,241 @@ export default function FoundersMessagePage() {
       </section>
 
       {/* ==========================================
-           1. VISIONARY FOUNDERS & LEADERSHIP
+           SECTION 2: The Heart of Our Foundation
            ========================================== */}
-      <section className="founders-section" id="leadership" style={{ padding: "4rem 0 1rem 0" }}>
+      <section className="eb-section fm-founder-vision-light" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
         <div className="container">
-          <div className="section-title text-center" style={{ marginBottom: '4rem' }}>
-            <span className="label-brand color-pink" style={{ background: 'rgba(236, 196, 64, 0.08)', color: 'var(--playful-pink)' }}>Visionary Leadership</span>
-            <h2>Meet Our <span className="highlight-pink text-pink-line">Founder & Mentor</span></h2>
-          </div>
-
-          <div className="founders-grid" style={{ margin: '0 auto' }}>
-            {/* Founder 1 */}
-            <div 
-              ref={founder1Ref}
-              className="founder-card-3d main-founder-theme"
-              onMouseMove={(e) => handleMouseMoveTilt(e, founder1Ref)}
-              onMouseLeave={() => handleMouseLeaveTilt(founder1Ref)}
-            >
-              <div className="founder-img-wrapper-3d">
-                <img src="/mamtha 1.jpeg" alt="Founder Mamatha M.C" />
-                <span className="founder-role-badge">Founder</span>
+          <div className="fm-2col-grid">
+            <div className="fm-vision-text">
+              <div style={{ marginBottom: '2rem' }}>
+                <div className="vm-tag tag-pink" style={{ marginBottom: '1rem' }}>THE HEART OF OUR FOUNDATION</div>
+                <h2 className="vm-title" style={{ fontSize: '2.5rem' }}>
+                  A Lifelong Commitment to <span className="underline-pink">Nurturing Young Potential</span>
+                </h2>
+                <p style={{ color: '#666', fontSize: '1.2rem', marginTop: '1rem' }}>Why early childhood education is the most critical foundation of human life.</p>
               </div>
-              <div className="founder-info-3d">
-                <h3>Mamatha M.C</h3>
-                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold' }}>Founder & Chairperson, SG Education | Co-Founder, Sarathi Groups 
-</p>
-                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;Ms. Mamatha M.C. is the visionary Founder & Chairperson of SG Education and Co-Founder of Sarathi Groups. She is committed to creating a transformative educational environment that combines academic excellence, cultural values, leadership development, and holistic learning. Her vision is to nurture confident, responsible, and future-ready individuals who contribute positively to society. &quot;</p>
-                </div>
+              
+              <div className="eb-founder-vision-statement" style={{ fontSize: '1.1rem', lineHeight: '1.8' }}>
+                <p><strong>Dear Parents, Guardians, and Well-Wishers,</strong></p>
+                <p>Welcome to the SG Education family.</p>
+                <p style={{ marginTop: '15px' }}>
+                  When we envisioned SG Education and SG Early Budding in Hosur, our driving motivation was simple yet profound: to create an educational sanctuary where academic curiosity and character development flourish hand in hand. The formative years of early childhood—from toddlerhood through primary grades—are not merely preparation for school; they are the bedrock upon which a child&apos;s entire worldview, emotional security, and moral compass are constructed.
+                </p>
+                <p style={{ marginTop: '15px' }}>
+                  In an increasingly fast-paced and technology-driven world, young learners face a unique paradox. They require 21st-century technological literacy and intellectual agility, yet they equally crave emotional grounding, empathy, and rooted ethical values. At SG Education, we made a conscious commitment never to compromise on either.
+                </p>
               </div>
             </div>
-
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* Section 1: The Founder's Vision (Text Only, Centered) */}
-      <section className="eb-section fm-founder-vision-light" style={{ paddingTop: '3rem' }}>
-        <div className="container">
-          <div className="fm-vision-text-centered">
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <div className="vm-tag tag-pink" style={{ margin: '0 auto 1rem auto' }}>THE FOUNDER&apos;S VISION</div>
-              <h2 className="vm-title">
-                Bridging <span className="underline-pink">Tradition</span> & Innovation
-              </h2>
-            </div>
             
-            <div className="eb-founder-identity" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <h3 className="eb-founder-name">Ms. Mamatha M.C</h3>
-              <span className="eb-founder-designation">Founder & Chairperson, SG Education</span>
-            </div>
-            
-            <div className="eb-founder-vision-statement">
-              <p><strong>Welcome to SG Education.</strong></p>
-              <p style={{ marginTop: '10px' }}>
-                 SG Education was built on a dream — a dream to create a space where every child&apos;s unique potential is celebrated, nurtured, and guided toward excellence. Our vision is to create an inspiring learning environment that nurtures young minds and prepares them to excel in a rapidly evolving world.
-              </p>
-              <p style={{ marginTop: '10px' }}>
-                We are committed to integrating Ancient Noble Bharat Culture (ANBC) with Corporate Professional Culture (CPC), enabling students to develop strong moral values while acquiring the skills and confidence required for future success. Through this unique approach, we strive to cultivate responsible, compassionate, and future-ready individuals.
-              </p>
-              <p style={{ marginTop: '10px' }}>
-                At SG Early Budding and our future educational institutions, every child is encouraged to explore, learn, create, and grow in a safe and supportive environment. We focus on holistic development by fostering intellectual curiosity, creativity, discipline, leadership, and social responsibility.
-              </p>
-              <p style={{ marginTop: '10px' }}>
-                Our mission is to empower every student with the knowledge, values, and life skills necessary to become a positive force in society and contribute meaningfully to the nation. We thank all parents, educators, and well-wishers for being part of this journey as we continue to shape the leaders of tomorrow.
-              </p>
-              <p style={{ marginTop: '1.5rem', fontStyle: 'normal', fontWeight: '500', color: 'var(--playful-pink)', textAlign: 'center' }}>
-                &quot;Inspiring Minds, Building Character, Creating Future Leaders.&quot;<br/>
-                <span style={{ color: 'var(--kidza-navy)', fontStyle: 'normal' }}>– Ms. Mamatha M.C.<br/>Founder &amp; Chairperson, SG Education</span>
-              </p>
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              <img src="/mamtha 1.jpeg" alt="Ms. Mamatha M.C." style={{ width: '100%', maxWidth: '450px', borderRadius: '30px', boxShadow: '0 15px 40px rgba(0,0,0,0.1)' }} />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 2: Multi-Sector Expertise (Pill Cards with Backgrounds) */}
-      <section className="fm-expertise-section">
+      {/* ==========================================
+           SECTION 3: The Educational Philosophy
+           ========================================== */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#F0F4F8' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', position: 'relative', zIndex: 2 }}>
-            <div className="vm-tag tag-blue">MULTI-SECTOR EXPERTISE</div>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <div className="vm-tag tag-blue" style={{ margin: '0 auto 1rem auto' }}>THE EDUCATIONAL PHILOSOPHY</div>
             <h2 className="vm-title">
-              Driving <span className="underline-blue">Growth</span> Across Industries
+              ANBC Meets <span className="underline-blue">Modern CPC</span>
             </h2>
+            <p style={{ color: '#666', fontSize: '1.1rem', marginTop: '1rem', maxWidth: '800px', margin: '1rem auto 0' }}>
+              Bridging Ancient Cultural Wisdom with 21st-Century Competencies. To provide our children with a balanced head start, we developed an educational philosophy anchored in two transformative pillars:
+            </p>
           </div>
-
-          <div className="fm-expertise-grid">
-            
-            {/* Sector 1: Education */}
-            <div className="fm-expertise-card fm-card-education">
-              <div className="fm-expertise-card-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80)' }}></div>
-              <div className="fm-expertise-card-overlay"></div>
-              
-              <div className="fm-expertise-icon-box">
-                <i className="fa-solid fa-book-open"></i>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
+            {/* Pillar 1 */}
+            <div style={{ backgroundColor: '#fff', padding: '2rem', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+              <div style={{ width: '60px', height: '60px', backgroundColor: '#fff0eb', color: '#E95D2A', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', marginBottom: '1.5rem' }}>
+                <i className="fa-solid fa-om"></i>
               </div>
-              <div className="fm-expertise-content">
-                <h4 className="fm-expertise-card-title">Education</h4>
-                <p className="fm-expertise-card-role">Founder – SG Education</p>
-                <p className="fm-expertise-card-desc">Building innovative learning environments that empower future generations through quality education and modern teaching methods.</p>
-              </div>
+              <h3 style={{ fontSize: '1.4rem', color: '#333', marginBottom: '1rem' }}>1. Ancient Noble Bharat Culture (ANBC)</h3>
+              <p style={{ color: '#666', lineHeight: '1.7' }}>
+                Our Indian heritage holds timeless wisdom regarding respect for parents and teachers, mindfulness, self-discipline, and environmental reverence. Through our signature daily practice, &quot;One Day, One Good Thing&quot;, we introduce small, consistent habits of gratitude, cleanliness, kindness, and truthfulness. These daily actions build genuine strength of character.
+              </p>
             </div>
-
-            {/* Sector 2: Business Leadership */}
-            <div className="fm-expertise-card fm-card-business">
-              <div className="fm-expertise-card-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80)' }}></div>
-              <div className="fm-expertise-card-overlay"></div>
-              
-              <div className="fm-expertise-icon-box">
+            
+            {/* Pillar 2 */}
+            <div style={{ backgroundColor: '#fff', padding: '2rem', borderRadius: '15px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+              <div style={{ width: '60px', height: '60px', backgroundColor: '#f0f9ff', color: '#0ea5e9', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.8rem', marginBottom: '1.5rem' }}>
                 <i className="fa-solid fa-briefcase"></i>
               </div>
-              <div className="fm-expertise-content">
-                <h4 className="fm-expertise-card-title">Business Leadership</h4>
-                <p className="fm-expertise-card-role">Co-Founder – Sarathi Groups</p>
-                <p className="fm-expertise-card-desc">Driving strategic growth, innovation, and sustainable business development across multiple sectors.</p>
-              </div>
+              <h3 style={{ fontSize: '1.4rem', color: '#333', marginBottom: '1rem' }}>2. Corporate Professional Culture (CPC)</h3>
+              <p style={{ color: '#666', lineHeight: '1.7' }}>
+                Modern life demands clarity of expression, adaptable problem-solving, collaborative teamwork, and early resilience. We nurture these professional qualities in an age-appropriate, joyful way—empowering children to articulate their thoughts fearlessly, respect differing viewpoints, and approach challenges with a solutions mindset.
+              </p>
             </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Sector 3: Real Estate */}
-            <div className="fm-expertise-card fm-card-realestate">
-              <div className="fm-expertise-card-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80)' }}></div>
-              <div className="fm-expertise-card-overlay"></div>
-              
-              <div className="fm-expertise-icon-box">
-                <i className="fa-solid fa-city"></i>
-              </div>
-              <div className="fm-expertise-content">
-                <h4 className="fm-expertise-card-title">Real Estate</h4>
-                <p className="fm-expertise-card-role">Director – SG Builders Pvt. Ltd.</p>
-                <p className="fm-expertise-card-desc">Leading residential and commercial projects with a focus on quality, trust, and long-term value.</p>
-              </div>
+      {/* ==========================================
+           SECTION 4 & 5: Our Pledge & Parent Partnership
+           ========================================== */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#fff' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '3rem' }}>
+            
+            {/* Section 4 */}
+            <div>
+              <div className="vm-tag tag-green">OUR PLEDGE TO EVERY PARENT</div>
+              <h3 style={{ fontSize: '2rem', color: '#333', marginTop: '1rem', marginBottom: '1.5rem' }}>
+                A Safe, Hygienic & Joyful Sanctuary for Your Child
+              </h3>
+              <p style={{ color: '#666', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+                Entrusting your child to a school is an act of immense trust. We honor that trust with unyielding dedication to child safety, mental wellbeing, and hygienic care. At our Gokul Nagar campus in Hosur:
+              </p>
+              <ul style={{ listStyleType: 'none', padding: 0 }}>
+                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                  <i className="fa-solid fa-shield-halved" style={{ color: '#00C853', marginTop: '5px', fontSize: '1.2rem', flexShrink: 0 }}></i>
+                  <span style={{ color: '#555', lineHeight: '1.6', flex: 1 }}><strong>Comprehensive Safety Monitoring:</strong> Every learning zone and play area is sanitized daily and monitored by round-the-clock CCTV cameras.</span>
+                </li>
+                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                  <i className="fa-solid fa-user-group" style={{ color: '#00C853', marginTop: '5px', fontSize: '1.2rem', flexShrink: 0 }}></i>
+                  <span style={{ color: '#555', lineHeight: '1.6', flex: 1 }}><strong>Attentive Care Ratios:</strong> Our teacher-to-child ratios are strictly maintained to ensure every young learner receives individualized attention, warmth, and encouragement.</span>
+                </li>
+                <li style={{ marginBottom: '1rem', display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                  <i className="fa-solid fa-face-smile-beam" style={{ color: '#00C853', marginTop: '5px', fontSize: '1.2rem', flexShrink: 0 }}></i>
+                  <span style={{ color: '#555', lineHeight: '1.6', flex: 1 }}><strong>Child-Centric Learning:</strong> Learning is never forced through rote stress; it is ignited through hands-on discovery, phonics, joyful storytelling, and conceptual exploration.</span>
+                </li>
+              </ul>
             </div>
-
-            {/* Sector 4: Healthcare */}
-            <div className="fm-expertise-card fm-card-healthcare">
-              <div className="fm-expertise-card-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80)' }}></div>
-              <div className="fm-expertise-card-overlay"></div>
-              
-              <div className="fm-expertise-icon-box">
-                <i className="fa-solid fa-heart-pulse"></i>
-              </div>
-              <div className="fm-expertise-content">
-                <h4 className="fm-expertise-card-title">Healthcare</h4>
-                <p className="fm-expertise-card-role">Managing Director – SG Health & Care</p>
-                <p className="fm-expertise-card-desc">Improving community well-being through accessible healthcare services and patient-centered solutions.</p>
-              </div>
-            </div>
-
-            {/* Sector 5: Banking & Finance */}
-            <div className="fm-expertise-card fm-card-banking">
-              <div className="fm-expertise-card-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=600&q=80)' }}></div>
-              <div className="fm-expertise-card-overlay"></div>
-              
-              <div className="fm-expertise-icon-box">
-                <i className="fa-solid fa-building-columns"></i>
-              </div>
-              <div className="fm-expertise-content">
-                <h4 className="fm-expertise-card-title">Banking & Finance</h4>
-                <p className="fm-expertise-card-role">Managing Director – SG Nidhi Limited</p>
-                <p className="fm-expertise-card-desc">Providing reliable financial solutions and strategic investments to foster economic growth and stability.</p>
-              </div>
-            </div>
-
-            {/* Sector 6: Enterprise */}
-            <div className="fm-expertise-card fm-card-enterprise">
-              <div className="fm-expertise-card-bg" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80)' }}></div>
-              <div className="fm-expertise-card-overlay"></div>
-              
-              <div className="fm-expertise-icon-box">
-                <i className="fa-solid fa-industry"></i>
-              </div>
-              <div className="fm-expertise-content">
-                <h4 className="fm-expertise-card-title">Enterprise</h4>
-                <p className="fm-expertise-card-role">Managing Director – SG Enterprise</p>
-                <p className="fm-expertise-card-desc">Fostering scalable business models and impactful corporate ventures for comprehensive market success.</p>
-              </div>
+            
+            {/* Section 5 */}
+            <div style={{ backgroundColor: '#fcfcfc', padding: '2.5rem', borderRadius: '15px', border: '1px solid #eee' }}>
+              <div className="vm-tag tag-yellow">THE PARENT-SCHOOL PARTNERSHIP</div>
+              <h3 style={{ fontSize: '2rem', color: '#333', marginTop: '1rem', marginBottom: '1.5rem' }}>
+                Walking Hand in Hand with Parents
+              </h3>
+              <p style={{ color: '#666', lineHeight: '1.8', fontSize: '1.1rem' }}>
+                We view parents as our vital co-educators. True educational success happens when home and school reinforce the same noble habits, mutual respect, and enthusiasm for learning. 
+              </p>
+              <p style={{ color: '#666', lineHeight: '1.8', fontSize: '1.1rem', marginTop: '1rem' }}>
+                Through open consultations, regular developmental feedback, and interactive family workshops, we walk together with you at every milestone of your child&apos;s journey.
+              </p>
             </div>
 
           </div>
         </div>
       </section>
 
-      {/* Moved Mentor Card Section */}
-      <section style={{ padding: '2rem 0', backgroundColor: '#f8f9fa' }}>
+      {/* ==========================================
+           SECTION 6: Closing Words & Institutional Leadership
+           ========================================== */}
+      <section style={{ padding: '4rem 0', backgroundColor: '#F0F7F4' }}>
         <div className="container">
-          <div className="founders-grid" style={{ margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
-            <div 
-              ref={founder2Ref}
-              className="founder-card-3d sub-founder-theme"
-              onMouseMove={(e) => handleMouseMoveTilt(e, founder2Ref)}
-              onMouseLeave={() => handleMouseLeaveTilt(founder2Ref)}
-              style={{ maxWidth: '800px', width: '100%', margin: '0' }}
-            >
-              <div className="founder-img-wrapper-3d">
-                <img src="/mentor.webp" alt="Mentor Shashi Kiran" />
-                <span className="founder-role-badge">Mentor</span>
+          <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+            <div style={{ fontSize: '3rem', color: '#00BFA6', marginBottom: '1rem' }}><i className="fa-solid fa-quote-left"></i></div>
+            <p style={{ fontSize: '1.3rem', color: '#444', fontStyle: 'italic', lineHeight: '1.8', marginBottom: '2rem' }}>
+              &quot;Our greatest reward is watching our children walk into campus with eager eyes and graduate with clear minds, compassionate hearts, and confident voices. We warmly invite you to visit our campus, experience our classrooms, and join us in shaping a luminous future for our children.&quot;
+            </p>
+          </div>
+          
+          <div className="fm-profiles-container">
+            <div className="fm-profile-card">
+              <img src="/mamtha 1.jpeg" alt="Ms. Mamatha M.C." style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #E95D2A' }} />
+              <div>
+                <h4 style={{ margin: 0, fontSize: '1.2rem', color: '#333' }}>Ms. Mamatha M.C.</h4>
+                <p style={{ margin: '5px 0 0 0', color: '#666', fontSize: '0.9rem', lineHeight: '1.4' }}>
+                  Founder & Chairperson, SG Education & SG Early Budding<br/>
+                  Co-Founder, Sarathi Groups
+                </p>
               </div>
-              <div className="founder-info-3d">
-                <h3>Shashi Kiran K.N</h3>
-                <p className="credential" style={{ color: 'var(--kidza-navy)', fontWeight: 'bold', textTransform: 'uppercase' }}>Mentor, SG Education & Visionary Leader</p>
-                <div className="quote-box" style={{ marginTop: '1rem', fontStyle: 'normal', fontSize: '0.95rem', color: 'var(--neutral-dark)' }}>
-                  <p>&quot;Mr. Shashi Kiran K.N. is a distinguished mentor, entrepreneur, and visionary leader. Through his guidance and strategic insights, he supports SG Education&apos;s mission of empowering young minds through quality education, ethical values, innovation, and leadership development. His dedication to social progress and nation-building continues to inspire students, educators, and communities alike.&quot;</p>
-                </div>
+            </div>
+            
+            <div className="fm-profile-card with-border">
+              <img src="/mentor.webp" alt="Mr. Shashi Kiran K.N." style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', border: '3px solid #00BFA6' }} />
+              <div>
+                <span style={{ fontSize: '0.8rem', textTransform: 'uppercase', color: '#00BFA6', fontWeight: 'bold' }}>In Mentorship & Strategic Association with:</span>
+                <h4 style={{ margin: '5px 0', fontSize: '1.2rem', color: '#333' }}>Mr. Shashi Kiran K.N.</h4>
+                <p style={{ margin: 0, color: '#666', fontSize: '0.9rem' }}>Strategic Advisor & Education Mentor</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 3: Mentor (Text Only) */}
-      <section className="eb-section fm-founder-vision-light" style={{ padding: '4rem 0' }}>
+      {/* ==========================================
+           SECTION 7: FAQ SECTION
+           ========================================== */}
+      <section className="vm-section faq-bg" style={{ padding: '5rem 0', backgroundColor: '#fff' }}>
         <div className="container">
-          <div className="fm-vision-text-centered">
-            <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <div className="vm-tag tag-green" style={{ margin: '0 auto 1rem auto' }}>MENTOR</div>
-              <h2 className="vm-title">
-                Visionary <span className="underline-green">Leadership</span>
-              </h2>
-            </div>
-            
-            <div className="eb-founder-identity" style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-              <h3 className="eb-founder-name">Shashi Kiran K.N</h3>
-              <span className="eb-founder-designation">Mentor at SG Education & Visionary Leader</span>
-            </div>
-            
-            <div className="eb-founder-vision-statement">
-              <p>
-                &quot;A visionary leader with a deep commitment to social responsibility and national development, combining moral character with modern tools.&quot;
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: '2.5rem', color: '#333' }}>Frequently Asked Questions About <span style={{ color: '#FF2A7A' }}>SG Education Leadership</span></h2>
+          </div>
+          
+          <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <details className="faq-accordion" name="faq-group" style={{ backgroundColor: '#fcfcfc', borderRadius: '12px', border: '1px solid #eee', overflow: 'hidden' }}>
+              <summary style={{ padding: '1rem', cursor: 'pointer', outline: 'none', margin: 0, fontWeight: 'bold' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '10px', color: '#333', fontSize: '1.1rem' }}>
+                  <i className="fa-solid fa-circle-question" style={{ color: '#FF2A7A', marginTop: '4px' }}></i> 
+                  <span>Who is the founder of SG Education in Hosur?</span>
+                </div>
+              </summary>
+              <p style={{ color: '#666', lineHeight: '1.6', margin: 0, padding: '0 1rem 1rem 34px' }}>
+                SG Education and SG Early Budding were founded by Ms. Mamatha M.C., who serves as Founder & Chairperson. Supported by strategic mentor Mr. Shashi Kiran K.N. and backed by the institutional credibility of Sarathi Groups, she established the institution to provide value-based early childhood and primary schooling in Hosur.
               </p>
-              <p style={{ marginTop: '1rem' }}>
-                His guidance and expertise play a crucial role in shaping the strategic direction of SG Education, ensuring that the institution remains at the forefront of holistic learning and character development.
+            </details>
+            
+            <details className="faq-accordion" name="faq-group" style={{ backgroundColor: '#fcfcfc', borderRadius: '12px', border: '1px solid #eee', overflow: 'hidden' }}>
+              <summary style={{ padding: '1rem', cursor: 'pointer', outline: 'none', margin: 0, fontWeight: 'bold' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '10px', color: '#333', fontSize: '1.1rem' }}>
+                  <i className="fa-solid fa-circle-question" style={{ color: '#00BFA6', marginTop: '4px' }}></i> 
+                  <span>What is the core vision behind the founding of SG Early Budding?</span>
+                </div>
+              </summary>
+              <p style={{ color: '#666', lineHeight: '1.6', margin: 0, padding: '0 1rem 1rem 34px' }}>
+                The core vision of SG Early Budding is to synthesize Ancient Noble Bharat Culture (ANBC) with modern Corporate Professional Culture (CPC). This unique curriculum nurtures children with strong moral character, empathy, disciplined habits, and future-ready 21st-century leadership skills.
               </p>
-            </div>
-
-            <ul className="eb-founder-highlights" style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', marginTop: '2rem', padding: '0', listStyle: 'none' }}>
-              <li><i className="fa-solid fa-check" style={{color: '#FF2A7A', marginRight: '8px'}}></i>Social Responsibility</li>
-              <li><i className="fa-solid fa-check" style={{color: '#FF2A7A', marginRight: '8px'}}></i>National Development</li>
-              <li><i className="fa-solid fa-check" style={{color: '#FF2A7A', marginRight: '8px'}}></i>Moral Character</li>
-              <li><i className="fa-solid fa-check" style={{color: '#FF2A7A', marginRight: '8px'}}></i>Strategic Guidance</li>
-            </ul>
+            </details>
+            
+            <details className="faq-accordion" name="faq-group" style={{ backgroundColor: '#fcfcfc', borderRadius: '12px', border: '1px solid #eee', overflow: 'hidden' }}>
+              <summary style={{ padding: '1rem', cursor: 'pointer', outline: 'none', margin: 0, fontWeight: 'bold' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '10px', color: '#333', fontSize: '1.1rem' }}>
+                  <i className="fa-solid fa-circle-question" style={{ color: '#FFC300', marginTop: '4px' }}></i> 
+                  <span>How does the founder ensure child safety and hygiene at the Hosur campus?</span>
+                </div>
+              </summary>
+              <p style={{ color: '#666', lineHeight: '1.6', margin: 0, padding: '0 1rem 1rem 34px' }}>
+                Under Ms. Mamatha M.C.&apos;s leadership, SG Education implements strict safety protocols, including round-the-clock CCTV campus surveillance, daily sanitized play spaces, child-safe infrastructure, low student-teacher ratios, and dedicated female support staff for attentive toddler supervision.
+              </p>
+            </details>
+            
+            <details className="faq-accordion" name="faq-group" style={{ backgroundColor: '#fcfcfc', borderRadius: '12px', border: '1px solid #eee', overflow: 'hidden' }}>
+              <summary style={{ padding: '1rem', cursor: 'pointer', outline: 'none', margin: 0, fontWeight: 'bold' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '10px', color: '#333', fontSize: '1.1rem' }}>
+                  <i className="fa-solid fa-circle-question" style={{ color: '#4A90E2', marginTop: '4px' }}></i> 
+                  <span>Where is the SG Education founder’s office and campus located?</span>
+                </div>
+              </summary>
+              <p style={{ color: '#666', lineHeight: '1.6', margin: 0, padding: '0 1rem 1rem 34px' }}>
+                The SG Education campus is located at 181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur, Tamil Nadu – 635109. Parents and prospective partners can schedule personal consultations and campus tours from Monday to Saturday, 9:00 AM to 5:00 PM.
+              </p>
+            </details>
           </div>
         </div>
       </section>
 
-      {/* Section 4: Social Impact (Moved to Bottom) */}
-      <section className="fm-section-padding" style={{ padding: '4rem 0' }}>
-        <div className="container">
-          <div className="fm-impact-grid">
-            
-            <div className="fm-impact-content" style={{ position: 'relative', zIndex: 2 }}>
-              <div className="vm-tag tag-yellow">SOCIAL RESPONSIBILITY</div>
-              <h2 className="vm-title" style={{ marginBottom: '1.5rem' }}>
-                Empowering <span className="underline-yellow">Communities</span> & Future Leaders
-              </h2>
-              
-              <p className="vm-desc">
-                Beyond their professional achievements, Ms. Mamatha M.C and Mr. Shashi Kiran K.N are deeply committed to community development and social welfare. Through their leadership and dedication, they actively contribute to empowering future generations by supporting education, healthcare, youth leadership, and impactful community initiatives. Their shared vision is to create a positive and lasting impact on society by nurturing responsible, confident, and compassionate individuals.
-              </p>
-
-              <div className="fm-stats-container">
-                <div className="fm-stat-card">
-                  <div className="fm-stat-title"><i className="fa-solid fa-hand-holding-heart" style={{color: '#ECC440', marginRight: '8px'}}></i> Social Welfare</div>
-                  <div className="fm-stat-desc">Driving impactful community initiatives.</div>
-                </div>
-                <div className="fm-stat-card">
-                  <div className="fm-stat-title"><i className="fa-solid fa-seedling" style={{color: '#00C853', marginRight: '8px'}}></i> Empowerment</div>
-                  <div className="fm-stat-desc">Educational & Healthcare support.</div>
-                </div>
-                <div className="fm-stat-card">
-                  <div className="fm-stat-title"><i className="fa-solid fa-user-group" style={{color: '#ECC440', marginRight: '8px'}}></i> Leadership</div>
-                  <div className="fm-stat-desc">Youth leadership development.</div>
-                </div>
-              </div>
-            </div>
-
-            <div className="fm-impact-images">
-              <div className="fm-impact-img-box fm-impact-img-1">
-                <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=600&q=80" alt="Community Service and Social Impact" />
-              </div>
-              <div className="fm-impact-img-box fm-impact-img-2">
-                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=600&q=80" alt="Inspiring Youth and Generations" />
-              </div>
-            </div>
-
+      {/* ==========================================
+           SECTION 8: Final Call to Action
+           ========================================== */}
+      <section className="vm-section final-cta-bg" style={{ padding: '3rem 0', backgroundImage: 'url("/kids-bg-pattern.png")', backgroundSize: 'cover', backgroundAttachment: 'fixed', position: 'relative' }}>
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(255,255,255,0.92)' }}></div>
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2.5rem', color: '#333', marginBottom: '1rem' }}>Experience Our <span style={{ color: '#E95D2A' }}>Value-Driven Campus</span> Firsthand</h2>
+          <p style={{ color: '#555', fontSize: '1.2rem', maxWidth: '800px', margin: '0 auto 2rem', lineHeight: '1.8', textAlign: 'center' }}>
+            Admissions are open for Toddler Care, Playgroup, Nursery, Kindergarten, and Classes 1 to 5 in Hosur.
+          </p>
+          
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+            <Link href="/admission" className="btn btn-orange" style={{ padding: '1rem 2rem', backgroundColor: '#E95D2A', color: '#fff', borderRadius: '30px', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.1rem', boxShadow: '0 4px 15px rgba(233, 93, 42, 0.3)' }}>Schedule a Campus Tour</Link>
+            <Link href="/contact" className="btn btn-red" style={{ padding: '1rem 2rem', backgroundColor: '#fff', color: '#333', borderRadius: '30px', textDecoration: 'none', fontWeight: 'bold', fontSize: '1.1rem', border: '2px solid #eee' }}>Speak to Admissions</Link>
           </div>
         </div>
       </section>

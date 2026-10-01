@@ -113,30 +113,30 @@ const TESTIMONIALS = [
 
 const FOUR_PILLARS = [
   {
-    title: "Inquiry-Led Play",
-    desc: "Children explore concepts by questioning, doing, and playing. No rote learning. We encourage curiosity and self-discovery.",
+    title: "Toddler Care & Playgroup",
+    desc: "Sensory exploration, speech initiation, and comfortable social habits in a loving, home-like environment. Focuses on motor skills, emotional comfort, and joyful discovery.",
     icon: "fa-child-reaching",
     color: "#ECC440",
     img: "/pillars1.webp"
   },
   {
-    title: "ANBC Culture",
-    desc: "Connecting kids to their roots. Value-based lessons, moral stories, yoga, and meditation elements in our daily schedule.",
-    icon: "fa-om",
+    title: "Nursery Foundation",
+    desc: "Sparking curiosity, phonics introduction, vocabulary building, and fine motor dexterity through guided Montessori-inspired activities.",
+    icon: "fa-seedling",
     color: "#FF2A7A",
     img: "/pillars2.webp"
   },
   {
-    title: "CPC Foundations",
-    desc: "Developing essential professional skills like dynamic communication, public speaking, tech integration, and polite gestures.",
-    icon: "fa-laptop-code",
+    title: "Kindergarten (LKG & UKG)",
+    desc: "Core literacy, mathematical reasoning, school readiness, and self-confidence. Prepares young learners smoothly for formal grade schooling.",
+    icon: "fa-shapes",
     color: "#5A49E3",
     img: "/pillars3.webp"
   },
   {
-    title: "Parent Partnership",
-    desc: "Continuous parent engagement, developmental workshops, and interactive tools to align home guidance with school learning.",
-    icon: "fa-handshake-angle",
+    title: "Primary School (Classes 1 to 5)",
+    desc: "Rigorous academic progression, conceptual STEM understanding, leadership development, disciplined study habits, and holistic co-curricular exposure.",
+    icon: "fa-graduation-cap",
     color: "#FFC300",
     img: "/pillars4.png"
   }
@@ -325,6 +325,74 @@ export default function Home() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": ["EducationalOrganization", "School", "LocalBusiness"],
+            "@id": "https://sgeducations.in/#organization",
+            "name": "SG Early Budding - SG Education Hosur",
+            "url": "https://sgeducations.in/",
+            "logo": "https://sgeducations.in/wp-content/uploads/logo.png",
+            "telephone": "+91-9994664346",
+            "email": "sg.educations.org@gmail.com",
+            "founder": {
+              "@type": "Person",
+              "name": "Ms. Mamatha M.C.",
+              "jobTitle": "Founder & Chairperson"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "181, Gopikrishna Colony, R K Road, Gokul Nagar",
+              "addressLocality": "Hosur",
+              "addressRegion": "Tamil Nadu",
+              "postalCode": "635109",
+              "addressCountry": "IN"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "12.7409",
+              "longitude": "77.8253"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "17:00"
+            }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://sgeducations.in/#faq",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Which is the best preschool and daycare center in Hosur?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SG Early Budding is among the best preschools in Hosur, located at Gokul Nagar, R K Road. It offers early childhood programs from Toddler Care to 5th Standard, combining Ancient Noble Bharat Culture with modern 21st-century academic and leadership skills."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What is the admission age criteria for Nursery and LKG at SG Education?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For Nursery admission, a child should be 3 years old by the start of the academic session. For Junior Kindergarten (LKG), the recommended age is 4 years, and for Senior Kindergarten (UKG), 5 years. Toddler Care welcomes children starting from 1.2 years."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is SG Education campus located in Hosur?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "SG Early Budding is located at 181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur, Tamil Nadu – 635109."
+                }
+              }
+            ]
+          }
+        ]
+      }) }} />
 
 
             {/* ==========================================
@@ -351,21 +419,25 @@ export default function Home() {
           <LightningDoodle style={{ bottom: "25%", right: "12%" }} />
         </div>
 
-        <div className="container hero-container" style={{ position: "relative", zIndex: 5 }}>
-          <div className="hero-center-content">
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2.5rem' }}>
+        <div className="container hero-container" style={{ position: "relative", zIndex: 15 }}>
+          <div className="hero-center-content" style={{ paddingTop: '8rem', paddingBottom: '3rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
               <div className="hero-pill-btn">
-                Educate, Empower, Elevate
+                Admissions Open for Academic Year 2026–2027 | Gokul Nagar, Hosur
               </div>
             </div>
-            <h1 className="hero-title" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)', marginBottom: '0.5rem' }}>
-              Welcome to <span className="text-yellow">SG Educations</span>
+            <h1 className="hero-title" style={{ textShadow: '0 4px 20px rgba(0,0,0,0.5)', marginBottom: '0.8rem' }}>
+              Nurturing Young Minds with <span className="text-yellow">Ancient Wisdom</span><br /> & Modern Excellence in Hosur
             </h1>
             
             
-            <p className="hero-subtitle" style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
-             SG Education, established in 2023 under Sarathi Groups, provides quality education by blending Ancient Noble Bharat Culture(ANBC) with Corporate Professional Culture(CPC). We nurture knowledgeable, disciplined, and future-ready individuals.  
+            <p className="hero-subtitle" style={{ maxWidth: '850px', margin: '0 auto', textAlign: 'center', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+             Welcome to SG Education & SG Early Budding, Hosur’s premier early learning and primary school center. We provide a safe, engaging, and value-driven environment for children from Toddler Care (1.2+ years) to 5th Standard, combining cultural values with future-ready skills.
             </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
+              <Link href="/admission" className="btn btn-orange" style={{ textDecoration: 'none', padding: '0.8rem 2rem', fontWeight: 'bold' }}>Schedule a Campus Tour</Link>
+              <Link href="/contact" className="btn btn-red" style={{ backgroundColor: 'white', color: '#333', textDecoration: 'none', padding: '0.8rem 2rem', fontWeight: 'bold', border: '2px solid transparent' }}>Download Admissions Guide</Link>
+            </div>
           </div>
         </div>
 
@@ -374,6 +446,36 @@ export default function Home() {
           <svg viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ width: '100%', height: '100%', display: 'block' }}>
             <path d="M0,224 C180,96 540,352 720,224 C900,96 1260,352 1440,224 L1440,320 L0,320 Z" fill="#FAF8F5"></path>
           </svg>
+        </div>
+      </section>
+
+      {/* ==========================================
+           2.5 TRUST HIGHLIGHTS / STATS BAR
+           ========================================== */}
+      <section style={{ backgroundColor: '#fff', padding: '2rem 0', borderBottom: '1px solid #eee' }}>
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ fontSize: '2.5rem', color: 'var(--playful-pink)', fontWeight: 'bold', marginBottom: '0.5rem' }}>1.2 - 11</div>
+              <h4 style={{ fontSize: '1.1rem', color: '#333', textAlign: 'center' }}>Years Old</h4>
+              <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem', textAlign: 'center', margin: '0.5rem auto 0 auto', maxWidth: '250px' }}>Complete Learning Pathway from Toddler to 5th Standard</p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ fontSize: '2.5rem', color: 'var(--joyful-yellow)', fontWeight: 'bold', marginBottom: '0.5rem' }}>100%</div>
+              <h4 style={{ fontSize: '1.1rem', color: '#333', textAlign: 'center' }}>Safe & Monitored</h4>
+              <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem', textAlign: 'center', margin: '0.5rem auto 0 auto', maxWidth: '250px' }}>CCTV-Enabled Campus, Child-Proof Safety & Strict Hygiene</p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ fontSize: '2.5rem', color: '#5A49E3', fontWeight: 'bold', marginBottom: '0.5rem' }}>1:10</div>
+              <h4 style={{ fontSize: '1.1rem', color: '#333', textAlign: 'center' }}>Ratio</h4>
+              <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem', textAlign: 'center', margin: '0.5rem auto 0 auto', maxWidth: '250px' }}>Personalized Attention & Dedicated Early-Years Mentors</p>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+              <div style={{ fontSize: '2.5rem', color: '#D90013', fontWeight: 'bold', marginBottom: '0.5rem' }}>ANBC+CPC</div>
+              <h4 style={{ fontSize: '1.1rem', color: '#333', textAlign: 'center' }}>Framework</h4>
+              <p style={{ fontSize: '0.9rem', color: '#666', marginTop: '0.5rem', textAlign: 'center', margin: '0.5rem auto 0 auto', maxWidth: '250px' }}>Ancient Bharath Values Combined with Corporate Life Skills</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -425,14 +527,12 @@ export default function Home() {
             {/* RIGHT COLUMN: Text, Feature Boxes, Button */}
             <div className="about-details-content" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', height: '100%', justifyContent: 'center' }}>
               <div>
-                <span className="label-brand color-blue">Welcome to SG Educations</span>
+                <span className="label-brand color-blue">A Balanced Foundation</span>
                 <h2 className="about-main-title">
-                  Blending <span className="highlight-text-gradient">Ancient Noble Bharat Culture </span> with Corporate Professional Culture
+                  <span className="highlight-text-gradient">Ancient Noble Bharat Culture </span> Meets Modern Professional Skills
                 </h2>
                 <p className="about-lead-text">
-                  Sarathi Groups is a successful organization contributing to economic growth through 
-professional services.SG Education established in 2023, aims to provide quality education by combining traditional Ancient Noble Bharat Culture with Corporate Professional Culture learning standards. Through SG Early Budding starts from July 2023 in Hosur. It focuses on building strong foundations for young learners and shaping future leaders with knowledge, discipline, and leadership skills. 
-
+                  At SG Early Budding, we believe education goes beyond standard textbooks. Every child's foundational years determine their character, intellectual curiosity, and emotional resilience. Our unique pedagogy integrates two vital pillars:
                 </p>
               </div>
 
@@ -441,23 +541,23 @@ professional services.SG Education established in 2023, aims to provide quality 
                 <div className="highlight-row">
                   <div className="h-icon blue"><i className="fa-solid fa-om"></i></div>
                   <div className="h-info">
-                    <h4>Ancient Noble Bharat Culture </h4>
-                    <p>Fostering respect and cultural traditions. </p>
+                    <h4>Ancient Noble Bharat Culture (ANBC)</h4>
+                    <p>Rooted in timeless ethical values, respect, self-discipline, and social responsibility. Through our daily &quot;One Day, One Good Thing&quot; habit-building framework, children develop empathy, moral integrity, and social consciousness.</p>
                   </div>
                 </div>
 
                 <div className="highlight-row">
                   <div className="h-icon pink"><i className="fa-solid fa-building"></i></div>
                   <div className="h-info">
-                    <h4>Corporate Professional Culture</h4>
-                    <p>Preparing young minds for future excellence.</p>
+                    <h4>Corporate Professional Culture (CPC)</h4>
+                    <p>Preparing children from their early years with essential 21st-century competencies—clear spoken communication, critical thinking, collaborative teamwork, adaptable mindset, and confident problem-solving.</p>
                   </div>
                 </div>
               </div>
 
               {/* CENTERED BUTTON BENEATH BOXES */}
               <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '1.5rem' }}>
-                <Link href="/admission" className="btn btn-orange" style={{ textDecoration: 'none' }}>Online Admission <i className="fa-solid fa-arrow-right" style={{ marginLeft: '8px' }}></i></Link>
+                <Link href="/about" className="btn btn-orange" style={{ textDecoration: 'none' }}>Learn More About Our Philosophy <i className="fa-solid fa-arrow-right" style={{ marginLeft: '8px' }}></i></Link>
               </div>
             </div>
 
@@ -485,9 +585,8 @@ professional services.SG Education established in 2023, aims to provide quality 
 
         <div className="container" style={{ marginTop: '5rem', position: 'relative', zIndex: 10 }}>
           <div className="section-title text-white scroll-reveal" style={{ marginBottom: '1rem' }}>
-            <span className="label-brand color-yellow" style={{ background: 'rgba(236, 196, 64, 0.15)', color: 'var(--joyful-yellow)' }}>Learning is an Adventure</span>
-            <h2 className="text-white" style={{ fontSize: '1.8rem' }}>Nurturing Young Minds - with <span className="text-orange">Love & Learning</span></h2>
-            <p className="text-white-muted">Our holistic early education is securely anchored on four robust key pillars.</p>
+            <span className="label-brand color-yellow" style={{ background: 'rgba(236, 196, 64, 0.15)', color: 'var(--joyful-yellow)' }}>Our Academic & Early Learning Programs in Hosur</span>
+            <h2 className="text-white" style={{ fontSize: '1.8rem' }}>Structured developmental milestones crafted for <span className="text-orange">every stage of your child&apos;s growth.</span></h2>
           </div>
 
           <div className="stacked-cards-container">
@@ -532,13 +631,16 @@ professional services.SG Education established in 2023, aims to provide quality 
               <div className="vs-doodle hands"><i className="fa-solid fa-hands-clapping"></i></div>
               
               <h2 className="vs-title" style={{ fontWeight: '800', lineHeight: '1.2', margin: '1rem 0', color: '#fff' }}>
-                <i className="fa-solid fa-brain" style={{ marginRight: '10px' }}></i>Educate – Empower – Elevate
+                <i className="fa-solid fa-brain" style={{ marginRight: '10px' }}></i>Why SG Early Budding is Hosur’s Trusted Choice
               </h2>
-              <p className="vs-desc">
-                We provide quality education that builds strong knowledge, values, and lifelong learning habits.We nurture confidence, leadership, communication, and practical skills to prepare students for real-world challenges.We inspire students to achieve their full potential and grow into responsible, successful, and future-ready individuals.
-              </p>
+              <ul className="vs-desc" style={{ listStyle: 'none', padding: 0, textAlign: 'left', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+                <li><i className="fa-solid fa-shield-halved text-yellow" style={{marginRight:'8px'}}></i> <strong>Safe, Clean & Child-Centric Infrastructure</strong> - Spacious, sanitized classrooms, ergonomic child-safe furniture.</li>
+                <li><i className="fa-solid fa-video text-yellow" style={{marginRight:'8px'}}></i> <strong>24/7 CCTV Campus Surveillance</strong> - Full camera monitoring across indoor learning spaces.</li>
+                <li><i className="fa-solid fa-flask text-yellow" style={{marginRight:'8px'}}></i> <strong>Activity-Led Experiential Learning</strong> - Moving beyond rote learning into hands-on experiments.</li>
+                <li><i className="fa-solid fa-users text-yellow" style={{marginRight:'8px'}}></i> <strong>Active Parent-Teacher Partnership</strong> - Regular developmental milestone tracking & feedback.</li>
+              </ul>
               <div style={{ display: 'flex', justifyContent: 'flex-start', marginTop: '1.5rem', position: 'relative', zIndex: 20 }}>
-                <Link href="/contact" className="vs-btn" style={{ textDecoration: 'none' }}>JOIN US NOW</Link>
+                <Link href="/contact" className="vs-btn" style={{ textDecoration: 'none' }}>Visit Our Campus</Link>
               </div>
               
               <div className="vs-doodle bike"><i className="fa-solid fa-bicycle"></i></div>
@@ -553,6 +655,7 @@ professional services.SG Education established in 2023, aims to provide quality 
           </svg>
         </div>
       </section>
+
 
       {/* ==========================================
            5. PARENTS TESTIMONIALS SLIDER (SCREENSHOT 2 SPEECH BUBBLE AVATAR TOP)
@@ -743,6 +846,44 @@ professional services.SG Education established in 2023, aims to provide quality 
       </section>
 
       {/* ==========================================
+           6.5 FAQ SECTION
+           ========================================== */}
+      <section className="faq-section scroll-reveal" style={{ padding: '4rem 0', backgroundColor: '#fff' }}>
+        <div className="container">
+          <div className="section-title text-center" style={{ marginBottom: '2rem' }}>
+            <span className="label-brand color-blue">Got Questions?</span>
+            <h2 style={{ fontSize: '1.8rem', color: '#333' }}>Frequently Asked Questions by <span className="text-orange">Parents</span></h2>
+          </div>
+          <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            <details className="faq-accordion" name="faq-group" style={{ background: '#FAF9F5', borderRadius: '12px', borderLeft: '4px solid var(--playful-pink)', overflow: 'hidden' }}>
+              <summary style={{ padding: '1rem 1.2rem', color: '#222', fontWeight: 'bold', cursor: 'pointer', outline: 'none', margin: 0, fontSize: '1.05rem' }}>
+                Which is the best preschool and daycare center in Hosur?
+              </summary>
+              <p style={{ padding: '0 1.2rem 1rem 1.2rem', color: '#555', fontSize: '0.95rem', margin: 0 }}>SG Early Budding is among the best preschools in Hosur, located at Gokul Nagar, R K Road. It offers early childhood programs from Toddler Care to 5th Standard, combining the ethical grounding of Ancient Noble Bharat Culture with modern 21st-century academic and leadership skills.</p>
+            </details>
+            <details className="faq-accordion" name="faq-group" style={{ background: '#FFF5E6', borderRadius: '12px', borderLeft: '4px solid var(--joyful-yellow)', overflow: 'hidden' }}>
+              <summary style={{ padding: '1rem 1.2rem', color: '#222', fontWeight: 'bold', cursor: 'pointer', outline: 'none', margin: 0, fontSize: '1.05rem' }}>
+                What is the admission age criteria for Nursery and LKG at SG Education?
+              </summary>
+              <p style={{ padding: '0 1.2rem 1rem 1.2rem', color: '#555', fontSize: '0.95rem', margin: 0 }}>For Nursery admission, a child should be 3 years old by the start of the academic session. For Junior Kindergarten (LKG), the recommended age is 4 years, and for Senior Kindergarten (UKG), 5 years. Toddler Care welcomes children starting from 1.2 years.</p>
+            </details>
+            <details className="faq-accordion" name="faq-group" style={{ background: '#F0F4FF', borderRadius: '12px', borderLeft: '4px solid #5A49E3', overflow: 'hidden' }}>
+              <summary style={{ padding: '1rem 1.2rem', color: '#222', fontWeight: 'bold', cursor: 'pointer', outline: 'none', margin: 0, fontSize: '1.05rem' }}>
+                Where is SG Education campus located in Hosur?
+              </summary>
+              <p style={{ padding: '0 1.2rem 1rem 1.2rem', color: '#555', fontSize: '0.95rem', margin: 0 }}>SG Early Budding is located at 181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur, Tamil Nadu – 635109. Our secondary facility is situated at Rangopanditha Agraharam Village in Gokul Nagar.</p>
+            </details>
+            <details className="faq-accordion" name="faq-group" style={{ background: '#FFF0F4', borderRadius: '12px', borderLeft: '4px solid #D90013', overflow: 'hidden' }}>
+              <summary style={{ padding: '1rem 1.2rem', color: '#222', fontWeight: 'bold', cursor: 'pointer', outline: 'none', margin: 0, fontSize: '1.05rem' }}>
+                Does the school provide a safe and hygienic campus for toddlers?
+              </summary>
+              <p style={{ padding: '0 1.2rem 1rem 1.2rem', color: '#555', fontSize: '0.95rem', margin: 0 }}>Yes. SG Early Budding maintains strict hygiene and safety standards, including daily sanitization of playrooms, round-the-clock CCTV surveillance, child-safe washrooms, and trained female support staff to ensure constant supervision.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
            7. ADMISSIONS ENROLLMENT FORM
            ========================================== */}
       <section className="admissions-section scroll-reveal" id="admissions" style={{ position: "relative", padding: "1rem 0" }}>
@@ -761,25 +902,43 @@ professional services.SG Education established in 2023, aims to provide quality 
         <div className="container admissions-grid" style={{ marginTop: '2rem' }}>
 
           <div className="admit-info" style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%' }}>
-            <span className="label-brand color-blue">Secure A Seat</span>
+            <span className="label-brand color-blue">Give Your Child the Best Start in Life</span>
             <h2>Sow the Seeds of a <span className="highlight-blue text-blue-line">Brighter Future</span></h2>
             <p className="admit-intro-p">
-              Admissions are open! Fill out our clean digital chalkboard, schedule a physical tour, and explore our Hosur campus facilities in person.
+              Admissions are open for Toddler, Nursery, Kindergarten, and Primary grades. Visit our campus to experience our learning spaces firsthand.
             </p>
 
             <div className="benefit-row">
-              <div className="b-icon blue"><i className="fa-solid fa-check"></i></div>
+              <div className="b-icon blue"><i className="fa-solid fa-map-location-dot"></i></div>
               <div className="b-text">
-                <h4>Online Application Process</h4>
-                <p>Register parent/child details and receive an prompt scheduling email within 24 hours.</p>
+                <h4>Campus Address</h4>
+                <p>SG Early Budding Campus, 181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur, Tamil Nadu – 635109.</p>
               </div>
             </div>
             <div className="benefit-row">
-              <div className="b-icon pink"><i className="fa-solid fa-check"></i></div>
+              <div className="b-icon pink"><i className="fa-solid fa-phone"></i></div>
               <div className="b-text">
-                <h4>Direct Coordinator helpline</h4>
-                <p>Talk to our Hosur admissions coordinators instantly: <strong>+91 9994664346</strong>.</p>
+                <h4>Direct Helpline</h4>
+                <p>Call Admissions: <strong>+91 9994664346</strong></p>
+                <p style={{ fontSize: '0.85rem', marginTop: '0.3rem' }}>Operating Hours: Mon to Sat: 9:00 AM – 5:00 PM<br/>Email: sg.educations.org@gmail.com / info@sgeducations.com</p>
               </div>
+            </div>
+            
+            <div style={{ marginTop: '2rem' }}>
+              <Link href="/admission" className="btn btn-orange" style={{ 
+                display: 'inline-block',
+                padding: '0.8rem 2rem', 
+                backgroundColor: '#E95D2A', 
+                color: '#fff', 
+                borderRadius: '30px', 
+                textDecoration: 'none', 
+                fontWeight: 'bold', 
+                fontSize: '1.1rem', 
+                boxShadow: '0 4px 15px rgba(233, 93, 42, 0.4)',
+                transition: 'transform 0.3s ease'
+              }}>
+                Book a Campus Visit <i className="fa-solid fa-arrow-right" style={{ marginLeft: '8px' }}></i>
+              </Link>
             </div>
           </div>
 
@@ -927,6 +1086,133 @@ professional services.SG Education established in 2023, aims to provide quality 
           </div>
         </div>
       )}
+    {/* JSON-LD Schemas */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://sgeducations.in/#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Which is the best preschool and daycare center in Hosur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SG Early Budding is among the best preschools in Hosur, located at Gokul Nagar, R K Road. It offers early childhood programs from Toddler Care to 5th Standard, combining the ethical grounding of Ancient Noble Bharat Culture with modern 21st-century academic and leadership skills."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the admission age criteria for Nursery and LKG at SG Education?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For Nursery admission, a child should be 3 years old by the start of the academic session. For Junior Kindergarten (LKG), the recommended age is 4 years, and for Senior Kindergarten (UKG), 5 years. Toddler Care welcomes children starting from 1.2 years."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where is SG Education campus located in Hosur?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SG Early Budding is located at 181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur, Tamil Nadu – 635109. Our secondary facility is situated at Rangopanditha Agraharam Village in Gokul Nagar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the school provide a safe and hygienic campus for toddlers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. SG Early Budding maintains strict hygiene and safety standards, including daily sanitization of playrooms, round-the-clock CCTV surveillance, child-safe washrooms, and trained female support staff to ensure constant supervision."
+      }
+    }
+  ]
+}
+      `}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://sgeducations.in/#webpage",
+  "url": "https://sgeducations.in/",
+  "name": "SG Educations | Quality Education in Hosur",
+  "isPartOf": {
+    "@id": "https://sgeducations.in/#website"
+  },
+  "about": {
+    "@id": "https://sgeducations.in/#organization"
+  },
+  "publisher": {
+    "@id": "https://sgeducations.in/#organization"
+  },
+  "description": "SG Educations provides quality education and a supportive learning environment focused on students' academic and overall development.",
+  "inLanguage": "en-IN"
+}
+      `}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://sgeducations.in/#organization",
+  "name": "SG Educations",
+  "url": "https://sgeducations.in/",
+  "description": "SG Educations is an educational institution in Hosur focused on quality education, student development, and overall growth.",
+  "telephone": "+91 9994664346",
+  "email": "sg.educations.org@gmail.com",
+  "foundingDate": "2023",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "181, Gopikrishna Colony, R K Road, Gokul Nagar",
+    "addressLocality": "Hosur",
+    "addressRegion": "Tamil Nadu",
+    "postalCode": "635109",
+    "addressCountry": "IN"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Hosur"
+  },
+  "sameAs": [
+    "https://sgeducations.in/"
+  ]
+}
+      `}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "https://sgeducations.in/#organization",
+      "name": "SG Educations",
+      "url": "https://sgeducations.in/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://sgeducations.in/wp-content/uploads/logo.png"
+      },
+      "image": "https://sgeducations.in/wp-content/uploads/logo.png",
+      "description": "SG Educations is an educational institution in Hosur providing quality education by blending Ancient Noble Bharat Culture with Corporate Professional Culture.",
+      "telephone": "+91 9994664346",
+      "email": "sg.educations.org@gmail.com",
+      "foundingDate": "2023",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "181, Gopikrishna Colony, R K Road, Gokul Nagar",
+        "addressLocality": "Hosur",
+        "postalCode": "635109",
+        "addressRegion": "Tamil Nadu",
+        "addressCountry": "IN"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Hosur"
+      },
+      "sameAs": [
+        "https://sgeducations.in/"
+      ]
+    }
+  ]
+}
+      `}} />
     </>
   );
 }

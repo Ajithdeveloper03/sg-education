@@ -37,9 +37,9 @@ export default function GalleryPage() {
       
       {/* Page Banner */}
       <section style={{ 
-        position: 'relative', width: '100%', height: '450px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
+        position: 'relative', width: '100%', minHeight: '550px', display: 'flex', alignItems: 'center', justifyContent: 'center', 
         backgroundImage: 'url("/gallery banner.png")', 
-        backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '40px', overflow: 'hidden'
+        backgroundSize: 'cover', backgroundPosition: 'center', paddingTop: '130px', paddingBottom: '40px', overflow: 'hidden'
       }}>
         <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', backgroundColor: 'rgba(17, 24, 39, 0.45)', zIndex: 1 }}></div>
         <div className="vm-banner-content" style={{ position: 'relative', zIndex: 10, textAlign: 'center', paddingBottom: '30px' }}>
