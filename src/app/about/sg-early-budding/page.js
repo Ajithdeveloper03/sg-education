@@ -69,7 +69,7 @@ export default function SGEarlyBuddingPage() {
         backgroundImage: 'url("/sg early budding banner.png")'
       }}>
         <div className="eb-hero-overlay" style={{ backgroundColor: 'rgba(17, 24, 39, 0.45)' }}></div>
-        <div className="eb-hero-content" style={{ paddingBottom: '30px' }}>
+        <div className="eb-hero-content" style={{ paddingBottom: '30px', position: 'relative', zIndex: 10 }}>
           <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
             <span className="hero-pill-btn">
               Nurturing Young Minds in Hosur

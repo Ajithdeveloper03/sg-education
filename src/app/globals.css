@@ -6203,3 +6203,16 @@ details.faq-accordion[open] > summary::after {
   transform: rotate(180deg);
   color: #E95D2A;
 }
+
+
+/* Home Page FAQ styles applied globally */
+details.faq-accordion { border-radius: 12px !important; overflow: hidden !important; margin-bottom: 0 !important; border: none !important; }
+details.faq-accordion:nth-of-type(4n+1) { background-color: #FAF9F5 !important; border-left: 4px solid var(--playful-pink) !important; }
+details.faq-accordion:nth-of-type(4n+2) { background-color: #FFF5E6 !important; border-left: 4px solid var(--joyful-yellow) !important; }
+details.faq-accordion:nth-of-type(4n+3) { background-color: #F0F4FF !important; border-left: 4px solid #5A49E3 !important; }
+details.faq-accordion:nth-of-type(4n+4) { background-color: #FFF0F4 !important; border-left: 4px solid #D90013 !important; }
+details.faq-accordion > summary { padding: 1rem 1.2rem !important; color: #222 !important; font-weight: bold !important; font-size: 1.05rem !important; }
+details.faq-accordion > p { padding: 0 1.2rem 1rem 1.2rem !important; color: #555 !important; font-size: 0.95rem !important; margin: 0 !important; line-height: 1.6 !important; }
+details.faq-accordion > summary i.fa-circle-question { display: none !important; }
+details.faq-accordion > summary div { display: inline !important; }
+details.faq-accordion > summary span { font-size: 1.05rem !important; color: inherit !important; }

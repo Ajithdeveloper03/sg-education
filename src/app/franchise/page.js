@@ -299,63 +299,12 @@ export default function FranchisePage() {
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <div className="section-header-centered">
               <h2>Build a Legacy of <span style={{ color: '#E95D2A' }}>Educational Excellence</span> in Your City</h2>
-              <p>Take the first step toward launching your own prestigious preschool. Fill out the form below to receive the detailed SG Education Franchise Kit.</p>
+              <p>Take the first step toward launching your own prestigious preschool. Contact us today to receive the detailed SG Education Franchise Kit.</p>
             </div>
             
             <div style={{ maxWidth: '800px', margin: '0 auto', backgroundColor: '#fff', padding: '3rem', borderRadius: '20px', boxShadow: '0 20px 50px rgba(0,0,0,0.1)' }}>
-              <form>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
-                  <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#333', fontWeight: 'bold' }}>Full Name *</label>
-                    <input type="text" required placeholder="Enter your full name" style={{ width: '100%', padding: '1rem', border: '1px solid #ddd', borderRadius: '8px', fontSize: '1rem', outline: 'none' }} />
-                  </div>
-                  <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#333', fontWeight: 'bold' }}>Mobile / WhatsApp Number *</label>
-                    <input type="tel" required placeholder="Enter your mobile number" style={{ width: '100%', padding: '1rem', border: '1px solid #ddd', borderRadius: '8px', fontSize: '1rem', outline: 'none' }} />
-                  </div>
-                </div>
-                
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '1.5rem' }}>
-                  <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#333', fontWeight: 'bold' }}>Email Address *</label>
-                    <input type="email" required placeholder="Enter your email address" style={{ width: '100%', padding: '1rem', border: '1px solid #ddd', borderRadius: '8px', fontSize: '1rem', outline: 'none' }} />
-                  </div>
-                  <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#333', fontWeight: 'bold' }}>Preferred City / State *</label>
-                    <input type="text" required placeholder="E.g. Hosur, Tamil Nadu" style={{ width: '100%', padding: '1rem', border: '1px solid #ddd', borderRadius: '8px', fontSize: '1rem', outline: 'none' }} />
-                  </div>
-                </div>
-                
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginBottom: '2rem' }}>
-                  <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#333', fontWeight: 'bold' }}>Available Commercial Space (Sq. Ft.)</label>
-                    <select style={{ width: '100%', padding: '1rem', border: '1px solid #ddd', borderRadius: '8px', fontSize: '1rem', outline: 'none', backgroundColor: '#fff' }}>
-                      <option value="">Select Option</option>
-                      <option value="None Yet">None Yet</option>
-                      <option value="1500–2500">1500–2500 Sq. Ft.</option>
-                      <option value="2500–4000">2500–4000 Sq. Ft.</option>
-                      <option value="4000+">4000+ Sq. Ft.</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label style={{ display: 'block', marginBottom: '0.5rem', color: '#333', fontWeight: 'bold' }}>Planned Investment Budget</label>
-                    <select style={{ width: '100%', padding: '1rem', border: '1px solid #ddd', borderRadius: '8px', fontSize: '1rem', outline: 'none', backgroundColor: '#fff' }}>
-                      <option value="">Select Option</option>
-                      <option value="Standard">Standard Model</option>
-                      <option value="Premium">Premium Model</option>
-                      <option value="Multi-Unit">Multi-Unit</option>
-                    </select>
-                  </div>
-                </div>
-                
-                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-                  <button type="submit" className="btn-franchise-primary" style={{ border: 'none', cursor: 'pointer', padding: '1rem 3rem', fontSize: '1.2rem' }}>
-                    Request Franchise Information Kit
-                  </button>
-                </div>
-              </form>
               
-              <div style={{ textAlign: 'center', borderTop: '1px solid #eee', paddingTop: '2rem' }}>
+              <div style={{ textAlign: 'center' }}>
                 <p style={{ color: '#555', marginBottom: '0.5rem' }}><strong>Direct Franchise Helpdesk:</strong> +91 9994664346</p>
                 <p style={{ color: '#555', marginBottom: '0.5rem' }}><strong>Email:</strong> sg.educations.org@gmail.com / info@sgeducations.com</p>
                 <p style={{ color: '#555', margin: 0 }}><strong>Corporate Office:</strong> SG Educations, Rangopanditha Agraharam Village, Gokul Nagar, Hosur, Tamil Nadu – 635109</p>

@@ -16,7 +16,7 @@
   align-items: center;
   background: linear-gradient(135deg, #1a2942 0%, #0f172a 100%);
   color: #fff;
-  padding: 60px 0;
+  padding: 150px 0 60px 0;
   overflow: hidden;
 }
 
@@ -38,7 +38,7 @@
   text-align: center;
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -72,7 +72,7 @@
   line-height: 1.6;
   color: #cbd5e1;
   margin: 0 auto 40px auto;
-  max-width: 700px;
+  max-width: 950px;
   text-align: center;
 }
 

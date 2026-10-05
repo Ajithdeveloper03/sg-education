@@ -82,18 +82,18 @@ export default function OurProgramsPage() {
           <div style={{ display: 'inline-block', backgroundColor: '#FFF5F8', color: '#E91E63', padding: '0.4rem 1rem', borderRadius: '50px', fontSize: '0.9rem', fontWeight: 'bold', marginBottom: '1rem', border: '1px solid #F48FB1' }}>
             Admissions Open for Academic Year 2026–2027 | Gokul Nagar, Hosur
           </div>
-          <h1 className="op-hero-title-main" style={{ fontSize: '3rem', lineHeight: '1.2' }}>Holistic Learning Programs:</h1>
-          <h1 className="op-hero-title-sub" style={{ fontSize: '2rem', marginTop: '0.5rem' }}>From Toddler Care to 5th Standard</h1>
+          <h1 className="op-hero-title-main" style={{ fontSize: '3rem', lineHeight: '1.2', marginBottom: '0.2rem' }}>Holistic Learning Programs:</h1>
+          <h1 className="op-hero-title-sub" style={{ fontSize: '2rem', margin: '0 0 0.5rem 0' }}>From Toddler Care to 5th Standard</h1>
           
-          <p className="op-hero-subtitle" style={{ fontSize: '1.1rem', lineHeight: '1.6', marginTop: '1.5rem', maxWidth: '600px' }}>
+          <p className="op-hero-subtitle" style={{ fontSize: '1.1rem', lineHeight: '1.6', marginTop: '0.5rem', marginBottom: '0.5rem', maxWidth: '600px' }}>
             At SG Education and SG Early Budding, Hosur, our research-backed curriculum guides children through every crucial developmental stage. Blending the cultural grounding of Ancient Noble Bharat Culture (ANBC) with Corporate Professional Culture (CPC) life skills, we prepare young learners for academic excellence and life readiness.
           </p>
 
-          <div style={{ display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}>
-            <Link href="/admission" className="op-btn-explore">
+          <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', flexWrap: 'wrap' }}>
+            <Link href="/admission" className="op-btn-explore" style={{ width: 'auto', flex: '1 1 auto', justifyContent: 'center', padding: '1rem', fontSize: '1rem', whiteSpace: 'nowrap' }}>
               Book a Campus Tour <i className="fa-solid fa-arrow-right"></i>
             </Link>
-            <Link href="/admission" className="op-btn-explore" style={{ backgroundColor: '#fff', color: '#1565C0', border: '2px solid #1565C0' }}>
+            <Link href="/admission" className="op-btn-explore" style={{ backgroundColor: '#fff', color: '#1565C0', border: '2px solid #1565C0', width: 'auto', flex: '1 1 auto', justifyContent: 'center', padding: '1rem', fontSize: '1rem', whiteSpace: 'nowrap' }}>
               Apply for Admission
             </Link>
           </div>
@@ -157,9 +157,9 @@ export default function OurProgramsPage() {
               <div className="jc-icon">
                 <i className="fa-solid fa-baby-carriage"></i>
               </div>
-              <h3 className="jc-title" style={{ color: '#E65100' }}>Toddler Care</h3>
-              <span className="jc-age">1.2 Years – 2 Years</span>
-              <p className="jc-desc">Safe separation, loving emotional reassurance, sensory exploration, and gross motor milestones.</p>
+              <h3 className="jc-title" style={{ color: '#E65100' }}>Toddler Care: Warmth, Comfort & Sensory Exploration</h3>
+              <span className="jc-age">1.2 – 2 Years</span>
+              <p className="jc-desc">Safe separation, loving emotional reassurance, sensory exploration, and gross motor milestones. Toddlers discover colors, textures, music, and social warmth in a hygienic, cheerful setting.</p>
             </div>
 
             <div className="journey-arrow">
@@ -171,9 +171,9 @@ export default function OurProgramsPage() {
               <div className="jc-icon">
                 <i className="fa-solid fa-cubes"></i>
               </div>
-              <h3 className="jc-title" style={{ color: '#0277BD' }}>Play Group</h3>
+              <h3 className="jc-title" style={{ color: '#0277BD' }}>Play Group: Social Bonding, Speech & Joyful Play</h3>
               <span className="jc-age">2 – 3 Years</span>
-              <p className="jc-desc">Vocabulary initiation, positive social habits, interactive games, sharing, and fine motor coordination.</p>
+              <p className="jc-desc">Vocabulary initiation, positive social habits, interactive games, sharing, and fine motor coordination through clay modeling, coloring, and rhymes.</p>
             </div>
 
             <div className="journey-arrow">
@@ -185,9 +185,9 @@ export default function OurProgramsPage() {
               <div className="jc-icon">
                 <i className="fa-solid fa-seedling"></i>
               </div>
-              <h3 className="jc-title" style={{ color: '#2E7D32' }}>Nursery</h3>
+              <h3 className="jc-title" style={{ color: '#2E7D32' }}>Nursery Foundation: Phonics, Language & Creative Discovery</h3>
               <span className="jc-age">3 – 4 Years</span>
-              <p className="jc-desc">Structured phonics recognition, basic numeracy, pencil grip development, and expressive storytelling.</p>
+              <p className="jc-desc">Structured phonics recognition, basic numeracy, pencil grip development, expressive storytelling, and active classroom curiosity.</p>
             </div>
 
             <div className="journey-arrow">
@@ -199,9 +199,9 @@ export default function OurProgramsPage() {
               <div className="jc-icon">
                 <i className="fa-solid fa-palette"></i>
               </div>
-              <h3 className="jc-title" style={{ color: '#1565C0' }}>LKG (Junior KG)</h3>
+              <h3 className="jc-title" style={{ color: '#1565C0' }}>LKG (Junior Kindergarten): Concept Building & Self-Reliance</h3>
               <span className="jc-age">4 – 5 Years</span>
-              <p className="jc-desc">Early reading, sentence construction, logical-mathematical sequences, and self-reliance habits.</p>
+              <p className="jc-desc">Early reading, sentence construction, logical-mathematical sequences, environmental awareness, and personal self-reliance habits.</p>
             </div>
 
             <div className="journey-arrow">
@@ -213,9 +213,9 @@ export default function OurProgramsPage() {
               <div className="jc-icon">
                 <i className="fa-solid fa-pencil"></i>
               </div>
-              <h3 className="jc-title" style={{ color: '#C62828' }}>UKG (Senior KG)</h3>
+              <h3 className="jc-title" style={{ color: '#C62828' }}>UKG (Senior Kindergarten): School Readiness & Confident Expression</h3>
               <span className="jc-age">5 – 6 Years</span>
-              <p className="jc-desc">Advanced literacy, mental math, scientific reasoning, and seamless primary school preparation.</p>
+              <p className="jc-desc">Advanced literacy, mental math, scientific reasoning, public speaking confidence, and seamless preparation for primary school admission.</p>
             </div>
 
             <div className="journey-arrow">
@@ -227,9 +227,9 @@ export default function OurProgramsPage() {
               <div className="jc-icon">
                 <i className="fa-solid fa-graduation-cap"></i>
               </div>
-              <h3 className="jc-title" style={{ color: '#4527A0' }}>1st to 5th Std</h3>
+              <h3 className="jc-title" style={{ color: '#4527A0' }}>Primary School (1st to 5th Standard): Academic Rigor & Ethical Leadership</h3>
               <span className="jc-age">6 – 11 Years</span>
-              <p className="jc-desc">Subject mastery in Math, Science & Languages integrated with ANBC values and leadership.</p>
+              <p className="jc-desc">Subject-specific mastery in Mathematics, Sciences, Languages, Social Studies, and Computer Literacy, integrated with ANBC moral values and leadership coaching.</p>
             </div>
           </div>
 
@@ -282,18 +282,18 @@ export default function OurProgramsPage() {
 
           <div className="op-cards-row">
              <div className="op-card-left">
-                <h3 className="op-card-title title-blue">A Child-Centric Learning Approach</h3>
-                <p style={{ color: '#666', marginBottom: '1.5rem', fontSize: '0.95rem' }}>How we spark lifelong curiosity, critical thinking, and joy in everyday learning grounded in real experience.</p>
-                <ul className="op-checklist" style={{ fontSize: '0.9rem' }}>
-                   <li><i className="fa-solid fa-square-check text-orange"></i> <strong>Play-Based & Activity-Led:</strong> Interactive play stations, sensorial discovery, and tactile learning.</li>
-                   <li><i className="fa-solid fa-square-check text-blue"></i> <strong>Conceptual & Experiential:</strong> Practical experiments, nature exploration, and real-world problems.</li>
-                   <li><i className="fa-solid fa-square-check text-green"></i> <strong>Technology-Integrated:</strong> Audio-visual phonics, smart boards, and multimedia tools.</li>
-                   <li><i className="fa-solid fa-square-check text-orange"></i> <strong>Personalized Attention:</strong> Continuous individual observation tailored to cognitive pace.</li>
-                   <li><i className="fa-solid fa-square-check text-green"></i> <strong>Continuous Parent Partnership:</strong> Transparent developmental milestones & dialogue.</li>
+                <div className="op-deco" style={{ top: '20px', right: '40px', fontSize: '1.5rem', zIndex: 3 }}><i className="fa-regular fa-star text-pink"></i></div>
+                <div className="op-deco" style={{ bottom: '80px', left: '60px', fontSize: '1.2rem', zIndex: 3 }}><i className="fa-regular fa-star text-green"></i></div>
+                
+                <h3 className="op-card-title title-blue" style={{ marginBottom: '1rem', position: 'relative', zIndex: 2 }}>A Child-Centric Learning Approach Grounded in Real Experience</h3>
+                <p style={{ color: '#666', marginBottom: '1.5rem', fontSize: '0.95rem', position: 'relative', zIndex: 2 }}>How we spark lifelong curiosity, critical thinking, and joy in everyday learning.</p>
+                <ul className="op-checklist" style={{ fontSize: '0.9rem', position: 'relative', zIndex: 2 }}>
+                   <li style={{ alignItems: 'flex-start' }}><i className="fa-solid fa-square-check text-orange" style={{ marginTop: '4px' }}></i> <div><strong>Play-Based & Activity-Led Learning:</strong> Moving away from rote pressure through interactive play stations, sensorial discovery, and tactile learning.</div></li>
+                   <li style={{ alignItems: 'flex-start' }}><i className="fa-solid fa-square-check text-blue" style={{ marginTop: '4px' }}></i> <div><strong>Conceptual & Experiential Understanding:</strong> Practical experiments, nature exploration, and real-world problem-solving modules.</div></li>
+                   <li style={{ alignItems: 'flex-start' }}><i className="fa-solid fa-square-check text-green" style={{ marginTop: '4px' }}></i> <div><strong>Technology-Integrated Classrooms:</strong> Audio-visual digital phonics, smart boards, and age-appropriate multimedia learning tools.</div></li>
+                   <li style={{ alignItems: 'flex-start' }}><i className="fa-solid fa-square-check text-orange" style={{ marginTop: '4px' }}></i> <div><strong>Personalized Attention & Care:</strong> Continuous individual observation tailored to each child's unique cognitive pace.</div></li>
+                   <li style={{ alignItems: 'flex-start' }}><i className="fa-solid fa-square-check text-green" style={{ marginTop: '4px' }}></i> <div><strong>Continuous Parent Partnership:</strong> Regular transparent developmental milestone reports and collaborative parent-teacher dialogues.</div></li>
                 </ul>
-                <img src="/girl_writing.png" alt="Girl writing" className="op-card-img-left" />
-                <div className="op-deco" style={{ top: '20px', right: '40px', fontSize: '1.5rem' }}><i className="fa-regular fa-star text-pink"></i></div>
-                <div className="op-deco" style={{ bottom: '80px', left: '60px', fontSize: '1.2rem' }}><i className="fa-regular fa-star text-green"></i></div>
              </div>
 
              <div className="op-card-right">
@@ -391,36 +391,45 @@ export default function OurProgramsPage() {
       </section>
 
       {/* 6. Final CTA & Campus Contact Details */}
-      <section style={{ padding: '4rem 0', backgroundColor: '#1D2A44', color: '#fff', textAlign: 'center' }}>
-        <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.2rem', fontWeight: 'bold', marginBottom: '1rem' }}>Choose the Right Academic Program for Your Child</h2>
-          <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: '#e0e0e0', lineHeight: '1.6' }}>
-            Connect with our admissions counselors today to find the perfect learning stage for your child.
-          </p>
-          <div style={{ marginBottom: '3rem' }}>
-            <Link href="/admission" className="op-btn-book" style={{ display: 'inline-flex', padding: '1rem 2.5rem', fontSize: '1.1rem', backgroundColor: '#E95D2A', color: '#fff', borderRadius: '50px', textDecoration: 'none', fontWeight: 'bold', alignItems: 'center', gap: '10px' }}>
-              Book a Campus Tour <i className="fa-solid fa-arrow-right"></i>
-            </Link>
-          </div>
+      <section style={{ padding: '0 1.5rem', backgroundColor: '#1D2A44', color: '#fff' }}>
+        <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', gap: '3rem' }}>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', backgroundColor: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '15px' }}>
-            <div style={{ fontSize: '1.2rem' }}>
-              <i className="fa-solid fa-phone" style={{ color: '#FFC300', marginRight: '10px' }}></i> 
-              <strong>Direct Helpline:</strong> +91 9994664346
+          <div style={{ flex: '1 1 500px' }}>
+            <h2 style={{ fontSize: '2.2rem', fontWeight: 'bold', marginBottom: '1rem', marginTop: '0' }}>Choose the Right Academic Program for Your Child</h2>
+            <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: '#e0e0e0', lineHeight: '1.6' }}>
+              Connect with our admissions counselors today to find the perfect learning stage for your child.
+            </p>
+            
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', backgroundColor: 'rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '15px' }}>
+              <div style={{ fontSize: '1.1rem', display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                <i className="fa-solid fa-phone" style={{ color: '#FFC300', marginTop: '4px', width: '20px', textAlign: 'center' }}></i> 
+                <div><strong>Direct Helpline:</strong> +91 9994664346</div>
+              </div>
+              <div style={{ fontSize: '1.1rem', color: '#ddd', display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                <i className="fa-solid fa-envelope" style={{ color: '#FFC300', marginTop: '4px', width: '20px', textAlign: 'center' }}></i> 
+                <div>sg.educations.org@gmail.com</div>
+              </div>
+              <div style={{ fontSize: '1.1rem', color: '#ddd', lineHeight: '1.5', display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                <i className="fa-solid fa-location-dot" style={{ color: '#FFC300', marginTop: '4px', width: '20px', textAlign: 'center' }}></i> 
+                <div><strong>Campus Address:</strong> SG Early Budding, 181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur, Tamil Nadu – 635109.</div>
+              </div>
+              <div style={{ fontSize: '1.1rem', color: '#ddd', display: 'flex', alignItems: 'flex-start', gap: '15px' }}>
+                <i className="fa-solid fa-clock" style={{ color: '#FFC300', marginTop: '4px', width: '20px', textAlign: 'center' }}></i> 
+                <div><strong>Operating Hours:</strong> Monday to Saturday: 9:00 AM – 5:00 PM</div>
+              </div>
             </div>
-            <div style={{ fontSize: '1.1rem', color: '#ddd' }}>
-              <i className="fa-solid fa-envelope" style={{ color: '#FFC300', marginRight: '10px' }}></i> 
-              sg.educations.org@gmail.com
-            </div>
-            <div style={{ fontSize: '1.1rem', color: '#ddd', lineHeight: '1.5' }}>
-              <i className="fa-solid fa-location-dot" style={{ color: '#FFC300', marginRight: '10px' }}></i> 
-              <strong>Campus Address:</strong> SG Early Budding, 181, Gopikrishna Colony, R K Road, Gokul Nagar, Hosur, Tamil Nadu – 635109.
-            </div>
-            <div style={{ fontSize: '1.1rem', color: '#ddd' }}>
-              <i className="fa-solid fa-clock" style={{ color: '#FFC300', marginRight: '10px' }}></i> 
-              <strong>Operating Hours:</strong> Monday to Saturday: 9:00 AM – 5:00 PM
+
+            <div style={{ marginTop: '2rem' }}>
+              <Link href="/admission" className="op-btn-book" style={{ display: 'inline-flex', padding: '1rem 2.5rem', fontSize: '1.1rem', backgroundColor: '#E95D2A', color: '#fff', borderRadius: '50px', textDecoration: 'none', fontWeight: 'bold', alignItems: 'center', gap: '10px' }}>
+                Book a Campus Tour <i className="fa-solid fa-arrow-right"></i>
+              </Link>
             </div>
           </div>
+
+          <div style={{ flex: '1 1 400px', display: 'flex', justifyContent: 'center' }}>
+             <img src="/girl_writing.png" alt="Student learning" style={{ width: '100%', maxWidth: '400px', objectFit: 'contain', filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.3))' }} />
+          </div>
+
         </div>
       </section>
 

@@ -301,7 +301,7 @@ export default function FacilitiesPage() {
               </p>
             </details>
             
-            <details style={{ backgroundColor: '#fcfcfc', borderRadius: '12px', border: '1px solid #eee', overflow: 'hidden' }}>
+            <details className="faq-accordion" name="faq-group" style={{ backgroundColor: '#fcfcfc', borderRadius: '12px', border: '1px solid #eee', overflow: 'hidden' }}>
               <summary style={{ padding: '1rem', cursor: 'pointer', outline: 'none', margin: 0, fontWeight: 'bold' }}>
                 <div style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '10px', color: '#333', fontSize: '1.1rem' }}>
                   <i className="fa-solid fa-circle-question" style={{ color: '#4A90E2', marginTop: '4px' }}></i> 
